@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28193060112F816700ECF9B4 /* SnakeClassic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2819305F112F816700ECF9B4 /* SnakeClassic.xcdatamodeld */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		2C786A6417DB2A8200DB72B6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C786A6317DB2A8200DB72B6 /* Default-568h@2x.png */; };
 		4D05000B12832500004603CF /* _0000_beach_theme2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000512832500004603CF /* _0000_beach_theme2.png */; };
 		4D05000C12832500004603CF /* _0000_garden_theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000612832500004603CF /* _0000_garden_theme1.png */; };
 		4D05000D12832500004603CF /* _0000_night_theme3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000712832500004603CF /* _0000_night_theme3.png */; };
@@ -619,6 +620,7 @@
 		28C3AD890F43EF2300507BA6 /* SnakeClassic.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SnakeClassic.xcdatamodel; sourceTree = "<group>"; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C786A6317DB2A8200DB72B6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SnakeClassic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeClassic_Prefix.pch; sourceTree = "<group>"; };
 		4D05000512832500004603CF /* _0000_beach_theme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_beach_theme2.png; sourceTree = "<group>"; };
 		4D05000612832500004603CF /* _0000_garden_theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_garden_theme1.png; sourceTree = "<group>"; };
@@ -1337,6 +1339,7 @@
 		4D27806A1230BAE300BE95A7 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				2C786A6317DB2A8200DB72B6 /* Default-568h@2x.png */,
 				4D6BF6491338A4E100A79861 /* gk-notification.png */,
 				4D6BF64A1338A4E100A79861 /* gk-icon.png */,
 				4D6BF64B1338A4E100A79861 /* gk-notification@2x.png */,
@@ -1860,6 +1863,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SnakeClassic" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -2070,6 +2076,7 @@
 				4D6BF6501338A4E100A79861 /* gk-icon@2x.png in Resources */,
 				4D7A9F2613B1DC55007E2DF5 /* Game_Center_logo.png in Resources */,
 				4DC178B4140CC6D90094E8A4 /* Entitlements.plist in Resources */,
+				2C786A6417DB2A8200DB72B6 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2468,6 +2475,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CLANG_ENABLE_OBJC_ARC[arch=*]" = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -2477,6 +2486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				INFOPLIST_FILE = "SnakeClassic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FlurryLib\"",
@@ -2498,7 +2508,7 @@
 				PRODUCT_NAME = Snake;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2507,6 +2517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -2514,6 +2525,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				INFOPLIST_FILE = "SnakeClassic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FlurryLib\"",
@@ -2535,7 +2547,7 @@
 				PRODUCT_NAME = Snake;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = NO;
 			};
@@ -2616,6 +2628,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -2627,12 +2640,11 @@
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"\"/Users/Swapan/facebook-ios-sdk/src\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				PROVISIONING_PROFILE = "53222092-E8E4-4612-98E9-F50FC9F50607";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53222092-E8E4-4612-98E9-F50FC9F50607";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Distribution;
 		};
@@ -2640,6 +2652,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -2647,6 +2660,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				INFOPLIST_FILE = "SnakeClassic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/FlurryLib\"",
@@ -2668,7 +2682,7 @@
 				PRODUCT_NAME = Snake;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.3;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2713,6 +2727,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -2724,11 +2739,10 @@
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"\"/Users/Swapan/facebook-ios-sdk/src\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PREBINDING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PROVISIONING_PROFILE = "53222092-E8E4-4612-98E9-F50FC9F50607";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53222092-E8E4-4612-98E9-F50FC9F50607";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -2736,6 +2750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -2747,12 +2762,11 @@
 					"$(SDKROOT)/usr/include/libxml2/**",
 					"\"/Users/Swapan/facebook-ios-sdk/src\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				PROVISIONING_PROFILE = "53222092-E8E4-4612-98E9-F50FC9F50607";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53222092-E8E4-4612-98E9-F50FC9F50607";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

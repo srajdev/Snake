@@ -30,7 +30,7 @@ void _AWLogCrit(NSString *format, ...) {
   if (g_AWLogLevel < AWLogLevelCrit) return;
   va_list ap;
   va_start(ap, format);
-  //NSLogv(format, ap);
+  NSLogv(format, ap);
   va_end(ap);
 }
 
@@ -38,7 +38,7 @@ void _AWLogError(NSString *format, ...) {
   if (g_AWLogLevel < AWLogLevelError) return;
   va_list ap;
   va_start(ap, format);
-  //NSLogv(format, ap);
+  NSLogv(format, ap);
   va_end(ap);
 }
 
@@ -46,7 +46,7 @@ void _AWLogWarn(NSString *format, ...) {
   if (g_AWLogLevel < AWLogLevelWarn) return;
   va_list ap;
   va_start(ap, format);
-  //NSLogv(format, ap);
+  NSLogv(format, ap);
   va_end(ap);
 }
 
@@ -54,7 +54,7 @@ void _AWLogInfo(NSString *format, ...) {
   if (g_AWLogLevel < AWLogLevelInfo) return;
   va_list ap;
   va_start(ap, format);
-  //NSLogv(format, ap);
+  NSLogv(format, ap);
   va_end(ap);
 }
 
@@ -62,6 +62,6 @@ void _AWLogDebug(NSString *format, ...) {
   if (g_AWLogLevel < AWLogLevelDebug) return;
   va_list ap;
   va_start(ap, format);
-  //NSLogv(format, ap);
+  NSLogv(format, ap);
   va_end(ap);
 }

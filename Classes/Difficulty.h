@@ -34,7 +34,7 @@
 	
 	IBOutlet UIImageView *background;
 	
-	Snake_3ViewController *new_game;
+	Snake_3ViewController *gameNew;
 	
 	IBOutlet UIImageView *smallBackground;
 	IBOutlet UIImageView *topBackground;
@@ -68,7 +68,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *speed5;
 @property (nonatomic,retain) IBOutlet UIButton *selectedSpeed5;
 
-@property (nonatomic,retain) Snake_3ViewController *new_game;
+@property (nonatomic,retain) Snake_3ViewController *gameNew;
 
 
 

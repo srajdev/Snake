@@ -19,7 +19,7 @@
 
 @implementation FriendsRequestResult
 
-- (id) initializeWithDelegate:(id<FriendsRequestDelegate>)delegate {
+- (id) initWithDelegate:(id<FriendsRequestDelegate>)delegate {
   self = [super init];
   _friendsRequestDelegate = [delegate retain];
   return self;   

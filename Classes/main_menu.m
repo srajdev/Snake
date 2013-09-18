@@ -396,7 +396,7 @@
 
 	
 	
-	[FlurryAnalytics openCatalog:@"more apps" canvasOrientation:@"portrait"];
+	//[FlurryAnalytics openCatalog:@"more apps" canvasOrientation:@"portrait"];
 	
 	
 	

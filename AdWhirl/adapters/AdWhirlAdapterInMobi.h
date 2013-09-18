@@ -19,14 +19,19 @@
 */
 
 #import "AdWhirlAdNetworkAdapter.h"
-#import "InMobiAdDelegate.h"
+#import "IMAdDelegate.h"
+#import "IMAdRequest.h"
 
 @class InMobiAdView;
 
-@interface AdWhirlAdapterInMobi : AdWhirlAdNetworkAdapter <InMobiAdDelegate> {
+@interface AdWhirlAdapterInMobi : AdWhirlAdNetworkAdapter <IMAdDelegate> {
 
 }
 
 + (AdWhirlAdNetworkType)networkType;
+- (NSString *)siteId;
+- (UIViewController *)rootViewControllerForAd;
+- (BOOL)testMode;
+- (GenderType)gender;
 
 @end

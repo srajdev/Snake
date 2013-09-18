@@ -65,7 +65,7 @@
  */
 - (void) requestUid{
   UserRequestResult *userRequestResult = 
-    [[[[UserRequestResult alloc] initializeWithDelegate:self] autorelease] retain];
+    [[[[UserRequestResult alloc] initWithDelegate:self] autorelease] retain];
   [_facebook requestWithGraphPath:@"me" andDelegate:userRequestResult];
 }
 
@@ -76,7 +76,7 @@
  */
 - (void) requestFriendsDetail{
   FriendsRequestResult *friendsRequestResult = 
-    [[[[FriendsRequestResult alloc] initializeWithDelegate:self] autorelease] retain];
+    [[[[FriendsRequestResult alloc] initWithDelegate:self] autorelease] retain];
    
   NSString *query = @"SELECT uid, name, pic_square, status FROM user WHERE uid IN (";
   query = [query stringByAppendingFormat:@"SELECT uid2 FROM friend WHERE uid1 = %@)", _uid];
