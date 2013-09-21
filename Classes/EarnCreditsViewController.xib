@@ -44,7 +44,7 @@
 					<object class="IBUIImageView" id="1022138305">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 568}</string>
+						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="532959110"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -57,7 +57,7 @@
 					<object class="IBUIButton" id="191119307">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{75, 348}, {157, 26}}</string>
+						<string key="NSFrame">{{75, 295}, {157, 26}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="55010415"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -80,7 +80,7 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">_0000_DOWNLOAD.png</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="617724210">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="28920765">
 							<string key="name">Helvetica-Bold</string>
 							<string key="family">Helvetica</string>
 							<int key="traits">2</int>
@@ -95,7 +95,7 @@
 					<object class="IBUIButton" id="55010415">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{15, 368}, {72, 37}}</string>
+						<string key="NSFrame">{{15, 315}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="122132704"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -112,7 +112,7 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">snake_Classic_0006_back.png</string>
 						</object>
-						<reference key="IBUIFontDescription" ref="617724210"/>
+						<reference key="IBUIFontDescription" ref="28920765"/>
 						<reference key="IBUIFont" ref="915321774"/>
 					</object>
 					<object class="IBUILabel" id="774276836">
@@ -147,8 +147,9 @@
 					<object class="IBUIButton" id="122132704">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{189, 368}, {131, 37}}</string>
+						<string key="NSFrame">{{189, 315}, {131, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -163,7 +164,7 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">_0001_refresh.png</string>
 						</object>
-						<reference key="IBUIFontDescription" ref="617724210"/>
+						<reference key="IBUIFontDescription" ref="28920765"/>
 						<reference key="IBUIFont" ref="915321774"/>
 					</object>
 					<object class="IBUILabel" id="532959110">

@@ -93,7 +93,20 @@ typedef enum{
 
 #define kSampleAppKey @"cfb6b6dd6df4492fa149e090f85e85ce" // adWhirl Key
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
+#define NEWGAME_BUTTON_X 86;
+#define NEWGAME_BUTTON_Y 140;
 
+#define RESUMEGAME_BUTTON_X 86;
+#define RESUMEGAME_BUTTON_Y 191;
 
+#define OPTIONGAME_BUTTON_X 86;
+#define OPTIONGAME_BUTTON_Y 244;
+
+#define HELP_BUTTON_X 8;
+#define HELP_BUTTON_Y 395;
+
+#define CHECKACHIEVEMENT_BUTTON_X 272;
+#define CHECKACHIEVEMENT_BUTTON_Y 389;
 

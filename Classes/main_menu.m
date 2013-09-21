@@ -36,6 +36,10 @@
 @synthesize newgamebutton;
 @synthesize optionbutton;
 @synthesize resumebutton;
+@synthesize scoresbutton;
+@synthesize storeButton;
+@synthesize helpButton;
+@synthesize checkAchievementsButton;
 @synthesize resumeTimer;
 @synthesize adView;
 
@@ -69,13 +73,17 @@
 	moreButton.hidden = NO;
 #endif
 	
-	
-	
-	if (delegate.theme == kClassicTheme) {
-		
-		//background.image = [UIImage imageNamed:@"_0001_Main-bkgrd.png"];
-		background.image = [UIImage imageNamed:@"Classic.png"];
-	}
+    
+    if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+    }
+    
 	else if(delegate.theme == kTheme1){
 		
 		
@@ -94,6 +102,44 @@
 		background.image = [UIImage imageNamed:@"Theme3.png"];
 	}
 	
+    if(IS_IPHONE_5){
+        CGRect btNewFrame = newgamebutton.frame;
+        btNewFrame.origin.x = NEWGAME_BUTTON_X;
+        btNewFrame.origin.y = 20 + NEWGAME_BUTTON_Y;
+        newgamebutton.frame = btNewFrame;
+        
+        CGRect btResumeFrame = resumebutton.frame;
+        btResumeFrame.origin.x = RESUMEGAME_BUTTON_X;
+        btResumeFrame.origin.y = 20 + RESUMEGAME_BUTTON_Y;
+        resumebutton.frame = btResumeFrame;
+        
+        CGRect btOptionFrame = optionbutton.frame;
+        btOptionFrame.origin.x = OPTIONGAME_BUTTON_X;
+        btOptionFrame.origin.y = 20 + OPTIONGAME_BUTTON_Y;
+        optionbutton.frame = btOptionFrame;
+        
+        CGRect btScoresFrame = scoresbutton.frame;
+        btScoresFrame.origin.x = OPTIONGAME_BUTTON_X;
+        btScoresFrame.origin.y = 90 + OPTIONGAME_BUTTON_Y;
+        scoresbutton.frame = btScoresFrame;
+        
+        CGRect btStoreFrame = storeButton.frame;
+        btStoreFrame.origin.x = OPTIONGAME_BUTTON_X;
+        btStoreFrame.origin.y = 140 + OPTIONGAME_BUTTON_Y;
+        storeButton.frame = btStoreFrame;
+        
+        CGRect btHelpFrame = helpButton.frame;
+        btHelpFrame.origin.x = HELP_BUTTON_X;
+        btHelpFrame.origin.y = 30 + HELP_BUTTON_Y;
+        helpButton.frame = btHelpFrame;
+        
+        CGRect btcheckAchievementsFrame = checkAchievementsButton.frame;
+        btcheckAchievementsFrame.origin.x = CHECKACHIEVEMENT_BUTTON_X;
+        btcheckAchievementsFrame.origin.y = 30 + CHECKACHIEVEMENT_BUTTON_Y;
+        checkAchievementsButton.frame = btcheckAchievementsFrame;
+                
+    }
+    
 	
 	if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
 		resumebutton.enabled = YES;
@@ -117,10 +163,15 @@
 	
 	
 
-	
+	if(IS_IPHONE_5){
+        
+    adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-
-	
+	}
+    
 	[self.view addSubview:adView];
 	
 #endif
@@ -556,7 +607,8 @@
 	[newgamebutton release];
 	[optionbutton release];
 	[resumebutton release];
-	
+	[scoresbutton release];
+    [storeButton release];
 
     [super dealloc];
 }

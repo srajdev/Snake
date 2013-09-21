@@ -67,7 +67,7 @@
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
 	
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
+	adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
 	
 	
 	[self.view addSubview:adView];

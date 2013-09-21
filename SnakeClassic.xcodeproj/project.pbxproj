@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28193060112F816700ECF9B4 /* SnakeClassic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2819305F112F816700ECF9B4 /* SnakeClassic.xcdatamodeld */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		2C6EDD6717EC8FDB00AB4D09 /* main-menu_classic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EDD6617EC8FD700AB4D09 /* main-menu_classic.png */; };
 		2C786A6417DB2A8200DB72B6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C786A6317DB2A8200DB72B6 /* Default-568h@2x.png */; };
 		4D05000B12832500004603CF /* _0000_beach_theme2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000512832500004603CF /* _0000_beach_theme2.png */; };
 		4D05000C12832500004603CF /* _0000_garden_theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000612832500004603CF /* _0000_garden_theme1.png */; };
@@ -620,6 +621,7 @@
 		28C3AD890F43EF2300507BA6 /* SnakeClassic.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SnakeClassic.xcdatamodel; sourceTree = "<group>"; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C6EDD6617EC8FD700AB4D09 /* main-menu_classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-menu_classic.png"; path = "../ResizedImages_320x568_v1/main-menu_classic.png"; sourceTree = "<group>"; };
 		2C786A6317DB2A8200DB72B6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SnakeClassic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeClassic_Prefix.pch; sourceTree = "<group>"; };
 		4D05000512832500004603CF /* _0000_beach_theme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_beach_theme2.png; sourceTree = "<group>"; };
@@ -1339,6 +1341,7 @@
 		4D27806A1230BAE300BE95A7 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				2C6EDD6617EC8FD700AB4D09 /* main-menu_classic.png */,
 				2C786A6317DB2A8200DB72B6 /* Default-568h@2x.png */,
 				4D6BF6491338A4E100A79861 /* gk-notification.png */,
 				4D6BF64A1338A4E100A79861 /* gk-icon.png */,
@@ -2077,6 +2080,7 @@
 				4D7A9F2613B1DC55007E2DF5 /* Game_Center_logo.png in Resources */,
 				4DC178B4140CC6D90094E8A4 /* Entitlements.plist in Resources */,
 				2C786A6417DB2A8200DB72B6 /* Default-568h@2x.png in Resources */,
+				2C6EDD6717EC8FDB00AB4D09 /* main-menu_classic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
