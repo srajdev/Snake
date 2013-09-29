@@ -38,7 +38,7 @@
 @synthesize resumebutton;
 @synthesize scoresbutton;
 @synthesize storeButton;
-@synthesize helpButton;
+@synthesize helpPressed;
 @synthesize checkAchievementsButton;
 @synthesize resumeTimer;
 @synthesize adView;
@@ -85,22 +85,33 @@
     }
     
 	else if(delegate.theme == kTheme1){
-		
-		
-		//background.image = [UIImage imageNamed:@"_0000_theme1_main.png"];
-		background.image = [UIImage imageNamed:@"Theme1.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+    }
 	else if(delegate.theme == kTheme2){
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
 		//background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
 		background.image = [UIImage imageNamed:@"Theme2.png"];
-	}
+        }
+    }
 	else if(delegate.theme == kTheme3){
-		
-		
-		//background.image = [UIImage imageNamed:@"_0000_theme3_main.png"];
-		background.image = [UIImage imageNamed:@"Theme3.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+    }
 	
     if(IS_IPHONE_5){
         CGRect btNewFrame = newgamebutton.frame;
@@ -128,14 +139,14 @@
         btStoreFrame.origin.y = 140 + OPTIONGAME_BUTTON_Y;
         storeButton.frame = btStoreFrame;
         
-        CGRect btHelpFrame = helpButton.frame;
+        CGRect btHelpFrame = helpPressed.frame;
         btHelpFrame.origin.x = HELP_BUTTON_X;
-        btHelpFrame.origin.y = 30 + HELP_BUTTON_Y;
-        helpButton.frame = btHelpFrame;
+        btHelpFrame.origin.y = 50 + HELP_BUTTON_Y;
+        helpPressed.frame = btHelpFrame;
         
         CGRect btcheckAchievementsFrame = checkAchievementsButton.frame;
         btcheckAchievementsFrame.origin.x = CHECKACHIEVEMENT_BUTTON_X;
-        btcheckAchievementsFrame.origin.y = 30 + CHECKACHIEVEMENT_BUTTON_Y;
+        btcheckAchievementsFrame.origin.y = 50 + CHECKACHIEVEMENT_BUTTON_Y;
         checkAchievementsButton.frame = btcheckAchievementsFrame;
                 
     }

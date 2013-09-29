@@ -22,8 +22,11 @@
 	AdWhirlView *adView;
 	
 	IBOutlet UIImageView *background;
+    IBOutlet UIButton *backButton;
 
 }
+
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
 
 -(IBAction) backPressed :(id)sender;
 

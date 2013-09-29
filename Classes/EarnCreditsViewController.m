@@ -19,6 +19,11 @@
 
 @implementation EarnCreditsViewController
 
+@synthesize backButton;
+@synthesize refreshButton;
+@synthesize nameButton;
+@synthesize downloadButton;
+@synthesize name;
 @synthesize myAdView;
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -29,29 +34,67 @@
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
 	if (delegate.theme == kClassicTheme) {
-		
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"earn_credits_classic.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"_0000_earn_credits.png"];
+        }
 		balance.textColor = [UIColor whiteColor];
 		
 	}
 	else if(delegate.theme == kTheme1){
-		
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"earn_credits_garden.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"_0000_theme1_earn_credits.png"];
+        }
 		balance.textColor = [UIColor yellowColor];
 	}
 	else if(delegate.theme == kTheme2){
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"earn_credits_beach.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"_0000_theme2_earn_credits.png"];
-		balance.textColor = [UIColor darkTextColor];
+		}
+        balance.textColor = [UIColor darkTextColor];
 	}
 	else if(delegate.theme == kTheme3){
-		
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"earn_credits_night.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"_0000_theme_3_earn_credits.png"];
-		balance.textColor = [UIColor whiteColor];
+		}
+        balance.textColor = [UIColor whiteColor];
 	}
-	
+	if(IS_IPHONE_5){
+        CGRect btnameFrame = name.frame;
+        btnameFrame.origin.x = EARN_NAME_BUTTON_X;
+        btnameFrame.origin.y = 20 + EARN_NAME_BUTTON_Y;
+        name.frame = btnameFrame;
+        
+        CGRect btdownloadFrame = downloadButton.frame;
+        btdownloadFrame.origin.x = EARN_DOWNLOAD_BUTTON_X;
+        btdownloadFrame.origin.y = 30 + EARN_DOWNLOAD_BUTTON_Y;
+        downloadButton.frame = btdownloadFrame;
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = EARN_BACK_BUTTON_X;
+        btbackFrame.origin.y = 30 + EARN_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+        
+        CGRect btrefreshFrame = refreshButton.frame;
+        btrefreshFrame.origin.x = EARN_REFRESH_BUTTON_X;
+        btrefreshFrame.origin.y = 30 + EARN_REFRESH_BUTTON_Y;
+        refreshButton.frame = btrefreshFrame;
+	}
 	
 	if (delegate.isconnected == NO) {
 		
@@ -73,9 +116,14 @@
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
-	
+	if(IS_IPHONE_5){
+        
+        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	
+	}
 	
 	[self.view addSubview:adView];
 	

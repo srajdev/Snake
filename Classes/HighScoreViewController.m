@@ -33,7 +33,7 @@
 @synthesize FBName;
 @synthesize FBid;
 @synthesize saveGame;
-
+@synthesize backButton;
 
 
 
@@ -345,9 +345,6 @@
 	
 	[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
 	
-
-	
-	
 }
 
 
@@ -359,29 +356,56 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	if (delegate.theme == kClassicTheme) {
-		
-		//background.image = [UIImage imageNamed:@"_0000_Classic_scores.png"];
-		background.image = [UIImage imageNamed:@"Classic.png"];
-		
-	}
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+    }
+    
 	else if(delegate.theme == kTheme1){
-		
-		
-		//background.image = [UIImage imageNamed:@"_0000_theme1_scores.png"];
-		background.image = [UIImage imageNamed:@"Theme1.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+    }
 	else if(delegate.theme == kTheme2){
-		
-		//background.image = [UIImage imageNamed:@"_0000_theme2_scores.png"];
-		background.image = [UIImage imageNamed:@"Theme2.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
+            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
+            background.image = [UIImage imageNamed:@"Theme2.png"];
+        }
+    }
 	else if(delegate.theme == kTheme3){
-		
-		
-		//background.image = [UIImage imageNamed:@"_0000_theme3_scores.png"];
-		background.image = [UIImage imageNamed:@"Theme3.png"];
-	}
-	
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+    }
+
+	if(IS_IPHONE_5){
+        
+        CGRect frame = highScoreTable.frame;
+        frame.size.height = 60 + 291;
+        highScoreTable.frame = frame;
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = HIGHSCORE_BACK_BUTTON_X;
+        btbackFrame.origin.y = 60 + HIGHSCORE_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
+    
 	localButton.hidden=YES;
 	localSelectedButton.hidden = NO;
 	friendsButton.hidden = NO;
@@ -407,9 +431,12 @@
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
-	
+	if(IS_IPHONE_5){
+        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	
+	}
 #endif
 	
     [super viewDidLoad];
@@ -561,9 +588,6 @@
 
 	if (saveGame == YES) {
 		
-		
-		
-		
 		FBName = [result objectForKey:@"name"];
 		FBName = [FBName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 		
@@ -691,7 +715,7 @@
 	
 	
 	NSError * e;
-	NSData	     *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&e];
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&e];
 	
 	
 	

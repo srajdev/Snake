@@ -63,7 +63,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *scoresbutton;
 
 @property (nonatomic,retain) IBOutlet UIButton *storeButton;
-@property (nonatomic,retain) IBOutlet UIButton *helpButton;
+@property (nonatomic,retain) IBOutlet UIButton *helpPressed;
 @property (nonatomic,retain) IBOutlet UIButton *checkAchievementsButton;
 @property (nonatomic,retain) AdWhirlView *adView;
 

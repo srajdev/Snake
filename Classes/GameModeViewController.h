@@ -22,9 +22,17 @@
 	
 	IBOutlet UIImageView *background;
 	AdWhirlView *adView;
-	
+	IBOutlet UIButton *classicButton;
+    IBOutlet UIButton *extremeButton;
+    IBOutlet UIButton *backButton;
+    IBOutlet UIButton *helpButton;
 
 }
+
+@property (nonatomic,retain) IBOutlet UIButton *classicButton;
+@property (nonatomic,retain) IBOutlet UIButton *extremeButton;
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic,retain) IBOutlet UIButton *helpButton;
 
 -(IBAction) ClassicPressed : (id) sender;
 

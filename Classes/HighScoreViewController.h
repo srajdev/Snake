@@ -52,6 +52,8 @@ FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 	
 	IBOutlet UIImageView *background;
 	
+    IBOutlet UIButton *backButton;
+    
 	NSString *FBName;
 	NSString *FBid;
 	
@@ -73,6 +75,7 @@ FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 @property bool isGlobal;
 @property (nonatomic,retain) NSMutableArray *friendsInfo;
 @property (nonatomic,retain) UIActivityIndicatorView *activity;
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
 
 -(void) showAlert ;
 
@@ -86,6 +89,7 @@ FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 -(IBAction) localPressed;
 -(IBAction) globalPressed;
 -(IBAction) friendsPressed;
+-(IBAction)backPressed:(id)sender;
 
 -(void) globalPressedTime:(NSTimer *)theTimer;
 
