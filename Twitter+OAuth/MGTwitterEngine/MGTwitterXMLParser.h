@@ -34,4 +34,7 @@ connectionIdentifier:(NSString *)identifier requestType:(MGTwitterRequestType)re
 
 - (void)addSource;
 
+- (void)parser:(NSXMLParser *)theParser didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
+
 @end

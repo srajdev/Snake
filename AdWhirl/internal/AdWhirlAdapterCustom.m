@@ -38,6 +38,7 @@
 @property (nonatomic,retain) NSURLConnection *imageConnection;
 @property (nonatomic,retain) AdWhirlCustomAdView *adView;
 @property (nonatomic,retain) AdWhirlWebBrowserController *webBrowserController;
+@property (nonatomic, assign) CGFloat scale;
 
 @end
 
@@ -48,6 +49,7 @@
 @synthesize imageConnection;
 @synthesize adView;
 @synthesize webBrowserController;
+@synthesize scale;
 
 + (AdWhirlAdNetworkType)networkType {
   return AdWhirlAdNetworkTypeCustom;
@@ -84,18 +86,18 @@
   }
 
   NSURL *adRequestBaseURL = nil;
-  if ([adWhirlDelegate respondsToSelector:@selector(adWhirlCustomAdURL)]) {
-    adRequestBaseURL = [adWhirlDelegate adWhirlCustomAdURL];
+  if ([self.adWhirlDelegate respondsToSelector:@selector(adWhirlCustomAdURL)]) {
+    adRequestBaseURL = [self.adWhirlDelegate adWhirlCustomAdURL];
   }
   if (adRequestBaseURL == nil) {
     adRequestBaseURL = [NSURL URLWithString:kAdWhirlDefaultCustomAdURL];
   }
   NSString *query;
-  if (adWhirlConfig.locationOn) {
+  if (self.adWhirlConfig.locationOn) {
     AWLogDebug(@"Allow location access in custom ad");
     CLLocation *location;
-    if ([adWhirlDelegate respondsToSelector:@selector(locationInfo)]) {
-      location = [adWhirlDelegate locationInfo];
+    if ([self.adWhirlDelegate respondsToSelector:@selector(locationInfo)]) {
+      location = [self.adWhirlDelegate locationInfo];
     }
     else {
       location = [self.locationManager location];
@@ -106,8 +108,8 @@
     query = [NSString stringWithFormat:@"?appver=%d&country_code=%@&appid=%@&nid=%@&location=%@&location_timestamp=%lf&client=1",
              kAdWhirlAppVer,
              [[NSLocale currentLocale] localeIdentifier],
-             adWhirlConfig.appKey,
-             networkConfig.nid,
+             self.adWhirlConfig.appKey,
+             self.networkConfig.nid,
              locationStr,
              [[NSDate date] timeIntervalSince1970]];
   }
@@ -116,8 +118,8 @@
     query = [NSString stringWithFormat:@"?appver=%d&country_code=%@&appid=%@&nid=%@&client=1",
              kAdWhirlAppVer,
              [[NSLocale currentLocale] localeIdentifier],
-             adWhirlConfig.appKey,
-             networkConfig.nid];
+             self.adWhirlConfig.appKey,
+             self.networkConfig.nid];
   }
   NSURL *adRequestURL = [NSURL URLWithString:query relativeToURL:adRequestBaseURL];
   AWLogDebug(@"Requesting custom ad at %@", adRequestURL);
@@ -274,8 +276,18 @@
       return NO;
     }
 
-    // fetch image
-    NSString * imageURL = [adInfo objectForKey:@"img_url"];
+    // fetch image, set scale
+    self.scale = [[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0;
+    NSString *imageURL;
+    if (self.scale == 2.0 && adType == AWCustomAdTypeBanner) {
+      imageURL = [adInfo objectForKey:@"img_url_640x100"];
+      if (imageURL == nil || [imageURL length] == 0) {
+        self.scale = 1.0f;
+        imageURL = [adInfo objectForKey:@"img_url"];
+      }
+    } else {
+      imageURL = [adInfo objectForKey:@"img_url"];
+    }
     AWLogDebug(@"Request custom ad image at %@", imageURL);
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:imageRequest
@@ -306,13 +318,13 @@
 
 - (void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error {
   if (conn == adConnection) {
-    [adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdConnectionError
+    [self.adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdConnectionError
                                                    description:@"Error connecting to custom ad server"
                                                underlyingError:error]];
     requesting = NO;
   }
   else if (conn == imageConnection) {
-    [adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdConnectionError
+    [self.adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdConnectionError
                                                         description:@"Error connecting to custom ad server to fetch image"
                                                     underlyingError:error]];
     requesting = NO;
@@ -323,15 +335,20 @@
   if (conn == adConnection) {
     NSError *error = nil;
     if (![self parseAdData:adData error:&error]) {
-      [adWhirlView adapter:self didFailAd:error];
+      [self.adWhirlView adapter:self didFailAd:error];
       requesting = NO;
       return;
     }
   }
   else if (conn == imageConnection) {
     UIImage *image = [[UIImage alloc] initWithData:imageData];
+    if (self.scale == 2.0) {
+      UIImage *img = [[UIImage alloc] initWithCGImage:image.CGImage scale:2.0 orientation:image.imageOrientation];
+      [image release];
+      image = img;
+    }
     if (image == nil) {
-      [adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdImageError
+      [self.adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdImageError
                                                           description:@"Cannot initialize custom ad image from data"]];
       requesting = NO;
       return;
@@ -340,7 +357,7 @@
     [adView setNeedsDisplay];
     [image release];
     requesting = NO;
-    [adWhirlView adapter:self didReceiveAdView:self.adView];
+    [self.adWhirlView adapter:self didReceiveAdView:self.adView];
   }
 }
 
@@ -382,7 +399,7 @@
         [ctrlr release];
       }
       webBrowserController.delegate = self;
-      [webBrowserController presentWithController:[adWhirlDelegate viewControllerForPresentingModalView]
+      [webBrowserController presentWithController:[self.adWhirlDelegate viewControllerForPresentingModalView]
                                        transition:ad.animType];
       [self helperNotifyDelegateOfFullScreenModal];
       [webBrowserController loadURL:ad.redirectURL];

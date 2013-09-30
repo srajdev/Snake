@@ -19,7 +19,7 @@
 
 @implementation UserRequestResult
 
-- (id) initializeWithDelegate:(id<UserRequestDelegate>)delegate {
+- (id) initWithDelegate:(id<UserRequestDelegate>)delegate {
   self = [super init];
   _userRequestDelegate = [delegate retain];
   return self;  

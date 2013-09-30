@@ -35,7 +35,7 @@
 
 
 
-@synthesize new_game;
+@synthesize gameNew;
 
 
 /* Action that is called whent he GO button of the game is pressed */
@@ -99,13 +99,13 @@
 	}
 	
 	
-	new_game = [[Snake_3ViewController alloc] initWithNibName:@"Snake_3ViewController" bundle:nil];
+	gameNew = [[Snake_3ViewController alloc] initWithNibName:@"Snake_3ViewController" bundle:nil];
 	
-	delegate.activeGame = new_game;
+	delegate.activeGame = gameNew;
 	
 	
 	
-	[delegate switchView:self.view toview:new_game.view delay:NO remove:YES display:nil curlup:NO curldown:NO];
+	[delegate switchView:self.view toview:gameNew.view delay:NO remove:YES display:nil curlup:NO curldown:NO];
 
 	
 	

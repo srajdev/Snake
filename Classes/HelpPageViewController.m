@@ -15,7 +15,13 @@
 
 @implementation HelpPageViewController
 
-
+@synthesize gameplayButton;
+@synthesize faqButton;
+@synthesize unlockButton;
+@synthesize rateButton;
+@synthesize blogButton;
+@synthesize facebookButton;
+@synthesize backButton;
 
 - (void) viewDidAppear:(BOOL)animated{
 
@@ -23,30 +29,82 @@
 	
 	delegate.helpMode = kGamePlay;
 	
-	
 	if (delegate.theme == kClassicTheme) {
-		
-		//background.image = [UIImage imageNamed:@"_0006_help_classic.png"];
-		background.image = [UIImage imageNamed:@"Classic.png"];
-	}
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+    }
+    
 	else if(delegate.theme == kTheme1){
-		
-		
-		//background.image = [UIImage imageNamed:@"help_garden.png"];
-		background.image = [UIImage imageNamed:@"Theme1.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+    }
 	else if(delegate.theme == kTheme2){
-		
-		//background.image = [UIImage imageNamed:@"help_beach.png"];
-		background.image = [UIImage imageNamed:@"Theme2.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
+            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
+            background.image = [UIImage imageNamed:@"Theme2.png"];
+        }
+    }
 	else if(delegate.theme == kTheme3){
-		
-		
-		//background.image = [UIImage imageNamed:@"help_night.png"];
-		background.image = [UIImage imageNamed:@"Theme3.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+    }
 	
+	if(IS_IPHONE_5){
+        CGRect btgameplayFrame = gameplayButton.frame;
+        btgameplayFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
+        btgameplayFrame.origin.y = 40 + GAMEPLAY_BUTTON_Y;
+        gameplayButton.frame = btgameplayFrame;
+        
+        CGRect btfaqFrame = faqButton.frame;
+        btfaqFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
+        btfaqFrame.origin.y = 90 + GAMEPLAY_BUTTON_Y;
+        faqButton.frame = btfaqFrame;
+
+        CGRect btunlockFrame = unlockButton.frame;
+        btunlockFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
+        btunlockFrame.origin.y = 140 + GAMEPLAY_BUTTON_Y;
+        unlockButton.frame = btunlockFrame;
+
+        CGRect btrateFrame = rateButton.frame;
+        btrateFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
+        btrateFrame.origin.y = 210 + GAMEPLAY_BUTTON_Y;
+        rateButton.frame = btrateFrame;
+
+        CGRect btblogFrame = blogButton.frame;
+        btblogFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
+        btblogFrame.origin.y = 260 + GAMEPLAY_BUTTON_Y;
+        blogButton.frame = btblogFrame;
+
+        CGRect btfacebookFrame = facebookButton.frame;
+        btfacebookFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
+        btfacebookFrame.origin.y = 310 + GAMEPLAY_BUTTON_Y;
+        facebookButton.frame = btfacebookFrame;
+
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = BACK_BUTTON_X;
+        btbackFrame.origin.y = 70 + BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+
+    }
 	
 #ifdef LITE_VERSION
 
@@ -54,8 +112,7 @@
 #else
     // Code specific to unlocked version
 	unlockButton.hidden = YES;
-	
-	
+		
 #endif
 	
 	
@@ -67,8 +124,14 @@
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
 	
+	if(IS_IPHONE_5){
+        
+        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	
+	}
 	
 	[self.view addSubview:adView];
 	

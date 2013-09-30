@@ -82,16 +82,50 @@
 	IBOutlet UIButton *theme2Locked;
 	IBOutlet UIButton *theme3Locked;
 	
+    IBOutlet UIButton *backButton;
+
 	
 
 }
 @property (nonatomic,retain) UITextField *name;
-@property (nonatomic,retain) 	IBOutlet UIButton *nameButton;
+@property (nonatomic,retain) IBOutlet UIButton *nameButton;
+@property (nonatomic,retain) IBOutlet UIButton *classic;
+@property (nonatomic,retain) IBOutlet UIButton *classicSelected;
+
+@property (nonatomic,retain) IBOutlet UIButton *theme1;
+@property (nonatomic,retain) IBOutlet UIButton *theme1Selected;
+@property (nonatomic,retain) IBOutlet UIButton *theme2;
+@property (nonatomic,retain) IBOutlet UIButton *theme2Selected;
+@property (nonatomic,retain) IBOutlet UIButton *theme3;
+@property (nonatomic,retain) IBOutlet UIButton *theme3Selected;
+
+@property (nonatomic,retain) IBOutlet UIButton *theme1Locked;
+@property (nonatomic,retain) IBOutlet UIButton *theme2Locked;
+@property (nonatomic,retain) IBOutlet UIButton *theme3Locked;
 
 
+@property (nonatomic,retain) IBOutlet UIButton *orange;
+@property (nonatomic,retain) IBOutlet UIButton *orangeSelected;
+@property (nonatomic,retain) IBOutlet UIButton *green;
+@property (nonatomic,retain) IBOutlet UIButton *greenSelected;
+@property (nonatomic,retain) IBOutlet UIButton *blue;
+@property (nonatomic,retain) IBOutlet UIButton *blueSelected;
+@property (nonatomic,retain) IBOutlet UIButton *black;
+@property (nonatomic,retain) IBOutlet UIButton *blackSelected;
+
+@property (nonatomic,retain) IBOutlet UIButton *vibrateOn;
+@property (nonatomic,retain) IBOutlet UIButton *vibrateOff;
+@property (nonatomic,retain) IBOutlet UIButton *vibrateOnSelected;
+@property (nonatomic,retain) IBOutlet UIButton *vibrateOffSelected;
 
 
+@property (nonatomic,retain) IBOutlet UIButton *soundOn;
+@property (nonatomic,retain) IBOutlet UIButton *soundOff;
+@property (nonatomic,retain) IBOutlet UIButton *soundOnSelected;
+@property (nonatomic,retain) IBOutlet UIButton *soundOffSelected;
 
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic,retain) IBOutlet FBLoginButton *fbButton;
 
 
 

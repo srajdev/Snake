@@ -14,6 +14,7 @@
 
 @implementation helpDetailViewController
 
+@synthesize backButton;
 
 - (void) viewDidAppear:(BOOL)animated{
 
@@ -25,32 +26,57 @@
 	
 	text.backgroundColor = [UIColor colorWithRed:1 green:0.925 blue:0.765 alpha:1];
 	
-	
 	if (delegate.theme == kClassicTheme) {
-		
-		//background.image = [UIImage imageNamed:@"_0006_help_classic.png"];
-		background.image = [UIImage imageNamed:@"Classic.png"];
-	}
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+    }
+    
 	else if(delegate.theme == kTheme1){
-		
-		
-		//background.image = [UIImage imageNamed:@"help_garden.png"];
-		background.image = [UIImage imageNamed:@"Theme1.png"];
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+    }
 	else if(delegate.theme == kTheme2){
-		
-		//background.image = [UIImage imageNamed:@"help_beach.png"];
-		background.image = [UIImage imageNamed:@"Theme2.png"];
-		
-	}
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
+            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
+            background.image = [UIImage imageNamed:@"Theme2.png"];
+        }
+    }
 	else if(delegate.theme == kTheme3){
-		
-		
-		//background.image = [UIImage imageNamed:@"help_night.png"];
-		background.image = [UIImage imageNamed:@"Theme3.png"];
-	}
-	
-	
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+    }
+
+	if(IS_IPHONE_5){
+        
+        CGRect frame = text.frame;
+        frame.origin.y = 50 + 104;
+        frame.size.height = 50 + 208;
+        text.frame = frame;
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
+        btbackFrame.origin.y = 50 + HELPDETAIL_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
 	
 	
 	if (delegate.helpMode == kGamePlay) {
@@ -74,9 +100,14 @@
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
-	
+	if(IS_IPHONE_5){
+        
+        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	
+	}
 	
 	[self.view addSubview:adView];
 #endif

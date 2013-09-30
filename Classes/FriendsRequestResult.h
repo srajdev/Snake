@@ -23,7 +23,7 @@
   id<FriendsRequestDelegate> _friendsRequestDelegate;
 }
 
-- (id) initializeWithDelegate: (id<FriendsRequestDelegate>)delegate;
+- (id) initWithDelegate: (id<FriendsRequestDelegate>)delegate;
 
 @end
 

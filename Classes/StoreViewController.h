@@ -24,12 +24,19 @@
 	AdWhirlView *adView;
 	
 	BOOL goToEarn;
+    
+    IBOutlet UIButton *earnButton;
+    IBOutlet UIButton *useButton;
+    IBOutlet UIButton *helpButton;
+    IBOutlet UIButton *backButton;
 
 }
 
 @property BOOL goToEarn;
-
-
+@property (nonatomic,retain) IBOutlet UIButton *earnButton;
+@property (nonatomic,retain) IBOutlet UIButton *useButton;
+@property (nonatomic,retain) IBOutlet UIButton *helpButton;
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
 
 -(IBAction) earnPressed : (id) sender;
 

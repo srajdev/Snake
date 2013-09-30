@@ -23,7 +23,7 @@
   id<UserRequestDelegate> _userRequestDelegate;   
 }
 
-- (id) initializeWithDelegate: (id<UserRequestDelegate>)delegate; 
+- (id) initWithDelegate: (id<UserRequestDelegate>)delegate; 
 
 @end
 

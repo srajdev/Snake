@@ -21,9 +21,22 @@
 	IBOutlet UIImageView *background;
 	
 	IBOutlet UIButton *unlockButton;
-
+    
+    IBOutlet UIButton *gameplayButton;
+    IBOutlet UIButton *faqButton;
+    IBOutlet UIButton *rateButton;
+    IBOutlet UIButton *blogButton;
+    IBOutlet UIButton *facebookButton;
+    IBOutlet UIButton *backButton;
 }
 
+@property (nonatomic,retain) IBOutlet UIButton *gameplayButton;
+@property (nonatomic,retain) IBOutlet UIButton *faqButton;
+@property (nonatomic,retain) IBOutlet UIButton *unlockButton;
+@property (nonatomic,retain) IBOutlet UIButton *rateButton;
+@property (nonatomic,retain) IBOutlet UIButton *blogButton;
+@property (nonatomic,retain) IBOutlet UIButton *facebookButton;
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
 
 -(IBAction) buttonPressed : (id)sender;
 

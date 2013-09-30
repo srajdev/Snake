@@ -28,38 +28,40 @@
 @implementation AdWhirlAdapterIAd
 
 + (AdWhirlAdNetworkType)networkType {
-	return AdWhirlAdNetworkTypeIAd;
+  return AdWhirlAdNetworkTypeIAd;
 }
 
 + (void)load {
-	if(NSClassFromString(@"ADBannerView") != nil) {
-		[[AdWhirlAdNetworkRegistry sharedRegistry] registerClass:self];
-	}
+  if(NSClassFromString(@"ADBannerView") != nil) {
+    [[AdWhirlAdNetworkRegistry sharedRegistry] registerClass:self];
+  }
 }
 
 - (void)getAd {
-	ADBannerView *iAdView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-	iAdView.requiredContentSizeIdentifiers = [NSSet setWithObjects:
-                                            ADBannerContentSizeIdentifier320x50,
-                                            ADBannerContentSizeIdentifier480x32,
-                                            nil];
-  UIDeviceOrientation orientation;
-  if ([self.adWhirlDelegate respondsToSelector:@selector(adWhirlCurrentOrientation)]) {
-    orientation = [self.adWhirlDelegate adWhirlCurrentOrientation];
-  }
-  else {
-    orientation = [UIDevice currentDevice].orientation;
+  kADBannerContentSizeIdentifierPortrait =
+      &ADBannerContentSizeIdentifierPortrait != nil ?
+          ADBannerContentSizeIdentifierPortrait :
+          ADBannerContentSizeIdentifier320x50;
+  kADBannerContentSizeIdentifierLandscape =
+      &ADBannerContentSizeIdentifierLandscape != nil ?
+          ADBannerContentSizeIdentifierLandscape :
+          ADBannerContentSizeIdentifier480x32;
+  ADBannerView *iAdView;
+  if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
+    iAdView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+    iAdView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+  } else {
+    iAdView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    iAdView.requiredContentSizeIdentifiers =
+        [NSSet setWithObjects:
+             kADBannerContentSizeIdentifierPortrait,
+             kADBannerContentSizeIdentifierLandscape,
+             nil];
   }
 
-  if (UIDeviceOrientationIsLandscape(orientation)) {
-    iAdView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier480x32;
-  }
-  else {
-    iAdView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
-  }
-	[iAdView setDelegate:self];
+  [iAdView setDelegate:self];
 
-	self.adNetworkView = iAdView;
+  self.adNetworkView = iAdView;
   [iAdView release];
 }
 
@@ -74,11 +76,14 @@
   ADBannerView *iAdView = (ADBannerView *)self.adNetworkView;
   if (iAdView == nil) return;
   if (UIInterfaceOrientationIsLandscape(orientation)) {
-    iAdView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier480x32;
+    iAdView.currentContentSizeIdentifier =
+        kADBannerContentSizeIdentifierLandscape;
   }
   else {
-    iAdView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    iAdView.currentContentSizeIdentifier =
+        kADBannerContentSizeIdentifierPortrait;
   }
+
   // ADBanner positions itself in the center of the super view, which we do not
   // want, since we rely on publishers to resize the container view.
   // position back to 0,0
@@ -95,7 +100,7 @@
 }
 
 - (void)dealloc {
-	[super dealloc];
+  [super dealloc];
 }
 
 #pragma mark IAdDelegate methods
@@ -108,20 +113,20 @@
   newFrame.origin.x = newFrame.origin.y = 0;
   banner.frame = newFrame;
 
-	[adWhirlView adapter:self didReceiveAdView:banner];
+  [adWhirlView adapter:self didReceiveAdView:banner];
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-	[adWhirlView adapter:self didFailAd:error];
+  [adWhirlView adapter:self didFailAd:error];
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-	[self helperNotifyDelegateOfFullScreenModal];
-	return YES;
+  [self helperNotifyDelegateOfFullScreenModal];
+  return YES;
 }
 
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner {
-	[self helperNotifyDelegateOfFullScreenModalDismissal];
+  [self helperNotifyDelegateOfFullScreenModalDismissal];
 }
 
 @end

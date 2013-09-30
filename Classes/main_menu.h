@@ -40,7 +40,7 @@
 	UIButton *optionbutton;
 	
 	UIButton *resumebutton;
-	
+	UIButton *scoresbutton;
 	
 	NSTimer *resumeTimer;
 	
@@ -51,7 +51,7 @@
 	
 	IBOutlet UIButton *storeButton;
 	IBOutlet UIButton *moreButton;
-	
+    IBOutlet UIButton *helpButton;
 	
 }
 
@@ -60,9 +60,12 @@
 @property (nonatomic,retain) IBOutlet UIButton *newgamebutton;
 @property (nonatomic,retain) IBOutlet UIButton *optionbutton;
 @property (nonatomic,retain) IBOutlet UIButton *resumebutton;
+@property (nonatomic,retain) IBOutlet UIButton *scoresbutton;
 
+@property (nonatomic,retain) IBOutlet UIButton *storeButton;
+@property (nonatomic,retain) IBOutlet UIButton *helpPressed;
+@property (nonatomic,retain) IBOutlet UIButton *checkAchievementsButton;
 @property (nonatomic,retain) AdWhirlView *adView;
-
 
 
 
