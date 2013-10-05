@@ -23,11 +23,11 @@
 @synthesize helpButton;
 @synthesize backButton;
 
-- (void) viewDidAppear:(BOOL)animated{
-	
-	
+-(void) viewDidLoad{
+    
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
+    
     if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -77,18 +77,26 @@
         btextremeFrame.origin.x = GAMEMODE_CLASSIC_BUTTON_X;
         btextremeFrame.origin.y = 150 + GAMEMODE_BUTTON_Y;
         extremeButton.frame = btextremeFrame;
-
+        
         CGRect bthelpFrame = helpButton.frame;
         bthelpFrame.origin.x = GAMEMODE_HELP_BUTTON_X;
         bthelpFrame.origin.y = 60 + GAMEMODE_HELP_BUTTON_Y;
         helpButton.frame = bthelpFrame;
-
+        
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = GAMEMODE_BACK_BUTTON_X;
         btbackFrame.origin.y = 60 + GAMEMODE_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
-
+        
     }
+    
+}
+- (void) viewDidAppear:(BOOL)animated{
+	
+	
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+    
     
 	
 #ifdef LITE_VERSION

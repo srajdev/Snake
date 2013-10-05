@@ -37,7 +37,7 @@
 
 		
 		
-		head_x = 135;.0,
+		head_x = 135.0;
 		//head_y = 105.0;
 		head_y = 145.0;
 		
@@ -74,7 +74,7 @@
 	/*storing bends value*/
 	CGPoint old_head = CGPointMake(head_x, head_y);
 	NSData *value = [NSData dataWithBytes:&old_head length:sizeof(CGPoint)];
-	[bends addObject: value]; 
+	[bends addObject: value];
 	
 	/*Direction of Bend*/
 	Direction bend_dir = kEastDirection;
@@ -162,11 +162,38 @@
 	/*update head to go up*/
 	head_y = head_y - SNAKE_INCREMENT;
 	headDirection = kNorthDirection;
+    /*CGPoint old_head_2;
+	if(IS_IPHONE_5){
+    old_head_2 = CGPointMake(head_x, 383.0);
+    }
+    else{
+    old_head_2 = CGPointMake(head_x, 295.0);
+    }
+    */
 	
-	CGPoint old_head_2 = CGPointMake(head_x, 295.0);
 	
-	
-	
+	if(IS_IPHONE_5){
+        
+        CGPoint old_head_2 = CGPointMake(head_x, 385.0);
+
+        
+        if (head_y < 5.0) {
+            
+            
+            NSData *value_2 = [NSData dataWithBytes:&old_head_2 length:sizeof(CGPoint)];
+            [bends addObject: value_2];
+            
+            Direction bend_dir_2 = kNorthIn;
+            NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value_2];
+            
+            head_y = 385.0;
+            
+        }
+    }
+	else{
+        CGPoint old_head_2 = CGPointMake(head_x, 295.0);
+
 	if (head_y < 5.0) {
 		
 		
@@ -177,9 +204,10 @@
 		NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
 		[bend_direction addObject:bend_dir_value_2];
 		
-		head_y = 295.0;
+        head_y = 295.0;
+        
 	}
-	
+	}
 }
 
 // Function to move the snake down.
@@ -203,7 +231,22 @@
 	
 	CGPoint old_head_2 = CGPointMake(head_x, 5.0);
 	
-	
+    if(IS_IPHONE_5) {
+        if (head_y > 385.0) {
+            
+            
+            NSData *value_2 = [NSData dataWithBytes:&old_head_2 length:sizeof(CGPoint)];
+            [bends addObject: value_2];
+            
+            Direction bend_dir_2 = kSouthIn;
+            NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value_2];
+            
+            head_y = 5.0;
+        }
+        
+    }
+	else{
 	if (head_y > 295.0) {
 		
 		
@@ -216,6 +259,7 @@
 		
 		head_y = 5.0;
 	}
+    }
 }
 
 
@@ -289,31 +333,60 @@
 -(void)moveSnakeTimerNorth{
 	
 	CGPoint old_head = CGPointMake(head_x, head_y);
-	
-	CGPoint old_head_2 = CGPointMake(head_x, 295.0);
-	
-	
-	
+	/*if(IS_IPHONE_5){
+        head_y = 383.0;
+    }
+    else{
+        head_y = 295.0;
+    }
+	CGPoint old_head_2 = CGPointMake(head_x, head_y);
+	*/
 	head_y = head_y - SNAKE_INCREMENT;
 	headDirection = kNorthDirection;
-	
-	if (head_y < 5.0) {
-		NSData *value = [NSData dataWithBytes:&old_head length:sizeof(CGPoint)];
-		[bends addObject: value]; 
+    
+	if(IS_IPHONE_5){
+        CGPoint old_head_2 = CGPointMake(head_x, 385.0);
+        
+        if (head_y < 5.0) {
+            NSData *value = [NSData dataWithBytes:&old_head length:sizeof(CGPoint)];
+            [bends addObject: value];
+            
+            Direction bend_dir = kNorthDirection;
+            NSData *bend_dir_value = [NSData dataWithBytes:&bend_dir length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value];
+            
+            NSData *value_2 = [NSData dataWithBytes:&old_head_2 length:sizeof(CGPoint)];
+            [bends addObject: value_2];
+            
+            Direction bend_dir_2 = kNorthIn;
+            NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value_2];
+            
+            head_y = 385.0;
+            
+        }
+        
+    }else{
+        CGPoint old_head_2 = CGPointMake(head_x, 295.0);
+        if (head_y < 5.0) {
+            NSData *value = [NSData dataWithBytes:&old_head length:sizeof(CGPoint)];
+            [bends addObject: value];
 		
-		Direction bend_dir = kNorthDirection;
-		NSData *bend_dir_value = [NSData dataWithBytes:&bend_dir length:sizeof(Direction)];
-		[bend_direction addObject:bend_dir_value];
+            Direction bend_dir = kNorthDirection;
+            NSData *bend_dir_value = [NSData dataWithBytes:&bend_dir length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value];
 		
-		NSData *value_2 = [NSData dataWithBytes:&old_head_2 length:sizeof(CGPoint)];
-		[bends addObject: value_2];
+            NSData *value_2 = [NSData dataWithBytes:&old_head_2 length:sizeof(CGPoint)];
+            [bends addObject: value_2];
 		
-		Direction bend_dir_2 = kNorthIn;
-		NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
-		[bend_direction addObject:bend_dir_value_2];
+            Direction bend_dir_2 = kNorthIn;
+            NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value_2];
 		
-		head_y = 295.0;
-	}
+            head_y = 295.0;
+        
+        }
+    }
 	
 	
 }
@@ -329,7 +402,27 @@
 	
 	head_y = head_y + SNAKE_INCREMENT;
 	headDirection = kSouthDirection;
-	
+    
+	if(IS_IPHONE_5){
+        if (head_y > 385.0) {
+            NSData *value = [NSData dataWithBytes:&old_head length:sizeof(CGPoint)];
+            [bends addObject: value];
+            
+            Direction bend_dir = kSouthDirection;
+            NSData *bend_dir_value = [NSData dataWithBytes:&bend_dir length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value];
+            
+            NSData *value_2 = [NSData dataWithBytes:&old_head_2 length:sizeof(CGPoint)];
+            [bends addObject: value_2];
+            
+            Direction bend_dir_2 = kSouthIn;
+            NSData *bend_dir_value_2 = [NSData dataWithBytes:&bend_dir_2 length:sizeof(Direction)];
+            [bend_direction addObject:bend_dir_value_2];
+            
+            head_y = 5.0;
+        }
+    }
+    else{
 	if (head_y > 295.0) {
 		NSData *value = [NSData dataWithBytes:&old_head length:sizeof(CGPoint)];
 		[bends addObject: value]; 
@@ -347,6 +440,7 @@
 		
 		head_y = 5.0;
 	}
+    }
 	
 }
 	
@@ -438,10 +532,17 @@ if ([bends count] > 0) {
 		case kNorthDirection:
 			tail_y = tail_y - SNAKE_INCREMENT;
 			tailDirection = kNorthDirection;
-			
-			if (tail_y < 5.0) {
-				tail_y = 295.0;
-			}
+			if(IS_IPHONE_5){
+                if (tail_y < 5.0) {
+                    tail_y = 385.0;
+                }
+            }
+            else{
+                if (tail_y < 5.0) {
+                    tail_y = 295.0;
+                }
+            }
+            
 			
 			if (tail_x == bend_point.x && tail_y == bend_point.y) {
 				tailDirection = bend_dir_value;
@@ -459,11 +560,16 @@ if ([bends count] > 0) {
 		case kSouthDirection:
 			tailDirection = kSouthDirection;
 			tail_y = tail_y + SNAKE_INCREMENT;
-			
+			if(IS_IPHONE_5){
+                if (tail_y > 385.0) {
+                    tail_y = 5.0;
+                }
+            }
+            else{
 			if (tail_y > 295.0) {
 				tail_y = 5.0;
 			}
-			
+			}
 			if (tail_x == bend_point.x && tail_y == bend_point.y) {
 				tailDirection = bend_dir_value;
 				

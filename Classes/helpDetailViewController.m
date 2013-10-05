@@ -16,15 +16,13 @@
 
 @synthesize backButton;
 
-- (void) viewDidAppear:(BOOL)animated{
-
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+- (void) viewDidLoad{
+    
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	[text setEditable:NO];
-	
-	
-	
-	text.backgroundColor = [UIColor colorWithRed:1 green:0.925 blue:0.765 alpha:1];
+
+    text.backgroundColor = [UIColor colorWithRed:1 green:0.925 blue:0.765 alpha:1];
 	
 	if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
@@ -64,7 +62,7 @@
             background.image = [UIImage imageNamed:@"Theme3.png"];
         }
     }
-
+    
 	if(IS_IPHONE_5){
         
         CGRect frame = text.frame;
@@ -77,6 +75,14 @@
         btbackFrame.origin.y = 50 + HELPDETAIL_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
     }
+    
+    
+}
+- (void) viewDidAppear:(BOOL)animated{
+
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	[text setEditable:NO];
 	
 	
 	if (delegate.helpMode == kGamePlay) {

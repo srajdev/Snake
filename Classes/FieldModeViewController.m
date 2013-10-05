@@ -31,7 +31,7 @@
 	hole.enabled = YES;
 	square.enabled = YES;
 	holeLocked.hidden =YES;
-	squareLocked.hidden = YES;
+    squareLocked.hidden = YES;
 	
 	openField.hidden = YES;
 	openFieldSelected.hidden = NO;
@@ -252,12 +252,6 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
-	
-	
-
-	
-	
-	
 	hole.enabled = YES;
 	square.enabled = YES;
 	holeLocked.hidden =YES;
@@ -273,7 +267,7 @@
 	boxSelected.hidden = YES;
 	
 
-	if (delegate.holeUnlocked == NO) {
+	if (true || delegate.holeUnlocked == NO) {
 		hole.hidden = NO;
 		holeSelected.hidden = YES;
 		hole.enabled = NO;
@@ -308,12 +302,16 @@
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
+    if(IS_IPHONE_5) {
+        [smallBackground setFrame:CGRectMake(43, 150, 240, 208)];
+        [background setFrame:CGRectMake(0, 388, 320, 180)];
+     }
+    
 	if (delegate.theme == kClassicTheme) {
+        
+        
 		smallBackground.image = [UIImage imageNamed:@"_0000_Field_Classic.png"];
-		background.image = [UIImage imageNamed:@"classic_back.png"];
-		
-		
+		background.image = [UIImage imageNamed:@"classic_back.png"];		
 		
 	}
 	else if (delegate.theme == kTheme1){
@@ -336,77 +334,161 @@
 	
 	}
 	
-	
 	if (delegate.snakeColor == [UIColor greenColor]) {
 		if (delegate.fieldMode == kNoWall) {
-			topBackground.image = [UIImage imageNamed:@"green_open.png"];
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_open.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"green_open.png"];
+            }
 		}
 		else if(delegate.fieldMode == kFullWall){
-		
-			topBackground.image = [UIImage imageNamed:@"green_box.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_box.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"green_box.png"];
+            }
 		}
 		else if(delegate.fieldMode == kHoleWall){
-			
-			topBackground.image = [UIImage imageNamed:@"green_hitw.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_hitw.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"green_hitw.png"];
+            }
 		}
 		else if(delegate.fieldMode == kSquareWall){
-			
-			topBackground.image = [UIImage imageNamed:@"green_4sq.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_4sq.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"green_4sq.png"];
+            }
 		}
 		
 	}
 	else if (delegate.snakeColor == [UIColor orangeColor]) {
 		if (delegate.fieldMode == kNoWall) {
-			topBackground.image = [UIImage imageNamed:@"orange_open.png"];
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_open.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"orange_open.png"];
+            }
 		}
 		else if(delegate.fieldMode == kFullWall){
-			
-			topBackground.image = [UIImage imageNamed:@"orange_box.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_box.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"orange_box.png"];
+            }
 		}
 		else if(delegate.fieldMode == kHoleWall){
-			
-			topBackground.image = [UIImage imageNamed:@"orange_hitw.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_hitw.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"orange_hitw.png"];
+            }
 		}
 		else if(delegate.fieldMode == kSquareWall){
-			
-			topBackground.image = [UIImage imageNamed:@"orange_4sq.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_4sq.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"orange_4sq.png"];
+            }
 		}
 		
 	}
 	else if (delegate.snakeColor == [UIColor blackColor]) {
 		if (delegate.fieldMode == kNoWall) {
-			topBackground.image = [UIImage imageNamed:@"yellow_open.png"];
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_open.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"yellow_open.png"];
+            }
 		}
 		else if(delegate.fieldMode == kFullWall){
-			
-			topBackground.image = [UIImage imageNamed:@"yellow_box.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_box.png"];
+            }
+            else{
+                
+                topBackground.image = [UIImage imageNamed:@"yellow_box.png"];
+            }
 		}
 		else if(delegate.fieldMode == kHoleWall){
-			
-			topBackground.image = [UIImage imageNamed:@"yellow_hitw.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_hitw.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"yellow_hitw.png"];
+            }
 		}
 		else if(delegate.fieldMode == kSquareWall){
-			
-			topBackground.image = [UIImage imageNamed:@"yellow_4sq.png"];
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_4sq.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"yellow_4sq.png"];
+            }
 		}
 		
 	}
 	else if (delegate.snakeColor == [UIColor blueColor]) {
 		if (delegate.fieldMode == kNoWall) {
-			topBackground.image = [UIImage imageNamed:@"blue_open.png"];
-		}
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_open.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"blue_open.png"];
+            }
+        }
 		else if(delegate.fieldMode == kFullWall){
-			
-			topBackground.image = [UIImage imageNamed:@"blue_box.png"];
-		}
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_box.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"blue_box.png"];
+            }
+        }
 		else if(delegate.fieldMode == kHoleWall){
-			
-			topBackground.image = [UIImage imageNamed:@"blue_hitw.png"];
-		}
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_hitw.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"blue_hitw.png"];
+            }
+        }
 		else if(delegate.fieldMode == kSquareWall){
-			
-			topBackground.image = [UIImage imageNamed:@"blue_4sq.png"];
-		}
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_4sq.png"];
+            }
+            else{
+                topBackground.image = [UIImage imageNamed:@"blue_4sq.png"];
+            }
+        }
 		
 	}
 	

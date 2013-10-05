@@ -23,13 +23,12 @@
 @synthesize facebookButton;
 @synthesize backButton;
 
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewDidLoad{
 
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	delegate.helpMode = kGamePlay;
-	
-	if (delegate.theme == kClassicTheme) {
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.helpMode = kGamePlay;
+
+    if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"main-menu_classic.png"];
@@ -78,34 +77,44 @@
         btfaqFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
         btfaqFrame.origin.y = 90 + GAMEPLAY_BUTTON_Y;
         faqButton.frame = btfaqFrame;
-
+        
         CGRect btunlockFrame = unlockButton.frame;
         btunlockFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
         btunlockFrame.origin.y = 140 + GAMEPLAY_BUTTON_Y;
         unlockButton.frame = btunlockFrame;
-
+        
         CGRect btrateFrame = rateButton.frame;
         btrateFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
         btrateFrame.origin.y = 210 + GAMEPLAY_BUTTON_Y;
         rateButton.frame = btrateFrame;
-
+        
         CGRect btblogFrame = blogButton.frame;
         btblogFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
         btblogFrame.origin.y = 260 + GAMEPLAY_BUTTON_Y;
         blogButton.frame = btblogFrame;
-
+        
         CGRect btfacebookFrame = facebookButton.frame;
         btfacebookFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
         btfacebookFrame.origin.y = 310 + GAMEPLAY_BUTTON_Y;
         facebookButton.frame = btfacebookFrame;
-
+        
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = BACK_BUTTON_X;
         btbackFrame.origin.y = 70 + BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
-
+        
     }
+
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
+	delegate.helpMode = kGamePlay;
+	
+		
 #ifdef LITE_VERSION
 
 	unlockButton.hidden = NO;

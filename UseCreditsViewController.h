@@ -34,12 +34,25 @@
 	IBOutlet UIButton *square;
 	IBOutlet UIButton *squareUnlocked;
 	
+    IBOutlet UIButton *backButton;
+    
 	IBOutlet UIImageView *background;
 	
 	AdWhirlView *adView;
 
 }
 
+@property (nonatomic,retain) IBOutlet UIButton *garden;
+@property (nonatomic,retain) IBOutlet UIButton *gardenUnlocked;
+@property (nonatomic,retain) IBOutlet UIButton *beach;
+@property (nonatomic,retain) IBOutlet UIButton *beachUnlocked;
+@property (nonatomic,retain) IBOutlet UIButton *night;
+@property (nonatomic,retain) IBOutlet UIButton *nightUnlocked;
+@property (nonatomic,retain) IBOutlet UIButton *hole;
+@property (nonatomic,retain) IBOutlet UIButton *holeUnlocked;
+@property (nonatomic,retain) IBOutlet UIButton *square;
+@property (nonatomic,retain) IBOutlet UIButton *squareUnlocked;
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
 
 -(IBAction) viewPressed : (id) sender;
 

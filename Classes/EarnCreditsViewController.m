@@ -26,10 +26,9 @@
 @synthesize name;
 @synthesize myAdView;
 
-- (void) viewDidAppear:(BOOL)animated{
-	
-	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+- (void) viewDidLoad{
+ 
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
@@ -39,7 +38,7 @@
             background.image = [UIImage imageNamed:@"earn_credits_classic.png"];
         }
         else{
-		background.image = [UIImage imageNamed:@"_0000_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_earn_credits.png"];
         }
 		balance.textColor = [UIColor whiteColor];
 		
@@ -50,7 +49,7 @@
             background.image = [UIImage imageNamed:@"earn_credits_garden.png"];
         }
         else{
-		background.image = [UIImage imageNamed:@"_0000_theme1_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_theme1_earn_credits.png"];
         }
 		balance.textColor = [UIColor yellowColor];
 	}
@@ -60,7 +59,7 @@
             background.image = [UIImage imageNamed:@"earn_credits_beach.png"];
         }
         else{
-		background.image = [UIImage imageNamed:@"_0000_theme2_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_theme2_earn_credits.png"];
 		}
         balance.textColor = [UIColor darkTextColor];
 	}
@@ -70,7 +69,7 @@
             background.image = [UIImage imageNamed:@"earn_credits_night.png"];
         }
         else{
-		background.image = [UIImage imageNamed:@"_0000_theme_3_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_theme_3_earn_credits.png"];
 		}
         balance.textColor = [UIColor whiteColor];
 	}
@@ -95,6 +94,15 @@
         btrefreshFrame.origin.y = 30 + EARN_REFRESH_BUTTON_Y;
         refreshButton.frame = btrefreshFrame;
 	}
+	
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+	
+	
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
 	if (delegate.isconnected == NO) {
 		
