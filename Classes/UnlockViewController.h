@@ -26,11 +26,13 @@
 	
 	AdWhirlView *adView;
 
-	
+	IBOutlet UIButton *backButton;
 
 }
 
 @property BOOL canPurchase;
+@property (nonatomic,retain) IBOutlet UIButton *backButton;
+
 -(IBAction) unlockPressed : (id)sender;
 -(IBAction) backPressed : (id)sender;
 

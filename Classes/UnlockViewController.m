@@ -17,6 +17,69 @@
 @implementation UnlockViewController
 
 @synthesize canPurchase;
+@synthesize backButton;
+
+-(void) viewDidLoad{
+    
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	
+	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
+	
+    if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+        balance.textColor = [UIColor whiteColor];
+    }
+    
+	else if(delegate.theme == kTheme1){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+        balance.textColor = [UIColor yellowColor];
+
+    }
+	else if(delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
+            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
+            background.image = [UIImage imageNamed:@"Theme2.png"];
+        }
+        balance.textColor = [UIColor darkTextColor];
+    }
+	else if(delegate.theme == kTheme3){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+        balance.textColor = [UIColor whiteColor];
+    }
+    
+    if(IS_IPHONE_5) {
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
+        btbackFrame.origin.y = 80 + HELPDETAIL_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
+	
+    
+}
 
 - (void) viewDidAppear:(BOOL)animated{
 	
@@ -25,33 +88,6 @@
 	
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
-	if (delegate.theme == kClassicTheme) {
-		
-		//background.image = [UIImage imageNamed:@"viewunlock_classic.png"];
-		background.image = [UIImage imageNamed:@"Classic.png"];
-		balance.textColor = [UIColor whiteColor];
-		
-	}
-	else if(delegate.theme == kTheme1){
-		
-		
-		//background.image = [UIImage imageNamed:@"viewunlock_garden.png"];
-		background.image = [UIImage imageNamed:@"Theme1.png"];
-		balance.textColor = [UIColor yellowColor];
-	}
-	else if(delegate.theme == kTheme2){
-		
-		//background.image = [UIImage imageNamed:@"viewunlock_beach.png"];
-		background.image = [UIImage imageNamed:@"Theme2.png"];
-		balance.textColor = [UIColor darkTextColor];
-	}
-	else if(delegate.theme == kTheme3){
-		
-		
-		//background.image = [UIImage imageNamed:@"viewunlock_night.png.png"];
-		background.image = [UIImage imageNamed:@"Theme3.png"];
-		balance.textColor = [UIColor whiteColor];
-	}
 	
 	if (delegate.creditsInfo == kGarden) {
 		
@@ -89,9 +125,14 @@
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
-	
+	if(IS_IPHONE_5){
+        
+        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	
+    }
 	
 	[self.view addSubview:adView];
 	

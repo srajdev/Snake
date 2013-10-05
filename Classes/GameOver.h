@@ -45,7 +45,14 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 	
 	IBOutlet UIImageView *background;
 	
+    IBOutlet UIButton *playAgain;
+    IBOutlet UIButton *mainMenu;
+    IBOutlet UIButton *rateAppButton;
+    IBOutlet UIButton *FBButton;
+    IBOutlet UIButton *TwtButton;
 	
+    IBOutlet UIImageView *gameOver;
+    
 	AdWhirlView *adView;
 	
 	
@@ -81,15 +88,18 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 @property (nonatomic,retain) UILabel *score;
 @property (nonatomic,retain) UITextField *changeName;
 @property (nonatomic,retain) 	IBOutlet UILabel *highestScore;
-
-
+@property (nonatomic,retain) IBOutlet UIButton *playAgain;
+@property (nonatomic,retain) IBOutlet UIButton *mainMenu;
+@property (nonatomic,retain) IBOutlet UIButton *rateAppButton;
+@property (nonatomic,retain) IBOutlet UIButton *FBButton;
+@property (nonatomic,retain) IBOutlet UIButton *TwtButton;
 
 @property (nonatomic,retain) NSString *FBName;
 @property (nonatomic,retain) NSString *FBid;
 @property int fbSaveCount;
 @property BOOL isTwitterLogged;
 
-
+@property (nonatomic,retain) UIImageView *gameOver;
 
 - (IBAction) FBpublish: (id)sender;
 -(IBAction) tweetIt;

@@ -91,15 +91,8 @@
 
 	//facebook = [[Facebook alloc] init];
 	
-	
-}
-
-
-
-- (void) viewDidAppear:(BOOL)animated{
-	
-	[[UIApplication sharedApplication] setStatusBarHidden:YES];
-
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[nameButton setTitle:delegate.playerName forState:UIControlStateNormal];
 	name.hidden = YES;
@@ -112,10 +105,311 @@
 	theme2Locked.hidden = YES;
 	theme3Locked.hidden = YES;
 	
+    
+    
+    
+	if (delegate.theme == kClassicTheme) {
+		classic.hidden = YES;
+		classicSelected.hidden = NO;
+		
+		
+		if (delegate.gardenUnlocked == NO) {
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+			theme1.enabled = NO;
+			theme1Locked.hidden = NO;
+		}
+		else{
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+		}
+		
+		
+		
+		if (delegate.beachUnlocked == NO) {
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+			theme2.enabled = NO;
+			theme2Locked.hidden = NO;
+		}
+		else{
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+		}
+		
+		if (delegate.nightUnlocked == NO) {
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+			theme3.enabled = NO;
+			theme3Locked.hidden = NO;
+		}
+		else{
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+		}
+		
+		
+		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_Options_Classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_classic_options.png"];
+        }
+	}
+	else if(delegate.theme == kTheme1){
+		classic.hidden = NO;
+		classicSelected.hidden = YES;
+		
+		
+		if (delegate.gardenUnlocked == NO) {
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+			theme1.enabled = NO;
+			theme1Locked.hidden = NO;
+		}
+		else{
+			theme1.hidden = YES;
+			theme1Selected.hidden = NO;
+		}
+		
+		
+		
+		if (delegate.beachUnlocked == NO) {
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+			theme2.enabled = NO;
+			theme2Locked.hidden = NO;
+		}
+		else{
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+		}
+		
+		if (delegate.nightUnlocked == NO) {
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+			theme3.enabled = NO;
+			theme3Locked.hidden = NO;
+		}
+		else{
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+		}
+		
+		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_Options_Garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme1_options.png"];
+        }
+    }
+	else if(delegate.theme == kTheme2){
+		classic.hidden = NO;
+		classicSelected.hidden = YES;
+		
+		
+		if (delegate.gardenUnlocked == NO) {
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+			theme1.enabled = NO;
+			theme1Locked.hidden = NO;
+		}
+		else{
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+		}
+		
+		
+		
+		if (delegate.beachUnlocked == NO) {
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+			theme2.enabled = NO;
+			theme2Locked.hidden = NO;
+		}
+		else{
+			theme2.hidden = YES;
+			theme2Selected.hidden = NO;
+		}
+		
+		if (delegate.nightUnlocked == NO) {
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+			theme3.enabled = NO;
+			theme3Locked.hidden = NO;
+		}
+		else{
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+		}
+		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_Options_Beach.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme2_options.png"];
+        }
+	}
+	else if(delegate.theme == kTheme3){
+		classic.hidden = NO;
+		classicSelected.hidden = YES;
+		
+		
+		if (delegate.gardenUnlocked == NO) {
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+			theme1.enabled = NO;
+			theme1Locked.hidden = NO;
+		}
+		else{
+			theme1.hidden = NO;
+			theme1Selected.hidden = YES;
+		}
+		
+		
+		
+		if (delegate.beachUnlocked == NO) {
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+			theme2.enabled = NO;
+			theme2Locked.hidden = NO;
+		}
+		else{
+			theme2.hidden = NO;
+			theme2Selected.hidden = YES;
+		}
+		
+		if (delegate.nightUnlocked == NO) {
+			theme3.hidden = NO;
+			theme3Selected.hidden = YES;
+			theme3.enabled = NO;
+			theme3Locked.hidden = NO;
+		}
+		else{
+			theme3.hidden = YES;
+			theme3Selected.hidden = NO;
+		}
+		
+		
+		
+		[nameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_Options_Night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme3_options.png"];
+        }
+	}
+	
+	
+	if (delegate.snakeColor == [UIColor greenColor]) {
+		greenSelected.hidden = NO;
+		green.hidden = YES;
+		orangeSelected.hidden = YES;
+		orange.hidden = NO;
+		blueSelected.hidden = YES;
+		blue.hidden = NO;
+		blackSelected.hidden = YES;
+		black.hidden = NO;
+	}
+    
+	else if (delegate.snakeColor == [UIColor blueColor]) {
+		greenSelected.hidden = YES;
+		green.hidden = NO;
+		orangeSelected.hidden = YES;
+		orange.hidden = NO;
+		blueSelected.hidden = NO;
+		blue.hidden = YES;
+		blackSelected.hidden = YES;
+		black.hidden = NO;
+	}
+	else if (delegate.snakeColor == [UIColor orangeColor]) {
+		greenSelected.hidden = YES;
+		green.hidden = NO;
+		orangeSelected.hidden = NO;
+		orange.hidden = YES;
+		blueSelected.hidden = YES;
+		blue.hidden = NO;
+		blackSelected.hidden = YES;
+		black.hidden = NO;
+	}
+	else if (delegate.snakeColor == [UIColor blackColor]) {
+		greenSelected.hidden = YES;
+		green.hidden = NO;
+		orangeSelected.hidden = YES;
+		orange.hidden = NO;
+		blueSelected.hidden = YES;
+		blue.hidden = NO;
+		blackSelected.hidden = NO;
+		black.hidden = YES;
+	}
+	
+	
+	
+	if (delegate.isWallOn == NO) {
+		wallOn.hidden = NO;
+		wallOnSelected.hidden = YES;
+		
+		wallOff.hidden = YES;
+		wallOffSelected.hidden = NO;
+	}
+	else if(delegate.isWallOn == YES){
+		wallOn.hidden = YES;
+		wallOnSelected.hidden = NO;
+		
+		wallOff.hidden = NO;
+		wallOffSelected.hidden = YES;
+		
+	}
+	
+	
+	if (delegate.isVibrateOn == NO) {
+		vibrateOn.hidden = NO;
+		vibrateOnSelected.hidden = YES;
+		
+		vibrateOff.hidden = YES;
+		vibrateOffSelected.hidden = NO;
+	}
+	else if(delegate.isVibrateOn == YES){
+		vibrateOn.hidden = YES;
+		vibrateOnSelected.hidden = NO;
+		
+		vibrateOff.hidden = NO;
+		vibrateOffSelected.hidden = YES;
+		
+	}
+	
+	if (delegate.isSoundOn == NO) {
+		soundOn.hidden = NO;
+		soundOnSelected.hidden = YES;
+		
+		soundOff.hidden = YES;
+		soundOffSelected.hidden = NO;
+	}
+	else if(delegate.isSoundOn == YES){
+		soundOn.hidden = YES;
+		soundOnSelected.hidden = NO;
+		
+		soundOff.hidden = NO;
+		soundOffSelected.hidden = YES;
+		
+	}
+    
     if(IS_IPHONE_5){
+        CGRect btNFrame = name.frame;
+        btNFrame.origin.x = OPTIONS_NAME_BUTTON_X;
+        btNFrame.origin.y = 65 + OPTIONS_NAME_BUTTON_Y;
+        name.frame = btNFrame;
+        
         CGRect btNameFrame = nameButton.frame;
         btNameFrame.origin.x = OPTIONS_NAME_BUTTON_X;
-        btNameFrame.origin.y = 85 + OPTIONS_NAME_BUTTON_Y;
+        btNameFrame.origin.y = 65 + OPTIONS_NAME_BUTTON_Y;
         nameButton.frame = btNameFrame;
         
         CGRect btclassicFrame = classic.frame;
@@ -174,96 +468,119 @@
         theme3Locked.frame = bttheme3LockedFrame;
         
         CGRect btsoundOnFrame = soundOn.frame;
-        btsoundOnFrame.origin.x = OPTIONS_THEME_BUTTON_X;
-        btsoundOnFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btsoundOnFrame.origin.x = 15 + OPTIONS_SOUND_BUTTON_X;
+        btsoundOnFrame.origin.y = 55 + OPTIONS_SOUND_BUTTON_Y;
         soundOn.frame = btsoundOnFrame;
         
         CGRect btsoundOnSelectedFrame = soundOnSelected.frame;
-        btsoundOnSelectedFrame.origin.x = OPTIONS_THEME_BUTTON_X;
-        btsoundOnSelectedFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btsoundOnSelectedFrame.origin.x = 15 + OPTIONS_SOUND_BUTTON_X;
+        btsoundOnSelectedFrame.origin.y = 55 + OPTIONS_SOUND_BUTTON_Y;
         soundOnSelected.frame = btsoundOnSelectedFrame;
         
         CGRect btsoundOffFrame = soundOff.frame;
-        btsoundOffFrame.origin.x = 100 + OPTIONS_THEME_BUTTON_X;
-        btsoundOffFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btsoundOffFrame.origin.x = 97 + OPTIONS_SOUND_BUTTON_X;
+        btsoundOffFrame.origin.y = 55 + OPTIONS_SOUND_BUTTON_Y;
         soundOff.frame = btsoundOffFrame;
         
         CGRect btsoundOffSelectedFrame = soundOffSelected.frame;
-        btsoundOffSelectedFrame.origin.x = 100 + OPTIONS_THEME_BUTTON_X;
-        btsoundOffSelectedFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btsoundOffSelectedFrame.origin.x = 97 + OPTIONS_SOUND_BUTTON_X;
+        btsoundOffSelectedFrame.origin.y = 55 + OPTIONS_SOUND_BUTTON_Y;
         soundOffSelected.frame = btsoundOffSelectedFrame;
         
         CGRect btvibrateOnFrame = vibrateOn.frame;
-        btvibrateOnFrame.origin.x = OPTIONS_THEME_BUTTON_X;
-        btvibrateOnFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btvibrateOnFrame.origin.x = 15 + OPTIONS_SOUND_BUTTON_X;
+        btvibrateOnFrame.origin.y = 110 + OPTIONS_SOUND_BUTTON_Y;
         vibrateOn.frame = btvibrateOnFrame;
         
         CGRect btvibrateOnSelectedFrame = vibrateOnSelected.frame;
-        btvibrateOnSelectedFrame.origin.x = OPTIONS_THEME_BUTTON_X;
-        btvibrateOnSelectedFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btvibrateOnSelectedFrame.origin.x = 15 + OPTIONS_SOUND_BUTTON_X;
+        btvibrateOnSelectedFrame.origin.y = 110 + OPTIONS_SOUND_BUTTON_Y;
         vibrateOnSelected.frame = btvibrateOnSelectedFrame;
         
         CGRect btvibrateOffFrame = vibrateOff.frame;
-        btvibrateOffFrame.origin.x = 100 + OPTIONS_THEME_BUTTON_X;
-        btvibrateOffFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btvibrateOffFrame.origin.x = 97 + OPTIONS_SOUND_BUTTON_X;
+        btvibrateOffFrame.origin.y = 110 + OPTIONS_SOUND_BUTTON_Y;
         vibrateOff.frame = btvibrateOffFrame;
         
         CGRect btvibrateOffSelectedFrame = vibrateOffSelected.frame;
-        btvibrateOffSelectedFrame.origin.x = 100 + OPTIONS_THEME_BUTTON_X;
-        btvibrateOffSelectedFrame.origin.y = 220 + OPTIONS_NAME_BUTTON_Y;
+        btvibrateOffSelectedFrame.origin.x = 97 + OPTIONS_SOUND_BUTTON_X;
+        btvibrateOffSelectedFrame.origin.y = 110 + OPTIONS_SOUND_BUTTON_Y;
         vibrateOffSelected.frame = btvibrateOffSelectedFrame;
         
         CGRect btgreenFrame = green.frame;
-        btgreenFrame.origin.x = OPTIONS_THEME_BUTTON_X;
-        btgreenFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btgreenFrame.origin.x = 13 + OPTIONS_COLOR_BUTTON_X;
+        btgreenFrame.origin.y = 75 + OPTIONS_COLOR_BUTTON_Y;
         green.frame = btgreenFrame;
-
+        
         CGRect btgreenSelectedFrame = greenSelected.frame;
-        btgreenSelectedFrame.origin.x = OPTIONS_THEME_BUTTON_X;
-        btgreenSelectedFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btgreenSelectedFrame.origin.x = OPTIONS_COLOR_BUTTON_X;
+        btgreenSelectedFrame.origin.y = 77 + OPTIONS_COLOR_BUTTON_Y;
         greenSelected.frame = btgreenSelectedFrame;
         
         CGRect btorangeFrame = orange.frame;
-        btorangeFrame.origin.x = 50 + OPTIONS_THEME_BUTTON_X;
-        btorangeFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btorangeFrame.origin.x = 56 + OPTIONS_COLOR_BUTTON_X;
+        btorangeFrame.origin.y = 75 + OPTIONS_COLOR_BUTTON_Y;
         orange.frame = btorangeFrame;
         
         CGRect btorangeSelectedFrame = orangeSelected.frame;
-        btorangeSelectedFrame.origin.x = 50 + OPTIONS_THEME_BUTTON_X;
-        btorangeSelectedFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btorangeSelectedFrame.origin.x = 43 + OPTIONS_COLOR_BUTTON_X;
+        btorangeSelectedFrame.origin.y = 77 + OPTIONS_COLOR_BUTTON_Y;
         orangeSelected.frame = btorangeSelectedFrame;
         
         CGRect btblackFrame = black.frame;
-        btblackFrame.origin.x = 80 + OPTIONS_THEME_BUTTON_X;
-        btblackFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btblackFrame.origin.x = 99 + OPTIONS_COLOR_BUTTON_X;
+        btblackFrame.origin.y = 75 + OPTIONS_COLOR_BUTTON_Y;
         black.frame = btblackFrame;
         
         CGRect btblackSelectedFrame = blackSelected.frame;
-        btblackSelectedFrame.origin.x = 80 + OPTIONS_THEME_BUTTON_X;
-        btblackSelectedFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btblackSelectedFrame.origin.x = 86 + OPTIONS_COLOR_BUTTON_X;
+        btblackSelectedFrame.origin.y = 77 + OPTIONS_COLOR_BUTTON_Y;
         blackSelected.frame = btblackSelectedFrame;
         
         CGRect btblueFrame = blue.frame;
-        btblueFrame.origin.x = 110 + OPTIONS_THEME_BUTTON_X;
-        btblueFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btblueFrame.origin.x = 142 + OPTIONS_COLOR_BUTTON_X;
+        btblueFrame.origin.y = 75 + OPTIONS_COLOR_BUTTON_Y;
         blue.frame = btblueFrame;
         
         CGRect btblueSelectedFrame = blueSelected.frame;
-        btblueSelectedFrame.origin.x = 110 + OPTIONS_THEME_BUTTON_X;
-        btblueSelectedFrame.origin.y = 300 + OPTIONS_NAME_BUTTON_Y;
+        btblueSelectedFrame.origin.x = 129 + OPTIONS_COLOR_BUTTON_X;
+        btblueSelectedFrame.origin.y = 77 + OPTIONS_COLOR_BUTTON_Y;
         blueSelected.frame = btblueSelectedFrame;
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = OPTIONS_BACK_BUTTON_X;
-        btbackFrame.origin.y = 40 + OPTIONS_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 75 + OPTIONS_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
         CGRect btfbButtonFrame = fbButton.frame;
         btfbButtonFrame.origin.x = OPTIONS_FB_BUTTON_X;
-        btfbButtonFrame.origin.y = 40 + OPTIONS_FB_BUTTON_Y;
+        btfbButtonFrame.origin.y = 75 + OPTIONS_FB_BUTTON_Y;
         fbButton.frame = btfbButtonFrame;
         
     }
+	
+}
+
+
+
+- (void) viewDidAppear:(BOOL)animated{
+	
+	[[UIApplication sharedApplication] setStatusBarHidden:YES];
+
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	/*
+    [nameButton setTitle:delegate.playerName forState:UIControlStateNormal];
+	name.hidden = YES;
+	
+	
+	theme1.enabled = YES;
+	theme2.enabled = YES;
+	theme3.enabled = YES;
+	theme1Locked.hidden = YES;
+	theme2Locked.hidden = YES;
+	theme3Locked.hidden = YES;
+	
+    
     
     
 	if (delegate.theme == kClassicTheme) {
@@ -310,7 +627,7 @@
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Classic.png"];
+            background.image = [UIImage imageNamed:@"_Options_Classic.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_classic_options.png"];
@@ -359,7 +676,7 @@
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Garden.png"];
+            background.image = [UIImage imageNamed:@"_Options_Garden.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_theme1_options.png"];
@@ -407,7 +724,7 @@
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Beach.png"];
+            background.image = [UIImage imageNamed:@"_Options_Beach.png"];
         }
         else{
         background.image = [UIImage imageNamed:@"_0000_theme2_options.png"];
@@ -458,7 +775,7 @@
 		[nameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Night.png"];
+            background.image = [UIImage imageNamed:@"_Options_Night.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_theme3_options.png"];
@@ -558,7 +875,7 @@
 		soundOffSelected.hidden = YES;
 		
 	}
-	
+	*/
 #ifdef LITE_VERSION
     // Code specific to lite version
 
@@ -761,7 +1078,7 @@
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Classic.png"];
+            background.image = [UIImage imageNamed:@"_Options_Classic.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_classic_options.png"];
@@ -815,7 +1132,7 @@
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Garden.png"];
+            background.image = [UIImage imageNamed:@"_Options_Garden.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_theme1_options.png"];
@@ -869,7 +1186,7 @@
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Beach.png"];
+            background.image = [UIImage imageNamed:@"_Options_Beach.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_theme2_options.png"];
@@ -923,7 +1240,7 @@
 		[nameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"Options_Night.png"];
+            background.image = [UIImage imageNamed:@"_Options_Night.png"];
         }
         else{
 		background.image = [UIImage imageNamed:@"_0000_theme3_options.png"];

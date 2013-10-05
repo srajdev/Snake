@@ -361,6 +361,11 @@
 -(void) setbackground{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if(IS_IPHONE_5) {
+        [smallBackground setFrame:CGRectMake(20, 195, 280, 186)];
+        [background setFrame:CGRectMake(0, 388, 320, 180)];
+    }
 	
 	if(delegate.theme == kClassicTheme){
 		
@@ -389,74 +394,159 @@
 	}
 	if (delegate.snakeColor == [UIColor greenColor]) {
 		if (delegate.fieldMode == kNoWall) {
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_open.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"green_open.png"];
+            }
 		}
 		else if(delegate.fieldMode == kFullWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_box.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"green_box.png"];
+            }
 		}
 		else if(delegate.fieldMode == kHoleWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_hitw.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"green_hitw.png"];
+            }
 		}
 		else if(delegate.fieldMode == kSquareWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_green_4sq.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"green_4sq.png"];
+            }
 		}
 		
 	}
 	else if (delegate.snakeColor == [UIColor orangeColor]) {
 		if (delegate.fieldMode == kNoWall) {
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_open.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"orange_open.png"];
+            }
 		}
 		else if(delegate.fieldMode == kFullWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_box.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"orange_box.png"];
+            }
 		}
 		else if(delegate.fieldMode == kHoleWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_hitw.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"orange_hitw.png"];
+            }
 		}
 		else if(delegate.fieldMode == kSquareWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_orange_4sq.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"orange_4sq.png"];
+            }
 		}
 		
 	}
 	else if (delegate.snakeColor == [UIColor blackColor]) {
 		if (delegate.fieldMode == kNoWall) {
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_open.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"yellow_open.png"];
+            }
 		}
 		else if(delegate.fieldMode == kFullWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_box.png"];
+            }
+            else{
+                
 			topBackground.image = [UIImage imageNamed:@"yellow_box.png"];
+            }
 		}
 		else if(delegate.fieldMode == kHoleWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_hitw.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"yellow_hitw.png"];
+            }
 		}
 		else if(delegate.fieldMode == kSquareWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_yellow_4sq.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"yellow_4sq.png"];
+            }
 		}
 		
 	}
 	else if (delegate.snakeColor == [UIColor blueColor]) {
 		if (delegate.fieldMode == kNoWall) {
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_open.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"blue_open.png"];
-		}
+            }
+        }
 		else if(delegate.fieldMode == kFullWall){
-			
+			if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_box.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"blue_box.png"];
-		}
+            }
+        }
 		else if(delegate.fieldMode == kHoleWall){
-			
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_hitw.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"blue_hitw.png"];
-		}
+            }
+        }
 		else if(delegate.fieldMode == kSquareWall){
-			
+            if(IS_IPHONE_5){
+                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                topBackground.image = [UIImage imageNamed:@"_blue_4sq.png"];
+            }
+            else{
 			topBackground.image = [UIImage imageNamed:@"blue_4sq.png"];
-		}
+            }
+        }
 		
 	}
 	

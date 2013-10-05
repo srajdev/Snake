@@ -17,6 +17,124 @@
 
 @implementation UseCreditsViewController
 
+@synthesize garden;
+@synthesize gardenUnlocked;
+@synthesize beach;
+@synthesize beachUnlocked;
+@synthesize night;
+@synthesize nightUnlocked;
+@synthesize hole;
+@synthesize holeUnlocked;
+@synthesize square;
+@synthesize squareUnlocked;
+@synthesize backButton;
+
+-(void) viewDidLoad{
+    
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (delegate.theme == kClassicTheme) {
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"use_credits_classic.png"];
+		}
+        balance.textColor = [UIColor whiteColor];
+		
+	}
+	else if(delegate.theme == kTheme1){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_garden.png"];
+        }
+        else{
+            
+            background.image = [UIImage imageNamed:@"use_credits_garden.png"];
+		}
+        balance.textColor = [UIColor yellowColor];
+	}
+	else if(delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_beach.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"use_credits_beach.png"];
+		}
+        balance.textColor = [UIColor darkTextColor];
+	}
+	else if(delegate.theme == kTheme3){
+		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"use_credits_night.png"];
+        }
+		balance.textColor = [UIColor whiteColor];
+	}
+    
+    
+    if(IS_IPHONE_5) {
+        
+        CGRect btbeachFrame = beach.frame;
+        btbeachFrame.origin.x = USE_BEACH_BUTTON_X;
+        btbeachFrame.origin.y = 65 + USE_BEACH_BUTTON_Y;
+        beach.frame = btbeachFrame;
+        
+        CGRect btbeachUnFrame = beachUnlocked.frame;
+        btbeachUnFrame.origin.x = USE_BEACH_BUTTON_X;
+        btbeachUnFrame.origin.y = 65 + USE_BEACH_BUTTON_Y;
+        beachUnlocked.frame = btbeachUnFrame;
+        
+        CGRect btgardenFrame = garden.frame;
+        btgardenFrame.origin.x = USE_BEACH_BUTTON_X;
+        btgardenFrame.origin.y = 115 + USE_BEACH_BUTTON_Y;
+        garden.frame = btgardenFrame;
+        
+        CGRect btgardenUnFrame = gardenUnlocked.frame;
+        btgardenUnFrame.origin.x = USE_BEACH_BUTTON_X;
+        btgardenUnFrame.origin.y = 115 + USE_BEACH_BUTTON_Y;
+        gardenUnlocked.frame = btgardenUnFrame;
+        
+        CGRect btnightFrame = night.frame;
+        btnightFrame.origin.x = USE_BEACH_BUTTON_X;
+        btnightFrame.origin.y = 165 + USE_BEACH_BUTTON_Y;
+        night.frame = btnightFrame;
+        
+        CGRect btnightUnFrame = nightUnlocked.frame;
+        btnightUnFrame.origin.x = USE_BEACH_BUTTON_X;
+        btnightUnFrame.origin.y = 165 + USE_BEACH_BUTTON_Y;
+        nightUnlocked.frame = btnightUnFrame;
+        
+        CGRect btholeFrame = hole.frame;
+        btholeFrame.origin.x = USE_BEACH_BUTTON_X;
+        btholeFrame.origin.y = 260 + USE_BEACH_BUTTON_Y;
+        hole.frame = btholeFrame;
+        
+        CGRect btholeUnFrame = holeUnlocked.frame;
+        btholeUnFrame.origin.x = USE_BEACH_BUTTON_X;
+        btholeUnFrame.origin.y = 260 + USE_BEACH_BUTTON_Y;
+        holeUnlocked.frame = btholeUnFrame;
+        
+        CGRect btsquareFrame = square.frame;
+        btsquareFrame.origin.x = USE_BEACH_BUTTON_X;
+        btsquareFrame.origin.y = 310 + USE_BEACH_BUTTON_Y;
+        square.frame = btsquareFrame;
+        
+        CGRect btsquareUnFrame = squareUnlocked.frame;
+        btsquareUnFrame.origin.x = USE_BEACH_BUTTON_X;
+        btsquareUnFrame.origin.y = 310 + USE_BEACH_BUTTON_Y;
+        squareUnlocked.frame = btsquareUnFrame;
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
+        btbackFrame.origin.y = 80 + HELPDETAIL_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
+}
 - (void) viewDidAppear:(BOOL)animated{
 	
 	
@@ -34,30 +152,50 @@
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
 	
-	if (delegate.theme == kClassicTheme) {
-		
+	/*if (delegate.theme == kClassicTheme) {
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_classic.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"use_credits_classic.png"];
-		balance.textColor = [UIColor whiteColor];
+		}
+        balance.textColor = [UIColor whiteColor];
 		
 	}
 	else if(delegate.theme == kTheme1){
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_garden.png"];
+        }
+        else{
 		
 		background.image = [UIImage imageNamed:@"use_credits_garden.png"];
-		balance.textColor = [UIColor yellowColor];
+		}
+        balance.textColor = [UIColor yellowColor];
 	}
 	else if(delegate.theme == kTheme2){
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_beach.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"use_credits_beach.png"];
-		balance.textColor = [UIColor darkTextColor];
+		}
+        balance.textColor = [UIColor darkTextColor];
 	}
 	else if(delegate.theme == kTheme3){
 		
-		
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_night.png"];
+        }
+        else{
 		background.image = [UIImage imageNamed:@"use_credits_night.png"];
+        }
 		balance.textColor = [UIColor whiteColor];
 	}
-	
+	*/
 	if (delegate.beachUnlocked == YES) {
 		beachUnlocked.hidden = NO;
 		beachUnlocked.enabled = NO;
@@ -130,10 +268,14 @@
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 	adView = delegate.mainmenu.adView;
-	
+	if(IS_IPHONE_5){
+        
+        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        
+    }
+    else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	
-	
+	}
 	
 	
 	

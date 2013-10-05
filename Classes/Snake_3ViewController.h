@@ -65,9 +65,12 @@
 	
 	
 	IBOutlet UIImageView *background;
-	
-	
-	
+    IBOutlet UIImageView *snakeLogo;
+    IBOutlet UIButton *leftButton;
+	IBOutlet UIButton *rightButton;
+    IBOutlet UIButton *topButton;
+    IBOutlet UIButton *bottomButton;
+	IBOutlet UIButton *pauseButton;
 
 }
 
@@ -92,6 +95,12 @@
 @property (nonatomic,retain) NSTimer	*bonusTimer;
 
 @property BOOL comeFromPause;
+
+@property (nonatomic,retain) IBOutlet UIButton *leftButton;
+@property (nonatomic,retain) IBOutlet UIButton *rightButton;
+@property (nonatomic,retain) IBOutlet UIButton *topButton;
+@property (nonatomic,retain) IBOutlet UIButton *bottomButton;
+@property (nonatomic,retain) IBOutlet UIButton *pauseButton;
 
 -(IBAction)rightPressed;
 -(IBAction)leftPressed;

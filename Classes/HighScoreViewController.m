@@ -80,7 +80,62 @@
     return self;
 }
 
+-(void)viewDidLoad{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+    }
+    
+	else if(delegate.theme == kTheme1){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+    }
+	else if(delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
+            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
+            background.image = [UIImage imageNamed:@"Theme2.png"];
+        }
+    }
+	else if(delegate.theme == kTheme3){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+    }
+    
+	if(IS_IPHONE_5){
+        
+        CGRect frame = highScoreTable.frame;
+        frame.size.height = 60 + 291;
+        highScoreTable.frame = frame;
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = HIGHSCORE_BACK_BUTTON_X;
+        btbackFrame.origin.y = 60 + HIGHSCORE_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
 
+    
+}
 
 //Action to be called when the local high scores are pressed
 -(IBAction) localPressed{
@@ -355,57 +410,7 @@
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	if (delegate.theme == kClassicTheme) {
-        if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"Classic.png"];
-        }
-    }
-    
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"Theme1.png"];
-        }
-    }
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
-        }
-        else{
-            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
-            background.image = [UIImage imageNamed:@"Theme2.png"];
-        }
-    }
-	else if(delegate.theme == kTheme3){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main_menu_night.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"Theme3.png"];
-        }
-    }
-
-	if(IS_IPHONE_5){
-        
-        CGRect frame = highScoreTable.frame;
-        frame.size.height = 60 + 291;
-        highScoreTable.frame = frame;
-        
-        CGRect btbackFrame = backButton.frame;
-        btbackFrame.origin.x = HIGHSCORE_BACK_BUTTON_X;
-        btbackFrame.origin.y = 60 + HIGHSCORE_BACK_BUTTON_Y;
-        backButton.frame = btbackFrame;
-    }
-    
+	    
 	localButton.hidden=YES;
 	localSelectedButton.hidden = NO;
 	friendsButton.hidden = NO;

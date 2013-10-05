@@ -308,19 +308,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">background</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="511085857"/>
+					</object>
+					<int key="connectionID">34</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">name</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="7367918"/>
 					</object>
-					<int key="connectionID">13</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">score</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1028689296"/>
-					</object>
-					<int key="connectionID">23</int>
+					<int key="connectionID">38</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -328,15 +328,63 @@
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="239373680"/>
 					</object>
-					<int key="connectionID">25</int>
+					<int key="connectionID">39</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">background</string>
+						<string key="label">score</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="511085857"/>
+						<reference key="destination" ref="1028689296"/>
 					</object>
-					<int key="connectionID">34</int>
+					<int key="connectionID">40</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mainMenu</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="859865936"/>
+					</object>
+					<int key="connectionID">41</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playAgain</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="166038915"/>
+					</object>
+					<int key="connectionID">42</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">rateAppButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="708529810"/>
+					</object>
+					<int key="connectionID">43</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">FBButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="833770700"/>
+					</object>
+					<int key="connectionID">44</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">TwtButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="338002162"/>
+					</object>
+					<int key="connectionID">45</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">gameOver</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="836937496"/>
+					</object>
+					<int key="connectionID">46</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -552,7 +600,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">37</int>
+			<int key="maxID">46</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
