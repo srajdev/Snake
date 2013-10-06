@@ -90,9 +90,4 @@
   return years;
 }
 
-- (NSObject *)helperDelegateValueForSelector:(SEL)selector {
-  return ([adWhirlDelegate respondsToSelector:selector]) ?
-      [adWhirlDelegate performSelector:selector] : nil;
-}
-
 @end

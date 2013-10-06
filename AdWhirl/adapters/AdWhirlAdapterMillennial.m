@@ -88,18 +88,14 @@
   MMAdView *adView = [MMAdView adWithFrame:kMillennialAdFrame
                                       type:adType
                                       apid:apID
-                                  delegate:self
-                                    loadAd:YES
-                                startTimer:NO];
-  adView.rootViewController =
-      [adWhirlDelegate viewControllerForPresentingModalView];
+                                  delegate:self];
   self.adNetworkView = adView;
 }
 
 - (void)stopBeingDelegate {
   MMAdView *adView = (MMAdView *)adNetworkView;
   if (adView != nil) {
-    [adView setRefreshTimerEnabled:false];
+    [adView disableAdRefresh];
     adView.delegate = nil;
   }
 }
@@ -114,6 +110,12 @@
 - (NSDictionary *)requestData {
   AWLogDebug(@"Sending requestData to MM: %@", requestData);
   return requestData;
+}
+
+- (BOOL)testMode {
+  if ([adWhirlDelegate respondsToSelector:@selector(adWhirlTestMode)])
+    return [adWhirlDelegate adWhirlTestMode];
+  return NO;
 }
 
 - (void)adRequestSucceeded:(MMAdView *)adView {

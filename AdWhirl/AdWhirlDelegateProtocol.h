@@ -152,8 +152,6 @@
 - (NSString *)zestADZClientID; // your clientID from ZestADZ
 - (NSString *)brightRollAppId; // your BrightRoll App ID
 - (NSString *)inMobiAppID; // your inMobi app ID
-- (NSString *)oneRiotAppID;
-- (NSDictionary *) nexageDictionary; // your nexage dcn and position
 
 
 #pragma mark demographic information optional delegate methods
@@ -325,20 +323,5 @@
 - (NSString *)inMobiInterests;
 
 - (NSString *)iAdAdvertisingSection;
-
-- (NSDictionary *)inMobiParamsDictionary;
-
-#pragma mark OneRiot-specific optional delegate methods
-
-/** Returns an array of NSStrings containing all optional context parameters
- */
-- (NSArray *)oneRiotContextParameters;
-
-#pragma mark Nexage-specific optional delegate methods
--(NSString *)nexageCity;
--(NSString *)nexageDesignatedMarketArea;
--(NSString *)nexageCountry;
--(NSString *)nexageEthnicity;
--(NSString *)nexageMaritalStatus;
 
 @end
