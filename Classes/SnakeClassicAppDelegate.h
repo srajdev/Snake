@@ -42,7 +42,7 @@
 #include <AudioToolbox/AudioToolbox.h>
 
 #import "constants.h"
-#import "AdWhirlDelegateProtocol.h"
+//#import "AdWhirlDelegateProtocol.h"
 #include <AVFoundation/AVFoundation.h>
 #include "FBConnect.h"
 #import "Session.h"
