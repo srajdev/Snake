@@ -17,6 +17,8 @@
 
 @implementation FieldModeViewController
 
+@synthesize topImage;
+
 // Action when user presses Open Field
 -(IBAction) OpenFieldPressed:(id)sender{
 	
@@ -241,12 +243,15 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+    
+        [self setbackground];
+
 	  [super viewDidLoad];
 
-}*/
+}
 -(void) viewDidAppear:(BOOL)animated{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -267,7 +272,7 @@
 	boxSelected.hidden = YES;
 	
 
-	if (true || delegate.holeUnlocked == NO) {
+	if (delegate.holeUnlocked == NO) {
 		hole.hidden = NO;
 		holeSelected.hidden = YES;
 		hole.enabled = NO;
@@ -291,7 +296,7 @@
 		squareSelected.hidden = YES;
 	}
 
-	[self setbackground];
+	//[self setbackground];
 	
 	
   
@@ -305,6 +310,10 @@
     if(IS_IPHONE_5) {
         [smallBackground setFrame:CGRectMake(43, 150, 240, 208)];
         [background setFrame:CGRectMake(0, 388, 320, 180)];
+        [topImage setFrame:CGRectMake(0, 0, 320, 568)];
+        //CGRect frame = topBackground.frame;
+        //frame.size.height = 88 + 480;
+        //topBackground.frame = frame;
      }
     
 	if (delegate.theme == kClassicTheme) {

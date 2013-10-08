@@ -552,17 +552,8 @@ if (delegate.gameStatus != kGamePause) {
 	}
 
 	
-	
-	
-
-	
 	comeFromPause = NO;
 		[self startGame];
-	
-	
-	
-
-	
 	
 	
 }

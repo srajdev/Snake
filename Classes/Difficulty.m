@@ -33,7 +33,7 @@
 @synthesize speed5;
 @synthesize selectedSpeed5;
 
-
+@synthesize topImage;
 
 @synthesize gameNew;
 
@@ -243,7 +243,12 @@
 }
 */
 
-
+-(void) viewDidLoad{
+	
+	
+	[self setbackground];
+	
+}
 
 -(void) viewDidAppear:(BOOL)animated{
 
@@ -255,7 +260,7 @@
 	
 	
 	
-	[self setbackground];
+	//[self setbackground];
 	
 	
 	
@@ -365,6 +370,8 @@
     if(IS_IPHONE_5) {
         [smallBackground setFrame:CGRectMake(20, 195, 280, 186)];
         [background setFrame:CGRectMake(0, 388, 320, 180)];
+        [topImage setFrame:CGRectMake(0, 0, 320, 568)];
+        
     }
 	
 	if(delegate.theme == kClassicTheme){

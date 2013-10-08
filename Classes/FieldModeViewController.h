@@ -35,8 +35,12 @@
 	
 	IBOutlet UIImageView *background;
 	IBOutlet UIImageView *topBackground;
+    
+    IBOutlet UIImageView *topImage;
 
 }
+
+@property (nonatomic,retain) IBOutlet UIImageView *topImage;
 
 -(IBAction) OpenFieldPressed:(id)sender;
 -(IBAction) BoxPressed:(id)sender;
