@@ -39,7 +39,7 @@
 	IBOutlet UIImageView *smallBackground;
 	IBOutlet UIImageView *topBackground;
 	
-	
+	IBOutlet UIImageView *topImage;
 	
 
 }
@@ -70,6 +70,7 @@
 
 @property (nonatomic,retain) Snake_3ViewController *gameNew;
 
+@property (nonatomic,retain) IBOutlet UIImageView *topImage;
 
 
 @end
