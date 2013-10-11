@@ -41,7 +41,7 @@
 @synthesize helpPressed;
 @synthesize checkAchievementsButton;
 @synthesize resumeTimer;
-@synthesize adView;
+
 
 
 
@@ -173,7 +173,7 @@
 	
 	
 	
-
+/*
 	if(IS_IPHONE_5){
         
     adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -184,7 +184,7 @@
 	}
     
 	[self.view addSubview:adView];
-	
+*/
 #endif
 	
 	 [super viewDidLoad];
@@ -327,7 +327,7 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
-	[self.adView ignoreNewAdRequests];
+//	[self.adView ignoreNewAdRequests];
 	
 	
 	delegate.comeFromResume = YES;
@@ -522,6 +522,8 @@
  //	[adView doNotIgnoreAutoRefreshTimer];
     
     if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
+        
         CGRect btNewFrame = newgamebutton.frame;
         btNewFrame.origin.x = NEWGAME_BUTTON_X;
         btNewFrame.origin.y = 20 + NEWGAME_BUTTON_Y;
@@ -539,27 +541,27 @@
         
         CGRect btScoresFrame = scoresbutton.frame;
         btScoresFrame.origin.x = OPTIONGAME_BUTTON_X;
-        btScoresFrame.origin.y = 90 + OPTIONGAME_BUTTON_Y;
+        btScoresFrame.origin.y = 70 + OPTIONGAME_BUTTON_Y;
         scoresbutton.frame = btScoresFrame;
         
         CGRect btStoreFrame = storeButton.frame;
         btStoreFrame.origin.x = OPTIONGAME_BUTTON_X;
-        btStoreFrame.origin.y = 140 + OPTIONGAME_BUTTON_Y;
+        btStoreFrame.origin.y = 120 + OPTIONGAME_BUTTON_Y;
         storeButton.frame = btStoreFrame;
         
         CGRect btHelpFrame = helpPressed.frame;
         btHelpFrame.origin.x = HELP_BUTTON_X;
-        btHelpFrame.origin.y = 50 + HELP_BUTTON_Y;
+        btHelpFrame.origin.y = 60 + HELP_BUTTON_Y;
         helpPressed.frame = btHelpFrame;
         
         CGRect btcheckAchievementsFrame = checkAchievementsButton.frame;
         btcheckAchievementsFrame.origin.x = CHECKACHIEVEMENT_BUTTON_X;
-        btcheckAchievementsFrame.origin.y = 50 + CHECKACHIEVEMENT_BUTTON_Y;
+        btcheckAchievementsFrame.origin.y = 60 + CHECKACHIEVEMENT_BUTTON_Y;
         checkAchievementsButton.frame = btcheckAchievementsFrame;
         
     }
 
- 
+ /*
  adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
  
  
@@ -569,13 +571,13 @@
  
  
  [self.view addSubview:adView];
- 
+ */
  #endif
  
 }
 
  
- 
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	[UIView beginAnimations:@"AdResize" context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -590,7 +592,7 @@
 	
 	[UIView commitAnimations];
 }
-
+*/
 
 -(IBAction) checkAchievements{
     

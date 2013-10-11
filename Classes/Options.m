@@ -151,6 +151,7 @@
 		
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if(IS_IPHONE_5){
+            self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_Options_Classic.png"];
         }
@@ -200,6 +201,7 @@
 		
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_Options_Garden.png"];
         }
@@ -248,6 +250,7 @@
 		}
 		[nameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_Options_Beach.png"];
         }
@@ -299,6 +302,7 @@
 		
 		[nameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_Options_Night.png"];
         }
@@ -402,6 +406,8 @@
 	}
     
     if(IS_IPHONE_5){
+        
+        
         CGRect btNFrame = name.frame;
         btNFrame.origin.x = OPTIONS_NAME_BUTTON_X;
         btNFrame.origin.y = 65 + OPTIONS_NAME_BUTTON_Y;
@@ -884,7 +890,7 @@
 	
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+	/*adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -893,7 +899,7 @@
     else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
 	}
-
+*/
 #endif	
 	
 	fbButton.isLoggedIn = delegate.FBLoggedIn;
@@ -902,7 +908,7 @@
 	
 	
 #ifdef LITE_VERSION
-	[self.view addSubview:adView];
+//	[self.view addSubview:adView];
 #endif
 	
 	[fbButton updateImage];
@@ -990,7 +996,7 @@
 	
 }
 
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	
 	
@@ -1015,7 +1021,7 @@
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
-
+*/
 
 // Action that is called when different themes are pressed
 

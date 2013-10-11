@@ -9,17 +9,16 @@
 //   Description: this is the detailed view of help which has all the content
 
 #import <UIKit/UIKit.h>
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
+
 #import "main_menu.h"
 
 
-@interface helpDetailViewController : UIViewController <AdWhirlDelegate> {
+@interface helpDetailViewController : UIViewController {
 	
 	IBOutlet UITextView *text;
 	
 	
-	AdWhirlView *adView;
+	
 	
 	IBOutlet UIImageView *background;
     IBOutlet UIButton *backButton;

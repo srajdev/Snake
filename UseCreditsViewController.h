@@ -9,12 +9,11 @@
 //  Description: This view is used to use the credits to unlock the different themes and fields
 
 #import <UIKit/UIKit.h>
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
+
 #import <GameKit/GameKit.h>
 
 
-@interface UseCreditsViewController : UIViewController <AdWhirlDelegate> {
+@interface UseCreditsViewController : UIViewController {
 	
 	IBOutlet UILabel *balance;
 	
@@ -38,7 +37,7 @@
     
 	IBOutlet UIImageView *background;
 	
-	AdWhirlView *adView;
+	
 
 }
 

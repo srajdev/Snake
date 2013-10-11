@@ -19,19 +19,18 @@
 #import "HighScores.h"
 #import "main_menu.h"
 
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
+
 #import "FBConnect.h"
 
 
 
-@interface HighScoreViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,AdWhirlDelegate,
+@interface HighScoreViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,
 FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 	
 	IBOutlet UITableView *highScoreTable;
 	NSArray *highScoreData;
 	
-	AdWhirlView *adView;
+	
 	
 	bool isLocal;
 	bool isFriends;

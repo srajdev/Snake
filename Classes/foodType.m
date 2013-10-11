@@ -27,7 +27,35 @@
 -(void)generateRandomFood{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    if(IS_IPHONE_5){
+        do{
+            
+            food_x = ((arc4random() % 30) * 10 ) - 7.5 ;
+            food_y = ((arc4random() % 40) * 10 ) - 7.5 ;
+            
+            
+        }while(food_x > 305 || food_y > 375 || food_x < 15 || food_y < 15);
+        
+        
+        // If the food is at the same position as the bonus food .. re generate the food
+        if (food_x == bonus_food_x && food_y == bonus_food_y) {
+            food_x = ((arc4random() % 30) * 10 ) - 7.5 ;
+            food_y = ((arc4random() % 40) * 10 ) - 7.5 ;
+            
+        }
+        
+        
+        while (delegate.fieldMode == kSquareWall && ((food_x > 130 && food_x < 140) || (food_x > 180 && food_x < 190) )) {
+            do{
+                
+                food_x = ((arc4random() % 30) * 10 ) - 7.5 ;
+                food_y = ((arc4random() % 40) * 10 ) - 7.5 ;
+                
+                
+            }while(food_x > 305 || food_y > 375 || food_x < 15 || food_y < 15);
+        }
+    }
+    else{
 	do{
 		
 		food_x = ((arc4random() % 30) * 10 ) - 7.5 ;
@@ -54,6 +82,7 @@
 			
 		}while(food_x > 305 || food_y > 285 || food_x < 15 || food_y < 15);
 	}
+    }
 }
 
 
@@ -62,6 +91,24 @@
 -(void)generateBonusFood{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if(IS_IPHONE_5) {
+        do{
+            
+            bonus_food_x = ((arc4random() % 30) * 10 ) - 7.5;
+            bonus_food_y = ((arc4random() % 40) * 10 ) - 7.5;
+        }while(bonus_food_x > 305 || bonus_food_y > 375 || bonus_food_x < 15 || bonus_food_y < 15);
+        
+        while (delegate.fieldMode == kSquareWall && ((bonus_food_x > 130 && bonus_food_x < 140) || (bonus_food_x > 180 && bonus_food_x < 190) )) {
+            do{
+                
+                bonus_food_x = ((arc4random() % 30) * 10 ) - 7.5 ;
+                bonus_food_y = ((arc4random() % 40) * 10 ) - 7.5 ;
+                
+                
+            }while(food_x > 305 || food_y > 375 || food_x < 15 || food_y < 15);
+        }
+    }
+    else{
 	do{
 		
 		bonus_food_x = ((arc4random() % 30) * 10 ) - 7.5;
@@ -77,7 +124,7 @@
 			
 		}while(food_x > 305 || food_y > 285 || food_x < 15 || food_y < 15);
 	}
-	
+	}
 	
 	
 }

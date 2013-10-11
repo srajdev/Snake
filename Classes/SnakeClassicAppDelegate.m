@@ -220,7 +220,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err { 
 	
-    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    //NSString *str = [NSString stringWithFormat: @"Error: %@", err];
    
 	
 }
@@ -238,12 +238,12 @@ static NSString* kFBAppId = @"158392174179755";
 - (BOOL) connectedToNetwork
 {
 	// Create zero addy
-	struct sockaddr_in zeroAddress;
+/*	struct sockaddr_in zeroAddress;
 	bzero(&zeroAddress, sizeof(zeroAddress));
 	zeroAddress.sin_len = sizeof(zeroAddress);
 	zeroAddress.sin_family = AF_INET;
 	
-	// Recover reachability flags
+	 Recover reachability flags
 	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
 	SCNetworkReachabilityFlags flags;
 	
@@ -251,14 +251,16 @@ static NSString* kFBAppId = @"158392174179755";
 	CFRelease(defaultRouteReachability);
 	
 	if (!didRetrieveFlags)
-	{
-		return NO;
+	{		return NO;
 	}
-	
+*/
+    	SCNetworkReachabilityFlags flags;
 	BOOL isReachable = flags & kSCNetworkFlagsReachable;
 	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
 	return (isReachable && !needsConnection) ? YES : NO;
-}
+
+
+ }
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -319,12 +321,6 @@ static NSString* kFBAppId = @"158392174179755";
 	
     // Override point for customization after application launch.
 	
-		
-    
-    
-
-	
-	
 	[application setStatusBarHidden:YES];
 		
 	
@@ -348,10 +344,6 @@ static NSString* kFBAppId = @"158392174179755";
 	[file release];
 	
 	self.player = audioPlayer;
-	
-	
-	
-	
 	
 	
 	[audioPlayer release];

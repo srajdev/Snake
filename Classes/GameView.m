@@ -282,34 +282,34 @@ else {  // If there is a paused game
 		else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.headDirection == kNorthDirection && snake.head_y < 10){
 			CGContextAddLineToPoint(context, snake.head_x, snake.head_y + 10);
 		}
-		else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.headDirection == kSouthDirection && snake.head_y > 378){
+		else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.headDirection == kSouthDirection && snake.head_y > 380){
 			CGContextAddLineToPoint(context, snake.head_x, snake.head_y - 10);
 		}
         
-        else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <173 || snake.head_y > 215)) {
+        else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <174 || snake.head_y > 216)) {
             CGContextAddLineToPoint(context, snake.head_x - 10, snake.head_y);
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <173 || snake.head_y > 215)){
+        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <174 || snake.head_y > 216)){
             CGContextAddLineToPoint(context, snake.head_x + 10, snake.head_y );
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddLineToPoint(context, snake.head_x, snake.head_y + 10);
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddLineToPoint(context, snake.head_x, snake.head_y - 10);
         }
         
         
-        else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)) {
+        else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)) {
             CGContextAddLineToPoint(context, snake.head_x - 10, snake.head_y);
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)){
+        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)){
             CGContextAddLineToPoint(context, snake.head_x + 10, snake.head_y );
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddLineToPoint(context, snake.head_x, snake.head_y + 10);
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddLineToPoint(context, snake.head_x, snake.head_y - 10);
         }
         
@@ -390,37 +390,37 @@ else {  // If there is a paused game
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x +7, snake.head_y - 3,9 , 6));
             
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y > 378 && snake.headDirection == kSouthDirection){
+        else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y > 380 && snake.headDirection == kSouthDirection){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y - 16,6 , 9));
             
         }
         else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y < 10 && snake.headDirection == kNorthDirection){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y +7,6 , 9));
         }
-        else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <173 || snake.head_y > 215)) {
+        else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <174 || snake.head_y > 216)) {
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x -16, snake.head_y - 3,9 , 6));
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <173 || snake.head_y > 215)){
+        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <174 || snake.head_y > 216)){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x +7, snake.head_y - 3,9 , 6));
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y +7,6 , 9));
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y - 16,6 , 9));
         }
         
         
-        else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)) {
+        else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)) {
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x -16, snake.head_y - 3,9 , 6));
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)){
+        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x +7, snake.head_y - 3,9 , 6));
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y +7,6 , 9));
         }
-        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+        else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
             CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y - 16,6 , 9));
         }
         
@@ -466,8 +466,6 @@ else {  // If there is a paused game
 	else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 290 || (snake.head_y > 171 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
 		CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y - 16,6 , 9));
 	}
-	
-	
 	else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <129 || snake.head_y > 171)) {
 		CGContextAddEllipseInRect(context, CGRectMake(snake.head_x -16, snake.head_y - 3,9 , 6));
 	}
@@ -480,7 +478,6 @@ else {  // If there is a paused game
 	else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 290 || (snake.head_y > 171 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
 		CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 3, snake.head_y - 16,6 , 9));
 	}
-	
 	else if (snake.headDirection == kEastDirection) {
 		CGContextAddEllipseInRect(context, CGRectMake(snake.head_x - 6, snake.head_y - 3,9 , 6));
 	}
@@ -519,37 +516,35 @@ else {  // If there is a paused game
                 
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y > 378 && snake.headDirection == kSouthDirection){
+            else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y > 380 && snake.headDirection == kSouthDirection){
                 
                 
             }
             else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y < 10 && snake.headDirection == kNorthDirection){
                 
             }
-            else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <173 || snake.head_y > 215)) {
+            else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <174 || snake.head_y > 216)) {
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <173 || snake.head_y > 215)){
+            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <174 || snake.head_y > 216)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
-            
-            
-            else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)) {
+            else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)) {
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)){
+            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
             else if (snake.headDirection == kEastDirection) {
@@ -657,37 +652,37 @@ else {  // If there is a paused game
                 
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y > 378 && snake.headDirection == kSouthDirection){
+            else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y > 380 && snake.headDirection == kSouthDirection){
                 
                 
             }
             else if(delegate.isWallOn && delegate.fieldMode == kFullWall && snake.head_y < 10 && snake.headDirection == kNorthDirection){
                 
             }
-            else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <173 || snake.head_y > 215)) {
+            else if (delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kEastDirection && snake.head_x > 310 && (snake.head_y <174 || snake.head_y > 216)) {
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <173 || snake.head_y > 215)){
+            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kWestDirection && snake.head_x < 10 && (snake.head_y <174 || snake.head_y > 216)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kHoleWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
             
             
-            else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)) {
+            else if (delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kEastDirection && (snake.head_x > 310 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <174 || snake.head_y > 216)) {
                 
             }
             else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kWestDirection && ( snake.head_x < 10 || (snake.head_x > 130 && snake.head_x <140) || (snake.head_x >180 && snake.head_x <190)) && (snake.head_y <173 || snake.head_y > 215)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 173 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall  && snake.headDirection == kNorthDirection && (snake.head_y < 10 || (snake.head_y < 174 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
-            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 378 || (snake.head_y > 215 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
+            else if(delegate.isWallOn && delegate.fieldMode == kSquareWall && snake.headDirection == kSouthDirection && (snake.head_y > 380 || (snake.head_y > 216 && (snake.head_x >310 || snake.head_x<10 || snake.head_x == 135 || snake.head_x == 185))) && (snake.head_x <140 || snake.head_x > 180)){
                 
             }
             else if (snake.headDirection == kEastDirection) {
@@ -895,7 +890,7 @@ else {  // If there is a paused game
             else if(snake.headDirection == kNorthDirection && snake.head_y < 15){
                 return YES;
             }
-            else if(snake.headDirection == kSouthDirection && snake.head_y > 373){
+            else if(snake.headDirection == kSouthDirection && snake.head_y > 375){
                 return YES;
             }
             else {
@@ -926,16 +921,16 @@ else {  // If there is a paused game
 	
 	if (delegate.fieldMode == kHoleWall) {
 		if(IS_IPHONE_5) {
-            if (snake.head_x > 305 && (snake.head_y < 173 || snake.head_y > 215 )) {
+            if (snake.head_x > 305 && (snake.head_y < 174 || snake.head_y > 216 )) {
                 return YES;
             }
-            else if (snake.head_x < 15 && (snake.head_y < 173 || snake.head_y > 215 ) ){
+            else if (snake.head_x < 15 && (snake.head_y < 174 || snake.head_y > 216 ) ){
                 return YES;
             }
-            else if( snake.head_y < 15 && (snake.head_x <139 || snake.head_x > 181)){
+            else if( snake.head_y < 15 && (snake.head_x <140 || snake.head_x > 182)){
                 return YES;
             }
-            else if(snake.head_y > 373 && (snake.head_x <139 || snake.head_x > 181)){
+            else if(snake.head_y > 375 && (snake.head_x <140 || snake.head_x > 182)){
                 return YES;
             }
             else {
@@ -966,22 +961,22 @@ else {  // If there is a paused game
 	if (delegate.fieldMode == kSquareWall) {
 		
         if(IS_IPHONE_5) {
-            if (snake.head_x > 305 && (snake.head_y < 173 || snake.head_y > 215 )) {
+            if (snake.head_x > 305 && (snake.head_y < 174 || snake.head_y > 216 )) {
                 return YES;
             }
-            else if (snake.head_x < 15 && (snake.head_y < 173 || snake.head_y > 215 ) ){
+            else if (snake.head_x < 15 && (snake.head_y < 174 || snake.head_y > 216 ) ){
                 return YES;
             }
             else if( snake.head_y < 15 && (snake.head_x <139 || snake.head_x > 181)){
                 return YES;
             }
-            else if(snake.head_y > 373 && (snake.head_x <139 || snake.head_x > 181)){
+            else if(snake.head_y > 375 && (snake.head_x <139 || snake.head_x > 181)){
                 return YES;
             }
-            else if(snake.head_x > 130 && snake.head_x < 140 && (snake.head_y < 173 || snake.head_y > 215)){
+            else if(snake.head_x > 130 && snake.head_x < 140 && (snake.head_y < 174 || snake.head_y > 216)){
                 return YES;
             }
-            else if(snake.head_x > 180 && snake.head_x < 190 && (snake.head_y < 173 || snake.head_y > 215)){
+            else if(snake.head_x > 180 && snake.head_x < 190 && (snake.head_y < 174 || snake.head_y > 216)){
                 return YES;
             }
             else {
@@ -1348,9 +1343,6 @@ else {  // If there is a paused game
 					AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 				}
 				
-				
-				
-				
 				[food generateRandomFood];
 				CGPoint food_value =  CGPointMake(food.food_x + 2.5, food.food_y + 2.5);
 				while ([self onSnake:food_value check_food:YES]) {
@@ -1368,15 +1360,12 @@ else {  // If there is a paused game
 			{
 				[snake moveSnakeSouth];
 				
-				
 				if (delegate.isSoundOn) {
 					[delegate bonusPlay];
 				}
 				if (delegate.isVibrateOn) {
 					AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 				}
-				
-				
 				
 				food.bonus_food_x = -10;
 				food.bonus_food_y = -10;
@@ -1693,8 +1682,6 @@ else{
 				[snake moveSnakeTimerWest];
 				
 				foodEaten ++ ;
-				
-				
 				
 				[self setNeedsDisplay];
 				

@@ -68,6 +68,8 @@
     }
 	
 	if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
+        
         CGRect btgameplayFrame = gameplayButton.frame;
         btgameplayFrame.origin.x = HELPPAGEVIEW_BUTTON_X;
         btgameplayFrame.origin.y = 40 + GAMEPLAY_BUTTON_Y;
@@ -131,7 +133,7 @@
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	
 	if(IS_IPHONE_5){
         
@@ -143,7 +145,7 @@
 	}
 	
 	[self.view addSubview:adView];
-	
+*/
 #endif
 	
 
@@ -166,16 +168,10 @@
 	return self;
 }
 
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	
-	
-	
-	
 	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	
-	
 	
 	[UIView beginAnimations:@"AdResize" context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -185,13 +181,11 @@
 	newFrame.size.width = adSize.width;
 	newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2; // center
 	
-	
-	
 	adWhirlView.frame = newFrame;
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
-
+*/
 
 
 -(IBAction) buttonPressed : (id)sender{

@@ -9,12 +9,11 @@
 //   Description: this view is to unlock the theme or a field
 
 #import <UIKit/UIKit.h>
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 
 
 
-@interface UnlockViewController : UIViewController <UIAlertViewDelegate, AdWhirlDelegate> {
+
+@interface UnlockViewController : UIViewController <UIAlertViewDelegate> {
 	
 	IBOutlet UIImageView *background;
 	IBOutlet UIImageView *theme;
@@ -24,7 +23,7 @@
 	
 	BOOL canPurchase;
 	
-	AdWhirlView *adView;
+	
 
 	IBOutlet UIButton *backButton;
 

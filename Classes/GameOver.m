@@ -21,7 +21,6 @@
 #import "HighScoreRecord.h"
 #import "Difficulty.h"
 #import "FlurryAnalytics.h"
-#import "AdWhirlAdapterGreystripe.h"
 #import "GSAdEngine.h"
 #import "GKAchievementHandler.h"
 #import "FlurryClips.h"
@@ -82,7 +81,7 @@ static NSString* kFBAppId = @"158392174179755";
 -(void) viewDidLoad{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+    /*
     if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -122,7 +121,7 @@ static NSString* kFBAppId = @"158392174179755";
             background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
-    
+    */
     if(IS_IPHONE_5){
         
         [gameOver setFrame:CGRectMake(69, 55, 182, 42)];
@@ -191,12 +190,12 @@ static NSString* kFBAppId = @"158392174179755";
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
+/*
 	if (delegate.mainmenu.adView != NULL) {
 		[delegate.mainmenu.adView doNotIgnoreNewAdRequests];
 		[delegate.mainmenu.adView requestFreshAd];
 	}
-	
+*/
 	
 	
 	
@@ -222,7 +221,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	score.textColor = [UIColor whiteColor];
 	highestScore.textColor = [UIColor whiteColor];
-	/*
+	
 	if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -262,56 +261,7 @@ static NSString* kFBAppId = @"158392174179755";
 		background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
-    
-    if(IS_IPHONE_5){
-        
-        [gameOver setFrame:CGRectMake(69, 55, 182, 42)];
-        gameOver.image = [UIImage imageNamed:@"_0000_game-over!.png"];
-        
-        CGRect btScoreFrame = score.frame;
-        btScoreFrame.origin.x = ENDGAME_BUTTON_X;
-        btScoreFrame.origin.y = ENDGAME_BUTTON_Y;
-        score.frame = btScoreFrame;
-       
-        CGRect bthighScoreFrame = highestScore.frame;
-        bthighScoreFrame.origin.x = ENDGAME_BUTTON_X;
-        bthighScoreFrame.origin.y = 40 + ENDGAME_BUTTON_Y;
-        highestScore.frame = bthighScoreFrame;
-        
-        CGRect btNameFrame = name.frame;
-        btNameFrame.origin.x = ENDGAME_BUTTON_X;
-        btNameFrame.origin.y = 67 + ENDGAME_BUTTON_Y;
-        name.frame = btNameFrame;
-        
-        CGRect btfbFrame = FBButton.frame;
-        btfbFrame.origin.x = 102;
-        btfbFrame.origin.y = 170 + ENDGAME_BUTTON_Y;
-        FBButton.frame = btfbFrame;
-        
-        CGRect bttwFrame = TwtButton.frame;
-        bttwFrame.origin.x = 175;
-        bttwFrame.origin.y = 170 + ENDGAME_BUTTON_Y;
-        TwtButton.frame = bttwFrame;
-        
-        CGRect btplayFrame = playAgain.frame;
-        btplayFrame.origin.x = 79;
-        btplayFrame.origin.y = 210 + ENDGAME_BUTTON_Y;
-        playAgain.frame = btplayFrame;
-    
-        CGRect btmenuFrame = mainMenu.frame;
-        btmenuFrame.origin.x = 102;
-        btmenuFrame.origin.y = 260 + ENDGAME_BUTTON_Y;
-        mainMenu.frame = btmenuFrame;
-        
-        CGRect btrateFrame = rateAppButton.frame;
-        btrateFrame.origin.x = 242;
-        btrateFrame.origin.y = 50 + 381;
-        rateAppButton.frame = btrateFrame;
-     
-        
-    }
- */
-	[[UIApplication sharedApplication] setStatusBarHidden: YES];
+    	[[UIApplication sharedApplication] setStatusBarHidden: YES];
 	
 	if (delegate.FBLoggedIn == YES) {
 		
@@ -381,24 +331,25 @@ static NSString* kFBAppId = @"158392174179755";
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        UadViewframe = CGRectMake(0.0, 520.0, 320.0, 50.0);
         
     }
     else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
 	}
-#endif
-	
+*/
+ #endif
+
 	[super viewDidLoad];
 	
 #ifdef LITE_VERSION
     // Code specific to lite version
 
 	
-	[self.view addSubview:adView];
+	//[self.view addSubview:adView];
 #endif
 	
 	if (delegate.GCTest) {
@@ -419,9 +370,6 @@ static NSString* kFBAppId = @"158392174179755";
 		
 	}
 	}
-
-	
-	
 
 	
 }
@@ -463,7 +411,7 @@ static NSString* kFBAppId = @"158392174179755";
 //	[adView ignoreAutoRefreshTimer];
 	
 }
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	[UIView beginAnimations:@"AdResize" context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -476,7 +424,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	[UIView commitAnimations];
 } 
-
+*/
 
 // Action that is called to post to facebook
 

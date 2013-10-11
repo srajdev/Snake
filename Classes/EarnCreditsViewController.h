@@ -12,16 +12,15 @@
 #import <UIKit/UIKit.h>
 #import "MyAdView.h"
 
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 
 
 
-@interface EarnCreditsViewController : UIViewController <AdWhirlDelegate, UIAlertViewDelegate>{
+
+@interface EarnCreditsViewController : UIViewController <UIAlertViewDelegate>{
 	
 	MyAdView *myAdView;
 	
-	AdWhirlView *adView;
+	
 	
 	
 
