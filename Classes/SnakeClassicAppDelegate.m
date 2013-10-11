@@ -220,7 +220,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err { 
 	
-    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    //NSString *str = [NSString stringWithFormat: @"Error: %@", err];
    
 	
 }
@@ -321,12 +321,6 @@ static NSString* kFBAppId = @"158392174179755";
 	
     // Override point for customization after application launch.
 	
-		
-    
-    
-
-	
-	
 	[application setStatusBarHidden:YES];
 		
 	
@@ -350,10 +344,6 @@ static NSString* kFBAppId = @"158392174179755";
 	[file release];
 	
 	self.player = audioPlayer;
-	
-	
-	
-	
 	
 	
 	[audioPlayer release];

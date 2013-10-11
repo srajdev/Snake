@@ -81,7 +81,7 @@ static NSString* kFBAppId = @"158392174179755";
 -(void) viewDidLoad{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+    /*
     if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -121,7 +121,7 @@ static NSString* kFBAppId = @"158392174179755";
             background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
-    
+    */
     if(IS_IPHONE_5){
         
         [gameOver setFrame:CGRectMake(69, 55, 182, 42)];
@@ -221,7 +221,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	score.textColor = [UIColor whiteColor];
 	highestScore.textColor = [UIColor whiteColor];
-	/*
+	
 	if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -261,56 +261,7 @@ static NSString* kFBAppId = @"158392174179755";
 		background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
-    
-    if(IS_IPHONE_5){
-        
-        [gameOver setFrame:CGRectMake(69, 55, 182, 42)];
-        gameOver.image = [UIImage imageNamed:@"_0000_game-over!.png"];
-        
-        CGRect btScoreFrame = score.frame;
-        btScoreFrame.origin.x = ENDGAME_BUTTON_X;
-        btScoreFrame.origin.y = ENDGAME_BUTTON_Y;
-        score.frame = btScoreFrame;
-       
-        CGRect bthighScoreFrame = highestScore.frame;
-        bthighScoreFrame.origin.x = ENDGAME_BUTTON_X;
-        bthighScoreFrame.origin.y = 40 + ENDGAME_BUTTON_Y;
-        highestScore.frame = bthighScoreFrame;
-        
-        CGRect btNameFrame = name.frame;
-        btNameFrame.origin.x = ENDGAME_BUTTON_X;
-        btNameFrame.origin.y = 67 + ENDGAME_BUTTON_Y;
-        name.frame = btNameFrame;
-        
-        CGRect btfbFrame = FBButton.frame;
-        btfbFrame.origin.x = 102;
-        btfbFrame.origin.y = 170 + ENDGAME_BUTTON_Y;
-        FBButton.frame = btfbFrame;
-        
-        CGRect bttwFrame = TwtButton.frame;
-        bttwFrame.origin.x = 175;
-        bttwFrame.origin.y = 170 + ENDGAME_BUTTON_Y;
-        TwtButton.frame = bttwFrame;
-        
-        CGRect btplayFrame = playAgain.frame;
-        btplayFrame.origin.x = 79;
-        btplayFrame.origin.y = 210 + ENDGAME_BUTTON_Y;
-        playAgain.frame = btplayFrame;
-    
-        CGRect btmenuFrame = mainMenu.frame;
-        btmenuFrame.origin.x = 102;
-        btmenuFrame.origin.y = 260 + ENDGAME_BUTTON_Y;
-        mainMenu.frame = btmenuFrame;
-        
-        CGRect btrateFrame = rateAppButton.frame;
-        btrateFrame.origin.x = 242;
-        btrateFrame.origin.y = 50 + 381;
-        rateAppButton.frame = btrateFrame;
-     
-        
-    }
- */
-	[[UIApplication sharedApplication] setStatusBarHidden: YES];
+    	[[UIApplication sharedApplication] setStatusBarHidden: YES];
 	
 	if (delegate.FBLoggedIn == YES) {
 		
@@ -419,9 +370,6 @@ static NSString* kFBAppId = @"158392174179755";
 		
 	}
 	}
-
-	
-	
 
 	
 }

@@ -409,7 +409,7 @@
 	
 	
 	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	    
 	localButton.hidden=YES;
@@ -589,10 +589,7 @@
  * on thee format of the API response.
  */
 - (void)request:(FBRequest*)request didLoad:(id)result {
-	
 
-	
-	
 
 	if (saveGame == YES) {
 		
@@ -611,16 +608,10 @@
 	else {
 		friendsInfo = (NSMutableArray *)[result objectForKey:@"data"];
 		
-		
-		
 		[self loadFriendsHighScore];
 	}
 
-	
-	
-	
-	
-	
+
 	
 };
 
@@ -661,18 +652,12 @@
 
 -(void)submitScore{
 
-	
-	
-	
-	
 	int i = 0;
 	while (i < [highScoreData count] && i < 10) {
 		HighScoreRecord *record = (HighScoreRecord *)[highScoreData objectAtIndex:i];
 		
 		int theScore = [record.totalScore intValue];
-		
-
-		
+	
 		[self submitScore:theScore theName:record.name theMode:record.mode];
 		
 		i++;
@@ -685,11 +670,6 @@
 	if (isGlobal) {
 		[self loadGlobalHighScores];
 	}
-	
-	
-	
-	
-	
 	
 }
 
