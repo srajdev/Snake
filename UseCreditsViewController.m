@@ -34,6 +34,7 @@
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_use_credits_classic.png"];
         }
@@ -45,6 +46,7 @@
 	}
 	else if(delegate.theme == kTheme1){
 		if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_use_credits_garden.png"];
         }
@@ -56,6 +58,7 @@
 	}
 	else if(delegate.theme == kTheme2){
 		if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_use_credits_beach.png"];
         }
@@ -67,6 +70,7 @@
 	else if(delegate.theme == kTheme3){
 		
 		if(IS_IPHONE_5){
+             self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_use_credits_night.png"];
         }
@@ -78,6 +82,7 @@
     
     
     if(IS_IPHONE_5) {
+       
         
         CGRect btbeachFrame = beach.frame;
         btbeachFrame.origin.x = USE_BEACH_BUTTON_X;
@@ -267,7 +272,7 @@
 	//[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -277,12 +282,8 @@
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
 	}
 	
-	
-	
-	
-	
 	[self.view addSubview:adView];
-
+*/
 	
 	
 }
@@ -299,16 +300,10 @@
 	
 }
 
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	
-	
-	
-	
 	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	
-	
 	
 	[UIView beginAnimations:@"AdResize" context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -324,6 +319,7 @@
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
+*/
 
 // Function to get AdWhirl key
 -(NSString *)adWhirlApplicationKey{

@@ -333,14 +333,7 @@
 -(void)moveSnakeTimerNorth{
 	
 	CGPoint old_head = CGPointMake(head_x, head_y);
-	/*if(IS_IPHONE_5){
-        head_y = 383.0;
-    }
-    else{
-        head_y = 295.0;
-    }
-	CGPoint old_head_2 = CGPointMake(head_x, head_y);
-	*/
+	
 	head_y = head_y - SNAKE_INCREMENT;
 	headDirection = kNorthDirection;
     

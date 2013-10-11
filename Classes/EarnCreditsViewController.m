@@ -74,6 +74,7 @@
         balance.textColor = [UIColor whiteColor];
 	}
 	if(IS_IPHONE_5){
+        
         CGRect btnameFrame = name.frame;
         btnameFrame.origin.x = EARN_NAME_BUTTON_X;
         btnameFrame.origin.y = 20 + EARN_NAME_BUTTON_Y;
@@ -123,7 +124,7 @@
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -134,7 +135,7 @@
 	}
 	
 	[self.view addSubview:adView];
-	
+*/
 }
 
 
@@ -219,11 +220,8 @@
 	return self;
 }
 
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
-	
-	
-	
 	
 	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -238,13 +236,11 @@
 	newFrame.size.width = adSize.width;
 	newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2; // center
 	
-	
-	
 	adWhirlView.frame = newFrame;
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
-
+*/
 
 // Takes the user to download the suggested app
 - (IBAction) downloadPressed{

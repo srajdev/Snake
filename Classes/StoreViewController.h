@@ -10,18 +10,16 @@
 //				 or download the unlocked version
 
 #import <UIKit/UIKit.h>
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 
 
-@interface StoreViewController : UIViewController <UIAlertViewDelegate , AdWhirlDelegate> {
+@interface StoreViewController : UIViewController <UIAlertViewDelegate> {
 	
 	
 	IBOutlet UIImageView *background;
 	
 	IBOutlet UILabel *balance;
 	
-	AdWhirlView *adView;
+	
 	
 	BOOL goToEarn;
     

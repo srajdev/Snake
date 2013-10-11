@@ -13,15 +13,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 
-
-@interface GameModeViewController : UIViewController <AdWhirlDelegate> {
+@interface GameModeViewController : UIViewController {
 	
 	
 	IBOutlet UIImageView *background;
-	AdWhirlView *adView;
+	
 	IBOutlet UIButton *classicButton;
     IBOutlet UIButton *extremeButton;
     IBOutlet UIButton *backButton;

@@ -10,13 +10,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 
 
-@interface HelpPageViewController : UIViewController <AdWhirlDelegate> {
+
+@interface HelpPageViewController : UIViewController {
 	
-	AdWhirlView *adView;
 	
 	IBOutlet UIImageView *background;
 	

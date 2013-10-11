@@ -82,6 +82,8 @@
      }
     
     if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
+        
         CGRect btearnFrame = earnButton.frame;
         btearnFrame.origin.x = STORE_EARN_BUTTON_X;
         btearnFrame.origin.y = 40 + STORE_EARN_BUTTON_Y;
@@ -201,7 +203,7 @@
 	//[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -217,10 +219,10 @@
 	
 	
 	[self.view addSubview:adView];
-	
+*/	
 }
 
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	
 	
@@ -245,6 +247,8 @@
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
+ */
+ 
 // Function to get AdWhirl key
 -(NSString *)adWhirlApplicationKey{
 	

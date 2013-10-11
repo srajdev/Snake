@@ -64,6 +64,7 @@
     }
     
 	if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
         
         CGRect frame = text.frame;
         frame.origin.y = 50 + 104;
@@ -105,7 +106,7 @@
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -116,6 +117,7 @@
 	}
 	
 	[self.view addSubview:adView];
+ */
 #endif
 }
 
@@ -134,11 +136,8 @@
 	return self;
 }
 
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
-	
-	
-	
 	
 	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -159,7 +158,7 @@
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
-
+*/
 
 -(IBAction) backPressed :(id)sender{
 	

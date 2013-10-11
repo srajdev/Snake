@@ -217,12 +217,12 @@
 	[bonusTimer invalidate];
 		
 		[displayLink invalidate];
-		
+/*
 		if (delegate.mainmenu.adView != NULL) {
 			[delegate.mainmenu.adView doNotIgnoreNewAdRequests];
 			[delegate.mainmenu.adView requestFreshAd];
 		}
-		
+*/
 		
 	
 	[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:NO display:displayLink curlup:NO curldown:YES];
@@ -359,11 +359,7 @@
 	 
 	 delegate.delegateScore = game.score;
 	
-
-	
 	[delegate switchView:self.view toview:delegate.gameOverMenu.view delay:YES remove:YES display:nil curlup:NO curldown:YES];
-	
-	
 	
 	[pool release];
 	
@@ -472,13 +468,61 @@ if (delegate.gameStatus != kGamePause) {
 		time_label.center = CGPointMake(0, 10);
 	}
 	
+	if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"gameplay_classic.png"];
+        }else{
+            background.image = [UIImage imageNamed:@"_0000_gameplay_classic.png"];
+        }
+	}
+	else if (delegate.theme == kTheme1){
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"gameplay_garden.png"];
+        }else{
+            
+            background.image = [UIImage imageNamed:@"_0003_gameplay_theme1.png"];
+        }
+	}
+	else if (delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"gameplay_beach.png"];
+        }else{
+            background.image = [UIImage imageNamed:@"_0001_gameplay_theme2.png"];
+        }
+	}
+	else if (delegate.theme == kTheme3){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"gameplay_night.png"];
+        }else{
+            
+            background.image = [UIImage imageNamed:@"_0002_gameplay_theme3.png"];
+        }
+	}
+    
+    if(IS_IPHONE_5){
+        UIColor *backgroundImage =[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gameplay_background.png"]];
+        game.backgroundColor = backgroundImage;
+        [backgroundImage release];
+    }
+    else{
+        UIColor *backgroundImage =[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"snake check.png"]];
+        game.backgroundColor = backgroundImage;
+        [backgroundImage release];
+	}
+    
 	if(IS_IPHONE_5){
+        
+        self.view.frame = CGRectMake(0, 0, 320, 568);
         
         [snakeLogo setFrame:CGRectMake(114, 460, 92, 34)];
         snakeLogo.image = [UIImage imageNamed:@"_0000_snake_classic.png"];
         
         CGRect frame = game.frame;
-        frame.size.height = 388;
+        frame.size.height = 390;
         game.frame = frame;
         
         CGRect btleftFrame = leftButton.frame;
@@ -499,7 +543,7 @@ if (delegate.gameStatus != kGamePause) {
         CGRect btbottomFrame = bottomButton.frame;
         btbottomFrame.size.height = 102;
         btbottomFrame.origin.x = 112;
-        btbottomFrame.origin.y = 60 + 397;
+        btbottomFrame.origin.y = 88 + 397;
         bottomButton.frame = btbottomFrame;
         NSLog(@"frame of button %f",btbottomFrame.origin.y);
         
@@ -515,44 +559,7 @@ if (delegate.gameStatus != kGamePause) {
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	if (delegate.theme == kClassicTheme) {
-        if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-        background.image = [UIImage imageNamed:@"gameplay_classic.png"];
-        }else{
-		background.image = [UIImage imageNamed:@"_0000_gameplay_classic.png"];
-        }
-	}
-	else if (delegate.theme == kTheme1){
-        if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"gameplay_garden.png"];
-        }else{
-
-		background.image = [UIImage imageNamed:@"_0003_gameplay_theme1.png"];
-        }
-	}
-	else if (delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"gameplay_beach.png"];
-        }else{
-		background.image = [UIImage imageNamed:@"_0001_gameplay_theme2.png"];
-        }
-	}
-	else if (delegate.theme == kTheme3){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"gameplay_night.png"];
-        }else{
-
-		background.image = [UIImage imageNamed:@"_0002_gameplay_theme3.png"];
-        }
-	}
-
-	
-	comeFromPause = NO;
+		comeFromPause = NO;
 		[self startGame];
 	
 	
@@ -577,7 +584,7 @@ if (delegate.gameStatus != kGamePause) {
 
 -(void) startGame{
 	
-	if(IS_IPHONE_5){
+	/*if(IS_IPHONE_5){
     UIColor *backgroundImage =[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gameplay_background.png"]];
         game.backgroundColor = backgroundImage;
         [backgroundImage release];
@@ -587,7 +594,7 @@ if (delegate.gameStatus != kGamePause) {
         game.backgroundColor = backgroundImage;
         [backgroundImage release];
 	}
-
+*/
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -830,11 +837,8 @@ if (delegate.gameStatus != kGamePause) {
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	
 	if ((delegate.comeFromResume == NO && delegate.gameStatus == kGameActive) || delegate.inTransition == YES) {
 		delegate.time = 45;
-		
 		
 	}
 	else {
@@ -866,9 +870,7 @@ if (delegate.gameStatus != kGamePause) {
 	
 	delegate.inTransition = NO;
 	
-	
 	displayLink = nil;
-	
 	
 	displayLink = [NSClassFromString(@"CADisplayLink") displayLinkWithTarget:self selector:@selector(moveSnake:)];
 	
@@ -1003,7 +1005,6 @@ if (delegate.gameStatus != kGamePause) {
 	
 		[delegate switchView:self.view toview:delegate.squareWallGame.view delay:YES remove:YES display:nil curlup:NO curldown:NO];
 	
-		
 	}
 	
 }
@@ -1015,7 +1016,6 @@ if (delegate.gameStatus != kGamePause) {
 	
 
 	[self gameOver:nil];
-	
 	
 	
 }
@@ -1081,9 +1081,9 @@ if (delegate.gameStatus != kGamePause) {
                 
                 CGContextAddLineToPoint(context, 315, 5);
                 
-                CGContextAddLineToPoint(context, 315, 383);
+                CGContextAddLineToPoint(context, 315, 385);
                 
-                CGContextAddLineToPoint(context, 5, 383);
+                CGContextAddLineToPoint(context, 5, 385);
                 
                 CGContextAddLineToPoint(context, 5, 5);  
                 
@@ -1113,14 +1113,14 @@ if (delegate.gameStatus != kGamePause) {
                 CGContextAddLineToPoint(context, 139, 5);
                 CGContextMoveToPoint(context, 181,5);
                 CGContextAddLineToPoint(context, 315, 5);
-                CGContextAddLineToPoint(context, 315, 129);
-                CGContextMoveToPoint(context, 315,171);
-                CGContextAddLineToPoint(context, 315, 295);
-                CGContextAddLineToPoint(context, 181, 295);
+                CGContextAddLineToPoint(context, 315, 174);
+                CGContextMoveToPoint(context, 315,216);
+                CGContextAddLineToPoint(context, 315, 385);
+                CGContextAddLineToPoint(context, 181, 385);
                 CGContextMoveToPoint(context, 139,295);
-                CGContextAddLineToPoint(context, 5, 295);
-                CGContextAddLineToPoint(context, 5, 171);
-                CGContextMoveToPoint(context, 5,129);
+                CGContextAddLineToPoint(context, 5, 385);
+                CGContextAddLineToPoint(context, 5, 216);
+                CGContextMoveToPoint(context, 5,174);
                 CGContextAddLineToPoint(context, 5, 5);
                 CGContextStrokePath(context);
                 
@@ -1149,24 +1149,24 @@ if (delegate.gameStatus != kGamePause) {
             if(IS_IPHONE_5){
                 CGContextMoveToPoint(context, 0,5);
                 CGContextAddLineToPoint(context, 135, 5);
-                CGContextAddLineToPoint(context, 135, 173);
+                CGContextAddLineToPoint(context, 135, 174);
                 
-                CGContextMoveToPoint(context, 185,173);
+                CGContextMoveToPoint(context, 185,174);
                 CGContextAddLineToPoint(context, 185, 5);
                 CGContextAddLineToPoint(context, 315, 5);
-                CGContextAddLineToPoint(context, 315, 173);
+                CGContextAddLineToPoint(context, 315, 174);
                 
-                CGContextMoveToPoint(context, 315,215);
-                CGContextAddLineToPoint(context, 315, 383);
-                CGContextAddLineToPoint(context, 185, 383);
-                CGContextAddLineToPoint(context, 185, 215);
+                CGContextMoveToPoint(context, 315,216);
+                CGContextAddLineToPoint(context, 315, 385);
+                CGContextAddLineToPoint(context, 185, 385);
+                CGContextAddLineToPoint(context, 185, 216);
                 
-                CGContextMoveToPoint(context, 135,215);
-                CGContextAddLineToPoint(context, 135, 383);
-                CGContextAddLineToPoint(context, 5, 383);
-                CGContextAddLineToPoint(context, 5, 215);
+                CGContextMoveToPoint(context, 135,216);
+                CGContextAddLineToPoint(context, 135, 385);
+                CGContextAddLineToPoint(context, 5, 385);
+                CGContextAddLineToPoint(context, 5, 216);
                 
-                CGContextMoveToPoint(context, 5,173);
+                CGContextMoveToPoint(context, 5,174);
                 CGContextAddLineToPoint(context, 5, 5);
                 
                 CGContextStrokePath(context);

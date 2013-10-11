@@ -74,7 +74,7 @@
 @class GlobalViewController;
 
 @interface SnakeClassicAppDelegate : NSObject <UIApplicationDelegate, AVAudioPlayerDelegate, FBSessionDelegate,
-UserInfoLoadDelegate, FBDialogDelegate, AdWhirlDelegate, FlurryAdDelegate> {
+UserInfoLoadDelegate, FBDialogDelegate, FlurryAdDelegate> {
     
     UIWindow *window;
 	
@@ -108,21 +108,11 @@ UserInfoLoadDelegate, FBDialogDelegate, AdWhirlDelegate, FlurryAdDelegate> {
 	
 	AVAudioPlayer *bonusfoodplayer;
 	
-	
-
-	
-	
-	
-	
-	
-	
 	int foodNumber;
 	int bonusFoodNumber;
 	
 	int extremeSuccess;
 	int missedInExtreme;
-	
-	
 	
 	
 	float snakeHeadX;

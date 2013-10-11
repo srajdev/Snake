@@ -21,7 +21,6 @@
 #import "HighScoreRecord.h"
 #import "Difficulty.h"
 #import "FlurryAnalytics.h"
-#import "AdWhirlAdapterGreystripe.h"
 #import "GSAdEngine.h"
 #import "GKAchievementHandler.h"
 #import "FlurryClips.h"
@@ -191,12 +190,12 @@ static NSString* kFBAppId = @"158392174179755";
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
+/*
 	if (delegate.mainmenu.adView != NULL) {
 		[delegate.mainmenu.adView doNotIgnoreNewAdRequests];
 		[delegate.mainmenu.adView requestFreshAd];
 	}
-	
+*/
 	
 	
 	
@@ -381,24 +380,25 @@ static NSString* kFBAppId = @"158392174179755";
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
+        UadViewframe = CGRectMake(0.0, 520.0, 320.0, 50.0);
         
     }
     else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
 	}
-#endif
-	
+*/
+ #endif
+
 	[super viewDidLoad];
 	
 #ifdef LITE_VERSION
     // Code specific to lite version
 
 	
-	[self.view addSubview:adView];
+	//[self.view addSubview:adView];
 #endif
 	
 	if (delegate.GCTest) {
@@ -463,7 +463,7 @@ static NSString* kFBAppId = @"158392174179755";
 //	[adView ignoreAutoRefreshTimer];
 	
 }
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	[UIView beginAnimations:@"AdResize" context:nil];
 	[UIView setAnimationDuration:0.5];
@@ -476,7 +476,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	[UIView commitAnimations];
 } 
-
+*/
 
 // Action that is called to post to facebook
 

@@ -123,6 +123,7 @@
     }
     
 	if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
         
         CGRect frame = highScoreTable.frame;
         frame.size.height = 60 + 291;
@@ -435,6 +436,7 @@
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
+    /*
 	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -442,6 +444,7 @@
     else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
 	}
+    */
 #endif
 	
     [super viewDidLoad];
@@ -450,7 +453,7 @@
     // Code specific to lite version
 
 	
-	[self.view addSubview:adView];
+	//[self.view addSubview:adView];
 	
 #endif
 }
@@ -637,7 +640,7 @@
 };
 
 
-
+/*
 // Function to make sure size of banner is the same size of Ad
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	[UIView beginAnimations:@"AdResize" context:nil];
@@ -647,11 +650,11 @@
 	newFrame.size.height = adSize.height; // fit the ad
 	newFrame.size.width = adSize.width;
 	newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2; // center
-	adWhirlView.frame = newFrame;
+//	adWhirlView.frame = newFrame;
 	
 	[UIView commitAnimations];
 }
-
+*/
 
 
 

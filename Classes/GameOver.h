@@ -17,8 +17,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 #import "FBConnect.h"
 #import "SA_OAuthTwitterController.h"
 #import "GreystripeDelegate.h"
@@ -33,7 +31,7 @@
 @class HighScoreRecord;
 
 
-@interface GameOver : UIViewController <UITextFieldDelegate, AdWhirlDelegate,
+@interface GameOver : UIViewController <UITextFieldDelegate,
 FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDelegate, GreystripeDelegate> {
 	
 	IBOutlet UIButton *name;
@@ -53,7 +51,6 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 	
     IBOutlet UIImageView *gameOver;
     
-	AdWhirlView *adView;
 	
 	
 	BOOL isTwitterLogged;

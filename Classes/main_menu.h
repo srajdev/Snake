@@ -19,8 +19,6 @@
 
 
 #import <UIKit/UIKit.h>
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 #import <GameKit/GameKit.h>
 
 
@@ -32,7 +30,7 @@
 
 
 
-@interface main_menu : UIViewController <AdWhirlDelegate,UIAlertViewDelegate, GKAchievementViewControllerDelegate>{
+@interface main_menu : UIViewController <UIAlertViewDelegate, GKAchievementViewControllerDelegate>{
 	
 	
 	
@@ -44,7 +42,7 @@
 	
 	NSTimer *resumeTimer;
 	
-	AdWhirlView *adView;
+	
 	
 	IBOutlet UIImageView *background;
 	
@@ -65,7 +63,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *storeButton;
 @property (nonatomic,retain) IBOutlet UIButton *helpPressed;
 @property (nonatomic,retain) IBOutlet UIButton *checkAchievementsButton;
-@property (nonatomic,retain) AdWhirlView *adView;
+
 
 
 

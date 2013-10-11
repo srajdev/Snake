@@ -17,8 +17,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
 #import "FBConnect.h"
 #import "FBLoginButton.h"
 
@@ -27,7 +25,7 @@
 
 
 
-@interface Options : UIViewController <UITextFieldDelegate, AdWhirlDelegate, FBSessionDelegate>{
+@interface Options : UIViewController <UITextFieldDelegate, FBSessionDelegate>{
 	
 	IBOutlet UITextField *name;
 	IBOutlet UIButton *orange;
@@ -58,8 +56,6 @@
 	IBOutlet UIButton *soundOff;
 	IBOutlet UIButton *soundOnSelected;
 	IBOutlet UIButton *soundOffSelected;
-	
-	AdWhirlView *adView;
 	
 	
 	IBOutlet FBLoginButton *fbButton;

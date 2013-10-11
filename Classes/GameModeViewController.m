@@ -68,6 +68,8 @@
     }
 	
     if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
+        
         CGRect btclassicFrame = classicButton.frame;
         btclassicFrame.origin.x = GAMEMODE_CLASSIC_BUTTON_X;
         btclassicFrame.origin.y = 30 + GAMEMODE_BUTTON_Y;
@@ -107,7 +109,7 @@
 	//	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	adView = delegate.mainmenu.adView;
+/*	adView = delegate.mainmenu.adView;
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -116,6 +118,7 @@
     else{
 	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
 	}
+ */
 #endif
 	
    
@@ -124,7 +127,7 @@
     // Code specific to lite version
 	
 	
-	[self.view addSubview:adView];
+	//[self.view addSubview:adView];
 	
 #endif
 	
@@ -165,7 +168,7 @@
 	delegate.inTransition = NO;
 	
 	delegate.isWallOn = NO;
-	[delegate.mainmenu.adView ignoreNewAdRequests];
+	//[delegate.mainmenu.adView ignoreNewAdRequests];
 	
 	[delegate switchView:self.view toview:delegate.fieldModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
 	
@@ -175,7 +178,7 @@
 	
 	
 }
-
+/*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	
 	
@@ -200,6 +203,7 @@
 	// ... adjust surrounding views here ...
 	[UIView commitAnimations];
 }
+ */
 // Action that is called when the user wants to play the extreme mode
 
 - (IBAction) ExtremePressed : (id) sender{
@@ -209,7 +213,7 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
-	[delegate.mainmenu.adView ignoreNewAdRequests];
+	//[delegate.mainmenu.adView ignoreNewAdRequests];
 	
 	[delegate.activeGame.displayLink invalidate];
 	delegate.activeGame = nil;
