@@ -20,6 +20,10 @@
 		2C9A7A5118096FB400BD4FB1 /* use_credits_garden.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A4A18096FB400BD4FB1 /* use_credits_garden.png */; };
 		2C9A7A5218096FB400BD4FB1 /* use_credits_night.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A4B18096FB400BD4FB1 /* use_credits_night.png */; };
 		2C9A7A5318096FB400BD4FB1 /* use_credits_night.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A4B18096FB400BD4FB1 /* use_credits_night.png */; };
+		2C9A7A5918097E5300BD4FB1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A5718097E5300BD4FB1 /* Icon.png */; };
+		2C9A7A5A18097E5300BD4FB1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A5718097E5300BD4FB1 /* Icon.png */; };
+		2C9A7A5B18097E5300BD4FB1 /* Icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A5818097E5300BD4FB1 /* Icon~iphone.png */; };
+		2C9A7A5C18097E5300BD4FB1 /* Icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A5818097E5300BD4FB1 /* Icon~iphone.png */; };
 		2CC2000717FB211300100CC7 /* end_game_beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2000317FB200900100CC7 /* end_game_beach.png */; };
 		2CC2000817FB211300100CC7 /* end_game_beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2000317FB200900100CC7 /* end_game_beach.png */; };
 		2CC2000917FB211300100CC7 /* end_game_classic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2000417FB201300100CC7 /* end_game_classic.png */; };
@@ -661,6 +665,8 @@
 		2C9A7A4918096FB400BD4FB1 /* use_credits_classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_credits_classic.png; sourceTree = "<group>"; };
 		2C9A7A4A18096FB400BD4FB1 /* use_credits_garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_credits_garden.png; sourceTree = "<group>"; };
 		2C9A7A4B18096FB400BD4FB1 /* use_credits_night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_credits_night.png; sourceTree = "<group>"; };
+		2C9A7A5718097E5300BD4FB1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		2C9A7A5818097E5300BD4FB1 /* Icon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon~iphone.png"; sourceTree = "<group>"; };
 		2CC2000317FB200900100CC7 /* end_game_beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end_game_beach.png; sourceTree = "<group>"; };
 		2CC2000417FB201300100CC7 /* end_game_classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end_game_classic.png; sourceTree = "<group>"; };
 		2CC2000517FB202100100CC7 /* end_game_garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end_game_garden.png; sourceTree = "<group>"; };
@@ -1376,6 +1382,8 @@
 				4DC43AE2128BB2D100FFE1B5 /* _0000_Difficulty_theme3.png */,
 				4DDDA14B1284FDFA00A59629 /* _0000_DOWNLOAD.png */,
 				4DE28D5812CD23C20057B008 /* _0000_earn-credits.png */,
+				2C9A7A5718097E5300BD4FB1 /* Icon.png */,
+				2C9A7A5818097E5300BD4FB1 /* Icon~iphone.png */,
 				4D098F1C12DF84A800155CEA /* _0000_earn_credits.png */,
 				4DDDA42512860B1600A59629 /* _0000_Extreme.png */,
 				4DBCFF1C128797440047AC18 /* _0000_facebook_page.png */,
@@ -1863,6 +1871,7 @@
 				4D2780711230BB1D00BE95A7 /* snake-Classic_scores.png in Resources */,
 				4D2780731230BB2A00BE95A7 /* snake-Classic_more-apps.png in Resources */,
 				4D27807B1230BC7A00BE95A7 /* snake_Classic_Selected-Speed.png in Resources */,
+				2C9A7A5918097E5300BD4FB1 /* Icon.png in Resources */,
 				4D27807D1230BC8700BE95A7 /* snake_Classic_Speed-Button.png in Resources */,
 				4D27807F1230BC9A00BE95A7 /* snake_Classic_GO!.png in Resources */,
 				4D2780851230BD2F00BE95A7 /* snake-Classic_Up-Arrow.png in Resources */,
@@ -2011,6 +2020,7 @@
 				4D35B538128A8DE1001ECC69 /* HELP.png in Resources */,
 				4DC43AE3128BB2D100FFE1B5 /* _0000_Difficulty_Classic.png in Resources */,
 				4DC43AE4128BB2D100FFE1B5 /* _0000_Difficulty_theme1.png in Resources */,
+				2C9A7A5B18097E5300BD4FB1 /* Icon~iphone.png in Resources */,
 				4DC43AE5128BB2D100FFE1B5 /* _0000_Difficulty_theme2.png in Resources */,
 				4DC43AE6128BB2D100FFE1B5 /* _0000_Difficulty_theme3.png in Resources */,
 				4DE28D4C12CD22B40057B008 /* _0000_theme2_store.png in Resources */,
@@ -2195,6 +2205,7 @@
 				4DBC024F1287ADB30047AC18 /* _0000_UNLOCK.png in Resources */,
 				4DBC02581287ADB30047AC18 /* _0008_Hole-pressed.png in Resources */,
 				4DBC02591287ADB30047AC18 /* _0007_Open-Field.png in Resources */,
+				2C9A7A5C18097E5300BD4FB1 /* Icon~iphone.png in Resources */,
 				4DBC025A1287ADB30047AC18 /* _0006_Open-Field-Pressed.png in Resources */,
 				4DBC025B1287ADB30047AC18 /* _0005_4square.png in Resources */,
 				4DBC025C1287ADB30047AC18 /* _0004_4square-pressed.png in Resources */,
@@ -2269,6 +2280,7 @@
 				2CC2000817FB211300100CC7 /* end_game_beach.png in Resources */,
 				2CC2000A17FB211400100CC7 /* end_game_classic.png in Resources */,
 				2CC2000C17FB211400100CC7 /* end_game_garden.png in Resources */,
+				2C9A7A5A18097E5300BD4FB1 /* Icon.png in Resources */,
 				2CC2000E17FB211400100CC7 /* end_game_night.png in Resources */,
 				2CC2001417FB3A5900100CC7 /* main_menu_beach.png in Resources */,
 				2CC2001617FB3A5900100CC7 /* main-menu_classic.png in Resources */,
