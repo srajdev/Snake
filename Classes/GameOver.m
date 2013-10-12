@@ -777,12 +777,13 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	//if (engine) return;
 	engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
+    [engine requestRequestToken];
 	engine.consumerKey = kOAuthConsumerKey;
 	engine.consumerSecret = kOAuthConsumerSecret;
 	
 	controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
-	
-	
+    
+    
 	if (controller) {
 		
 		//[[UIApplication sharedApplication] setStatusBarHidden: NO];

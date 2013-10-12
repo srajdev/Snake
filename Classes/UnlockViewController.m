@@ -193,10 +193,16 @@
 	}
 	
 	else if ((delegate.creditsInfo == kHole || delegate.creditsInfo == kSquare) && delegate.userBalance < 30) {
-		canPurchase = NO;
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Snake Classic" message:@"You do not have enough credits to unlock this field." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Earn Credits",nil];
+		//canPurchase = NO;
+        canPurchase = YES;
+        delegate.holeUnlocked = YES;
+        delegate.squareUnlocked = YES;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You have unlocked the field 'Hole in the Wall'. Enjoy!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Continue" ,nil];
+        
+        [alert show];
+		//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Snake Classic" message:@"You do not have enough credits to unlock this field." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Earn Credits",nil];
 		
-		[alert show];
+		//[alert show];
 	}
 	
 	else {

@@ -82,7 +82,7 @@
      }
     
     if(IS_IPHONE_5){
-        self.view.frame = CGRectMake(0, 0, 320, 568);
+       // self.view.frame = CGRectMake(0, 0, 320, 568);
         
         CGRect btearnFrame = earnButton.frame;
         btearnFrame.origin.x = STORE_EARN_BUTTON_X;
@@ -101,7 +101,7 @@
         
         CGRect bthelpFrame = helpButton.frame;
         bthelpFrame.origin.x = GAMEMODE_HELP_BUTTON_X;
-        bthelpFrame.origin.y = 70 + GAMEMODE_HELP_BUTTON_Y;
+        bthelpFrame.origin.y = 65 + GAMEMODE_HELP_BUTTON_Y;
         helpButton.frame = bthelpFrame;
 	}
 }
@@ -112,76 +112,8 @@
 
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	/*
     
-    if (delegate.theme == kClassicTheme) {
-        if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_classic.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_classic_store.png"];
-        }
-        balance.textColor = [UIColor whiteColor];
-    }
     
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_garden.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_theme1_store.png"];
-        }
-        balance.textColor = [UIColor yellowColor];
-    }
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_beach.png"];
-        }
-        else{
-            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
-            background.image = [UIImage imageNamed:@"_0000_theme2_store.png"];
-        }
-        balance.textColor = [UIColor darkTextColor];
-    }
-	else if(delegate.theme == kTheme3){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_night.png"];
-            
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_theme3_store.png"];
-        }
-        balance.textColor = [UIColor whiteColor];
-    }
-	*/
-    /*if(IS_IPHONE_5){
-        CGRect btearnFrame = earnButton.frame;
-        btearnFrame.origin.x = STORE_EARN_BUTTON_X;
-        btearnFrame.origin.y = 40 + STORE_EARN_BUTTON_Y;
-        earnButton.frame = btearnFrame;
-        
-        CGRect btuseFrame = useButton.frame;
-        btuseFrame.origin.x = STORE_EARN_BUTTON_X;
-        btuseFrame.origin.y = 150 + STORE_EARN_BUTTON_Y;
-        useButton.frame = btuseFrame;
-        
-        CGRect btbackFrame = backButton.frame;
-        btbackFrame.origin.x = OPTIONS_BACK_BUTTON_X;
-        btbackFrame.origin.y = 70 + OPTIONS_BACK_BUTTON_Y;
-        backButton.frame = btbackFrame;
-        
-        CGRect bthelpFrame = helpButton.frame;
-        bthelpFrame.origin.x = GAMEMODE_HELP_BUTTON_X;
-        bthelpFrame.origin.y = 70 + GAMEMODE_HELP_BUTTON_Y;
-        helpButton.frame = bthelpFrame;
-	}
-	*/
-
 	
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	 

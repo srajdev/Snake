@@ -38,6 +38,9 @@
 #import <GameKit/GameKit.h>
 #import "GKAchievementHandler.h"
 
+#import "sys/socket.h"
+#import "netinet/in.h"
+#import "SystemConfiguration/SystemConfiguration.h"
 
 
 
@@ -238,14 +241,15 @@ static NSString* kFBAppId = @"158392174179755";
 - (BOOL) connectedToNetwork
 {
 	// Create zero addy
-/*	struct sockaddr_in zeroAddress;
+	struct sockaddr_in zeroAddress;
 	bzero(&zeroAddress, sizeof(zeroAddress));
 	zeroAddress.sin_len = sizeof(zeroAddress);
 	zeroAddress.sin_family = AF_INET;
-	
-	 Recover reachability flags
-	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+    
 	SCNetworkReachabilityFlags flags;
+    //Recover reachability flags;
+	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+	
 	
 	BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
 	CFRelease(defaultRouteReachability);
@@ -253,8 +257,8 @@ static NSString* kFBAppId = @"158392174179755";
 	if (!didRetrieveFlags)
 	{		return NO;
 	}
-*/
-    	SCNetworkReachabilityFlags flags;
+
+    
 	BOOL isReachable = flags & kSCNetworkFlagsReachable;
 	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
 	return (isReachable && !needsConnection) ? YES : NO;
@@ -274,9 +278,7 @@ static NSString* kFBAppId = @"158392174179755";
 	 registerForRemoteNotificationTypes:
 	 (UIRemoteNotificationTypeAlert | 
 	  UIRemoteNotificationTypeBadge | 
-	  UIRemoteNotificationTypeSound)];
-	
-
+	  UIRemoteNotificationTypeSound) ];
 	
 	
 	take_over = 0;
@@ -639,7 +641,8 @@ static NSString* kFBAppId = @"158392174179755";
 		
 	//	[aMenu release];
 		
-		//[[UIApplication sharedApplication] setStatusBarHidden:YES];
+	//	[[UIApplication sharedApplication] setStatusBarHidden:YES];
+        
 	}
 	else {       //if there is a paused game
 		gameStatus = kGamePause;

@@ -35,16 +35,25 @@
 -(id)init{
 	if(self = [super init]){
 
-		
-		
-		head_x = 135.0;
+		if(IS_IPHONE_5){
+            head_x = 135.0;
+            //head_y = 105.0;
+            head_y = 185.0;
+            
+            tail_x = 45.0;
+            //tail_y = 105.0;
+            tail_y = 185.0;
+        }
+		else{
+	
+        head_x = 135.0;
 		//head_y = 105.0;
 		head_y = 145.0;
 		
 		tail_x = 45.0;
 		//tail_y = 105.0;
 		tail_y = 145.0;
-		
+		}
 		
 		
 		headDirection = kEastDirection;
@@ -162,14 +171,6 @@
 	/*update head to go up*/
 	head_y = head_y - SNAKE_INCREMENT;
 	headDirection = kNorthDirection;
-    /*CGPoint old_head_2;
-	if(IS_IPHONE_5){
-    old_head_2 = CGPointMake(head_x, 383.0);
-    }
-    else{
-    old_head_2 = CGPointMake(head_x, 295.0);
-    }
-    */
 	
 	
 	if(IS_IPHONE_5){

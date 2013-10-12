@@ -156,8 +156,8 @@
 	
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
-	
-	/*if (delegate.theme == kClassicTheme) {
+	/*
+	if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_use_credits_classic.png"];

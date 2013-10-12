@@ -598,25 +598,46 @@ if (delegate.gameStatus != kGamePause) {
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	
 	if (delegate.appLaunch == NO && delegate.comeFromResume == NO && delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kFullWall) {
+        if(IS_IPHONE_5){
+            game.snake.head_x = 235.0;
+            game.snake.head_y = 185.0;
+            
+        }
+        else{
 		game.snake.head_x = 235.0;
 		game.snake.head_y = 145.0;
         int abc = delegate.bonusFoodNumber;
-	}
+        }
+    }
+	
 	
 	if (delegate.appLaunch == NO && delegate.comeFromResume == NO && delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kHoleWall) {
+        if(IS_IPHONE_5){
+            game.snake.head_x = 275.0;
+            game.snake.head_y = 185.0;
+            
+        }
+        else{
 		game.snake.head_x = 275.0;
 		game.snake.head_y = 145.0;
+        }
 	}
 	
 	if (delegate.appLaunch == NO && delegate.comeFromResume == NO && delegate.inTransition == YES && delegate.gameMode == kExtremeMode && delegate.fieldMode == kSquareWall) {
-		game.snake.head_x = 295.0;
+		if(IS_IPHONE_5){
+            game.snake.head_x = 295.0;
+            game.snake.head_y = 185.0;
+            game.snake.tail_x = 25.0;
+            game.snake.tail_y = 185.0;
+        }
+        else{
+        game.snake.head_x = 295.0;
 		game.snake.head_y = 145.0;
 		game.snake.tail_x = 25.0;
 		game.snake.tail_y = 145.0;
-	}
+        }
+    }
 	
 	if(delegate.appLaunch == YES){
 		
@@ -685,26 +706,46 @@ if (delegate.gameStatus != kGamePause) {
 	
 	score_label.text = [NSString stringWithFormat:@"%d",game.score];
 	
-	
-	
 	if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kFullWall) {
+        if(IS_IPHONE_5){
+            game.snake.head_x = 235.0;
+            game.snake.head_y = 185.0;
+            
+        }
+        else{
 		game.snake.head_x = 235.0;
 		game.snake.head_y = 145.0;
+        }
 	}
 	
 	if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kHoleWall) {
+        if(IS_IPHONE_5){
+            game.snake.head_x = 275.0;
+            game.snake.head_y = 185.0;
+            
+        }
+        else{
 		game.snake.head_x = 275.0;
 		game.snake.head_y = 145.0;
+        }
 	}
 	
 	if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode && delegate.fieldMode == kSquareWall) {
+        if(IS_IPHONE_5){
+            game.snake.head_x = 295.0;
+            game.snake.head_y = 185.0;
+            game.snake.tail_x = 25.0;
+            game.snake.tail_y = 185.0;
+            
+        }
+        else{
 		game.snake.head_x = 295.0;
 		game.snake.head_y = 145.0;
 		game.snake.tail_x = 25.0;
 		game.snake.tail_y = 145.0;
+        }
 	}
-		
-	
+    
 	 [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(startLoop:) userInfo:nil repeats:NO];
 	
 	
@@ -1117,7 +1158,7 @@ if (delegate.gameStatus != kGamePause) {
                 CGContextMoveToPoint(context, 315,216);
                 CGContextAddLineToPoint(context, 315, 385);
                 CGContextAddLineToPoint(context, 181, 385);
-                CGContextMoveToPoint(context, 139,295);
+                CGContextMoveToPoint(context, 139,385);
                 CGContextAddLineToPoint(context, 5, 385);
                 CGContextAddLineToPoint(context, 5, 216);
                 CGContextMoveToPoint(context, 5,174);
