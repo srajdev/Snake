@@ -243,12 +243,14 @@
 }
 */
 
--(void) viewDidLoad{
-	
+-(void) viewDidLoad{	
 	
 	[self setbackground];
+    
+    [super viewDidLoad];
 	
 }
+
 
 -(void) viewDidAppear:(BOOL)animated{
 

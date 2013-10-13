@@ -3,7 +3,7 @@
 //  SnakeClassic
 //
 //  Created by Swapan Rajdev on 9/2/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
+//  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1154,14 +1154,14 @@ if (delegate.gameStatus != kGamePause) {
                 CGContextAddLineToPoint(context, 139, 5);
                 CGContextMoveToPoint(context, 181,5);
                 CGContextAddLineToPoint(context, 315, 5);
-                CGContextAddLineToPoint(context, 315, 174);
-                CGContextMoveToPoint(context, 315,216);
+                CGContextAddLineToPoint(context, 315, 170);
+                CGContextMoveToPoint(context, 315,218);
                 CGContextAddLineToPoint(context, 315, 385);
                 CGContextAddLineToPoint(context, 181, 385);
                 CGContextMoveToPoint(context, 139,385);
                 CGContextAddLineToPoint(context, 5, 385);
-                CGContextAddLineToPoint(context, 5, 216);
-                CGContextMoveToPoint(context, 5,174);
+                CGContextAddLineToPoint(context, 5, 218);
+                CGContextMoveToPoint(context, 5,170);
                 CGContextAddLineToPoint(context, 5, 5);
                 CGContextStrokePath(context);
                 
@@ -1190,24 +1190,24 @@ if (delegate.gameStatus != kGamePause) {
             if(IS_IPHONE_5){
                 CGContextMoveToPoint(context, 0,5);
                 CGContextAddLineToPoint(context, 135, 5);
-                CGContextAddLineToPoint(context, 135, 174);
+                CGContextAddLineToPoint(context, 135, 170);
                 
-                CGContextMoveToPoint(context, 185,174);
+                CGContextMoveToPoint(context, 185,170);
                 CGContextAddLineToPoint(context, 185, 5);
                 CGContextAddLineToPoint(context, 315, 5);
-                CGContextAddLineToPoint(context, 315, 174);
+                CGContextAddLineToPoint(context, 315, 170);
                 
-                CGContextMoveToPoint(context, 315,216);
+                CGContextMoveToPoint(context, 315,218);
                 CGContextAddLineToPoint(context, 315, 385);
                 CGContextAddLineToPoint(context, 185, 385);
-                CGContextAddLineToPoint(context, 185, 216);
+                CGContextAddLineToPoint(context, 185, 218);
                 
-                CGContextMoveToPoint(context, 135,216);
+                CGContextMoveToPoint(context, 135,218);
                 CGContextAddLineToPoint(context, 135, 385);
                 CGContextAddLineToPoint(context, 5, 385);
-                CGContextAddLineToPoint(context, 5, 216);
+                CGContextAddLineToPoint(context, 5, 218);
                 
-                CGContextMoveToPoint(context, 5,174);
+                CGContextMoveToPoint(context, 5,170);
                 CGContextAddLineToPoint(context, 5, 5);
                 
                 CGContextStrokePath(context);
