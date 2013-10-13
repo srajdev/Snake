@@ -55,7 +55,7 @@
 @synthesize playAgain;
 @synthesize rateAppButton;
 @synthesize FBButton;
-//@synthesize TwtButton;
+@synthesize TwtButton;
 @synthesize gameOver;
 
 static NSString* kFBAppId = @"158392174179755";
@@ -152,11 +152,11 @@ static NSString* kFBAppId = @"158392174179755";
         btfbFrame.origin.y = 170 + ENDGAME_BUTTON_Y;
         FBButton.frame = btfbFrame;
         
-  /*      CGRect bttwFrame = TwtButton.frame;
+        CGRect bttwFrame = TwtButton.frame;
         bttwFrame.origin.x = 175;
         bttwFrame.origin.y = 170 + ENDGAME_BUTTON_Y;
         TwtButton.frame = bttwFrame;
-    */    
+        
         CGRect btplayFrame = playAgain.frame;
         btplayFrame.origin.x = 79;
         btplayFrame.origin.y = 210 + ENDGAME_BUTTON_Y;

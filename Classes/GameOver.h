@@ -47,7 +47,7 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
     IBOutlet UIButton *mainMenu;
     IBOutlet UIButton *rateAppButton;
     IBOutlet UIButton *FBButton;
- //   IBOutlet UIButton *TwtButton;
+    IBOutlet UIButton *TwtButton;
 	
     IBOutlet UIImageView *gameOver;
     
@@ -89,7 +89,7 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 @property (nonatomic,retain) IBOutlet UIButton *mainMenu;
 @property (nonatomic,retain) IBOutlet UIButton *rateAppButton;
 @property (nonatomic,retain) IBOutlet UIButton *FBButton;
-//@property (nonatomic,retain) IBOutlet UIButton *TwtButton;
+@property (nonatomic,retain) IBOutlet UIButton *TwtButton;
 
 @property (nonatomic,retain) NSString *FBName;
 @property (nonatomic,retain) NSString *FBid;
