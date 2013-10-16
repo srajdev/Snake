@@ -41,7 +41,7 @@
 #import "sys/socket.h"
 #import "netinet/in.h"
 #import "SystemConfiguration/SystemConfiguration.h"
-
+#import "AdSupport/ASIdentifierManager.h"
 
 
 @implementation SnakeClassicAppDelegate
@@ -809,9 +809,8 @@ if ([self connectedToNetwork]) {
 	isconnected = YES;
 	
 #ifdef LITE_VERSION
-	NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
-	
-	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/get_balance_2.php?udid=%@",udid];
+	NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/get_balance_2.php?udid=%@",idfaString];
 	
 	
 	
@@ -1025,8 +1024,8 @@ if ([self connectedToNetwork]) {
 	
 	if(isconnected){
 		
-		NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
-		NSString * secret = @"Qwdfty13";
+		NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        NSString * secret = @"Qwdfty13";
 		
 		
 		//theName = [theName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -1039,7 +1038,7 @@ if ([self connectedToNetwork]) {
 		device_Token = [device_Token stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		
 		NSString *urlString = [NSString stringWithFormat:@"http://zingapps.us/put_token.php?secret=%@&udid=%@&token=%@",
-							   secret,udid,device_Token];
+							   secret,idfaString,device_Token];
 		
 
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];

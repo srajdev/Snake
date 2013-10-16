@@ -76,6 +76,8 @@ FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 @property (nonatomic,retain) UIActivityIndicatorView *activity;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
 
+//@property(nonatomic, readonly) NSUUID *advertisingIdentifier;
+
 -(void) showAlert ;
 
 

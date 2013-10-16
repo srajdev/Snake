@@ -118,6 +118,7 @@
 		2CC5EEF7180E4DC30021C69B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF5180E4DC30021C69B /* Icon@2x.png */; };
 		2CC5EEF9180E4E890021C69B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF8180E4E890021C69B /* Default@2x.png */; };
 		2CC5EEFA180E4E890021C69B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF8180E4E890021C69B /* Default@2x.png */; };
+		2CC5EEFC180E59A40021C69B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5EEFB180E59A40021C69B /* AdSupport.framework */; };
 		4D05000B12832500004603CF /* _0000_beach_theme2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000512832500004603CF /* _0000_beach_theme2.png */; };
 		4D05000C12832500004603CF /* _0000_garden_theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000612832500004603CF /* _0000_garden_theme1.png */; };
 		4D05000D12832500004603CF /* _0000_night_theme3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000712832500004603CF /* _0000_night_theme3.png */; };
@@ -673,6 +674,7 @@
 		2CC5EEF2180C89610021C69B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2CC5EEF5180E4DC30021C69B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2CC5EEF8180E4E890021C69B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2CC5EEFB180E59A40021C69B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* SnakeClassic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeClassic_Prefix.pch; sourceTree = "<group>"; };
 		4D05000512832500004603CF /* _0000_beach_theme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_beach_theme2.png; sourceTree = "<group>"; };
 		4D05000612832500004603CF /* _0000_garden_theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_garden_theme1.png; sourceTree = "<group>"; };
@@ -976,6 +978,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC5EEFC180E59A40021C69B /* AdSupport.framework in Frameworks */,
 				2C9A7AC7180C7AA900BD4FB1 /* Security.framework in Frameworks */,
 				2C9A7A6F180C6A1700BD4FB1 /* Twitter.framework in Frameworks */,
 				4D2783801230EE8B00BE95A7 /* MediaPlayer.framework in Frameworks */,
@@ -1164,6 +1167,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CC5EEFB180E59A40021C69B /* AdSupport.framework */,
 				2C9A7AC6180C7AA900BD4FB1 /* Security.framework */,
 				2C9A7A6E180C6A1700BD4FB1 /* Twitter.framework */,
 				4DABB62E125F840400D397D6 /* libxml2.dylib */,

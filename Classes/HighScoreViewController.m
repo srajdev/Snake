@@ -17,7 +17,7 @@
 #import "SnakeClassicAppDelegate.h"
 #import "GlobalScoreRecord.h"
 #import "XMLParser.h"
-
+#import "AdSupport/ASIdentifierManager.h"
 
 
 @implementation HighScoreViewController
@@ -683,8 +683,7 @@
 	
 	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
+    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 	NSString * secret = @"Qwdfty!3";
 	
 	
@@ -694,7 +693,7 @@
 
 	
 	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/put_score_trial.php?secret=%@&udid=%@&name=%@&score=%d&fbname=%@&fbid=%@&mode=%@",
-						   secret,udid,theName,theScore,FBName,FBid,gameMode];
+						   secret,idfaString,theName,theScore,FBName,FBid,gameMode];
 	
 	
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
