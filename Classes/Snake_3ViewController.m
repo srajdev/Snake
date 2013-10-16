@@ -16,7 +16,7 @@
 
 #import "Snake_3ViewController.h"
 #import "SnakeClassicAppDelegate.h"
-#import "FlurryAnalytics.h"
+//#import "FlurryAnalytics.h"
 #import "HighScores.h"
 #import "HighScoreRecord.h"
 
@@ -175,7 +175,7 @@
 
 -(void) pauseGameNow{
 	
-	[FlurryAnalytics logEvent:@"Pause"];
+	//[FlurryAnalytics logEvent:@"Pause"];
 	
 
 	
@@ -303,7 +303,7 @@
 
 -(void)gameOver:(CADisplayLink *)displayLinkSent{
 	
-	[FlurryAnalytics logEvent:@"Game Over"];
+//	[FlurryAnalytics logEvent:@"Game Over"];
 	
 	[displayLinkSent invalidate];
 	
@@ -557,7 +557,7 @@ if (delegate.gameStatus != kGamePause) {
 - (void) viewDidAppear:(BOOL)animated {
 
 	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 		comeFromPause = NO;
 		[self startGame];
@@ -572,7 +572,7 @@ if (delegate.gameStatus != kGamePause) {
 	if(buttonIndex == 0)
 	{
 		
-		[FlurryAnalytics logEvent:@"extreme/Unlock pressed in popup"];
+	//	[FlurryAnalytics logEvent:@"extreme/Unlock pressed in popup"];
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 		
 		[delegate switchView:self.view toview:delegate.storeView.view delay:NO remove:NO display:nil curlup:YES curldown:NO];
@@ -686,14 +686,14 @@ if (delegate.gameStatus != kGamePause) {
 			//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field Hole in the Wall." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
 			
 			//[alert show];
-			[FlurryAnalytics logEvent:@"extreme/pop to unlock hitw shown"];
+	//		[FlurryAnalytics logEvent:@"extreme/pop to unlock hitw shown"];
 			[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
 		}
 		else if ((delegate.fieldMode == kSquareWall && delegate.squareUnlocked == NO)) {
 			//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field 4square." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
 			
 			//[alert show];
-			[FlurryAnalytics logEvent:@"extreme/pop to unlock 4sq shown"];
+	//		[FlurryAnalytics logEvent:@"extreme/pop to unlock 4sq shown"];
 			[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
 		}
 		else {
@@ -1155,12 +1155,12 @@ if (delegate.gameStatus != kGamePause) {
                 CGContextMoveToPoint(context, 181,5);
                 CGContextAddLineToPoint(context, 315, 5);
                 CGContextAddLineToPoint(context, 315, 170);
-                CGContextMoveToPoint(context, 315,218);
+                CGContextMoveToPoint(context, 315,219);
                 CGContextAddLineToPoint(context, 315, 385);
                 CGContextAddLineToPoint(context, 181, 385);
                 CGContextMoveToPoint(context, 139,385);
                 CGContextAddLineToPoint(context, 5, 385);
-                CGContextAddLineToPoint(context, 5, 218);
+                CGContextAddLineToPoint(context, 5, 219);
                 CGContextMoveToPoint(context, 5,170);
                 CGContextAddLineToPoint(context, 5, 5);
                 CGContextStrokePath(context);
@@ -1197,15 +1197,15 @@ if (delegate.gameStatus != kGamePause) {
                 CGContextAddLineToPoint(context, 315, 5);
                 CGContextAddLineToPoint(context, 315, 170);
                 
-                CGContextMoveToPoint(context, 315,218);
+                CGContextMoveToPoint(context, 315,219);
                 CGContextAddLineToPoint(context, 315, 385);
                 CGContextAddLineToPoint(context, 185, 385);
-                CGContextAddLineToPoint(context, 185, 218);
+                CGContextAddLineToPoint(context, 185, 219);
                 
-                CGContextMoveToPoint(context, 135,218);
+                CGContextMoveToPoint(context, 135,219);
                 CGContextAddLineToPoint(context, 135, 385);
                 CGContextAddLineToPoint(context, 5, 385);
-                CGContextAddLineToPoint(context, 5, 218);
+                CGContextAddLineToPoint(context, 5, 219);
                 
                 CGContextMoveToPoint(context, 5,170);
                 CGContextAddLineToPoint(context, 5, 5);

@@ -47,7 +47,8 @@
 #include "FBConnect.h"
 #import "Session.h"
 #import "UserInfo.h"
-#import "SA_OAuthTwitterEngine.h"
+//#import "SA_OAuthTwitterEngine.h"
+//#import "SA_OAuthTwitterController.h"
 #import "GameModeViewController.h"
 #import "FieldModeViewController.h"
 #import "StoreViewController.h"
@@ -56,9 +57,9 @@
 #import "EarnCreditsViewController.h"
 #import "HelpPageViewController.h"
 #import "helpDetailViewController.h"
-#import "FlurryAnalytics.h"
-#import "GSAdEngine.h"
-#import "FlurryAdDelegate.h"
+//#import "FlurryAnalytics.h"
+//#import "GSAdEngine.h"
+//#import "FlurryAdDelegate.h"
 #import <GameKit/GameKit.h>
 
 
@@ -74,7 +75,7 @@
 @class GlobalViewController;
 
 @interface SnakeClassicAppDelegate : NSObject <UIApplicationDelegate, AVAudioPlayerDelegate, FBSessionDelegate,
-UserInfoLoadDelegate, FBDialogDelegate, FlurryAdDelegate> {
+UserInfoLoadDelegate, FBDialogDelegate> {
     
     UIWindow *window;
 	

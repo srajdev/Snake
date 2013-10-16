@@ -212,7 +212,7 @@
 // Action taking the user to earn credits
 -(IBAction) earnPressed : (id) sender{
 	
-	[FlurryAnalytics logEvent:@"store/earn credits"];
+	//[FlurryAnalytics logEvent:@"store/earn credits"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -225,7 +225,7 @@
 // Action taking the user to use their credits
 -(IBAction) usePressed : (id) sender{
 	
-	[FlurryAnalytics logEvent:@"store/user credits"];
+	//[FlurryAnalytics logEvent:@"store/user credits"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -258,7 +258,7 @@
 // Action that takes the user to download the unlocked game
 -(IBAction) unlockPressed : (id) sender{
 	
-	[FlurryAnalytics logEvent:@"store/unlock all"];
+	//[FlurryAnalytics logEvent:@"store/unlock all"];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/app/id403683533"]];
 	
@@ -280,7 +280,7 @@
 // Action taking the user to the help page to understand the store
 -(IBAction) helpPressed : (id)sender{
 	
-	[FlurryAnalytics logEvent:@"store/help"];
+	//[FlurryAnalytics logEvent:@"store/help"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

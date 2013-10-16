@@ -140,7 +140,7 @@
         backButton.frame = btbackFrame;
     }
 }
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewWillAppear:(BOOL)animated{
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -344,27 +344,27 @@
 	delegate.unlockFromAnother = 0;
 	
 	if (buttonPressed.tag == 0) {
-		[FlurryAnalytics logEvent:@"use credits/view beach"];
+	//	[FlurryAnalytics logEvent:@"use credits/view beach"];
 		delegate.creditsInfo = kBeach;
 		
 	}
 	else if(buttonPressed.tag == 1){
-		[FlurryAnalytics logEvent:@"use credits/view garden"];
+	//	[FlurryAnalytics logEvent:@"use credits/view garden"];
 	
 		delegate.creditsInfo = kGarden;
 	}
 	else if(buttonPressed.tag == 2){
-		[FlurryAnalytics logEvent:@"use credits/view night"];
+	//	[FlurryAnalytics logEvent:@"use credits/view night"];
 		
 		delegate.creditsInfo = kNight;
 	}	
 	else if(buttonPressed.tag == 3){
-		[FlurryAnalytics logEvent:@"use credits/view hitw"];
+	//	[FlurryAnalytics logEvent:@"use credits/view hitw"];
 		
 		delegate.creditsInfo = kHole;
 	}
 	else if(buttonPressed.tag == 4){
-		[FlurryAnalytics logEvent:@"use credits/view 4sq"];
+	//	[FlurryAnalytics logEvent:@"use credits/view 4sq"];
 		
 		delegate.creditsInfo = kSquare;
 	}

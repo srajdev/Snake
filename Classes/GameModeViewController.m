@@ -96,10 +96,7 @@
 - (void) viewDidAppear:(BOOL)animated{
 	
 	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-    
-    
+	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 #ifdef LITE_VERSION
     // Code specific to lite version
@@ -123,13 +120,13 @@
 	
    
 	
-#ifdef LITE_VERSION
+//#ifdef LITE_VERSION
     // Code specific to lite version
 	
 	
 	//[self.view addSubview:adView];
 	
-#endif
+//#endif
 	
 	
 }
@@ -143,7 +140,7 @@
 
 -(IBAction) ClassicPressed : (id) sender{
 	
-	[FlurryAnalytics logEvent:@"newgame/classic"];
+	//[FlurryAnalytics logEvent:@"newgame/classic"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -208,7 +205,7 @@
 
 - (IBAction) ExtremePressed : (id) sender{
 	
-	[FlurryAnalytics logEvent:@"newgame/extreme"];
+	//[FlurryAnalytics logEvent:@"newgame/extreme"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

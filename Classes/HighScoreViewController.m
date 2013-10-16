@@ -171,7 +171,7 @@
 
 //Action to be called whent he global high score is pressed
 -(IBAction) globalPressed {
-	[FlurryAnalytics logEvent:@"scores/global"];
+	//[FlurryAnalytics logEvent:@"scores/global"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	if (delegate.isconnected == NO) {
@@ -211,7 +211,7 @@
 // Acction to be called when the friends score is pressed
 -(IBAction) friendsPressed{
 	
-	[FlurryAnalytics logEvent:@"scores/friends"];
+	//[FlurryAnalytics logEvent:@"scores/friends"];
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];

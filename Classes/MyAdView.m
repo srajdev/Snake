@@ -7,7 +7,7 @@
 //
 
 #import "MyAdView.h"
-#import "FlurryOffer.h"
+//#import "FlurryOffer.h"
 
 
 @implementation MyAdView
@@ -28,7 +28,7 @@
     return self;
 }
 
-
+/*
 - (id)initWithFlurryOffer:(FlurryOffer*)flurryOffer {
 	// this will instantiate our very own customized view of
 	// an ad offer. it uses the FlurryOffer object to create
@@ -56,7 +56,7 @@
 	referralUrl = [flurryOffer.referralUrl copy];
 	return self;
 }
-
+*/
 - (void)downloadApp {
 	// allow this object to respond to touch or click.
 

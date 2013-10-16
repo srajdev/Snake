@@ -27,9 +27,9 @@
 #import "snakeType.h"
 #import "foodType.h"
 #import "Snake_3ViewController.h"
-#import "FlurryAnalytics.h"
-#import "FlurryAppCircle.h"
-#import "FlurryClips.h"
+//#import "FlurryAnalytics.h"
+//#import "FlurryAppCircle.h"
+//#import "FlurryClips.h"
 #import "HighScoreViewController.h"
 #import "Options.h"
 #import "Difficulty.h"
@@ -295,7 +295,7 @@ static NSString* kFBAppId = @"158392174179755";
         [self authenticateLocalPlayer];
     }
 	
-	GSAdSlotDescription * slot2 = [GSAdSlotDescription descriptionWithSize:kGSAdSizeIPhoneFullScreen name:@"fullscreenSlot"];
+//	GSAdSlotDescription * slot2 = [GSAdSlotDescription descriptionWithSize:kGSAdSizeIPhoneFullScreen name:@"fullscreenSlot"];
 	
 	achievementsDictionary = [[NSMutableDictionary alloc] init];
 	
@@ -304,7 +304,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	
 	NSString *applicationID = @"6cb1c347-cd2b-4b24-8fcd-ccf728144e92";
-	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
+//	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
 	
 	
 	
@@ -786,11 +786,11 @@ static NSString* kFBAppId = @"158392174179755";
 	helpDetail = [[helpDetailViewController alloc] initWithNibName:@"helpDetailViewController" bundle:nil];
 	
     
-    [FlurryAppCircle setAppCircleEnabled:YES];
-    [FlurryClips setVideoAdsEnabled:YES];
-    [FlurryClips setVideoDelegate:self];
-    [FlurryAppCircle setAppCircleDelegate:self];
-    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
+//    [FlurryAppCircle setAppCircleEnabled:YES];
+//    [FlurryClips setVideoAdsEnabled:YES];
+//    [FlurryClips setVideoDelegate:self];
+//    [FlurryAppCircle setAppCircleDelegate:self];
+//    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
 
 	
 // If the user has the unlocked version we give him all the features unlocked.

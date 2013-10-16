@@ -11,9 +11,9 @@
 
 #import "EarnCreditsViewController.h"
 #import "SnakeClassicAppDelegate.h"
-#import "FlurryAnalytics.h"
-#import "FlurryOffer.h"
-#import "FlurryAppCircle.h"
+//#import "FlurryAnalytics.h"
+//#import "FlurryOffer.h"
+//#import "FlurryAppCircle.h"
 #import "main_menu.h"
 
 
@@ -140,9 +140,10 @@
 
 
 // Function to refresh the app suggested to the user
+
 -(void) refresh{
 	
-	FlurryOffer *flurryOffer = [[FlurryOffer alloc] init];
+	/*FlurryOffer *flurryOffer = [[FlurryOffer alloc] init];
 	BOOL validOffer = [FlurryAppCircle getOffer:@"EARN_CREDITS" withFlurryOfferContainer:flurryOffer];
 	
 
@@ -162,7 +163,7 @@
 	[flurryOffer release];
 	
 	
-			
+	*/		
 	
 }
 
