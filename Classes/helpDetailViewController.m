@@ -79,7 +79,7 @@
     
     
 }
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewWillAppear:(BOOL)animated{
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

@@ -82,7 +82,7 @@
     
 }
 
-- (void) viewDidAppear:(BOOL)animated{
+- (void) viewWillAppear:(BOOL)animated{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -194,6 +194,7 @@
 	
 	else if ((delegate.creditsInfo == kHole || delegate.creditsInfo == kSquare) && delegate.userBalance < 30) {
 		canPurchase = NO;
+        
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Snake Classic" message:@"You do not have enough credits to unlock this field." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Earn Credits",nil];
 		
 		[alert show];
@@ -203,7 +204,7 @@
 	
 
 		if (delegate.creditsInfo == kGarden) {
-			[FlurryAnalytics logEvent:@"view/unlock garden"];
+		//	[FlurryAnalytics logEvent:@"view/unlock garden"];
 			delegate.gardenUnlocked = YES;
 			canPurchase = YES;
 		
@@ -213,7 +214,7 @@
 		
 		}
 		else if (delegate.creditsInfo == kBeach){
-			[FlurryAnalytics logEvent:@"view/unlock beach"];
+		//	[FlurryAnalytics logEvent:@"view/unlock beach"];
 			delegate.beachUnlocked = YES;
 			canPurchase = YES;
 			
@@ -222,7 +223,7 @@
 			[alert show];
 		}
 		else if(delegate.creditsInfo == kNight){
-			[FlurryAnalytics logEvent:@"view/unlock night"];
+		//	[FlurryAnalytics logEvent:@"view/unlock night"];
 			delegate.nightUnlocked = YES;
 			canPurchase = YES;
 			
@@ -231,7 +232,7 @@
 			[alert show];
 		}
 		else if (delegate.creditsInfo == kHole){
-			[FlurryAnalytics logEvent:@"view/unlock hitw"];
+		//	[FlurryAnalytics logEvent:@"view/unlock hitw"];
 	
 			delegate.holeUnlocked = YES;
 			canPurchase = YES;
@@ -241,7 +242,7 @@
 			[alert show];
 		}
 		else if(delegate.creditsInfo == kSquare){
-			[FlurryAnalytics logEvent:@"view/unlock 4sq"];
+		//	[FlurryAnalytics logEvent:@"view/unlock 4sq"];
 	
 			delegate.squareUnlocked = YES;
 			canPurchase = YES;

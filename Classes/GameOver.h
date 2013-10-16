@@ -18,8 +18,9 @@
 #import <UIKit/UIKit.h>
 
 #import "FBConnect.h"
-#import "SA_OAuthTwitterController.h"
-#import "GreystripeDelegate.h"
+//#import "SA_OAuthTwitterController.h"
+//#import "SA_OAuthTwitterEngine.h"
+//#import "GreystripeDelegate.h"
 #import <GameKit/GameKit.h>
 #import "GKAchievementHandler.h"
 
@@ -32,7 +33,7 @@
 
 
 @interface GameOver : UIViewController <UITextFieldDelegate,
-FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDelegate, GreystripeDelegate> {
+FBDialogDelegate,FBRequestDelegate,FBSessionDelegate> {
 	
 	IBOutlet UIButton *name;
 	IBOutlet UILabel *score;
@@ -64,7 +65,7 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 	
 	int fbSaveCount;
 	
-	SA_OAuthTwitterEngine *engine;
+	//SA_OAuthTwitterEngine *engine;
 	UIViewController *controller;
 
 }
@@ -84,7 +85,7 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 @property (nonatomic,retain) UIButton *name;
 @property (nonatomic,retain) UILabel *score;
 @property (nonatomic,retain) UITextField *changeName;
-@property (nonatomic,retain) 	IBOutlet UILabel *highestScore;
+@property (nonatomic,retain) IBOutlet UILabel *highestScore;
 @property (nonatomic,retain) IBOutlet UIButton *playAgain;
 @property (nonatomic,retain) IBOutlet UIButton *mainMenu;
 @property (nonatomic,retain) IBOutlet UIButton *rateAppButton;
@@ -98,7 +99,7 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 
 @property (nonatomic,retain) UIImageView *gameOver;
 
-- (IBAction) FBpublish: (id)sender;
+-(IBAction) FBpublish: (id)sender;
 -(IBAction) tweetIt;
 
 -(void) submitScore: (int) theScore theName:(NSString *)theName;   //v1.1
@@ -106,11 +107,6 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate,SA_OAuthTwitterControllerDe
 
 
 -(void) publishFacebook;
-
-
-
-
-
 
 
 @end

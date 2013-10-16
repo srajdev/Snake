@@ -23,9 +23,9 @@
 #import "Difficulty.h"
 #import "Snake_3ViewController.h"
 #import "Options.h"
-#import "FlurryAnalytics.h"
+//#import "FlurryAnalytics.h"
 #import "HighScoreViewController.h"
-#import "FlurryClips.h"
+//#import "FlurryClips.h"
 
 
 
@@ -286,7 +286,7 @@
 // Action that takes place when the new game button is pressed. takes the user to a screen to select different speeds
 -(IBAction)newgame:(id)sender{
 
-	[FlurryAnalytics logEvent:@"New Game"];
+	//[FlurryAnalytics logEvent:@"New Game"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -306,7 +306,7 @@
 
 -(IBAction)options:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"Settings"];
+//	[FlurryAnalytics logEvent:@"Settings"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -322,7 +322,7 @@
 
 -(IBAction)resume:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"Resume"];
+	//[FlurryAnalytics logEvent:@"Resume"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -433,7 +433,7 @@
 // Action that takes palce when the scores button is pressed. Takes the user to the scores screen
 -(IBAction)scores:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"Scores"];
+	//[FlurryAnalytics logEvent:@"Scores"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -454,7 +454,7 @@
 
 -(IBAction)moreApps:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"More Apps"];
+//	[FlurryAnalytics logEvent:@"More Apps"];
 
 	
 	
@@ -475,7 +475,7 @@
 
 
 	
-	[FlurryAnalytics logEvent:@"main menu/store"];
+	//[FlurryAnalytics logEvent:@"main menu/store"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -488,7 +488,7 @@
 
 -(IBAction) helpPressed : (id)sender{
 	
-	[FlurryAnalytics logEvent:@"main menu/help"];
+	//[FlurryAnalytics logEvent:@"main menu/help"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

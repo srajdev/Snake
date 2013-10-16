@@ -22,7 +22,7 @@
 // Action when user presses Open Field
 -(IBAction) OpenFieldPressed:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"classic/play openfield"];
+	//[FlurryAnalytics logEvent:@"classic/play openfield"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -74,7 +74,7 @@
 // Action when user presses Box field
 -(IBAction) BoxPressed:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"classic/play box"];
+	//[FlurryAnalytics logEvent:@"classic/play box"];
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
@@ -125,7 +125,7 @@
 // Action when user presses Hole in the wall Field
 -(IBAction) HoleWallPressed:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"classic/play hitw"];
+	//[FlurryAnalytics logEvent:@"classic/play hitw"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -179,7 +179,7 @@
 // Action when user presses 4Square Field
 -(IBAction) SquarePressed:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"classic/play 4sq"];
+	//[FlurryAnalytics logEvent:@"classic/play 4sq"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -249,10 +249,10 @@
     
         [self setbackground];
 
-	  [super viewDidLoad];
+	//  [super viewDidLoad];
 
 }
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

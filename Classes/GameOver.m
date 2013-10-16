@@ -20,20 +20,14 @@
 #import "HighScores.h"
 #import "HighScoreRecord.h"
 #import "Difficulty.h"
-#import "FlurryAnalytics.h"
-#import "GSAdEngine.h"
+//#import "FlurryAnalytics.h"
+//#import "GSAdEngine.h"
 #import "GKAchievementHandler.h"
-#import "FlurryClips.h"
-#import "FlurryAppCircle.h"
-
-
-
-
+//#import "FlurryClips.h"
+//#import "FlurryAppCircle.h"
 
 #define kOAuthConsumerKey				@"qbOcFT2SmkVJ5JKNLpq1jg"		//REPLACE ME
 #define kOAuthConsumerSecret			@"W3zanQvRhXx1rT9rsOJqlpIrwu1slvUbVabB4c2wDc"		//REPLACE ME
-
-
 
 @implementation GameOver
 
@@ -81,7 +75,7 @@ static NSString* kFBAppId = @"158392174179755";
 -(void) viewDidLoad{
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    /*
+    
     if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -121,7 +115,7 @@ static NSString* kFBAppId = @"158392174179755";
             background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
-    */
+    
     if(IS_IPHONE_5){
         
         [gameOver setFrame:CGRectMake(69, 55, 182, 42)];
@@ -184,7 +178,7 @@ static NSString* kFBAppId = @"158392174179755";
 }
 
 // Make sure all the score and names are shown as current every time the view appears
--(void) viewDidAppear:(BOOL)animated{
+-(void) viewWillAppear:(BOOL)animated{
 	
 	
 
@@ -221,7 +215,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	score.textColor = [UIColor whiteColor];
 	highestScore.textColor = [UIColor whiteColor];
-	
+	/*
 	if (delegate.theme == kClassicTheme) {
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -261,6 +255,7 @@ static NSString* kFBAppId = @"158392174179755";
 		background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
+     */
     	[[UIApplication sharedApplication] setStatusBarHidden: YES];
 	
 	if (delegate.FBLoggedIn == YES) {
@@ -272,7 +267,7 @@ static NSString* kFBAppId = @"158392174179755";
 	}
 
 	
-	
+	/*
 	if (isTwitterLogged == YES) {
 		
 		[engine sendUpdate: [NSString stringWithFormat: @"I scored %d in SnakeClassic on the iPhone! Beat that! http://bit.ly/c26ZIw #SnakeClassic #iPhone",delegate.delegateScore]];
@@ -281,7 +276,7 @@ static NSString* kFBAppId = @"158392174179755";
 	}
 	
 	isTwitterLogged = NO;
-	
+	*/
 	NSArray *highScoreData = [[HighScores getLocalHighScores] retain];
 	
 	
@@ -310,11 +305,6 @@ static NSString* kFBAppId = @"158392174179755";
 	}
 
 
-	
-
-	
-	
-	
 	[name setTitle:delegate.playerName forState:UIControlStateNormal];
 
 	score.text = [NSString stringWithFormat:@"%d",delegate.delegateScore];
@@ -431,7 +421,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 - (IBAction) FBpublish: (id)sender {
 	
-	[FlurryAnalytics logEvent:@"gameover/facebook"];
+	//[FlurryAnalytics logEvent:@"gameover/facebook"];
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	if (delegate.FBLoggedIn == NO) {
@@ -497,10 +487,6 @@ static NSString* kFBAppId = @"158392174179755";
 			andParams: params
 				  andDelegate:self];
 		
-	
-	
-	
-	
 
 	
 }
@@ -518,14 +504,8 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction)playAgain:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"Play Again"];
+	//[FlurryAnalytics logEvent:@"Play Again"];
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-
-	
-
-	
-	
 	
 	delegate.foodNumber = 0;
 	delegate.bonusFoodNumber = 0;
@@ -549,19 +529,14 @@ static NSString* kFBAppId = @"158392174179755";
 */
     
 	
-    if([FlurryClips videoAdIsAvailable:@"VIDEO_AUTOPLAY"] && delegate.delegateScore > 5000){
+    /*if([FlurryClips videoAdIsAvailable:@"VIDEO_AUTOPLAY"] && delegate.delegateScore > 5000){
         
         [FlurryClips openVideoTakeover:@"VIDEO_AUTOPLAY" orientation:@"portrait" rewardImage:nil rewardMessage:nil userCookies:nil autoPlay:YES];
         
         
     }
-
+     */
 	[delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-	
-	
-	
-	
-	
 	
 	
 }
@@ -573,7 +548,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction)buttonToChangeName{
 	
-	[FlurryAnalytics logEvent:@"Game Over/Change Player"];
+//	[FlurryAnalytics logEvent:@"Game Over/Change Player"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	name.hidden = YES;
@@ -614,7 +589,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction)mainmenu:(id)sender{
 	
-	[FlurryAnalytics logEvent:@"Menu"];
+	//[FlurryAnalytics logEvent:@"Menu"];
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -640,13 +615,12 @@ static NSString* kFBAppId = @"158392174179755";
 #endif
 */
     
-    
+    /*
     if( [FlurryClips videoAdIsAvailable:@"VIDEO_AUTOPLAY"] && delegate.delegateScore > 5000){
         
         [FlurryClips openVideoTakeover:@"VIDEO_AUTOPLAY" orientation:@"portrait" rewardImage:nil rewardMessage:nil userCookies:nil autoPlay:YES];
-        
-        
     }
+    */
 	[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
 	
 	
@@ -661,8 +635,6 @@ static NSString* kFBAppId = @"158392174179755";
 -(void) submitScore: (int) theScore theName:(NSString *)theName{
 	
 	
-	
-	
 }
 
 // Action that is calle to rate the app
@@ -671,7 +643,7 @@ static NSString* kFBAppId = @"158392174179755";
 -(IBAction) rateApp{
 	
 	
-	[FlurryAnalytics logEvent:@"gameover/rate"];
+//	[FlurryAnalytics logEvent:@"gameover/rate"];
 	
 	// Send the user to the appropriate rate place depending on which version (LOCKED OR UNLOCKED)
 #ifdef LITE_VERSION
@@ -764,7 +736,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction) tweetIt{
 	
-	[FlurryAnalytics logEvent:@"gameover/twitter"];
+	//[FlurryAnalytics logEvent:@"gameover/twitter"];
 	
 	NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
 	[numberFormatter setPositiveFormat:@"#,###"];
@@ -776,13 +748,15 @@ static NSString* kFBAppId = @"158392174179755";
 	NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
 	
 	//if (engine) return;
+    /*
 	engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
+    [engine requestRequestToken];
 	engine.consumerKey = kOAuthConsumerKey;
 	engine.consumerSecret = kOAuthConsumerSecret;
 	
 	controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
-	
-	
+    
+    
 	if (controller) {
 		
 		//[[UIApplication sharedApplication] setStatusBarHidden: NO];
@@ -795,15 +769,11 @@ static NSString* kFBAppId = @"158392174179755";
 	else{
 		[engine sendUpdate: [NSString stringWithFormat: @"I scored %d in #SnakeClassic! Beat that! http://bit.ly/c26ZIw #iphone", [numberFormatter stringFromNumber:abcd] ]];
 	}
-	
+	*/
 	
 	
 	
 }
-
-
-
-
 
 
 //=============================================================================================================================
@@ -826,6 +796,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 //=============================================================================================================================
 #pragma mark SA_OAuthTwitterControllerDelegate
+/*
 - (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
 	//NSLog(@"Authenicated for %@", username);
 	isTwitterLogged = YES;
@@ -839,7 +810,7 @@ static NSString* kFBAppId = @"158392174179755";
 	//NSLog(@"Authentication Canceled.");
 		
 }
-
+*/
 //=============================================================================================================================
 #pragma mark TwitterEngineDelegate
 - (void) requestSucceeded: (NSString *) requestIdentifier {

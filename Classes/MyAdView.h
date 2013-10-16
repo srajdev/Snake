@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FlurryOffer.h"
+//#import "FlurryOffer.h"
 
 
 @interface MyAdView : UIView {
@@ -18,7 +18,7 @@
 }
 
 - (id)initWithFrame:(CGRect)frame appIcon:(UIImage*)icon referralUrl:(NSString*)url;
-- (id)initWithFlurryOffer:(FlurryOffer*)flurryOffer;
+//- (id)initWithFlurryOffer:(FlurryOffer*)flurryOffer;
 - (void)downloadApp;
 
 @end

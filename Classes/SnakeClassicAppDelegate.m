@@ -27,9 +27,9 @@
 #import "snakeType.h"
 #import "foodType.h"
 #import "Snake_3ViewController.h"
-#import "FlurryAnalytics.h"
-#import "FlurryAppCircle.h"
-#import "FlurryClips.h"
+//#import "FlurryAnalytics.h"
+//#import "FlurryAppCircle.h"
+//#import "FlurryClips.h"
 #import "HighScoreViewController.h"
 #import "Options.h"
 #import "Difficulty.h"
@@ -38,7 +38,10 @@
 #import <GameKit/GameKit.h>
 #import "GKAchievementHandler.h"
 
-
+#import "sys/socket.h"
+#import "netinet/in.h"
+#import "SystemConfiguration/SystemConfiguration.h"
+#import "AdSupport/ASIdentifierManager.h"
 
 
 @implementation SnakeClassicAppDelegate
@@ -238,14 +241,15 @@ static NSString* kFBAppId = @"158392174179755";
 - (BOOL) connectedToNetwork
 {
 	// Create zero addy
-/*	struct sockaddr_in zeroAddress;
+	struct sockaddr_in zeroAddress;
 	bzero(&zeroAddress, sizeof(zeroAddress));
 	zeroAddress.sin_len = sizeof(zeroAddress);
 	zeroAddress.sin_family = AF_INET;
-	
-	 Recover reachability flags
-	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+    
 	SCNetworkReachabilityFlags flags;
+    //Recover reachability flags;
+	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+	
 	
 	BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
 	CFRelease(defaultRouteReachability);
@@ -253,8 +257,8 @@ static NSString* kFBAppId = @"158392174179755";
 	if (!didRetrieveFlags)
 	{		return NO;
 	}
-*/
-    	SCNetworkReachabilityFlags flags;
+
+    
 	BOOL isReachable = flags & kSCNetworkFlagsReachable;
 	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
 	return (isReachable && !needsConnection) ? YES : NO;
@@ -274,9 +278,7 @@ static NSString* kFBAppId = @"158392174179755";
 	 registerForRemoteNotificationTypes:
 	 (UIRemoteNotificationTypeAlert | 
 	  UIRemoteNotificationTypeBadge | 
-	  UIRemoteNotificationTypeSound)];
-	
-
+	  UIRemoteNotificationTypeSound) ];
 	
 	
 	take_over = 0;
@@ -293,7 +295,7 @@ static NSString* kFBAppId = @"158392174179755";
         [self authenticateLocalPlayer];
     }
 	
-	GSAdSlotDescription * slot2 = [GSAdSlotDescription descriptionWithSize:kGSAdSizeIPhoneFullScreen name:@"fullscreenSlot"];
+//	GSAdSlotDescription * slot2 = [GSAdSlotDescription descriptionWithSize:kGSAdSizeIPhoneFullScreen name:@"fullscreenSlot"];
 	
 	achievementsDictionary = [[NSMutableDictionary alloc] init];
 	
@@ -302,7 +304,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	
 	NSString *applicationID = @"6cb1c347-cd2b-4b24-8fcd-ccf728144e92";
-	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
+//	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
 	
 	
 	
@@ -639,7 +641,8 @@ static NSString* kFBAppId = @"158392174179755";
 		
 	//	[aMenu release];
 		
-		//[[UIApplication sharedApplication] setStatusBarHidden:YES];
+	//	[[UIApplication sharedApplication] setStatusBarHidden:YES];
+        
 	}
 	else {       //if there is a paused game
 		gameStatus = kGamePause;
@@ -783,11 +786,11 @@ static NSString* kFBAppId = @"158392174179755";
 	helpDetail = [[helpDetailViewController alloc] initWithNibName:@"helpDetailViewController" bundle:nil];
 	
     
-    [FlurryAppCircle setAppCircleEnabled:YES];
-    [FlurryClips setVideoAdsEnabled:YES];
-    [FlurryClips setVideoDelegate:self];
-    [FlurryAppCircle setAppCircleDelegate:self];
-    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
+//    [FlurryAppCircle setAppCircleEnabled:YES];
+//    [FlurryClips setVideoAdsEnabled:YES];
+//    [FlurryClips setVideoDelegate:self];
+//    [FlurryAppCircle setAppCircleDelegate:self];
+//    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
 
 	
 // If the user has the unlocked version we give him all the features unlocked.
@@ -806,9 +809,8 @@ if ([self connectedToNetwork]) {
 	isconnected = YES;
 	
 #ifdef LITE_VERSION
-	NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
-	
-	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/get_balance_2.php?udid=%@",udid];
+	NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/get_balance_2.php?udid=%@",idfaString];
 	
 	
 	
@@ -1022,8 +1024,8 @@ if ([self connectedToNetwork]) {
 	
 	if(isconnected){
 		
-		NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
-		NSString * secret = @"Qwdfty13";
+		NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        NSString * secret = @"Qwdfty13";
 		
 		
 		//theName = [theName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -1036,7 +1038,7 @@ if ([self connectedToNetwork]) {
 		device_Token = [device_Token stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		
 		NSString *urlString = [NSString stringWithFormat:@"http://zingapps.us/put_token.php?secret=%@&udid=%@&token=%@",
-							   secret,udid,device_Token];
+							   secret,idfaString,device_Token];
 		
 
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];

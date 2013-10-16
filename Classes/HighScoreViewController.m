@@ -17,7 +17,7 @@
 #import "SnakeClassicAppDelegate.h"
 #import "GlobalScoreRecord.h"
 #import "XMLParser.h"
-
+#import "AdSupport/ASIdentifierManager.h"
 
 
 @implementation HighScoreViewController
@@ -171,7 +171,7 @@
 
 //Action to be called whent he global high score is pressed
 -(IBAction) globalPressed {
-	[FlurryAnalytics logEvent:@"scores/global"];
+	//[FlurryAnalytics logEvent:@"scores/global"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	if (delegate.isconnected == NO) {
@@ -211,7 +211,7 @@
 // Acction to be called when the friends score is pressed
 -(IBAction) friendsPressed{
 	
-	[FlurryAnalytics logEvent:@"scores/friends"];
+	//[FlurryAnalytics logEvent:@"scores/friends"];
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -683,8 +683,7 @@
 	
 	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
+    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 	NSString * secret = @"Qwdfty!3";
 	
 	
@@ -694,7 +693,7 @@
 
 	
 	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/put_score_trial.php?secret=%@&udid=%@&name=%@&score=%d&fbname=%@&fbid=%@&mode=%@",
-						   secret,udid,theName,theScore,FBName,FBid,gameMode];
+						   secret,idfaString,theName,theScore,FBName,FBid,gameMode];
 	
 	
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
