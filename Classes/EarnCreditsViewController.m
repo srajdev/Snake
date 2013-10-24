@@ -11,11 +11,10 @@
 
 #import "EarnCreditsViewController.h"
 #import "SnakeClassicAppDelegate.h"
-//#import "FlurryAnalytics.h"
-//#import "FlurryOffer.h"
-//#import "FlurryAppCircle.h"
 #import "main_menu.h"
-
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
+#import "AdSupport/ASIdentifierManager.h"
 
 @implementation EarnCreditsViewController
 
@@ -35,7 +34,7 @@
 	if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"earn_credits_classic.png"];
+            background.image = [UIImage imageNamed:@"store_classic.png"];
         }
         else{
             background.image = [UIImage imageNamed:@"_0000_earn_credits.png"];
@@ -74,6 +73,7 @@
         balance.textColor = [UIColor whiteColor];
 	}
 	if(IS_IPHONE_5){
+        //self.view.frame = CGRectMake(0, 0, 320, 568);
         
         CGRect btnameFrame = name.frame;
         btnameFrame.origin.x = EARN_NAME_BUTTON_X;
@@ -87,12 +87,12 @@
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = EARN_BACK_BUTTON_X;
-        btbackFrame.origin.y = 30 + EARN_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 90 + EARN_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
         CGRect btrefreshFrame = refreshButton.frame;
         btrefreshFrame.origin.x = EARN_REFRESH_BUTTON_X;
-        btrefreshFrame.origin.y = 30 + EARN_REFRESH_BUTTON_Y;
+        btrefreshFrame.origin.y = 90 + EARN_REFRESH_BUTTON_Y;
         refreshButton.frame = btrefreshFrame;
 	}
 	
@@ -102,11 +102,21 @@
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
-	
+	NSUserDefaults	*defaults = [NSUserDefaults standardUserDefaults];
+    
+    balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Enter your Email ID:" message:@"Earn 5 Credits" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+
+    //need to show the alert only if the idfa is empty in the database
+    if ([defaults boolForKey:@"emailEntered"]!=YES) {
+        [alertView show];
+    }
+    
+    
+    
 	if (delegate.isconnected == NO) {
-		
 				
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert:) userInfo:nil repeats:NO];
 		
@@ -115,34 +125,73 @@
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert_2:) userInfo:nil repeats:NO];
 	}
 
-	
-	
+    [FlurryAds setAdDelegate:self];
+    
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+
 	
 	[self refresh];
-	
-//	[adView doNotIgnoreNewAdRequests];
-//	[adView doNotIgnoreAutoRefreshTimer];
-	
-	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-/*	adView = delegate.mainmenu.adView;
-	if(IS_IPHONE_5){
-        
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	}
-	
-	[self.view addSubview:adView];
-*/
 }
 
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UITextField *emailTextField = [alertView textFieldAtIndex:0];
+    NSString *vendorID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
+    NSLog(@"%@",emailTextField.text);
+    NSLog(@"%lu",(unsigned long)[emailTextField.text length]);
+    NSLog(@"%@",vendorID);
+    
+    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    NSLog(@"%@",idfaString);
+    NSString *secret = @"Qwdfty!3";
+    
+    if(((unsigned long)[emailTextField.text length]) > 0 ){
+	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/setEmail.php?secret=%@&idfa=%@&email=%@&vendorID=%@",secret,idfaString,emailTextField.text,vendorID];
+	
+        BOOL emailEntered = YES;
+        
+    //give the user 5 credits
+        
+    NSUserDefaults	*defaults = [NSUserDefaults standardUserDefaults];
+	
+        
+	[defaults setBool:emailEntered forKey: @"emailEntered"];
+	[defaults synchronize];
+
+	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    
+	NSError *e;
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&e];
+	
+	}
+    
+   // [self viewDidAppear:true];
+    
+}
+
+-(void) watchVideo{
+    
+    if ([FlurryAds adReadyForSpace:@"Videos"]) {
+        [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
+    } else {
+        [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+    }
+    
+}
 
 // Function to refresh the app suggested to the user
 
 -(void) refresh{
 	
+    if ([FlurryAds adReadyForSpace:@"Videos"]) {
+        [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
+    } else {
+        [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+    }
+    
+    
 	/*FlurryOffer *flurryOffer = [[FlurryOffer alloc] init];
 	BOOL validOffer = [FlurryAppCircle getOffer:@"EARN_CREDITS" withFlurryOfferContainer:flurryOffer];
 	
@@ -170,11 +219,6 @@
 
 // Alert shown when the user is not connected to the interner
 -(void) showAlert :(NSTimer *)theTimer{
-	
-	
-	
-	
-	
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Unable to communicate with server. Please make sure you have Internet connectivity. Thanks!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	
@@ -246,7 +290,12 @@
 // Takes the user to download the suggested app
 - (IBAction) downloadPressed{
 	
-	[myAdView downloadApp];
+    if ([FlurryAds adReadyForSpace:@"Videos"]) {
+        [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
+    } else {
+        [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+    }
+	//[myAdView downloadApp];
 	
 }
 
@@ -279,6 +328,14 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
+	
 }
 
 - (void)viewDidUnload {

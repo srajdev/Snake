@@ -13,7 +13,8 @@
 #import "FieldModeViewController.h"
 #import "SnakeClassicAppDelegate.h"
 #import "Difficulty.h"
-
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 @implementation FieldModeViewController
 
@@ -532,6 +533,14 @@
 	[delegate switchView:self.view toview:delegate.unlockView.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
 	
 	
+	
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
 	
 }
 

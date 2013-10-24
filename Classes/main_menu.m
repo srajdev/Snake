@@ -23,9 +23,10 @@
 #import "Difficulty.h"
 #import "Snake_3ViewController.h"
 #import "Options.h"
-//#import "FlurryAnalytics.h"
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 #import "HighScoreViewController.h"
-//#import "FlurryClips.h"
+
 
 
 
@@ -112,47 +113,7 @@
             background.image = [UIImage imageNamed:@"Theme3.png"];
         }
     }
-	/*
-    if(IS_IPHONE_5){
-        CGRect btNewFrame = newgamebutton.frame;
-        btNewFrame.origin.x = NEWGAME_BUTTON_X;
-        btNewFrame.origin.y = 20 + NEWGAME_BUTTON_Y;
-        newgamebutton.frame = btNewFrame;
-        
-        CGRect btResumeFrame = resumebutton.frame;
-        btResumeFrame.origin.x = RESUMEGAME_BUTTON_X;
-        btResumeFrame.origin.y = 20 + RESUMEGAME_BUTTON_Y;
-        resumebutton.frame = btResumeFrame;
-        
-        CGRect btOptionFrame = optionbutton.frame;
-        btOptionFrame.origin.x = OPTIONGAME_BUTTON_X;
-        btOptionFrame.origin.y = 20 + OPTIONGAME_BUTTON_Y;
-        optionbutton.frame = btOptionFrame;
-        
-        CGRect btScoresFrame = scoresbutton.frame;
-        btScoresFrame.origin.x = OPTIONGAME_BUTTON_X;
-        btScoresFrame.origin.y = 90 + OPTIONGAME_BUTTON_Y;
-        scoresbutton.frame = btScoresFrame;
-        
-        CGRect btStoreFrame = storeButton.frame;
-        btStoreFrame.origin.x = OPTIONGAME_BUTTON_X;
-        btStoreFrame.origin.y = 140 + OPTIONGAME_BUTTON_Y;
-        storeButton.frame = btStoreFrame;
-        
-        CGRect btHelpFrame = helpPressed.frame;
-        btHelpFrame.origin.x = HELP_BUTTON_X;
-        btHelpFrame.origin.y = 50 + HELP_BUTTON_Y;
-        helpPressed.frame = btHelpFrame;
-        
-        CGRect btcheckAchievementsFrame = checkAchievementsButton.frame;
-        btcheckAchievementsFrame.origin.x = CHECKACHIEVEMENT_BUTTON_X;
-        btcheckAchievementsFrame.origin.y = 50 + CHECKACHIEVEMENT_BUTTON_Y;
-        checkAchievementsButton.frame = btcheckAchievementsFrame;
-                
-    }
-    */
-	
-	if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
+		if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
 		resumebutton.enabled = YES;
 	}
 	else {
@@ -170,8 +131,9 @@
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
 //	adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	
-	
+
+    [FlurryAds setAdDelegate:self];
+    [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
 	
 /*
 	if(IS_IPHONE_5){
@@ -196,6 +158,9 @@
 
 - (void) viewDidDisappear:(BOOL)animated{
 
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
 //	[adView ignoreNewAdRequests];
 	
 //	[adView ignoreAutoRefreshTimer];

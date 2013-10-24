@@ -119,6 +119,10 @@
 		2CC5EEF9180E4E890021C69B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF8180E4E890021C69B /* Default@2x.png */; };
 		2CC5EEFA180E4E890021C69B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF8180E4E890021C69B /* Default@2x.png */; };
 		2CC5EEFC180E59A40021C69B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5EEFB180E59A40021C69B /* AdSupport.framework */; };
+		2CC5F0CB180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */; };
+		2CC5F0CC180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */; };
+		2CC5F0D1180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */; };
+		2CC5F0D2180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */; };
 		4D05000B12832500004603CF /* _0000_beach_theme2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000512832500004603CF /* _0000_beach_theme2.png */; };
 		4D05000C12832500004603CF /* _0000_garden_theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000612832500004603CF /* _0000_garden_theme1.png */; };
 		4D05000D12832500004603CF /* _0000_night_theme3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000712832500004603CF /* _0000_night_theme3.png */; };
@@ -675,6 +679,11 @@
 		2CC5EEF5180E4DC30021C69B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2CC5EEF8180E4E890021C69B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CC5EEFB180E59A40021C69B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		2CC5F0C9180F12AF0021C69B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.4.a; sourceTree = "<group>"; };
+		2CC5F0CE180F14380021C69B /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
+		2CC5F0CF180F14380021C69B /* FlurryAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAds.h; sourceTree = "<group>"; };
+		2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_4.2.4.a; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SnakeClassic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeClassic_Prefix.pch; sourceTree = "<group>"; };
 		4D05000512832500004603CF /* _0000_beach_theme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_beach_theme2.png; sourceTree = "<group>"; };
 		4D05000612832500004603CF /* _0000_garden_theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_garden_theme1.png; sourceTree = "<group>"; };
@@ -980,6 +989,7 @@
 			files = (
 				2CC5EEFC180E59A40021C69B /* AdSupport.framework in Frameworks */,
 				2C9A7AC7180C7AA900BD4FB1 /* Security.framework in Frameworks */,
+				2CC5F0CB180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */,
 				2C9A7A6F180C6A1700BD4FB1 /* Twitter.framework in Frameworks */,
 				4D2783801230EE8B00BE95A7 /* MediaPlayer.framework in Frameworks */,
 				4D2783661230EE1E00BE95A7 /* AudioToolbox.framework in Frameworks */,
@@ -988,6 +998,7 @@
 				4D2783691230EE2100BE95A7 /* CoreGraphics.framework in Frameworks */,
 				4D27836A1230EE2500BE95A7 /* Foundation.framework in Frameworks */,
 				4D27836B1230EE3700BE95A7 /* QuartzCore.framework in Frameworks */,
+				2CC5F0D1180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */,
 				4D2783791230EE8500BE95A7 /* CoreLocation.framework in Frameworks */,
 				4D27837A1230EE8600BE95A7 /* AddressBook.framework in Frameworks */,
 				4D27837C1230EE8700BE95A7 /* libsqlite3.dylib in Frameworks */,
@@ -1010,11 +1021,13 @@
 				4DBC02FD1287ADB30047AC18 /* AudioToolbox.framework in Frameworks */,
 				4DBC02FE1287ADB30047AC18 /* AVFoundation.framework in Frameworks */,
 				4DBC02FF1287ADB30047AC18 /* CoreData.framework in Frameworks */,
+				2CC5F0D2180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */,
 				4DBC03001287ADB30047AC18 /* CoreGraphics.framework in Frameworks */,
 				4DBC03011287ADB30047AC18 /* Foundation.framework in Frameworks */,
 				4DBC03021287ADB30047AC18 /* QuartzCore.framework in Frameworks */,
 				4DBC03031287ADB30047AC18 /* CoreLocation.framework in Frameworks */,
 				4DBC03041287ADB30047AC18 /* AddressBook.framework in Frameworks */,
+				2CC5F0CC180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */,
 				2C9A7A71180C704E00BD4FB1 /* Twitter.framework in Frameworks */,
 				4DBC03051287ADB30047AC18 /* libsqlite3.dylib in Frameworks */,
 				4DBC03061287ADB30047AC18 /* libz.dylib in Frameworks */,
@@ -1113,6 +1126,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				2CC5F0CD180F14380021C69B /* FlurryAds */,
+				2CC5F0C8180F12AF0021C69B /* Flurry */,
 				4DC178B3140CC6D90094E8A4 /* Entitlements.plist */,
 				4DCD8D0013D549C000538C3F /* MediaPlayer.framework */,
 				4DC8C4FC12AE0B6700286D15 /* TouchJSON */,
@@ -1191,6 +1206,25 @@
 				4D6BF5C313388A5800A79861 /* GameKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CC5F0C8180F12AF0021C69B /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				2CC5F0C9180F12AF0021C69B /* Flurry.h */,
+				2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
+		2CC5F0CD180F14380021C69B /* FlurryAds */ = {
+			isa = PBXGroup;
+			children = (
+				2CC5F0CE180F14380021C69B /* FlurryAdDelegate.h */,
+				2CC5F0CF180F14380021C69B /* FlurryAds.h */,
+				2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */,
+			);
+			path = FlurryAds;
 			sourceTree = "<group>";
 		};
 		4D0D1D7D128A74440091E3A4 /* NewPics */ = {
@@ -2217,6 +2251,10 @@
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
+					/Users/pmehta/Zing/Snake/Flurry,
+					/Users/pmehta/Zing/Snake/FlurryAds,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -2289,6 +2327,10 @@
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
+					/Users/pmehta/Zing/Snake/Flurry,
+					/Users/pmehta/Zing/Snake/FlurryAds,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DLITE_VERSION";
@@ -2337,6 +2379,10 @@
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
+					/Users/pmehta/Zing/Snake/Flurry,
+					/Users/pmehta/Zing/Snake/FlurryAds,
 				);
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "Snake UL";
@@ -2377,6 +2423,10 @@
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
+					/Users/pmehta/Zing/Snake/Flurry,
+					/Users/pmehta/Zing/Snake/FlurryAds,
 				);
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "Snake UL";
@@ -2447,6 +2497,10 @@
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
+					/Users/pmehta/Zing/Snake/Flurry,
+					/Users/pmehta/Zing/Snake/FlurryAds,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DLITE_VERSION";
@@ -2493,6 +2547,10 @@
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
+					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
+					/Users/pmehta/Zing/Snake/Flurry,
+					/Users/pmehta/Zing/Snake/FlurryAds,
 				);
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "Snake UL";

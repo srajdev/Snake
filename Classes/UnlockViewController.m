@@ -13,6 +13,8 @@
 #import "main_menu.h"
 #import "Options.h"
 #import "FieldModeViewController.h"
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 @implementation UnlockViewController
 
@@ -120,6 +122,8 @@
 		
 	}
 	
+    [FlurryAds setAdDelegate:self];
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
 	
 //	[adView doNotIgnoreNewAdRequests];
 //	[adView doNotIgnoreAutoRefreshTimer];
@@ -298,12 +302,14 @@
 	else {
 		[delegate switchView:self.view toview:delegate.useCreditsView.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
 	}
+	
+}
 
-	
-	
-	
-	
-	
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
 	
 }
 

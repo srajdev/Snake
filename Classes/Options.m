@@ -18,7 +18,8 @@
 #import "Options.h"
 #import "SnakeClassicAppDelegate.h"
 #import "main_menu.h"
-//#import "FlurryAnalytics.h"
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 
 @implementation Options
@@ -883,6 +884,11 @@
 	}
 	*/
 #ifdef LITE_VERSION
+    
+    [FlurryAds setAdDelegate:self];
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	
+    
     // Code specific to lite version
 
 	//[adView doNotIgnoreNewAdRequests];
@@ -990,6 +996,9 @@
 
 - (void) viewDidDisappear:(BOOL)animated{
 	
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+
 //	[adView ignoreNewAdRequests];
 	
 //	[adView ignoreAutoRefreshTimer];

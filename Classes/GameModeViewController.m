@@ -15,7 +15,8 @@
 #import "SnakeClassicAppDelegate.h"
 #import "Difficulty.h"
 #import "Snake_3ViewController.h"
-
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 @implementation GameModeViewController
 @synthesize classicButton;
@@ -100,13 +101,17 @@
 	
 #ifdef LITE_VERSION
     // Code specific to lite version
-	
-	
+	[FlurryAds setAdDelegate:self];
+
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+    
 	//	[adView doNotIgnoreNewAdRequests];
 	//	[adView doNotIgnoreAutoRefreshTimer];
 	
 	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
 /*	adView = delegate.mainmenu.adView;
+ 
+ 
 	if(IS_IPHONE_5){
         
         adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
@@ -296,6 +301,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+
+	
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.

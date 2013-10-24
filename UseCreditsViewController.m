@@ -13,6 +13,8 @@
 #import "main_menu.h"
 #import "UnlockViewController.h"
 #import "GKAchievementHandler.h"
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 
 @implementation UseCreditsViewController
@@ -156,51 +158,7 @@
 	
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
-	/*
-	if (delegate.theme == kClassicTheme) {
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_classic.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"use_credits_classic.png"];
-		}
-        balance.textColor = [UIColor whiteColor];
-		
-	}
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_garden.png"];
-        }
-        else{
-		
-		background.image = [UIImage imageNamed:@"use_credits_garden.png"];
-		}
-        balance.textColor = [UIColor yellowColor];
-	}
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_beach.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"use_credits_beach.png"];
-		}
-        balance.textColor = [UIColor darkTextColor];
-	}
-	else if(delegate.theme == kTheme3){
-		
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_night.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"use_credits_night.png"];
-        }
-		balance.textColor = [UIColor whiteColor];
-	}
-	*/
+	
 	if (delegate.beachUnlocked == YES) {
 		beachUnlocked.hidden = NO;
 		beachUnlocked.enabled = NO;
@@ -267,7 +225,9 @@
 	}
 
 
-
+    [FlurryAds setAdDelegate:self];
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	
 	//[adView doNotIgnoreNewAdRequests];
 	//[adView doNotIgnoreAutoRefreshTimer];
 	
@@ -387,7 +347,13 @@
 	
 }
 
-
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
+	
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.

@@ -18,6 +18,8 @@
 #import "GlobalScoreRecord.h"
 #import "XMLParser.h"
 #import "AdSupport/ASIdentifierManager.h"
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 
 @implementation HighScoreViewController
@@ -429,6 +431,10 @@
 	
 	
 #ifdef LITE_VERSION
+    
+    [FlurryAds setAdDelegate:self];
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	
     // Code specific to lite version
 
 	
@@ -458,16 +464,12 @@
 #endif
 }
 
-
-
 - (void) viewDidDisappear:(BOOL)animated{
-
-//	[adView ignoreNewAdRequests];
-	
-//	[adView ignoreAutoRefreshTimer];
-
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    	
 }
-
 
 // Function that sends a call to the server and gets the global high scores
 -(void)loadGlobalHighScores{
@@ -750,14 +752,6 @@
 	
 	
 }
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
