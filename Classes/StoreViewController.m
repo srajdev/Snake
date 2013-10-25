@@ -130,8 +130,18 @@
 	
 	
     [FlurryAds setAdDelegate:self];
-	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-
+    if(IS_IPHONE_5){
+        //cretate a UIView to hold the Flurry banner ad, with desired position and size
+        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
+        
+        [self.view addSubview:flurryContainer];
+        //fetch the ad with the newly created UIView
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
+    }
+    else{
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	}
+	
 	
 	//[adView doNotIgnoreNewAdRequests];
 	//[adView doNotIgnoreAutoRefreshTimer];

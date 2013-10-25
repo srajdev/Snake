@@ -21,8 +21,8 @@
 @synthesize backButton;
 @synthesize refreshButton;
 @synthesize nameButton;
-@synthesize downloadButton;
-@synthesize name;
+//@synthesize downloadButton;
+//@synthesize name;
 @synthesize myAdView;
 
 - (void) viewDidLoad{
@@ -37,7 +37,7 @@
             background.image = [UIImage imageNamed:@"store_classic.png"];
         }
         else{
-            background.image = [UIImage imageNamed:@"_0000_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_classic_store.png"];
         }
 		balance.textColor = [UIColor whiteColor];
 		
@@ -45,37 +45,37 @@
 	else if(delegate.theme == kTheme1){
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"earn_credits_garden.png"];
+            background.image = [UIImage imageNamed:@"store_garden.png"];
         }
         else{
-            background.image = [UIImage imageNamed:@"_0000_theme1_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_theme1_store.png"];
         }
 		balance.textColor = [UIColor yellowColor];
 	}
 	else if(delegate.theme == kTheme2){
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"earn_credits_beach.png"];
+            background.image = [UIImage imageNamed:@"store_beach.png"];
         }
         else{
-            background.image = [UIImage imageNamed:@"_0000_theme2_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_theme2_store.png"];
 		}
         balance.textColor = [UIColor darkTextColor];
 	}
 	else if(delegate.theme == kTheme3){
 		if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"earn_credits_night.png"];
+            background.image = [UIImage imageNamed:@"store_night.png"];
         }
         else{
-            background.image = [UIImage imageNamed:@"_0000_theme_3_earn_credits.png"];
+            background.image = [UIImage imageNamed:@"_0000_theme3_store.png"];
 		}
         balance.textColor = [UIColor whiteColor];
 	}
 	if(IS_IPHONE_5){
         //self.view.frame = CGRectMake(0, 0, 320, 568);
         
-        CGRect btnameFrame = name.frame;
+        /*CGRect btnameFrame = name.frame;
         btnameFrame.origin.x = EARN_NAME_BUTTON_X;
         btnameFrame.origin.y = 20 + EARN_NAME_BUTTON_Y;
         name.frame = btnameFrame;
@@ -84,15 +84,15 @@
         btdownloadFrame.origin.x = EARN_DOWNLOAD_BUTTON_X;
         btdownloadFrame.origin.y = 30 + EARN_DOWNLOAD_BUTTON_Y;
         downloadButton.frame = btdownloadFrame;
-        
+        */
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = EARN_BACK_BUTTON_X;
-        btbackFrame.origin.y = 90 + EARN_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 120 + EARN_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
         CGRect btrefreshFrame = refreshButton.frame;
-        btrefreshFrame.origin.x = EARN_REFRESH_BUTTON_X;
-        btrefreshFrame.origin.y = 90 + EARN_REFRESH_BUTTON_Y;
+        btrefreshFrame.origin.x = 20 + EARN_REFRESH_BUTTON_X;
+        btrefreshFrame.origin.y = 30 + EARN_REFRESH_BUTTON_Y;
         refreshButton.frame = btrefreshFrame;
 	}
 	
@@ -106,7 +106,7 @@
     
     balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Enter your Email ID:" message:@"Earn 5 Credits" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Enter your Email ID:" message:@"Earn 5 Snake Credits" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
 
     //need to show the alert only if the idfa is empty in the database
@@ -127,8 +127,24 @@
 
     [FlurryAds setAdDelegate:self];
     
-	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-
+	/*if(IS_IPHONE_5){
+        //cretate a UIView to hold the Flurry banner ad, with desired position and size
+        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
+        
+        [self.view addSubview:flurryContainer];
+        //fetch the ad with the newly created UIView
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
+    }
+    else{
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	}
+    */
+    
+    if ([FlurryAds adReadyForSpace:@"Videos"]) {
+        [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
+    } else {
+        [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+    }
 	
 	[self refresh];
 }

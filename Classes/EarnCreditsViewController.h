@@ -24,19 +24,19 @@
 	
 	
 
-	IBOutlet UILabel *name;
+//	IBOutlet UILabel *name;
 	
 	IBOutlet UILabel *balance;
 	
 	IBOutlet UIImageView *background;
     IBOutlet UIButton *nameButton;
-    IBOutlet UIButton *downloadButton;
+    //IBOutlet UIButton *downloadButton;
     IBOutlet UIButton *backButton;
     IBOutlet UIButton *refreshButton;
 }
-@property (nonatomic,retain) IBOutlet UILabel *name;
+//@property (nonatomic,retain) IBOutlet UILabel *name;
 @property (nonatomic,retain) IBOutlet UIButton *nameButton;
-@property (nonatomic,retain) IBOutlet UIButton *downloadButton;
+//@property (nonatomic,retain) IBOutlet UIButton *downloadButton;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
 @property (nonatomic,retain) IBOutlet UIButton *refreshButton;
 
