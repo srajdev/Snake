@@ -20,11 +20,9 @@
 #import "HighScores.h"
 #import "HighScoreRecord.h"
 #import "Difficulty.h"
-//#import "FlurryAnalytics.h"
-//#import "GSAdEngine.h"
 #import "GKAchievementHandler.h"
-//#import "FlurryClips.h"
-//#import "FlurryAppCircle.h"
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 #define kOAuthConsumerKey				@"qbOcFT2SmkVJ5JKNLpq1jg"		//REPLACE ME
 #define kOAuthConsumerSecret			@"W3zanQvRhXx1rT9rsOJqlpIrwu1slvUbVabB4c2wDc"		//REPLACE ME
@@ -190,8 +188,18 @@ static NSString* kFBAppId = @"158392174179755";
 		[delegate.mainmenu.adView requestFreshAd];
 	}
 */
-	
-	
+	[FlurryAds setAdDelegate:self];
+	if(IS_IPHONE_5){
+        //cretate a UIView to hold the Flurry banner ad, with desired position and size
+        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
+        
+        [self.view addSubview:flurryContainer];
+        //fetch the ad with the newly created UIView
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
+    }
+    else{
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	}
 	
 	
 	if (delegate.gameMode == kClassicMode && delegate.fieldMode == kNoWall && delegate.delegateScore >= 10000) {
@@ -399,8 +407,11 @@ static NSString* kFBAppId = @"158392174179755";
 //	[adView ignoreNewAdRequests];
 	
 //	[adView ignoreAutoRefreshTimer];
-	
+
+	    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
 }
+
 /*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
 	[UIView beginAnimations:@"AdResize" context:nil];

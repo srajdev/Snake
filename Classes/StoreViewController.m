@@ -12,7 +12,8 @@
 #import "StoreViewController.h"
 #import "SnakeClassicAppDelegate.h"
 #import "main_menu.h"
-
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 @implementation StoreViewController
 
@@ -21,6 +22,7 @@
 @synthesize useButton;
 @synthesize backButton;
 @synthesize helpButton;
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -82,7 +84,6 @@
      }
     
     if(IS_IPHONE_5){
-       // self.view.frame = CGRectMake(0, 0, 320, 568);
         
         CGRect btearnFrame = earnButton.frame;
         btearnFrame.origin.x = STORE_EARN_BUTTON_X;
@@ -128,7 +129,18 @@
 	}
 	
 	
-	
+    [FlurryAds setAdDelegate:self];
+    if(IS_IPHONE_5){
+        //cretate a UIView to hold the Flurry banner ad, with desired position and size
+        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
+        
+        [self.view addSubview:flurryContainer];
+        //fetch the ad with the newly created UIView
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
+    }
+    else{
+        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	}
 	
 	
 	//[adView doNotIgnoreNewAdRequests];
@@ -299,6 +311,14 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
+	
 }
 
 - (void)viewDidUnload {

@@ -13,8 +13,8 @@
 #import "Difficulty.h"
 #import "SnakeClassicAppDelegate.h"
 #import "Snake_3ViewController.h"
-//#import "FlurryAnalytics.h"
-
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 @implementation Difficulty
 

@@ -27,9 +27,8 @@
 #import "snakeType.h"
 #import "foodType.h"
 #import "Snake_3ViewController.h"
-//#import "FlurryAnalytics.h"
-//#import "FlurryAppCircle.h"
-//#import "FlurryClips.h"
+#import "Flurry.h"
+#import "FlurryAds.h"
 #import "HighScoreViewController.h"
 #import "Options.h"
 #import "Difficulty.h"
@@ -204,6 +203,25 @@ static NSString* kFBAppId = @"158392174179755";
     
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    if (!url) {  return NO; }
+    
+    NSString *URLString = [url absoluteString];
+    [[NSUserDefaults standardUserDefaults] setObject:URLString forKey:@"url"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //EarnCreditsViewController *aEarn = [[EarnCreditsViewController alloc] initWithNibName:@"EarnCreditsViewController" bundle:nil];
+	
+    earnView = [[EarnCreditsViewController alloc] initWithNibName:@"EarnCreditsViewController" bundle:nil];
+	
+	[window addSubview:earnView.view];
+	
+	//[earnView release];
+	
+    return YES;
+    
+}
 
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
@@ -792,6 +810,8 @@ static NSString* kFBAppId = @"158392174179755";
 //    [FlurryAppCircle setAppCircleDelegate:self];
 //    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
 
+    [Flurry startSession:@"9VIC9CUSJ9PN1RB212BA"];
+    [FlurryAds initialize:window.rootViewController];
 	
 // If the user has the unlocked version we give him all the features unlocked.
 #ifndef LITE_VERSION

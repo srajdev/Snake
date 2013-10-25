@@ -11,7 +11,8 @@
 #import "HelpPageViewController.h"
 #import "SnakeClassicAppDelegate.h"
 #import "main_menu.h"
-
+#import "FlurryAdDelegate.h"
+#import "FlurryAds.h"
 
 @implementation HelpPageViewController
 
@@ -129,6 +130,9 @@
 	
 	
 #ifdef LITE_VERSION
+    [FlurryAds setAdDelegate:self];
+	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
+	
 //	[adView doNotIgnoreNewAdRequests];
 //	[adView doNotIgnoreAutoRefreshTimer];
 	
@@ -272,6 +276,14 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void) viewDidDisappear:(BOOL)animated{
+    
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds setAdDelegate:nil];
+    
+	
 }
 
 - (void)viewDidUnload {
