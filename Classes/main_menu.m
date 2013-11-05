@@ -250,7 +250,7 @@
 // Action that takes place when the new game button is pressed. takes the user to a screen to select different speeds
 -(IBAction)newgame:(id)sender{
 
-	[Flurry logEvent:@"New Game for v4.1"];
+	[Flurry logEvent:@"New Game"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

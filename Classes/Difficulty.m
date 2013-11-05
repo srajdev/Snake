@@ -54,7 +54,7 @@
 		[Flurry logEvent:@"Play Speed 2"];
 	}
 	if (delegate.speed == 3) {
-		[Flurry logEvent:@"Play Speed 3 for v4.1"];
+		[Flurry logEvent:@"Play Speed 3"];
 	}
 	if (delegate.speed == 4) {
 		[Flurry logEvent:@"Play Speed 4"];
@@ -107,13 +107,6 @@
 	
 	
 	[delegate switchView:self.view toview:gameNew.view delay:NO remove:YES display:nil curlup:NO curldown:NO];
-
-	
-	
-	
-	
-	
-	
 }
 
 
