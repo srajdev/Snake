@@ -35,6 +35,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *useButton;
 @property (nonatomic,retain) IBOutlet UIButton *helpButton;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic,retain) IBOutlet UILabel *balance;
 
 -(IBAction) earnPressed : (id) sender;
 

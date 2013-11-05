@@ -123,6 +123,7 @@
 		2CC5F0CC180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */; };
 		2CC5F0D1180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */; };
 		2CC5F0D2180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */; };
+		2CF6A3E3182447F5004F8BAA /* watch videos.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6A3E2182447F5004F8BAA /* watch videos.png */; };
 		4D05000B12832500004603CF /* _0000_beach_theme2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000512832500004603CF /* _0000_beach_theme2.png */; };
 		4D05000C12832500004603CF /* _0000_garden_theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000612832500004603CF /* _0000_garden_theme1.png */; };
 		4D05000D12832500004603CF /* _0000_night_theme3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000712832500004603CF /* _0000_night_theme3.png */; };
@@ -684,6 +685,7 @@
 		2CC5F0CE180F14380021C69B /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
 		2CC5F0CF180F14380021C69B /* FlurryAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAds.h; sourceTree = "<group>"; };
 		2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_4.2.4.a; sourceTree = "<group>"; };
+		2CF6A3E2182447F5004F8BAA /* watch videos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch videos.png"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SnakeClassic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeClassic_Prefix.pch; sourceTree = "<group>"; };
 		4D05000512832500004603CF /* _0000_beach_theme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_beach_theme2.png; sourceTree = "<group>"; };
 		4D05000612832500004603CF /* _0000_garden_theme1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_garden_theme1.png; sourceTree = "<group>"; };
@@ -1230,15 +1232,14 @@
 		4D0D1D7D128A74440091E3A4 /* NewPics */ = {
 			isa = PBXGroup;
 			children = (
-				4D7A9F2513B1DC55007E2DF5 /* Game_Center_logo.png */,
-				4DE28D8F12CD30F30057B008 /* night.png */,
-				4DE28D8C12CD30ED0057B008 /* classic_back.png */,
-				2CC2006517FF48E700100CC7 /* _green_box.png */,
 				2CC2008B17FF4AEB00100CC7 /* _blue_4sq.png */,
-				2CC2009417FFDC7600100CC7 /* _green_4sq.png */,
 				2CC2008C17FF4AF700100CC7 /* _blue_box.png */,
 				2CC2008D17FF4B2300100CC7 /* _blue_hitw.png */,
+				2CC2005B17FF366D00100CC7 /* _blue_open.png */,
+				2CC2009417FFDC7600100CC7 /* _green_4sq.png */,
+				2CC2006517FF48E700100CC7 /* _green_box.png */,
 				2CC2006617FF48EF00100CC7 /* _green_hitw.png */,
+				2CC2005E17FF395A00100CC7 /* _green_open.png */,
 				2CC2006717FF48F100100CC7 /* _orange_4sq.png */,
 				2CC2006817FF48F400100CC7 /* _orange_box.png */,
 				2CC2006917FF490400100CC7 /* _orange_hitw.png */,
@@ -1247,32 +1248,33 @@
 				2CC2006C17FF490F00100CC7 /* _yellow_box.png */,
 				2CC2006D17FF491200100CC7 /* _yellow_hitw.png */,
 				2CC2006E17FF491400100CC7 /* _yellow_open.png */,
+				4D0D1DC7128A78D80091E3A4 /* balance_.png */,
 				4DE28D8912CD30DB0057B008 /* beach.png */,
-				4DE28D8612CD30D50057B008 /* garden.png */,
 				4D0D1DDA128A7C500091E3A4 /* blue_4sq.png */,
-				2CC2005E17FF395A00100CC7 /* _green_open.png */,
 				4D0D1DDB128A7C500091E3A4 /* blue_box.png */,
 				4D0D1DDC128A7C500091E3A4 /* blue_hitw.png */,
 				4D0D1DDD128A7C500091E3A4 /* blue_open.png */,
+				4D0D1D80128A74540091E3A4 /* Classic.png */,
+				4DE28D8C12CD30ED0057B008 /* classic_back.png */,
+				4D7A9F2513B1DC55007E2DF5 /* Game_Center_logo.png */,
+				4DE28D8612CD30D50057B008 /* garden.png */,
 				4D0D1DDF128A7C500091E3A4 /* green_4sq.png */,
-				2CC2005B17FF366D00100CC7 /* _blue_open.png */,
 				4D0D1DE0128A7C500091E3A4 /* green_box.png */,
 				4D0D1DE1128A7C500091E3A4 /* green_hitw.png */,
 				4D0D1DE2128A7C500091E3A4 /* green_open.png */,
+				4D0D1D81128A74540091E3A4 /* Logo.png */,
+				4DE28D8F12CD30F30057B008 /* night.png */,
 				4D0D1DE4128A7C500091E3A4 /* orange_4sq.png */,
 				4D0D1DE5128A7C500091E3A4 /* orange_box.png */,
 				4D0D1DE6128A7C500091E3A4 /* orange_hitw.png */,
 				4D0D1DE7128A7C500091E3A4 /* orange_open.png */,
+				4D0D1D82128A74540091E3A4 /* Theme1.png */,
+				4D0D1D83128A74540091E3A4 /* Theme2.png */,
+				4D0D1D84128A74540091E3A4 /* Theme3.png */,
 				4D0D1DE8128A7C500091E3A4 /* yellow_4sq.png */,
 				4D0D1DE9128A7C500091E3A4 /* yellow_box.png */,
 				4D0D1DEA128A7C500091E3A4 /* yellow_hitw.png */,
 				4D0D1DEB128A7C500091E3A4 /* yellow_open.png */,
-				4D0D1DC7128A78D80091E3A4 /* balance_.png */,
-				4D0D1D80128A74540091E3A4 /* Classic.png */,
-				4D0D1D81128A74540091E3A4 /* Logo.png */,
-				4D0D1D82128A74540091E3A4 /* Theme1.png */,
-				4D0D1D83128A74540091E3A4 /* Theme2.png */,
-				4D0D1D84128A74540091E3A4 /* Theme3.png */,
 			);
 			name = NewPics;
 			sourceTree = "<group>";
@@ -1441,6 +1443,7 @@
 				4D26F44D1283D66D00D16F13 /* theme_beach.png */,
 				4D26F44C1283D66D00D16F13 /* theme_beach_selected.png */,
 				4D26F44F1283D66D00D16F13 /* theme_garden.png */,
+				2CF6A3E2182447F5004F8BAA /* watch videos.png */,
 				4D26F44E1283D66D00D16F13 /* theme_garden_selected.png */,
 				4D26F4511283D66D00D16F13 /* theme_night.png */,
 				4D26F4501283D66D00D16F13 /* theme_night_selected.png */,
@@ -1653,6 +1656,7 @@
 				4D89F9BC12371FA100051A67 /* HighScoreViewController.xib in Resources */,
 				4D89F9FD1237225000051A67 /* HighScoreCell.xib in Resources */,
 				4DFDB14A1239EE8E00329152 /* apple_red.png in Resources */,
+				2CF6A3E3182447F5004F8BAA /* watch videos.png in Resources */,
 				4DFDB20E1239F8F100329152 /* apple_green.png in Resources */,
 				4DE90A421241CEA200CB48EB /* _0000_yellow.png in Resources */,
 				4DE90A4A1241CFCE00CB48EB /* _0001_yellow.png in Resources */,

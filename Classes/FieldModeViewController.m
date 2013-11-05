@@ -15,6 +15,7 @@
 #import "Difficulty.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 @implementation FieldModeViewController
 
@@ -23,7 +24,7 @@
 // Action when user presses Open Field
 -(IBAction) OpenFieldPressed:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"classic/play openfield"];
+	[Flurry logEvent:@"classic/play openfield"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -75,7 +76,7 @@
 // Action when user presses Box field
 -(IBAction) BoxPressed:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"classic/play box"];
+	[Flurry logEvent:@"classic/play box"];
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
@@ -126,7 +127,7 @@
 // Action when user presses Hole in the wall Field
 -(IBAction) HoleWallPressed:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"classic/play hitw"];
+	[Flurry logEvent:@"classic/play hitw"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -180,7 +181,7 @@
 // Action when user presses 4Square Field
 -(IBAction) SquarePressed:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"classic/play 4sq"];
+	[Flurry logEvent:@"classic/play 4sq"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

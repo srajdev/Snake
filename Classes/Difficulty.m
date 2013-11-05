@@ -15,6 +15,7 @@
 #import "Snake_3ViewController.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 @implementation Difficulty
 
@@ -47,55 +48,55 @@
 	
 	if (delegate.speed == 1) {
 	//	[FlurryAnalytics logEvent:@"Play Speed 1"];
-		
+		[Flurry logEvent:@"Play Speed 1"];
 	}
 	if (delegate.speed == 2) {
-	//	[FlurryAnalytics logEvent:@"Play Speed 2"];
+		[Flurry logEvent:@"Play Speed 2"];
 	}
 	if (delegate.speed == 3) {
-	//	[FlurryAnalytics logEvent:@"Play Speed 3"];
+		[Flurry logEvent:@"Play Speed 3 for v4.1"];
 	}
 	if (delegate.speed == 4) {
-	//	[FlurryAnalytics logEvent:@"Play Speed 4"];
+		[Flurry logEvent:@"Play Speed 4"];
 	}
 	if (delegate.speed == 5) {
-	//	[FlurryAnalytics logEvent:@"Play Speed 5"];
+		[Flurry logEvent:@"Play Speed 5"];
 	}
 	
 	
 	if (delegate.isSoundOn == YES) {
-	//	[FlurryAnalytics logEvent:@"Sound on"];
+		[Flurry logEvent:@"Sound on"];
 	}
 	if (delegate.isSoundOn == NO) {
-	//	[FlurryAnalytics logEvent:@"Sound off"];
+		[Flurry logEvent:@"Sound off"];
 	}
 	
 	if (delegate.isVibrateOn == YES) {
-	//	[FlurryAnalytics logEvent:@"Vibration on"];
+		[Flurry logEvent:@"Vibration on"];
 	}
 	if (delegate.isVibrateOn == NO) {
-	//	[FlurryAnalytics logEvent:@"Vibration off"];
+		[Flurry logEvent:@"Vibration off"];
 	}
 	
 	if (delegate.isWallOn == YES) {
-	//	[FlurryAnalytics logEvent:@"Walls on"];
+		[Flurry logEvent:@"Walls on"];
 		
 	}
 	if (delegate.isWallOn == NO) {
-	//	[FlurryAnalytics logEvent:@"Walls off"];
+		[Flurry logEvent:@"Walls off"];
 	}
 	
 	if (delegate.snakeColor == [UIColor greenColor]) {
-	//	[FlurryAnalytics logEvent:@"Snake Color/Green"];
+		[Flurry logEvent:@"Snake Color/Green"];
 	}
 	if (delegate.snakeColor == [UIColor blueColor]) {
-	//	[FlurryAnalytics logEvent:@"Snake Color/Blue"];
+		[Flurry logEvent:@"Snake Color/Blue"];
 	}
 	if (delegate.snakeColor == [UIColor blackColor]) {
-	//	[FlurryAnalytics logEvent:@"Snake Color/Black"];
+		[Flurry logEvent:@"Snake Color/Black"];
 	}
 	if (delegate.snakeColor == [UIColor orangeColor]) {
-	//	[FlurryAnalytics logEvent:@"Snake Color/Orange"];
+		[Flurry logEvent:@"Snake Color/Orange"];
 	}
 	
 	

@@ -23,6 +23,7 @@
 #import "GKAchievementHandler.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 #define kOAuthConsumerKey				@"qbOcFT2SmkVJ5JKNLpq1jg"		//REPLACE ME
 #define kOAuthConsumerSecret			@"W3zanQvRhXx1rT9rsOJqlpIrwu1slvUbVabB4c2wDc"		//REPLACE ME
@@ -432,7 +433,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 - (IBAction) FBpublish: (id)sender {
 	
-	//[FlurryAnalytics logEvent:@"gameover/facebook"];
+	[Flurry logEvent:@"gameover/facebook"];
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	if (delegate.FBLoggedIn == NO) {
@@ -514,8 +515,8 @@ static NSString* kFBAppId = @"158392174179755";
 // user is directed to the screen to select a speed and then start playing the game again
 
 -(IBAction)playAgain:(id)sender{
-	
-	//[FlurryAnalytics logEvent:@"Play Again"];
+
+	[Flurry logEvent:@"Play Again"];
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	delegate.foodNumber = 0;
@@ -559,7 +560,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction)buttonToChangeName{
 	
-//	[FlurryAnalytics logEvent:@"Game Over/Change Player"];
+	[Flurry logEvent:@"Game Over/Change Player"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	name.hidden = YES;
@@ -600,7 +601,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction)mainmenu:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"Menu"];
+	[Flurry logEvent:@"Menu"];
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -654,7 +655,7 @@ static NSString* kFBAppId = @"158392174179755";
 -(IBAction) rateApp{
 	
 	
-//	[FlurryAnalytics logEvent:@"gameover/rate"];
+	[Flurry logEvent:@"gameover/rate"];
 	
 	// Send the user to the appropriate rate place depending on which version (LOCKED OR UNLOCKED)
 #ifdef LITE_VERSION
@@ -747,16 +748,16 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(IBAction) tweetIt{
 	
-	//[FlurryAnalytics logEvent:@"gameover/twitter"];
+	[Flurry logEvent:@"gameover/twitter"];
 	
 	NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
 	[numberFormatter setPositiveFormat:@"#,###"];
 	
 	
 	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
+	//NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
 	
 	//if (engine) return;
     /*

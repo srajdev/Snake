@@ -26,7 +26,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "HighScoreViewController.h"
-
+#import "Flurry.h"
 
 
 
@@ -42,8 +42,6 @@
 @synthesize helpPressed;
 @synthesize checkAchievementsButton;
 @synthesize resumeTimer;
-
-
 
 
 
@@ -75,7 +73,7 @@
 #endif
 	
     
-    if (delegate.theme == kClassicTheme) {
+   /* if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"main-menu_classic.png"];
@@ -113,6 +111,7 @@
             background.image = [UIImage imageNamed:@"Theme3.png"];
         }
     }
+    */
 		if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
 		resumebutton.enabled = YES;
 	}
@@ -251,7 +250,7 @@
 // Action that takes place when the new game button is pressed. takes the user to a screen to select different speeds
 -(IBAction)newgame:(id)sender{
 
-	//[FlurryAnalytics logEvent:@"New Game"];
+	[Flurry logEvent:@"New Game for v4.1"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -271,7 +270,7 @@
 
 -(IBAction)options:(id)sender{
 	
-//	[FlurryAnalytics logEvent:@"Settings"];
+	[Flurry logEvent:@"Settings"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -287,7 +286,7 @@
 
 -(IBAction)resume:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"Resume"];
+	[Flurry logEvent:@"Resume"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -398,7 +397,7 @@
 // Action that takes palce when the scores button is pressed. Takes the user to the scores screen
 -(IBAction)scores:(id)sender{
 	
-	//[FlurryAnalytics logEvent:@"Scores"];
+	[Flurry logEvent:@"Scores"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -419,11 +418,11 @@
 
 -(IBAction)moreApps:(id)sender{
 	
-//	[FlurryAnalytics logEvent:@"More Apps"];
+	[Flurry logEvent:@"More Apps"];
 
 	
 	
-	//[FlurryAnalytics openCatalog:@"more apps" canvasOrientation:@"portrait"];
+	[Flurry openCatalog:@"more apps" canvasOrientation:@"portrait"];
 	
 	
 	
@@ -440,7 +439,7 @@
 
 
 	
-	//[FlurryAnalytics logEvent:@"main menu/store"];
+	[Flurry logEvent:@"main menu/store"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -453,7 +452,7 @@
 
 -(IBAction) helpPressed : (id)sender{
 	
-	//[FlurryAnalytics logEvent:@"main menu/help"];
+	[Flurry logEvent:@"main menu/help"];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -485,6 +484,46 @@
  
  //	[adView doNotIgnoreNewAdRequests];
  //	[adView doNotIgnoreAutoRefreshTimer];
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Classic.png"];
+        }
+    }
+    
+	else if(delegate.theme == kTheme1){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme1.png"];
+        }
+    }
+	else if(delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
+        }
+        else{
+            //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
+            background.image = [UIImage imageNamed:@"Theme2.png"];
+        }
+    }
+	else if(delegate.theme == kTheme3){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"main_menu_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"Theme3.png"];
+        }
+    }
     
     if(IS_IPHONE_5){
         self.view.frame = CGRectMake(0, 0, 320, 568);
