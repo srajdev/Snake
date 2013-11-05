@@ -20,6 +20,7 @@
 #import "main_menu.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 
 @implementation Options
@@ -1049,7 +1050,7 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	if (buttonPressed.tag == 0) {
-		//[FlurryAnalytics logEvent:@"options/classic theme"];
+		[Flurry logEvent:@"options/classic theme"];
 		classic.hidden = YES;
 		classicSelected.hidden = NO;
 		
@@ -1102,7 +1103,7 @@
 	}
 	else if(buttonPressed.tag == 1){
 	
-		//[FlurryAnalytics logEvent:@"options/garden theme"];
+		[Flurry logEvent:@"options/garden theme"];
 		classic.hidden = NO;
 		classicSelected.hidden = YES;
 		
@@ -1155,7 +1156,7 @@
 		
 	}
 	else if(buttonPressed.tag == 2){
-	//	[FlurryAnalytics logEvent:@"options/beach theme"];
+		[Flurry logEvent:@"options/beach theme"];
 		
 		classic.hidden = NO;
 		classicSelected.hidden = YES;
@@ -1209,7 +1210,7 @@
 		
 	}
 	else if(buttonPressed.tag == 3){
-		//[FlurryAnalytics logEvent:@"options/night theme"];
+		[Flurry logEvent:@"options/night theme"];
 		
 		classic.hidden = NO;
 		classicSelected.hidden = YES;
@@ -1459,7 +1460,7 @@
 
 -(IBAction)buttonToChangeName{
 	
-	//[FlurryAnalytics logEvent:@"Settings/Change Player"];
+	[Flurry logEvent:@"Settings/Change Player"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	nameButton.hidden = YES;

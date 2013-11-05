@@ -13,6 +13,7 @@
 #import "main_menu.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 @implementation HelpPageViewController
 
@@ -202,18 +203,18 @@
 	delegate.pageFrom = kFromHelp;
 	
 	if (button.tag == 0) {
-	//	[FlurryAnalytics logEvent:@"help/gameplay"];
+		[Flurry logEvent:@"help/gameplay"];
 		delegate.helpMode = kGamePlay;
 	}
 	else if(button.tag == 1){
 	
-	//	[FlurryAnalytics logEvent:@"help/unlock items"];
+		[Flurry logEvent:@"help/unlock items"];
 		delegate.helpMode = kUnlockItems;
 		
 	}
 	else if(button.tag == 2){
 	
-	//	[FlurryAnalytics logEvent:@"help/FAQ"];
+		[Flurry logEvent:@"help/FAQ"];
 		delegate.helpMode = kFAQ;
 	}
 	
@@ -230,7 +231,7 @@
 // takes the user to rate the game depending on which version he is on
 
 -(IBAction) rateGame : (id) sender{
-//	[FlurryAnalytics logEvent:@"help/rate"];
+	[Flurry logEvent:@"help/rate"];
 #ifdef LITE_VERSION
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=394603141&onlyLatestVersion=false&type=Purple+Software"]];
 	
@@ -244,7 +245,7 @@
 
 // Takes the user to Snake Classic Blog
 -(IBAction) blogPressed : (id) sender{
-//	[FlurryAnalytics logEvent:@"help/blog"];
+	[Flurry logEvent:@"help/blog"];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://snakeclassic.blogspot.com"]];
 	
@@ -254,7 +255,7 @@
 
 // Takes the user to the facebook page of Snake classic
 -(IBAction) facebookPressed : (id) sender{
-//	[FlurryAnalytics logEvent:@"help/facebook page"];
+	[Flurry logEvent:@"help/facebook page"];
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.facebook.com/snakeclassic"]];
 	
 }

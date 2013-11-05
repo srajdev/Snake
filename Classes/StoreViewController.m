@@ -14,6 +14,7 @@
 #import "main_menu.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 @implementation StoreViewController
 
@@ -22,7 +23,7 @@
 @synthesize useButton;
 @synthesize backButton;
 @synthesize helpButton;
-
+@synthesize balance;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -84,6 +85,11 @@
      }
     
     if(IS_IPHONE_5){
+        
+        CGRect btbalFrame = balance.frame;
+        btbalFrame.origin.x = 268;
+        btbalFrame.origin.y = 3 + 4;
+        balance.frame = btbalFrame;
         
         CGRect btearnFrame = earnButton.frame;
         btearnFrame.origin.x = STORE_EARN_BUTTON_X;
@@ -224,7 +230,7 @@
 // Action taking the user to earn credits
 -(IBAction) earnPressed : (id) sender{
 	
-	//[FlurryAnalytics logEvent:@"store/earn credits"];
+	[Flurry logEvent:@"store/earn credits"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -237,7 +243,7 @@
 // Action taking the user to use their credits
 -(IBAction) usePressed : (id) sender{
 	
-	//[FlurryAnalytics logEvent:@"store/user credits"];
+	[Flurry logEvent:@"store/user credits"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -270,7 +276,7 @@
 // Action that takes the user to download the unlocked game
 -(IBAction) unlockPressed : (id) sender{
 	
-	//[FlurryAnalytics logEvent:@"store/unlock all"];
+	[Flurry logEvent:@"store/unlock all"];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/app/id403683533"]];
 	
@@ -292,7 +298,7 @@
 // Action taking the user to the help page to understand the store
 -(IBAction) helpPressed : (id)sender{
 	
-	//[FlurryAnalytics logEvent:@"store/help"];
+	[Flurry logEvent:@"store/help"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

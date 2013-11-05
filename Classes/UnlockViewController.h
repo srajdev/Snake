@@ -31,6 +31,7 @@
 
 @property BOOL canPurchase;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic,retain) IBOutlet UILabel *balance;
 
 -(IBAction) unlockPressed : (id)sender;
 -(IBAction) backPressed : (id)sender;

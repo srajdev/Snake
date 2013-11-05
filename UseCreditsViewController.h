@@ -52,6 +52,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *square;
 @property (nonatomic,retain) IBOutlet UIButton *squareUnlocked;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic,retain) IBOutlet UILabel *balance;
 
 -(IBAction) viewPressed : (id) sender;
 

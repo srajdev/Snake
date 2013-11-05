@@ -15,11 +15,13 @@
 #import "FieldModeViewController.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 @implementation UnlockViewController
 
 @synthesize canPurchase;
 @synthesize backButton;
+@synthesize balance;
 
 -(void) viewDidLoad{
     
@@ -219,7 +221,7 @@
 	
 
 		if (delegate.creditsInfo == kGarden) {
-		//	[FlurryAnalytics logEvent:@"view/unlock garden"];
+			[Flurry logEvent:@"view/unlock garden"];
 			delegate.gardenUnlocked = YES;
 			canPurchase = YES;
 		
@@ -229,7 +231,7 @@
 		
 		}
 		else if (delegate.creditsInfo == kBeach){
-		//	[FlurryAnalytics logEvent:@"view/unlock beach"];
+			[Flurry logEvent:@"view/unlock beach"];
 			delegate.beachUnlocked = YES;
 			canPurchase = YES;
 			
@@ -238,7 +240,7 @@
 			[alert show];
 		}
 		else if(delegate.creditsInfo == kNight){
-		//	[FlurryAnalytics logEvent:@"view/unlock night"];
+			[Flurry logEvent:@"view/unlock night"];
 			delegate.nightUnlocked = YES;
 			canPurchase = YES;
 			
@@ -247,7 +249,7 @@
 			[alert show];
 		}
 		else if (delegate.creditsInfo == kHole){
-		//	[FlurryAnalytics logEvent:@"view/unlock hitw"];
+			[Flurry logEvent:@"view/unlock hitw"];
 	
 			delegate.holeUnlocked = YES;
 			canPurchase = YES;
@@ -257,7 +259,7 @@
 			[alert show];
 		}
 		else if(delegate.creditsInfo == kSquare){
-		//	[FlurryAnalytics logEvent:@"view/unlock 4sq"];
+			[Flurry logEvent:@"view/unlock 4sq"];
 	
 			delegate.squareUnlocked = YES;
 			canPurchase = YES;

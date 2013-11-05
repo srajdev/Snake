@@ -17,6 +17,7 @@
 #import "Snake_3ViewController.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Flurry.h"
 
 @implementation GameModeViewController
 @synthesize classicButton;
@@ -145,7 +146,7 @@
 
 -(IBAction) ClassicPressed : (id) sender{
 	
-	//[FlurryAnalytics logEvent:@"newgame/classic"];
+	[Flurry logEvent:@"newgame/classic"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -210,7 +211,7 @@
 
 - (IBAction) ExtremePressed : (id) sender{
 	
-	//[FlurryAnalytics logEvent:@"newgame/extreme"];
+	[Flurry logEvent:@"newgame/extreme"];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

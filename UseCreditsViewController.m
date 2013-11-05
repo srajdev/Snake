@@ -15,7 +15,7 @@
 #import "GKAchievementHandler.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
-
+#import "Flurry.h"
 
 @implementation UseCreditsViewController
 
@@ -30,6 +30,7 @@
 @synthesize square;
 @synthesize squareUnlocked;
 @synthesize backButton;
+@synthesize balance;
 
 -(void) viewDidLoad{
     
@@ -85,6 +86,10 @@
     
     if(IS_IPHONE_5) {
        
+        CGRect btbalFrame = balance.frame;
+        btbalFrame.origin.x = 268;
+        btbalFrame.origin.y = 3 + 4;
+        balance.frame = btbalFrame;
         
         CGRect btbeachFrame = beach.frame;
         btbeachFrame.origin.x = USE_BEACH_BUTTON_X;
@@ -304,27 +309,27 @@
 	delegate.unlockFromAnother = 0;
 	
 	if (buttonPressed.tag == 0) {
-	//	[FlurryAnalytics logEvent:@"use credits/view beach"];
+		[Flurry logEvent:@"use credits/view beach"];
 		delegate.creditsInfo = kBeach;
 		
 	}
 	else if(buttonPressed.tag == 1){
-	//	[FlurryAnalytics logEvent:@"use credits/view garden"];
+		[Flurry logEvent:@"use credits/view garden"];
 	
 		delegate.creditsInfo = kGarden;
 	}
 	else if(buttonPressed.tag == 2){
-	//	[FlurryAnalytics logEvent:@"use credits/view night"];
+		[Flurry logEvent:@"use credits/view night"];
 		
 		delegate.creditsInfo = kNight;
 	}	
 	else if(buttonPressed.tag == 3){
-	//	[FlurryAnalytics logEvent:@"use credits/view hitw"];
+		[Flurry logEvent:@"use credits/view hitw"];
 		
 		delegate.creditsInfo = kHole;
 	}
 	else if(buttonPressed.tag == 4){
-	//	[FlurryAnalytics logEvent:@"use credits/view 4sq"];
+		[Flurry logEvent:@"use credits/view 4sq"];
 		
 		delegate.creditsInfo = kSquare;
 	}

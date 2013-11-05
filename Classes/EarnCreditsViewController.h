@@ -24,25 +24,32 @@
 	
 	
 
-//	IBOutlet UILabel *name;
-	
+	IBOutlet UILabel *name;
+	IBOutlet UILabel *refreshLabel;
 	IBOutlet UILabel *balance;
 	
 	IBOutlet UIImageView *background;
     IBOutlet UIButton *nameButton;
     //IBOutlet UIButton *downloadButton;
+    IBOutlet UIButton *watchVideo;
     IBOutlet UIButton *backButton;
     IBOutlet UIButton *refreshButton;
 }
-//@property (nonatomic,retain) IBOutlet UILabel *name;
+@property (nonatomic,retain) IBOutlet UILabel *name;
+@property (nonatomic,retain) IBOutlet UILabel *balance;
 @property (nonatomic,retain) IBOutlet UIButton *nameButton;
 //@property (nonatomic,retain) IBOutlet UIButton *downloadButton;
+@property (nonatomic,retain) IBOutlet UIButton *watchVideo;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
+
+@property (nonatomic,retain) IBOutlet UILabel *refreshLabel;
 @property (nonatomic,retain) IBOutlet UIButton *refreshButton;
 
 @property (nonatomic,retain) MyAdView *myAdView;
 
 - (IBAction) downloadPressed;
+
+-(IBAction) watchVideoPressed;
 
 -(IBAction) backPressed;
 
@@ -52,4 +59,5 @@
 
 -(void) showAlert :(NSTimer *)theTimer;
 -(void) showAlert_2 :(NSTimer *)theTimer;
+
 @end

@@ -321,7 +321,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	
 	
-	NSString *applicationID = @"6cb1c347-cd2b-4b24-8fcd-ccf728144e92";
+//	NSString *applicationID = @"6cb1c347-cd2b-4b24-8fcd-ccf728144e92";
 //	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
 	
 	
@@ -810,8 +810,10 @@ static NSString* kFBAppId = @"158392174179755";
 //    [FlurryAppCircle setAppCircleDelegate:self];
 //    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
 
+    [Flurry setCrashReportingEnabled:YES];
     [Flurry startSession:@"9VIC9CUSJ9PN1RB212BA"];
     [FlurryAds initialize:window.rootViewController];
+
 	
 // If the user has the unlocked version we give him all the features unlocked.
 #ifndef LITE_VERSION
@@ -830,7 +832,7 @@ if ([self connectedToNetwork]) {
 	
 #ifdef LITE_VERSION
 	NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/get_balance_2.php?udid=%@",idfaString];
+	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/get_balance_2.php?idfa=%@",idfaString];
 	
 	
 	
@@ -1045,7 +1047,7 @@ if ([self connectedToNetwork]) {
 	if(isconnected){
 		
 		NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-        NSString * secret = @"Qwdfty13";
+        //NSString * secret = @"Qwdfty13";
 		
 		
 		//theName = [theName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -1057,8 +1059,8 @@ if ([self connectedToNetwork]) {
 		
 		device_Token = [device_Token stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		
-		NSString *urlString = [NSString stringWithFormat:@"http://zingapps.us/put_token.php?secret=%@&udid=%@&token=%@",
-							   secret,idfaString,device_Token];
+		NSString *urlString = [NSString stringWithFormat:@"http://zingapps.us/put_token.php?udid=%@&token=%@",
+							   idfaString,device_Token];
 		
 
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
