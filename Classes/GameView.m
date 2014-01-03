@@ -42,7 +42,7 @@
 
 @synthesize headColor;
 @synthesize tailColor;
-
+@synthesize speed;
 
 
 
@@ -144,6 +144,7 @@ if (delegate.gameStatus != kGamePause || delegate.inTransition == YES/*delegate.
 		self.vibrate = delegate.isVibrateOn;
 		self.sound = delegate.isSoundOn;
 		self.foodEaten = 0;
+        self.speed = delegate.speed;
 		[self setupLayers];
 	}
 	
@@ -188,7 +189,8 @@ else {  // If there is a paused game
 		self.walls = delegate.isWallOn;
 		self.vibrate = delegate.isVibrateOn;
 		self.sound = delegate.isSoundOn;
-		
+		self.speed = delegate.speed;
+        
             [self setupLayers];
 		
 	}

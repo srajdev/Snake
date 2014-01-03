@@ -90,7 +90,7 @@
 @property (nonatomic,retain) CALayer *wallLayer;
 
 @property int foodValue;
-
+@property int speed;
 
 
 @property int addFoodScore;

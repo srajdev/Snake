@@ -415,8 +415,6 @@ UserInfoLoadDelegate, FBDialogDelegate> {
 @property (nonatomic, retain) NSMutableArray *achievementsToSubmit;
 
 
-
-
 -(void) play;
 -(void)bonusPlay;
 

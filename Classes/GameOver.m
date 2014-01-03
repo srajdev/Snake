@@ -25,6 +25,8 @@
 #import "FlurryAds.h"
 #import "Flurry.h"
 
+
+
 #define kOAuthConsumerKey				@"qbOcFT2SmkVJ5JKNLpq1jg"		//REPLACE ME
 #define kOAuthConsumerSecret			@"W3zanQvRhXx1rT9rsOJqlpIrwu1slvUbVabB4c2wDc"		//REPLACE ME
 
@@ -50,6 +52,10 @@
 @synthesize FBButton;
 @synthesize TwtButton;
 @synthesize gameOver;
+@synthesize account;
+@synthesize mainMenuButton;
+@synthesize playAgainButton; 
+
 
 static NSString* kFBAppId = @"158392174179755";
 
@@ -69,6 +75,8 @@ static NSString* kFBAppId = @"158392174179755";
 	return self;
 	
 }
+
+NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 
 
 -(void) viewDidLoad{
@@ -189,7 +197,12 @@ static NSString* kFBAppId = @"158392174179755";
 		[delegate.mainmenu.adView requestFreshAd];
 	}
 */
+    [FlurryAds initialize:self];
 	[FlurryAds setAdDelegate:self];
+    
+    playAgainButton = false;
+    mainMenuButton = false;
+    
 	if(IS_IPHONE_5){
         //cretate a UIView to hold the Flurry banner ad, with desired position and size
         UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
@@ -202,6 +215,7 @@ static NSString* kFBAppId = @"158392174179755";
         [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
 	}
 	
+       //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
 	
 	if (delegate.gameMode == kClassicMode && delegate.fieldMode == kNoWall && delegate.delegateScore >= 10000) {
 		delegate.maxOpen = YES;
@@ -408,7 +422,7 @@ static NSString* kFBAppId = @"158392174179755";
 //	[adView ignoreNewAdRequests];
 	
 //	[adView ignoreAutoRefreshTimer];
-
+[super viewDidDisappear:animated];
 	    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
     [FlurryAds setAdDelegate:nil];
 }
@@ -430,7 +444,28 @@ static NSString* kFBAppId = @"158392174179755";
 
 // Action that is called to post to facebook
 
-
+- (IBAction)postToFacebook:(id)sender {
+    [Flurry logEvent:@"gameover/facebook"];
+    
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+	NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+	[numberFormatter setPositiveFormat:@"#,###"];
+	
+	NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
+	
+        SLComposeViewController *controller2 = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [controller2 setInitialText: [NSString stringWithFormat:@"I just scored %@ in SnakeClassic! Beat that!", [numberFormatter stringFromNumber:abcd]]];
+    
+        //[controller2 setInitialText:@"First post from my iPhone app"];
+        [controller2 addURL:[NSURL URLWithString:@"https://itunes.apple.com/in/app/snake-classic/id394603141?mt=8"]];
+        [controller2 addImage:[UIImage imageNamed:@"http://zingapps.co/FBlogo.png"]];
+        
+        [self presentViewController:controller2 animated:YES completion:Nil];
+    
+}
+/*
 - (IBAction) FBpublish: (id)sender {
 	
 	[Flurry logEvent:@"gameover/facebook"];
@@ -452,7 +487,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	
 }
-
+*/
 
 // Function that posts to facebook
 
@@ -517,6 +552,16 @@ static NSString* kFBAppId = @"158392174179755";
 -(IBAction)playAgain:(id)sender{
 
 	[Flurry logEvent:@"Play Again"];
+    playAgainButton = true;
+    
+    //if ([FlurryAds adReadyForSpace:adSpaceName]) {
+    //    [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
+    //} else {
+        // Fetch an ad
+        //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+        [FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
+    //}
+    
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	delegate.foodNumber = 0;
@@ -524,11 +569,16 @@ static NSString* kFBAppId = @"158392174179755";
 	delegate.extremeSuccess = 0;
 	delegate.missedInExtreme = 0;
 	
+    
+    
 	//delegate.gameStatus = kGameActive;
 	
 	delegate.gameStatus = kGameStart;
 	
 	[self saveGame];
+    
+    
+    
 /*	
 #ifdef LITE_VERSION
 	
@@ -548,9 +598,55 @@ static NSString* kFBAppId = @"158392174179755";
         
     }
      */
-	[delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
+//	[delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
 	
 	
+}
+
+- (BOOL) spaceShouldDisplay:(NSString*)adSpace interstitial:(BOOL)
+interstitial {
+    if (interstitial) {
+        // Pause app state here
+    }
+    
+    // Continue ad display
+    return YES;
+}
+
+/*
+ *  Resume app state when the interstitial is dismissed.
+ */
+
+- (void)spaceDidDismiss:(NSString *)adSpace interstitial:(BOOL)interstitial {
+    if (interstitial) {
+        SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+        if(playAgainButton){
+        /*delegate.foodNumber = 0;
+        delegate.bonusFoodNumber = 0;
+        delegate.extremeSuccess = 0;
+        delegate.missedInExtreme = 0;
+        
+        
+        
+        //delegate.gameStatus = kGameActive;
+        
+        delegate.gameStatus = kGameStart;
+        
+        [self saveGame];
+        */
+        [delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
+        }
+        
+        if(mainMenuButton){
+            //delegate.gameStatus = kGameStart;
+            
+            //[self saveGame];
+
+            [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
+            
+        }
+    }
 }
 
 
@@ -602,18 +698,28 @@ static NSString* kFBAppId = @"158392174179755";
 -(IBAction)mainmenu:(id)sender{
 	
 	[Flurry logEvent:@"Menu"];
+    
+    mainMenuButton = true;
+    
+      [FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
+    
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    delegate.gameStatus = kGameStart;
+    
+    [self saveGame];
+    
+    //[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
+    
+    
+    /*if ([FlurryAds adReadyForSpace:adSpaceName]) {
+        [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
+    } else {
+        // Fetch an ad
+        [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+    }
+	*/
 	
-	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	
-	
-	delegate.gameStatus = kGameStart;
-	
-	
-	
-
-	[self saveGame];
 	
 /*	
 #ifdef LITE_VERSION
@@ -633,9 +739,6 @@ static NSString* kFBAppId = @"158392174179755";
         [FlurryClips openVideoTakeover:@"VIDEO_AUTOPLAY" orientation:@"portrait" rewardImage:nil rewardMessage:nil userCookies:nil autoPlay:YES];
     }
     */
-	[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
-	
-	
 	
 	
 	
@@ -743,9 +846,40 @@ static NSString* kFBAppId = @"158392174179755";
 	[self submitScore:delegate.delegateScore theName:delegate.playerName];
 };
 
+- (IBAction)postToTwitter:(id)sender {
+    //NSLog(@"Enter posttotwitter");
+    SLComposeViewController *tweetSheet;
+    //if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    //{
+        [Flurry logEvent:@"gameover/twitter"];
+        tweetSheet = [[SLComposeViewController alloc] init];
+        NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+        [numberFormatter setPositiveFormat:@"#,###"];
+        
+        SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
+        
+        tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText: [NSString stringWithFormat:@"I scored %@ in #SnakeClassic! Beat that! http://bit.ly/c26ZIw #iphone", [numberFormatter stringFromNumber:abcd]]];
+        
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    //}
+    /*else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+     */
+    
+}
 
 // Action that is called to post on twitter
-
+/*
 -(IBAction) tweetIt{
 	
 	[Flurry logEvent:@"gameover/twitter"];
@@ -755,16 +889,16 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	
 	
-	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	//NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
+	NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
 	
 	//if (engine) return;
-    /*
-	engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
-    [engine requestRequestToken];
-	engine.consumerKey = kOAuthConsumerKey;
-	engine.consumerSecret = kOAuthConsumerSecret;
+    
+	//engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
+    //[engine requestRequestToken];
+	//engine.consumerKey = kOAuthConsumerKey;
+	//engine.consumerSecret = kOAuthConsumerSecret;
 	
 	controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
     
@@ -781,7 +915,7 @@ static NSString* kFBAppId = @"158392174179755";
 	else{
 		[engine sendUpdate: [NSString stringWithFormat: @"I scored %d in #SnakeClassic! Beat that! http://bit.ly/c26ZIw #iphone", [numberFormatter stringFromNumber:abcd] ]];
 	}
-	*/
+	
 	
 	
 	
@@ -808,7 +942,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 //=============================================================================================================================
 #pragma mark SA_OAuthTwitterControllerDelegate
-/*
+
 - (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
 	//NSLog(@"Authenicated for %@", username);
 	isTwitterLogged = YES;
@@ -822,7 +956,7 @@ static NSString* kFBAppId = @"158392174179755";
 	//NSLog(@"Authentication Canceled.");
 		
 }
-*/
+
 //=============================================================================================================================
 #pragma mark TwitterEngineDelegate
 - (void) requestSucceeded: (NSString *) requestIdentifier {
@@ -844,7 +978,7 @@ static NSString* kFBAppId = @"158392174179755";
 	
 	
 }
-
+*/
 - (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
 	//NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
 }

@@ -85,7 +85,6 @@
 
 
 
-
 @synthesize isVibrateOn;
 
 @synthesize isSoundOn;
@@ -202,6 +201,7 @@ static NSString* kFBAppId = @"158392174179755";
     //NSLog(@"data is available");
     
 }
+
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
@@ -813,8 +813,7 @@ static NSString* kFBAppId = @"158392174179755";
     [Flurry setCrashReportingEnabled:YES];
     [Flurry startSession:@"9VIC9CUSJ9PN1RB212BA"];
     [FlurryAds initialize:window.rootViewController];
-
-	
+    
 // If the user has the unlocked version we give him all the features unlocked.
 #ifndef LITE_VERSION
     
@@ -953,12 +952,11 @@ if ([self connectedToNetwork]) {
 	self.mainmenu = aMenu;
 	
 	[window addSubview:mainmenu.view];
-	
+    // [self.window setRootViewController:mainmenu];
+	//window.rootViewController = mainmenu;
 	
 	[aMenu release];
-	
-	
-	
+
 	return YES;
 }
 
@@ -1478,6 +1476,7 @@ doRemove: if you want to remove the first view. If not view2 is added over view 
             abort();
         } 
     }
+    
 }
 
 -(void)unlockFBAchievement{

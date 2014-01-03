@@ -59,7 +59,7 @@
 	
 	BOOL comeFromPause;
 	
-	
+	BOOL loopAdded;
 	NSTimer	*bonusTimer;
 	
 	
@@ -95,6 +95,7 @@
 @property (nonatomic,retain) NSTimer	*bonusTimer;
 
 @property BOOL comeFromPause;
+@property BOOL loopAdded;
 
 @property (nonatomic,retain) IBOutlet UIButton *leftButton;
 @property (nonatomic,retain) IBOutlet UIButton *rightButton;

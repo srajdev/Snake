@@ -85,6 +85,7 @@
      }
     
     if(IS_IPHONE_5){
+        //self.view.frame = CGRectMake(0, 0, 320, 568);
         
         CGRect btbalFrame = balance.frame;
         btbalFrame.origin.x = 268;
@@ -227,6 +228,8 @@
 	
 }
 
+
+
 // Action taking the user to earn credits
 -(IBAction) earnPressed : (id) sender{
 	
@@ -258,10 +261,6 @@
 // Alert taking the user to download the Unlocked game
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	
-	
-
-
-		
 	if (buttonIndex == 1){
 		
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -279,8 +278,6 @@
 	[Flurry logEvent:@"store/unlock all"];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/app/id403683533"]];
-	
-	
 	
 }
 

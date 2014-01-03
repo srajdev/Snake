@@ -47,6 +47,7 @@
 
 -(void) showAlert :(NSTimer *)theTimer;
 -(IBAction) helpPressed : (id)sender;
+-(NSString *)appSpotMillennialAppKey;
 
 
 @end

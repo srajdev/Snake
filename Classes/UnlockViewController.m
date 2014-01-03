@@ -79,7 +79,7 @@
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
-        btbackFrame.origin.y = 80 + HELPDETAIL_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 90 + HELPDETAIL_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
     }
 	
@@ -170,6 +170,7 @@
 - (UIViewController *)viewControllerForPresentingModalView {
 	return self;
 }
+
 
 /*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {

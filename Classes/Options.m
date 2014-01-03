@@ -557,12 +557,12 @@
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = OPTIONS_BACK_BUTTON_X;
-        btbackFrame.origin.y = 75 + OPTIONS_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 80 + OPTIONS_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
         CGRect btfbButtonFrame = fbButton.frame;
         btfbButtonFrame.origin.x = OPTIONS_FB_BUTTON_X;
-        btfbButtonFrame.origin.y = 75 + OPTIONS_FB_BUTTON_Y;
+        btfbButtonFrame.origin.y = 80 + OPTIONS_FB_BUTTON_Y;
         fbButton.frame = btfbButtonFrame;
         
     }
@@ -1518,6 +1518,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.

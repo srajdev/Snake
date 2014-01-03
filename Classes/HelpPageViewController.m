@@ -104,7 +104,7 @@
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = BACK_BUTTON_X;
-        btbackFrame.origin.y = 70 + BACK_BUTTON_Y;
+        btbackFrame.origin.y = 80 + BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
     }
@@ -158,8 +158,6 @@
 	
 	
 }
-
-
 
 
 // Function to get AdWhirl key

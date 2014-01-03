@@ -84,12 +84,12 @@
         
         CGRect bthelpFrame = helpButton.frame;
         bthelpFrame.origin.x = GAMEMODE_HELP_BUTTON_X;
-        bthelpFrame.origin.y = 60 + GAMEMODE_HELP_BUTTON_Y;
+        bthelpFrame.origin.y = 70 + GAMEMODE_HELP_BUTTON_Y;
         helpButton.frame = bthelpFrame;
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = GAMEMODE_BACK_BUTTON_X;
-        btbackFrame.origin.y = 60 + GAMEMODE_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 70 + GAMEMODE_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
     }

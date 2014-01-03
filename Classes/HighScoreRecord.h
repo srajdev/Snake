@@ -8,9 +8,9 @@
 //  Description: This object presents a record to be stored as the high score.
 
 #import <Foundation/Foundation.h>
+#import "FlurryAdDelegate.h"
 
-
-@interface HighScoreRecord : NSObject <NSCoding, NSCopying>{
+@interface HighScoreRecord : NSObject <NSCoding, FlurryAdDelegate, NSCopying>{
 	
 	NSString *name;
 	NSNumber *totalScore;

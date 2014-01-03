@@ -143,7 +143,7 @@
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
-        btbackFrame.origin.y = 80 + HELPDETAIL_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 85 + HELPDETAIL_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
     }
 }
@@ -344,13 +344,10 @@
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	
 	[delegate switchView:self.view toview:delegate.storeView.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
 	
-	
-	
 }
+
 
 - (void) viewDidDisappear:(BOOL)animated{
     

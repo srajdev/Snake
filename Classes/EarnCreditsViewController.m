@@ -106,7 +106,7 @@
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = EARN_BACK_BUTTON_X;
-        btbackFrame.origin.y = 140 + EARN_BACK_BUTTON_Y;
+        btbackFrame.origin.y = 150 + EARN_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
         CGRect btrefreshFrame = refreshButton.frame;
@@ -343,23 +343,6 @@
 
 -(void) refresh{
 	[self viewDidAppear:true];
-    
-	/*FlurryOffer *flurryOffer = [[FlurryOffer alloc] init];
-	BOOL validOffer = [FlurryAppCircle getOffer:@"EARN_CREDITS" withFlurryOfferContainer:flurryOffer];
-	
-	if (validOffer) {
-		
-		CGRect imageRect = CGRectMake(68.7f, 120.5f, 44.0f, 44.0f);
-		myAdView = [[MyAdView alloc] initWithFrame:imageRect appIcon:flurryOffer.appIcon referralUrl:flurryOffer.referralUrl];
-		[self.view addSubview:myAdView];
-		
-		name.text = flurryOffer.appName;
-		//[myAdView autorelease];
-	}
-
-	[flurryOffer release];
-	
-	*/		
 	
 }
 
@@ -407,39 +390,7 @@
 	return self;
 }
 
-/*
-- (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
-	
-	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	
-	
-	
-	[UIView beginAnimations:@"AdResize" context:nil];
-	[UIView setAnimationDuration:0.5];
-	CGSize adSize = [adWhirlView actualAdSize];
-	CGRect newFrame = adWhirlView.frame;
-	newFrame.size.height = adSize.height; // fit the ad
-	newFrame.size.width = adSize.width;
-	newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2; // center
-	
-	adWhirlView.frame = newFrame;
-	// ... adjust surrounding views here ...
-	[UIView commitAnimations];
-}
-*/
 
-// Takes the user to download the suggested app
-- (IBAction) downloadPressed{
-	
-    if ([FlurryAds adReadyForSpace:@"Videos"]) {
-        [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
-    } else {
-        [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
-    }
-	//[myAdView downloadApp];
-	
-}
 
 -(IBAction) refreshPressed{
 
@@ -457,11 +408,6 @@
 	else {
 		[delegate switchView:self.view toview:delegate.storeView.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
 	}
-
-	
-	
-	
-	
 	
 }
 
