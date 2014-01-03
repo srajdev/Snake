@@ -18,13 +18,13 @@
 #import "HighScoreRecord.h"
 #import "HighScores.h"
 #import "main_menu.h"
-
+#import "FlurryAdDelegate.h"
 
 #import "FBConnect.h"
 
 
 
-@interface HighScoreViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,
+@interface HighScoreViewController : UIViewController <UITableViewDelegate, FlurryAdDelegate, UITableViewDataSource,
 FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 	
 	IBOutlet UITableView *highScoreTable;

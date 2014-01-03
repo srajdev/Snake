@@ -23,9 +23,9 @@
 //#import "GreystripeDelegate.h"
 #import <GameKit/GameKit.h>
 #import "GKAchievementHandler.h"
-
-
-
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+#import "FlurryAdDelegate.h"
 
 @class Difficulty;
 @class main_menu;
@@ -33,7 +33,7 @@
 
 
 @interface GameOver : UIViewController <UITextFieldDelegate,
-FBDialogDelegate,FBRequestDelegate,FBSessionDelegate> {
+FBDialogDelegate,FBRequestDelegate,FBSessionDelegate, FlurryAdDelegate> {
 	
 	IBOutlet UIButton *name;
 	IBOutlet UILabel *score;
@@ -55,7 +55,9 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate> {
 	
 	
 	BOOL isTwitterLogged;
-	
+	BOOL playAgainButton;
+    BOOL mainMenuButton;
+    
 	HighScoreRecord *highScore;
 	
 //	Facebook *facebook;
@@ -99,12 +101,19 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate> {
 
 @property (nonatomic,retain) UIImageView *gameOver;
 
--(IBAction) FBpublish: (id)sender;
--(IBAction) tweetIt;
+@property (nonatomic, retain) ACAccount *account;
 
+@property BOOL playAgainButton;
+@property BOOL mainMenuButton;
+
+//-(IBAction) FBpublish: (id)sender;
+-(IBAction) postToTwitter:(id)sender;
+-(IBAction) postToFacebook:(id)sender;
+//-(IBAction) tweetIt;
+//-(void) postToTwitter;
 -(void) submitScore: (int) theScore theName:(NSString *)theName;   //v1.1
 -(void) getUserInfo;
-
+//-(id) appSpotRootViewController;
 
 -(void) publishFacebook;
 

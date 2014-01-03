@@ -46,6 +46,7 @@
 @synthesize topButton;
 @synthesize bottomButton;
 @synthesize pauseButton;
+@synthesize loopAdded;
 
 // Action that takes place when the right button is pressed. It moves the snake right.
 -(IBAction)rightPressed{
@@ -213,7 +214,8 @@
 	delegate.displayLink = self.displayLink;
 	
 	delegate.activeGame = self;
-		
+        delegate.speed = game.speed;
+        
 	[bonusTimer invalidate];
 		
 		[displayLink invalidate];
@@ -552,6 +554,8 @@ if (delegate.gameStatus != kGamePause) {
         btpauseFrame.origin.y = 88 + 456;
         pauseButton.frame = btpauseFrame;
     }
+    
+       self.loopAdded = NO;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -751,7 +755,10 @@ if (delegate.gameStatus != kGamePause) {
 	
 		
 
-	
+         //   if(bonusTimer != nil){
+         //       [bonusTimer invalidate];
+         //   }
+            
 	bonusTimer = [NSTimer scheduledTimerWithTimeInterval: 13
 									 target:self
 								   selector:@selector(generateBonusFood:)
@@ -913,9 +920,9 @@ if (delegate.gameStatus != kGamePause) {
 	
 	displayLink = nil;
 	
-	displayLink = [NSClassFromString(@"CADisplayLink") displayLinkWithTarget:self selector:@selector(moveSnake:)];
+	displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(moveSnake:)];
 	
-	
+	//displayLink.paused = YES;
 	if (delegate.speed == 1) {
 		
 		[displayLink setFrameInterval:10.5];
@@ -941,19 +948,19 @@ if (delegate.gameStatus != kGamePause) {
 		[displayLink setFrameInterval:4.5];
 		
 	}
-	
-	
+        	//displayLink.paused = NO;
+	//[displayLink setFrameInterval:15];
 	delegate.displayLink = displayLink;
 	
 	//if (comeFromPause == YES) {
 	//	comeFromPause = NO;
-		
-//	}
-//	else {
-		[displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-		
-//	}
-	
+    
+    //	}
+    //	else {
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    //	}
+
 	
 	[pool release];
 

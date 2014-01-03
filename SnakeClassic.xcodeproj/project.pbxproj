@@ -11,6 +11,38 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		28193060112F816700ECF9B4 /* SnakeClassic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2819305F112F816700ECF9B4 /* SnakeClassic.xcdatamodeld */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		2C241F3F183F3E4800A61CBB /* libMMSDK_5.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F3A183F3E4800A61CBB /* libMMSDK_5.1.1.a */; };
+		2C241F41183F42CF00A61CBB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F40183F42CF00A61CBB /* CoreMotion.framework */; };
+		2C241F43183F42E400A61CBB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F42183F42E400A61CBB /* CoreTelephony.framework */; };
+		2C241F45183F430400A61CBB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F44183F430400A61CBB /* MobileCoreServices.framework */; };
+		2C241F47183F432200A61CBB /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F46183F432200A61CBB /* PassKit.framework */; };
+		2C241F50183F63BE00A61CBB /* libMMSDK_5.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F4F183F63BE00A61CBB /* libMMSDK_5.1.1.a */; };
+		2C241F511840913300A61CBB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5EEFB180E59A40021C69B /* AdSupport.framework */; };
+		2C241F531840914B00A61CBB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F521840914B00A61CBB /* CFNetwork.framework */; };
+		2C241F54184091A800A61CBB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9A7AC6180C7AA900BD4FB1 /* Security.framework */; };
+		2C241F58184091E800A61CBB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F57184091E800A61CBB /* StoreKit.framework */; };
+		2C241F5A1840BEC200A61CBB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F591840BEC200A61CBB /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		2C241F621843446600A61CBB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F611843446600A61CBB /* CoreFoundation.framework */; };
+		2C241F63184361EC00A61CBB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F55184091B000A61CBB /* Social.framework */; };
+		2C241F641843631B00A61CBB /* libMMSDK_5.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F4F183F63BE00A61CBB /* libMMSDK_5.1.1.a */; };
+		2C241F651843632000A61CBB /* libFlurryAds_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F4D183F633A00A61CBB /* libFlurryAds_4.3.0.a */; };
+		2C241F661843632300A61CBB /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F49183F442B00A61CBB /* libFlurry_4.3.0.a */; };
+		2C241F6718436DC200A61CBB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F40183F42CF00A61CBB /* CoreMotion.framework */; };
+		2C241F6818436DC700A61CBB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F42183F42E400A61CBB /* CoreTelephony.framework */; };
+		2C241F6918436DCA00A61CBB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F44183F430400A61CBB /* MobileCoreServices.framework */; };
+		2C241F6A18436DCD00A61CBB /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F46183F432200A61CBB /* PassKit.framework */; };
+		2C241F6B18436DD500A61CBB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F521840914B00A61CBB /* CFNetwork.framework */; };
+		2C241F6C18436DD900A61CBB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F55184091B000A61CBB /* Social.framework */; };
+		2C241F6D18436DDC00A61CBB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F57184091E800A61CBB /* StoreKit.framework */; };
+		2C241F6E18436DDF00A61CBB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F591840BEC200A61CBB /* Accounts.framework */; };
+		2C241F6F18436DE200A61CBB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C241F611843446600A61CBB /* CoreFoundation.framework */; };
+		2C6183D6185C2C36007FDC79 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183D5185C2C36007FDC79 /* EventKit.framework */; };
+		2C6183D7185F1C28007FDC79 /* MadsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183D3185C2C16007FDC79 /* MadsSDK.framework */; };
+		2C6183D8185F1C31007FDC79 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183D5185C2C36007FDC79 /* EventKit.framework */; };
+		2C6183DC1864CB24007FDC79 /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183DB1864CB23007FDC79 /* libFlurry_4.3.0.a */; };
+		2C6183E11864CB37007FDC79 /* libFlurryAds_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183E01864CB37007FDC79 /* libFlurryAds_4.3.0.a */; };
+		2C6183E21864CBF9007FDC79 /* libFlurryAds_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183E01864CB37007FDC79 /* libFlurryAds_4.3.0.a */; };
+		2C6183E31864CBFF007FDC79 /* libFlurry_4.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6183DB1864CB23007FDC79 /* libFlurry_4.3.0.a */; };
 		2C9A7A4C18096FB400BD4FB1 /* use_credits_beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A4818096FB400BD4FB1 /* use_credits_beach.png */; };
 		2C9A7A4D18096FB400BD4FB1 /* use_credits_beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A4818096FB400BD4FB1 /* use_credits_beach.png */; };
 		2C9A7A4E18096FB400BD4FB1 /* use_credits_classic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A7A4918096FB400BD4FB1 /* use_credits_classic.png */; };
@@ -119,10 +151,6 @@
 		2CC5EEF9180E4E890021C69B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF8180E4E890021C69B /* Default@2x.png */; };
 		2CC5EEFA180E4E890021C69B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC5EEF8180E4E890021C69B /* Default@2x.png */; };
 		2CC5EEFC180E59A40021C69B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5EEFB180E59A40021C69B /* AdSupport.framework */; };
-		2CC5F0CB180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */; };
-		2CC5F0CC180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */; };
-		2CC5F0D1180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */; };
-		2CC5F0D2180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */; };
 		2CF6A3E3182447F5004F8BAA /* watch videos.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6A3E2182447F5004F8BAA /* watch videos.png */; };
 		4D05000B12832500004603CF /* _0000_beach_theme2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000512832500004603CF /* _0000_beach_theme2.png */; };
 		4D05000C12832500004603CF /* _0000_garden_theme1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05000612832500004603CF /* _0000_garden_theme1.png */; };
@@ -464,7 +492,7 @@
 		4DBC03051287ADB30047AC18 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2783511230EDC500BE95A7 /* libsqlite3.dylib */; };
 		4DBC03061287ADB30047AC18 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2783531230EDC500BE95A7 /* libz.dylib */; };
 		4DBC03071287ADB30047AC18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2783491230EDC500BE95A7 /* MapKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		4DBC03081287ADB30047AC18 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D27834D1230EDC500BE95A7 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4DBC03081287ADB30047AC18 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D27834D1230EDC500BE95A7 /* MessageUI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4DBC03091287ADB30047AC18 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D27834B1230EDC500BE95A7 /* MediaPlayer.framework */; };
 		4DBC030A1287ADB30047AC18 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D27834F1230EDC500BE95A7 /* SystemConfiguration.framework */; };
 		4DBC030B1287ADB30047AC18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -622,6 +650,30 @@
 		28C3AD890F43EF2300507BA6 /* SnakeClassic.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SnakeClassic.xcdatamodel; sourceTree = "<group>"; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C241F3A183F3E4800A61CBB /* libMMSDK_5.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMSDK_5.1.1.a; sourceTree = "<group>"; };
+		2C241F3B183F3E4800A61CBB /* MMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdView.h; sourceTree = "<group>"; };
+		2C241F3C183F3E4800A61CBB /* MMInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInterstitial.h; sourceTree = "<group>"; };
+		2C241F3D183F3E4800A61CBB /* MMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRequest.h; sourceTree = "<group>"; };
+		2C241F3E183F3E4800A61CBB /* MMSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSDK.h; sourceTree = "<group>"; };
+		2C241F40183F42CF00A61CBB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		2C241F42183F42E400A61CBB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2C241F44183F430400A61CBB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2C241F46183F432200A61CBB /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		2C241F49183F442B00A61CBB /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.0.a; path = "../Flurry iPhone SDK viPhone 4.3.0/Flurry-iOS-4.3.0/Flurry/libFlurry_4.3.0.a"; sourceTree = "<group>"; };
+		2C241F4D183F633A00A61CBB /* libFlurryAds_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurryAds_4.3.0.a; path = "../Flurry iPhone SDK viPhone 4.3.0/Flurry-iOS-4.3.0/FlurryAds/libFlurryAds_4.3.0.a"; sourceTree = "<group>"; };
+		2C241F4F183F63BE00A61CBB /* libMMSDK_5.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMMSDK_5.1.1.a; path = ../iOS_5.1.1_SDK/MMSDK/libMMSDK_5.1.1.a; sourceTree = "<group>"; };
+		2C241F521840914B00A61CBB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2C241F55184091B000A61CBB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		2C241F57184091E800A61CBB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2C241F591840BEC200A61CBB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		2C241F611843446600A61CBB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2C6183D3185C2C16007FDC79 /* MadsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MadsSDK.framework; path = ../MadsSDKv436/MadsSDK.framework; sourceTree = "<group>"; };
+		2C6183D5185C2C36007FDC79 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		2C6183DA1864CB23007FDC79 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		2C6183DB1864CB23007FDC79 /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.3.0.a; sourceTree = "<group>"; };
+		2C6183DE1864CB37007FDC79 /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
+		2C6183DF1864CB37007FDC79 /* FlurryAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAds.h; sourceTree = "<group>"; };
+		2C6183E01864CB37007FDC79 /* libFlurryAds_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_4.3.0.a; sourceTree = "<group>"; };
 		2C9A7A4818096FB400BD4FB1 /* use_credits_beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_credits_beach.png; sourceTree = "<group>"; };
 		2C9A7A4918096FB400BD4FB1 /* use_credits_classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_credits_classic.png; sourceTree = "<group>"; };
 		2C9A7A4A18096FB400BD4FB1 /* use_credits_garden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = use_credits_garden.png; sourceTree = "<group>"; };
@@ -680,11 +732,6 @@
 		2CC5EEF5180E4DC30021C69B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2CC5EEF8180E4E890021C69B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CC5EEFB180E59A40021C69B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		2CC5F0C9180F12AF0021C69B /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_4.2.4.a; sourceTree = "<group>"; };
-		2CC5F0CE180F14380021C69B /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
-		2CC5F0CF180F14380021C69B /* FlurryAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAds.h; sourceTree = "<group>"; };
-		2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_4.2.4.a; sourceTree = "<group>"; };
 		2CF6A3E2182447F5004F8BAA /* watch videos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch videos.png"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SnakeClassic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeClassic_Prefix.pch; sourceTree = "<group>"; };
 		4D05000512832500004603CF /* _0000_beach_theme2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0000_beach_theme2.png; sourceTree = "<group>"; };
@@ -989,29 +1036,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6183D7185F1C28007FDC79 /* MadsSDK.framework in Frameworks */,
 				2CC5EEFC180E59A40021C69B /* AdSupport.framework in Frameworks */,
+				2C241F661843632300A61CBB /* libFlurry_4.3.0.a in Frameworks */,
 				2C9A7AC7180C7AA900BD4FB1 /* Security.framework in Frameworks */,
-				2CC5F0CB180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */,
 				2C9A7A6F180C6A1700BD4FB1 /* Twitter.framework in Frameworks */,
 				4D2783801230EE8B00BE95A7 /* MediaPlayer.framework in Frameworks */,
 				4D2783661230EE1E00BE95A7 /* AudioToolbox.framework in Frameworks */,
 				4D2783671230EE1F00BE95A7 /* AVFoundation.framework in Frameworks */,
+				2C241F6C18436DD900A61CBB /* Social.framework in Frameworks */,
+				2C241F3F183F3E4800A61CBB /* libMMSDK_5.1.1.a in Frameworks */,
 				4D2783681230EE2000BE95A7 /* CoreData.framework in Frameworks */,
+				2C241F641843631B00A61CBB /* libMMSDK_5.1.1.a in Frameworks */,
 				4D2783691230EE2100BE95A7 /* CoreGraphics.framework in Frameworks */,
 				4D27836A1230EE2500BE95A7 /* Foundation.framework in Frameworks */,
+				2C241F6B18436DD500A61CBB /* CFNetwork.framework in Frameworks */,
+				2C6183E11864CB37007FDC79 /* libFlurryAds_4.3.0.a in Frameworks */,
+				2C241F6A18436DCD00A61CBB /* PassKit.framework in Frameworks */,
 				4D27836B1230EE3700BE95A7 /* QuartzCore.framework in Frameworks */,
-				2CC5F0D1180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */,
+				2C241F6718436DC200A61CBB /* CoreMotion.framework in Frameworks */,
 				4D2783791230EE8500BE95A7 /* CoreLocation.framework in Frameworks */,
 				4D27837A1230EE8600BE95A7 /* AddressBook.framework in Frameworks */,
 				4D27837C1230EE8700BE95A7 /* libsqlite3.dylib in Frameworks */,
 				4D27837D1230EE8800BE95A7 /* libz.dylib in Frameworks */,
+				2C241F6D18436DDC00A61CBB /* StoreKit.framework in Frameworks */,
+				2C241F651843632000A61CBB /* libFlurryAds_4.3.0.a in Frameworks */,
 				4D27837E1230EE8A00BE95A7 /* MapKit.framework in Frameworks */,
+				2C6183DC1864CB24007FDC79 /* libFlurry_4.3.0.a in Frameworks */,
+				2C241F6E18436DDF00A61CBB /* Accounts.framework in Frameworks */,
+				2C241F6818436DC700A61CBB /* CoreTelephony.framework in Frameworks */,
 				4D27837F1230EE8B00BE95A7 /* MessageUI.framework in Frameworks */,
 				4D2783811230EE8C00BE95A7 /* SystemConfiguration.framework in Frameworks */,
+				2C6183D8185F1C31007FDC79 /* EventKit.framework in Frameworks */,
+				2C241F6F18436DE200A61CBB /* CoreFoundation.framework in Frameworks */,
 				4D2783821230EE8D00BE95A7 /* UIKit.framework in Frameworks */,
 				4D433DE81237193A006552B1 /* iAd.framework in Frameworks */,
 				4DABB62F125F840400D397D6 /* libxml2.dylib in Frameworks */,
 				4DC8C3C812ADFADD00286D15 /* OpenAL.framework in Frameworks */,
+				2C241F6918436DCA00A61CBB /* MobileCoreServices.framework in Frameworks */,
 				4D6BF5C413388A5800A79861 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1020,17 +1082,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6183E31864CBFF007FDC79 /* libFlurry_4.3.0.a in Frameworks */,
+				2C6183E21864CBF9007FDC79 /* libFlurryAds_4.3.0.a in Frameworks */,
+				2C6183D6185C2C36007FDC79 /* EventKit.framework in Frameworks */,
+				2C241F63184361EC00A61CBB /* Social.framework in Frameworks */,
+				2C241F621843446600A61CBB /* CoreFoundation.framework in Frameworks */,
+				2C9A7A71180C704E00BD4FB1 /* Twitter.framework in Frameworks */,
+				2C241F5A1840BEC200A61CBB /* Accounts.framework in Frameworks */,
+				2C241F58184091E800A61CBB /* StoreKit.framework in Frameworks */,
+				2C241F54184091A800A61CBB /* Security.framework in Frameworks */,
+				2C241F531840914B00A61CBB /* CFNetwork.framework in Frameworks */,
+				2C241F511840913300A61CBB /* AdSupport.framework in Frameworks */,
+				2C241F50183F63BE00A61CBB /* libMMSDK_5.1.1.a in Frameworks */,
+				2C241F47183F432200A61CBB /* PassKit.framework in Frameworks */,
+				2C241F45183F430400A61CBB /* MobileCoreServices.framework in Frameworks */,
+				2C241F43183F42E400A61CBB /* CoreTelephony.framework in Frameworks */,
+				2C241F41183F42CF00A61CBB /* CoreMotion.framework in Frameworks */,
 				4DBC02FD1287ADB30047AC18 /* AudioToolbox.framework in Frameworks */,
 				4DBC02FE1287ADB30047AC18 /* AVFoundation.framework in Frameworks */,
 				4DBC02FF1287ADB30047AC18 /* CoreData.framework in Frameworks */,
-				2CC5F0D2180F14380021C69B /* libFlurryAds_4.2.4.a in Frameworks */,
 				4DBC03001287ADB30047AC18 /* CoreGraphics.framework in Frameworks */,
 				4DBC03011287ADB30047AC18 /* Foundation.framework in Frameworks */,
 				4DBC03021287ADB30047AC18 /* QuartzCore.framework in Frameworks */,
 				4DBC03031287ADB30047AC18 /* CoreLocation.framework in Frameworks */,
 				4DBC03041287ADB30047AC18 /* AddressBook.framework in Frameworks */,
-				2CC5F0CC180F12AF0021C69B /* libFlurry_4.2.4.a in Frameworks */,
-				2C9A7A71180C704E00BD4FB1 /* Twitter.framework in Frameworks */,
 				4DBC03051287ADB30047AC18 /* libsqlite3.dylib in Frameworks */,
 				4DBC03061287ADB30047AC18 /* libz.dylib in Frameworks */,
 				4DBC03071287ADB30047AC18 /* MapKit.framework in Frameworks */,
@@ -1128,8 +1203,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				2CC5F0CD180F14380021C69B /* FlurryAds */,
-				2CC5F0C8180F12AF0021C69B /* Flurry */,
+				2C6183DD1864CB37007FDC79 /* FlurryAds */,
+				2C6183D91864CB23007FDC79 /* Flurry */,
+				2C241F39183F3E4800A61CBB /* MMSDK */,
 				4DC178B3140CC6D90094E8A4 /* Entitlements.plist */,
 				4DCD8D0013D549C000538C3F /* MediaPlayer.framework */,
 				4DC8C4FC12AE0B6700286D15 /* TouchJSON */,
@@ -1184,6 +1260,20 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C6183D5185C2C36007FDC79 /* EventKit.framework */,
+				2C6183D3185C2C16007FDC79 /* MadsSDK.framework */,
+				2C241F611843446600A61CBB /* CoreFoundation.framework */,
+				2C241F591840BEC200A61CBB /* Accounts.framework */,
+				2C241F57184091E800A61CBB /* StoreKit.framework */,
+				2C241F55184091B000A61CBB /* Social.framework */,
+				2C241F521840914B00A61CBB /* CFNetwork.framework */,
+				2C241F4F183F63BE00A61CBB /* libMMSDK_5.1.1.a */,
+				2C241F4D183F633A00A61CBB /* libFlurryAds_4.3.0.a */,
+				2C241F49183F442B00A61CBB /* libFlurry_4.3.0.a */,
+				2C241F46183F432200A61CBB /* PassKit.framework */,
+				2C241F44183F430400A61CBB /* MobileCoreServices.framework */,
+				2C241F42183F42E400A61CBB /* CoreTelephony.framework */,
+				2C241F40183F42CF00A61CBB /* CoreMotion.framework */,
 				2CC5EEFB180E59A40021C69B /* AdSupport.framework */,
 				2C9A7AC6180C7AA900BD4FB1 /* Security.framework */,
 				2C9A7A6E180C6A1700BD4FB1 /* Twitter.framework */,
@@ -1210,21 +1300,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2CC5F0C8180F12AF0021C69B /* Flurry */ = {
+		2C241F39183F3E4800A61CBB /* MMSDK */ = {
 			isa = PBXGroup;
 			children = (
-				2CC5F0C9180F12AF0021C69B /* Flurry.h */,
-				2CC5F0CA180F12AF0021C69B /* libFlurry_4.2.4.a */,
+				2C241F3A183F3E4800A61CBB /* libMMSDK_5.1.1.a */,
+				2C241F3B183F3E4800A61CBB /* MMAdView.h */,
+				2C241F3C183F3E4800A61CBB /* MMInterstitial.h */,
+				2C241F3D183F3E4800A61CBB /* MMRequest.h */,
+				2C241F3E183F3E4800A61CBB /* MMSDK.h */,
+			);
+			path = MMSDK;
+			sourceTree = "<group>";
+		};
+		2C6183D91864CB23007FDC79 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				2C6183DA1864CB23007FDC79 /* Flurry.h */,
+				2C6183DB1864CB23007FDC79 /* libFlurry_4.3.0.a */,
 			);
 			path = Flurry;
 			sourceTree = "<group>";
 		};
-		2CC5F0CD180F14380021C69B /* FlurryAds */ = {
+		2C6183DD1864CB37007FDC79 /* FlurryAds */ = {
 			isa = PBXGroup;
 			children = (
-				2CC5F0CE180F14380021C69B /* FlurryAdDelegate.h */,
-				2CC5F0CF180F14380021C69B /* FlurryAds.h */,
-				2CC5F0D0180F14380021C69B /* libFlurryAds_4.2.4.a */,
+				2C6183DE1864CB37007FDC79 /* FlurryAdDelegate.h */,
+				2C6183DF1864CB37007FDC79 /* FlurryAds.h */,
+				2C6183E01864CB37007FDC79 /* libFlurryAds_4.3.0.a */,
 			);
 			path = FlurryAds;
 			sourceTree = "<group>";
@@ -2217,6 +2319,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pmehta/Zing/MadsSDKv436,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2235,19 +2341,19 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/SAOAuthTwitterEngine\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 					/Users/pmehta/Zing/Snake/AdMob,
 					/Users/pmehta/Zing/Snake/FlurryAnalytics,
@@ -2259,6 +2365,10 @@
 					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
 					/Users/pmehta/Zing/Snake/Flurry,
 					/Users/pmehta/Zing/Snake/FlurryAds,
+					/Users/pmehta/Zing/Snake/MMSDK,
+					/Users/pmehta/Zing/iOS_5.1.1_SDK/MMSDK,
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/Flurry",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -2301,6 +2411,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pmehta/Zing/MadsSDKv436,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
@@ -2311,18 +2425,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 					/Users/pmehta/Zing/Snake/AdMob,
 					/Users/pmehta/Zing/Snake/FlurryAnalytics,
@@ -2335,6 +2449,10 @@
 					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
 					/Users/pmehta/Zing/Snake/Flurry,
 					/Users/pmehta/Zing/Snake/FlurryAds,
+					/Users/pmehta/Zing/Snake/MMSDK,
+					/Users/pmehta/Zing/iOS_5.1.1_SDK/MMSDK,
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/Flurry",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DLITE_VERSION";
@@ -2356,42 +2474,50 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapan Rajdev";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapan Rajdev";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pmehta/Zing/MadsSDKv436,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				INFOPLIST_FILE = "SnakeClassic-InfoUnlocked.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth_1/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView/FlurryAnalytics\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 					/Users/pmehta/Zing/Snake/FlurryAnalytics,
-					"/Users/pmehta/Zing/Snake/Twitter+OAuth",
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
-					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
-					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
 					/Users/pmehta/Zing/Snake/Flurry,
 					/Users/pmehta/Zing/Snake/FlurryAds,
+					/Users/pmehta/Zing/MMAdView,
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
+					/Users/pmehta/Zing/iOS_5.1.1_SDK/MMSDK,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "Snake UL";
 				PROVISIONING_PROFILE = "257FD466-EC74-43CF-904C-42A49EE829C5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "257FD466-EC74-43CF-904C-42A49EE829C5";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2402,48 +2528,60 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapan Rajdev";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapan Rajdev";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pmehta/Zing/MadsSDKv436,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				INFOPLIST_FILE = "SnakeClassic-InfoUnlocked.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth_1/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView/FlurryAnalytics\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth_1/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 					/Users/pmehta/Zing/Snake/FlurryAnalytics,
 					"/Users/pmehta/Zing/Snake/Twitter+OAuth",
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
-					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
-					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
 					/Users/pmehta/Zing/Snake/Flurry,
 					/Users/pmehta/Zing/Snake/FlurryAds,
+					/Users/pmehta/Zing/MMAdView,
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
+					/Users/pmehta/Zing/iOS_5.1.1_SDK/MMSDK,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "Snake UL";
 				PROVISIONING_PROFILE = "257FD466-EC74-43CF-904C-42A49EE829C5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "257FD466-EC74-43CF-904C-42A49EE829C5";
 				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
 		4DC178B0140CC4B40094E8A4 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -2473,6 +2611,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pmehta/Zing/MadsSDKv436,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
@@ -2483,18 +2625,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\"",
-					"\\\\\\\"$(SRCROOT)/AdMob\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 					/Users/pmehta/Zing/Snake/AdMob,
 					/Users/pmehta/Zing/Snake/FlurryAnalytics,
@@ -2505,6 +2647,10 @@
 					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
 					/Users/pmehta/Zing/Snake/Flurry,
 					/Users/pmehta/Zing/Snake/FlurryAds,
+					/Users/pmehta/Zing/Snake/MMSDK,
+					/Users/pmehta/Zing/iOS_5.1.1_SDK/MMSDK,
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/Flurry",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DLITE_VERSION";
@@ -2526,48 +2672,60 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapan Rajdev";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapan Rajdev";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pmehta/Zing/MadsSDKv436,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SnakeClassic_Prefix.pch;
 				INFOPLIST_FILE = "SnakeClassic-InfoUnlocked.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth_1/Libraries\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView/FlurryAnalytics\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryLib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/AdMob\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/GSSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3.1.1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter-OAuth-iPhone/Twitter+OAuth/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/Twitter+OAuth_1/Libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ &\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Headers\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/JumptapApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_3.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/InMobiIphoneSDKBundle/iPhone_4.x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/MMAdView/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAppCircle\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryClips\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/FlurryAnalytics\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 					/Users/pmehta/Zing/Snake/FlurryAnalytics,
 					"/Users/pmehta/Zing/Snake/Twitter+OAuth",
 					/Users/pmehta/Zing/Snake/MMAdView,
 					/Users/pmehta/Zing/Snake/FlurryAppCircle,
 					/Users/pmehta/Zing/Snake/FlurryClips,
-					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/Flurry",
-					"/Users/pmehta/Zing/Snake/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.2.4/Flurry-iOS-4.2.4/FlurryAds",
 					/Users/pmehta/Zing/Snake/Flurry,
 					/Users/pmehta/Zing/Snake/FlurryAds,
+					/Users/pmehta/Zing/MMAdView,
+					"/Users/pmehta/Zing/Flurry\\ iPhone\\ SDK\\ viPhone\\ 4.3.0/Flurry-iOS-4.3.0/FlurryAds",
+					/Users/pmehta/Zing/iOS_5.1.1_SDK/MMSDK,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "Snake UL";
 				PROVISIONING_PROFILE = "257FD466-EC74-43CF-904C-42A49EE829C5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "257FD466-EC74-43CF-904C-42A49EE829C5";
 				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 			};
 			name = Distribution;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -2590,7 +2748,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				GCC_C_LANGUAGE_STANDARD = c99;

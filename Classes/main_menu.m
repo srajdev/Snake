@@ -27,8 +27,14 @@
 #import "FlurryAds.h"
 #import "HighScoreViewController.h"
 #import "Flurry.h"
+#import "MMSDK.h"
+#import <CoreLocation/CoreLocation.h>
 
 
+#define kiPhoneInlineDefaultZone @"3327876051"
+#define kiPhoneInlineDefaultSecret @"5AC993C91380875B"
+#define kiPadInlineDefaultZone @"0337178053"
+#define kiPadInlineDefaultSecret @"F0B4E489B0CFC0BB"
 
 
 
@@ -43,13 +49,13 @@
 @synthesize checkAchievementsButton;
 @synthesize resumeTimer;
 
+@synthesize adView = _adView;
 
 
 
 
-
-- (void) viewDidAppear:(BOOL)animated{
-	
+- (void) viewWillAppear:(BOOL)animated{
+	[super viewWillAppear:animated];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 
@@ -126,14 +132,13 @@
     // Code specific to lite version
 
 	
-//	[adView doNotIgnoreNewAdRequests];
-//	[adView doNotIgnoreAutoRefreshTimer];
-	
-//	adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-
     [FlurryAds setAdDelegate:self];
+    [Flurry setDebugLogEnabled:YES];
+    
     [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-	
+ 
+    
+    
 /*
 	if(IS_IPHONE_5){
         
@@ -150,10 +155,8 @@
 	
 	 [super viewDidLoad];
 	
-	
-	
-	
 }
+
 
 - (void) viewDidDisappear:(BOOL)animated{
 
@@ -168,6 +171,17 @@
 }
 
 
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    //[super viewWillDisappear:animated];
+    
+    // Remove the ad when view dissappears
+    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    
+    // Reset delegate, if set earlier
+    [FlurryAds setAdDelegate:nil];
+}
+
 
 
 // Function to get the AdWhirl Key
@@ -178,14 +192,9 @@
 	
 	
 	return kSampleAppKey;
-	
-	
-	
 
 	
 }
-
-
 
 -(void) showAlert :(NSTimer *)theTimer{
 	
@@ -254,13 +263,7 @@
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-
-	
 	[delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-	
-	
-	
-	
 	
 	
 }
@@ -310,15 +313,7 @@
 	[self.view removeFromSuperview];
 	[UIView commitAnimations];
 	
-	
-
-	
-	
-	
-	
-	
 	resumeTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(loadResume:) userInfo:nil repeats:NO];
-	
 	
 }
 
@@ -403,13 +398,6 @@
 	
 	
 	[delegate switchView:self.view toview:delegate.scoreMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-
-	
-	
-	
-	
-	
-	
 	
 }
 
@@ -420,16 +408,8 @@
 	
 	[Flurry logEvent:@"More Apps"];
 
-	
-	
 	[Flurry openCatalog:@"more apps" canvasOrientation:@"portrait"];
-	
-	
-	
-	
-	
-	
-	
+    
 	
 }
 
@@ -555,12 +535,12 @@
         
         CGRect btHelpFrame = helpPressed.frame;
         btHelpFrame.origin.x = HELP_BUTTON_X;
-        btHelpFrame.origin.y = 60 + HELP_BUTTON_Y;
+        btHelpFrame.origin.y = 70 + HELP_BUTTON_Y;
         helpPressed.frame = btHelpFrame;
         
         CGRect btcheckAchievementsFrame = checkAchievementsButton.frame;
         btcheckAchievementsFrame.origin.x = CHECKACHIEVEMENT_BUTTON_X;
-        btcheckAchievementsFrame.origin.y = 60 + CHECKACHIEVEMENT_BUTTON_Y;
+        btcheckAchievementsFrame.origin.y = 70 + CHECKACHIEVEMENT_BUTTON_Y;
         checkAchievementsButton.frame = btcheckAchievementsFrame;
         
     }
@@ -665,7 +645,8 @@
 	[resumebutton release];
 	[scoresbutton release];
     [storeButton release];
-
+    _adView.delegate = nil;
+    [_adView release];
     [super dealloc];
 }
 
