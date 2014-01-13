@@ -215,7 +215,7 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
         [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
 	}
 	
-       //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+    [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
 	
 	if (delegate.gameMode == kClassicMode && delegate.fieldMode == kNoWall && delegate.delegateScore >= 10000) {
 		delegate.maxOpen = YES;
@@ -553,17 +553,19 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 
 	[Flurry logEvent:@"Play Again"];
     playAgainButton = true;
-    
-    //if ([FlurryAds adReadyForSpace:adSpaceName]) {
-    //    [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
-    //} else {
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+    if ([FlurryAds adReadyForSpace:adSpaceName]) {
+        NSLog(@"ad is there");
+        [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
+    } else {
         // Fetch an ad
-        //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
-        [FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
-    //}
-    
-		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
+        NSLog(@"NO AD");
+        [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+        [delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
+        //[FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
+    }
+
 	delegate.foodNumber = 0;
 	delegate.bonusFoodNumber = 0;
 	delegate.extremeSuccess = 0;
@@ -701,7 +703,7 @@ interstitial {
     
     mainMenuButton = true;
     
-      [FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
+      //[FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
     
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -712,13 +714,14 @@ interstitial {
     //[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
     
     
-    /*if ([FlurryAds adReadyForSpace:adSpaceName]) {
+    if ([FlurryAds adReadyForSpace:adSpaceName]) {
         [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
     } else {
         // Fetch an ad
         [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+        [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
     }
-	*/
+	
 	
 	
 /*	
