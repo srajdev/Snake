@@ -356,18 +356,18 @@
 	else if (delegate.gameMode == kExtremeMode) {
 		
 		//[delegate.activeGame startTime];
-		[delegate.activeGame startGame];
+		//[delegate.activeGame startGame];
 	}
 	else if (delegate.gameMode == kClassicMode){
 	
-		[delegate.activeGame startGame];
+		//[delegate.activeGame startGame];
 
 	}
 
 	
 	delegate.gameStatus = kGameActive;
-	
-	//delegate.activeGame.displayLink.paused = NO;
+    [delegate.activeGame activateTimers];
+    [delegate.activeGame setupExtremeTimers];
 	
 	delegate.displayLink.paused = NO;
 	
@@ -645,7 +645,7 @@
 	[resumebutton release];
 	[scoresbutton release];
     [storeButton release];
-    _adView.delegate = nil;
+    //_adView.delegate = nil;
     [_adView release];
     [super dealloc];
 }

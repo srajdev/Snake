@@ -93,7 +93,7 @@
 	}
 	else if(delegate.helpMode == kUnlockItems){
 	
-		text.text = [NSString stringWithFormat:@"Premium fields and wallpapers have to be unlocked using credits. Credits are earned by downloading our partner apps. These are high quality free apps that are specially recommended for you. For each app you download and launch, you get 30 credits.\n\nThis way, you don’t have to pay anything AND get to try out cool apps!\n\nSteps to earn credits\n\u2022\tClick on “Unlock” in the main menu and then click on “Earn Credits”\n\u2022\tChoose the app you want to download (you can change the app being recommended by clicking on “refresh” in the bottom right corner) \n\u2022\tOnce you have decided the app you want, click on download\n\u2022\tYou will be taken to the App Store, click on install\n\u2022\tOnce installation is complete, launch the app\n\u2022\tCome back to Snake Classic and your balance should be updated*\n\n*In most cases, the balance is updated immediately, but it might take up to 30 minutes some times for your credits to show up."];
+		text.text = [NSString stringWithFormat:@"Premium fields and wallpapers have to be unlocked using credits. Credits are earned by watching videos from our partner advertisers.\n\nSteps to earn credits\n\u2022\tClick on “Unlock” in the main menu and then click on “Earn Credits”.\n\u2022\tClick on Watch Videos to watch a video to earn credits.\n\u2022\tMake sure to watch till the end of the video to earn your credits\n\u2022\tClick on refresh once you have watched the video to update the balance.\n\n*In most cases, the balance is updated immediately, but it might take up to 30 minutes some times for your credits to show up."];
 		
 	}
 	else if (delegate.helpMode == kFAQ){

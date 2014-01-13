@@ -142,6 +142,9 @@
 
 -(void) showAlert3 :(NSTimer *)theTimer;
 
+-(void) activateTimers;
+-(void)setupExtremeTimers;
+
 //-(void)saveGame;
 
 //-(void)drawSnake:(CGContextRef)context;

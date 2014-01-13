@@ -185,49 +185,39 @@
 	if (delegate.gameStatus != kGameOver && delegate.time != 0) {
 		
 		[countTimer invalidate];
+        countTimer = nil;
 	
 		
 		comeFromPause = YES;
-//	displayLink.paused = YES;
-	
-	delegate.gameStatus = kGamePause;
-	
- //	mainmenu = [[main_menu alloc] initWithNibName:@"main_menu" bundle:nil];
-	
-	delegate.snakeHeadX = game.snake.head_x;
-	delegate.snakeHeadY = game.snake.head_y;
-	
-	delegate.snakeTailX = game.snake.tail_x;
-	delegate.snakeTailY	= game.snake.tail_y;
-	
-	delegate.snakeHeadDirection = game.snake.headDirection;
-	delegate.snakeTailDirection	= game.snake.tailDirection;
-	
-	delegate.snakeBends = game.snake.bends;
-	delegate.snakeBendDirection = game.snake.bend_direction;
-	
-	delegate.snakeFoodX = game.food.food_x;
-	delegate.snakeFoodY = game.food.food_y;
-	
-	delegate.delegateScore = game.score;
-	
-	delegate.displayLink = self.displayLink;
-	
-	delegate.activeGame = self;
-        delegate.speed = game.speed;
+        delegate.gameStatus = kGamePause;
+        delegate.snakeHeadX = game.snake.head_x;
+        delegate.snakeHeadY = game.snake.head_y;
         
-	[bonusTimer invalidate];
-		
-		[displayLink invalidate];
-/*
-		if (delegate.mainmenu.adView != NULL) {
-			[delegate.mainmenu.adView doNotIgnoreNewAdRequests];
-			[delegate.mainmenu.adView requestFreshAd];
-		}
-*/
-		
-	
-	[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:NO display:displayLink curlup:NO curldown:YES];
+        delegate.snakeTailX = game.snake.tail_x;
+        delegate.snakeTailY	= game.snake.tail_y;
+        
+        delegate.snakeHeadDirection = game.snake.headDirection;
+        delegate.snakeTailDirection	= game.snake.tailDirection;
+        
+        delegate.snakeBends = game.snake.bends;
+        delegate.snakeBendDirection = game.snake.bend_direction;
+        
+        delegate.snakeFoodX = game.food.food_x;
+        delegate.snakeFoodY = game.food.food_y;
+        
+        delegate.delegateScore = game.score;
+        
+        delegate.displayLink = self.displayLink;
+        
+        delegate.activeGame = self;
+        delegate.speed = game.speed;
+      
+        [bonusTimer invalidate];
+        bonusTimer = nil;
+            
+        displayLink.paused = YES;
+        //[displayLink invalidate];
+        [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:NO display:displayLink curlup:NO curldown:YES];
 		
 		
 	
@@ -558,6 +548,10 @@ if (delegate.gameStatus != kGamePause) {
        self.loopAdded = NO;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"disappear");
+}
+
 - (void) viewDidAppear:(BOOL)animated {
 
 	
@@ -565,8 +559,6 @@ if (delegate.gameStatus != kGamePause) {
 	
 		comeFromPause = NO;
 		[self startGame];
-	
-	
 }
 
 // Alert that takes the user to the store if a level is locked
@@ -578,10 +570,11 @@ if (delegate.gameStatus != kGamePause) {
 		
 		[Flurry logEvent:@"extreme/Unlock pressed in popup"];
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+        
+		[self pauseGameNow];
 		
 		[delegate switchView:self.view toview:delegate.storeView.view delay:NO remove:NO display:nil curlup:YES curldown:NO];
-		
-		
+
 		
 	}
 }
@@ -702,86 +695,128 @@ if (delegate.gameStatus != kGamePause) {
 		}
 		else {
 			currentView = game;
-	
-	
-	
-	bonusCounter = 1;
-	
-	
-	score_label.text = [NSString stringWithFormat:@"%d",game.score];
-	
-	if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kFullWall) {
-        if(IS_IPHONE_5){
-            game.snake.head_x = 235.0;
-            game.snake.head_y = 185.0;
+            bonusCounter = 1;
             
-        }
-        else{
-		game.snake.head_x = 235.0;
-		game.snake.head_y = 145.0;
-        }
-	}
-	
-	if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kHoleWall) {
-        if(IS_IPHONE_5){
-            game.snake.head_x = 275.0;
-            game.snake.head_y = 185.0;
             
-        }
-        else{
-		game.snake.head_x = 275.0;
-		game.snake.head_y = 145.0;
-        }
-	}
-	
-	if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode && delegate.fieldMode == kSquareWall) {
-        if(IS_IPHONE_5){
-            game.snake.head_x = 295.0;
-            game.snake.head_y = 185.0;
-            game.snake.tail_x = 25.0;
-            game.snake.tail_y = 185.0;
+            score_label.text = [NSString stringWithFormat:@"%d",game.score];
             
-        }
-        else{
-		game.snake.head_x = 295.0;
-		game.snake.head_y = 145.0;
-		game.snake.tail_x = 25.0;
-		game.snake.tail_y = 145.0;
-        }
-	}
+            if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kFullWall) {
+                if(IS_IPHONE_5){
+                    game.snake.head_x = 235.0;
+                    game.snake.head_y = 185.0;
+                    
+                }
+                else{
+                game.snake.head_x = 235.0;
+                game.snake.head_y = 145.0;
+                }
+            }
+            
+            if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode  && delegate.fieldMode == kHoleWall) {
+                if(IS_IPHONE_5){
+                    game.snake.head_x = 275.0;
+                    game.snake.head_y = 185.0;
+                    
+                }
+                else{
+                game.snake.head_x = 275.0;
+                game.snake.head_y = 145.0;
+                }
+            }
+            
+            if (delegate.inTransition == YES && delegate.gameMode == kExtremeMode && delegate.fieldMode == kSquareWall) {
+                if(IS_IPHONE_5){
+                    game.snake.head_x = 295.0;
+                    game.snake.head_y = 185.0;
+                    game.snake.tail_x = 25.0;
+                    game.snake.tail_y = 185.0;
+                    
+                }
+                else{
+                game.snake.head_x = 295.0;
+                game.snake.head_y = 145.0;
+                game.snake.tail_x = 25.0;
+                game.snake.tail_y = 145.0;
+                }
+            }
     
-	 [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(startLoop:) userInfo:nil repeats:NO];
-	
-	
-		
-
-         //   if(bonusTimer != nil){
-         //       [bonusTimer invalidate];
-         //   }
+            [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(startLoop:) userInfo:nil repeats:NO];
             
-	bonusTimer = [NSTimer scheduledTimerWithTimeInterval: 13
-									 target:self
-								   selector:@selector(generateBonusFood:)
-								   userInfo:nil
-									repeats:YES];
+            
+            [self activateTimers];
+            
+            
+            
+            
+            if (delegate.gameMode == kExtremeMode) {
+                time_label.text = [NSString stringWithFormat:@"%d", delegate.time];
+            
+            }
 	
-	
-	
-	
-	
-	if (delegate.gameMode == kExtremeMode) {
-		time_label.text = [NSString stringWithFormat:@"%d", delegate.time];
-	
+        }
+        
 	}
-	
-	}
-	}
-	
 	
    // [super viewDidLoad];
 }
 
+-(void) activateTimers{
+    
+    if (bonusTimer && [bonusTimer isValid]) {
+        [bonusTimer invalidate];
+    }
+    bonusTimer = [NSTimer scheduledTimerWithTimeInterval: 13
+                                                  target:self
+                                                selector:@selector(generateBonusFood:)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
 
+-(void)setupExtremeTimers{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if ((delegate.fieldMode == kHoleWall && delegate.holeUnlocked == NO)) {
+        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field Hole in the Wall." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
+        
+        //[alert show];
+        //[Flurry logEvent:@"extreme/pop to unlock hitw shown"];
+        [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
+    }
+    else if ((delegate.fieldMode == kSquareWall && delegate.squareUnlocked == NO)) {
+        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field 4square." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
+        
+        //[alert show];
+        [Flurry logEvent:@"extreme/pop to unlock 4sq shown"];
+        [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
+    }
+    else {
+    
+    
+        if ((delegate.gameMode == kExtremeMode && delegate.gameStatus == kGameActive) || delegate.inTransition == YES) {
+            time_label.text = [NSString stringWithFormat:@"%.2d", delegate.time];
+            
+            countTimer = nil;
+            
+            countTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countTime:) userInfo:nil repeats:YES];
+            
+        }
+        
+        
+        //if (delegate.gameMode == kExtremeMode) {
+        
+        if (delegate.inTransition == YES) {
+            
+            
+            
+            [self.currentView.wallLayer setNeedsDisplay];
+            delegate.gameStatus = kGameActive;
+            
+            delegate.displayLink.paused = NO;
+        }
+        
+        delegate.inTransition = NO;
+    }
+
+}
 
 -(void) showAlert1 :(NSTimer *)theTimer{
 	
@@ -894,7 +929,8 @@ if (delegate.gameStatus != kGamePause) {
 	}
 	
 
-	if ((delegate.gameMode == kExtremeMode && delegate.gameStatus == kGameActive) || delegate.inTransition == YES) {
+    [self setupExtremeTimers];
+	/*if ((delegate.gameMode == kExtremeMode && delegate.gameStatus == kGameActive) || delegate.inTransition == YES) {
 		time_label.text = [NSString stringWithFormat:@"%.2d", delegate.time];
 		
 		countTimer = nil;
@@ -916,7 +952,7 @@ if (delegate.gameStatus != kGamePause) {
 		delegate.displayLink.paused = NO;
 	}
 	
-	delegate.inTransition = NO;
+	delegate.inTransition = NO;*/
 	
 	displayLink = nil;
 	
@@ -948,18 +984,11 @@ if (delegate.gameStatus != kGamePause) {
 		[displayLink setFrameInterval:4.5];
 		
 	}
-        	//displayLink.paused = NO;
-	//[displayLink setFrameInterval:15];
+
 	delegate.displayLink = displayLink;
-	
-	//if (comeFromPause == YES) {
-	//	comeFromPause = NO;
-    
-    //	}
-    //	else {
-        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    
-    //	}
+
+    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+
 
 	
 	[pool release];

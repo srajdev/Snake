@@ -151,7 +151,7 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
-	[delegate.activeGame.displayLink invalidate];
+	//[delegate.activeGame.displayLink invalidate];
 	delegate.activeGame = nil;
 	
 	
@@ -218,7 +218,7 @@
 	
 	//[delegate.mainmenu.adView ignoreNewAdRequests];
 	
-	[delegate.activeGame.displayLink invalidate];
+	//[delegate.activeGame.displayLink invalidate];
 	delegate.activeGame = nil;
 	
 	

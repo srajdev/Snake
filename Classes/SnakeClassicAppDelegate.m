@@ -241,7 +241,8 @@ static NSString* kFBAppId = @"158392174179755";
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err { 
 	
-    //NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    NSLog(@"failed: %@", str);
    
 	
 }
@@ -249,7 +250,7 @@ static NSString* kFBAppId = @"158392174179755";
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 	
     for (id key in userInfo) {
-        //NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
+        NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
     }    
 	
 }
@@ -325,6 +326,7 @@ static NSString* kFBAppId = @"158392174179755";
 //	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
 	
 	
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 	
 	unlockFromAnother = 0;
 	
@@ -1054,7 +1056,7 @@ if ([self connectedToNetwork]) {
 		
 		device_Token = [device_Token stringByReplacingOccurrencesOfString:@"<" withString:@""];
 		device_Token = [device_Token stringByReplacingOccurrencesOfString:@">" withString:@""];
-		
+		NSLog(@"device token : %@", device_Token);
 		device_Token = [device_Token stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 		
 		NSString *urlString = [NSString stringWithFormat:@"http://zingapps.us/put_token.php?udid=%@&token=%@",
@@ -1070,7 +1072,7 @@ if ([self connectedToNetwork]) {
 		
 
 		
-		//return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		NSLog(@"response: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 		
 		
 		

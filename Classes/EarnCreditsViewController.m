@@ -193,6 +193,8 @@
 
     [FlurryAds setAdDelegate:self];
     
+    [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+    
 }
 
 
@@ -265,10 +267,14 @@
 
 - (IBAction) watchVideoPressed{
     
+    NSLog(@"self view :%@", self.view);
     if ([FlurryAds adReadyForSpace:@"Videos"]) {
+        NSLog(@"ready");
         [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
     } else {
-        [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+        NSLog(@"not ready");
+        //[FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
+        [FlurryAds fetchAndDisplayAdForSpace:@"Videos" view:self.view size:FULLSCREEN];
     }
     
 }

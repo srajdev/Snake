@@ -22,7 +22,7 @@
 #import <GameKit/GameKit.h>
 #import "flurryAdDelegate.h"
 
-#import <MadsSDK/MadsSDK.h>
+//#import <MadsSDK/MadsSDK.h>
 
 @class MadsAdView;
 

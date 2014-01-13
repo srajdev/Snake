@@ -245,8 +245,14 @@
 	
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    if(IS_IPHONE_5){
+        //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+    }
+}
 
--(void) viewDidAppear:(BOOL)animated{
+
+-(void) viewWillAppear:(BOOL)animated{
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -346,7 +352,7 @@
 	if (delegate.snakeColor == [UIColor greenColor]) {
 		if (delegate.fieldMode == kNoWall) {
             if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_green_open.png"];
             }
             else{
@@ -355,7 +361,7 @@
 		}
 		else if(delegate.fieldMode == kFullWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_green_box.png"];
             }
             else{
@@ -364,7 +370,7 @@
 		}
 		else if(delegate.fieldMode == kHoleWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_green_hitw.png"];
             }
             else{
@@ -373,7 +379,7 @@
 		}
 		else if(delegate.fieldMode == kSquareWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_green_4sq.png"];
             }
             else{
@@ -385,7 +391,7 @@
 	else if (delegate.snakeColor == [UIColor orangeColor]) {
 		if (delegate.fieldMode == kNoWall) {
             if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_orange_open.png"];
             }
             else{
@@ -394,7 +400,7 @@
 		}
 		else if(delegate.fieldMode == kFullWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_orange_box.png"];
             }
             else{
@@ -403,7 +409,7 @@
 		}
 		else if(delegate.fieldMode == kHoleWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_orange_hitw.png"];
             }
             else{
@@ -412,7 +418,7 @@
 		}
 		else if(delegate.fieldMode == kSquareWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_orange_4sq.png"];
             }
             else{
@@ -424,7 +430,7 @@
 	else if (delegate.snakeColor == [UIColor blackColor]) {
 		if (delegate.fieldMode == kNoWall) {
             if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_yellow_open.png"];
             }
             else{
@@ -433,7 +439,7 @@
 		}
 		else if(delegate.fieldMode == kFullWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_yellow_box.png"];
             }
             else{
@@ -443,7 +449,7 @@
 		}
 		else if(delegate.fieldMode == kHoleWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_yellow_hitw.png"];
             }
             else{
@@ -452,7 +458,7 @@
 		}
 		else if(delegate.fieldMode == kSquareWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_yellow_4sq.png"];
             }
             else{
@@ -464,7 +470,7 @@
 	else if (delegate.snakeColor == [UIColor blueColor]) {
 		if (delegate.fieldMode == kNoWall) {
             if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_blue_open.png"];
             }
             else{
@@ -473,7 +479,7 @@
         }
 		else if(delegate.fieldMode == kFullWall){
 			if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_blue_box.png"];
             }
             else{
@@ -482,7 +488,7 @@
         }
 		else if(delegate.fieldMode == kHoleWall){
             if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_blue_hitw.png"];
             }
             else{
@@ -491,7 +497,7 @@
         }
 		else if(delegate.fieldMode == kSquareWall){
             if(IS_IPHONE_5){
-                [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
+                //[topBackground setFrame:CGRectMake(0, 0, 320, 388)];
                 topBackground.image = [UIImage imageNamed:@"_blue_4sq.png"];
             }
             else{
@@ -501,9 +507,6 @@
 		
         
 	}
-	
-    [super viewDidLoad];
-	
 	
 }
 
@@ -517,6 +520,7 @@
         [smallBackground setFrame:CGRectMake(20, 195, 280, 186)];
         [background setFrame:CGRectMake(0, 388, 320, 180)];
         [topImage setFrame:CGRectMake(0, 0, 320, 568)];
+        [topBackground setFrame:CGRectMake(0, 0, 320, 388)];
         
     }
 	
