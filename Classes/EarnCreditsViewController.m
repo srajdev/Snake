@@ -14,6 +14,7 @@
 #import "main_menu.h"
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
+#import "Social/Social.h"
 #import "AdSupport/ASIdentifierManager.h"
 
 @implementation EarnCreditsViewController
@@ -75,6 +76,37 @@
 		}
         balance.textColor = [UIColor whiteColor];
 	}
+    
+    UIImage *watchVideoImage = [UIImage imageNamed:@"watch videos.png"];
+    
+    watchVideo = [[UIButton alloc] initWithFrame:CGRectMake(40,
+                                                            200,
+                                                           watchVideoImage.size.width,
+                                                            watchVideoImage.size.height)];
+    [watchVideo setImage:watchVideoImage forState:UIControlStateNormal];
+    [watchVideo addTarget:self action:@selector(watchVideoPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:watchVideo];
+    
+    
+    UIButton *facebookShare = [[UIButton alloc] initWithFrame:CGRectMake(watchVideo.frame.origin.x,
+                                                                         watchVideo.frame.origin.y + watchVideo.frame.size.height + 20,
+                                                                         watchVideo.frame.size.width,
+                                                                         watchVideo.frame.size.height)];
+    [facebookShare setTitle:@"Share on Facebook" forState:UIControlStateNormal];
+    [facebookShare addTarget:self action:@selector(shareOnFacebook) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:facebookShare];
+    
+    
+    UIButton *twitterShare = [[UIButton alloc] initWithFrame:CGRectMake(watchVideo.frame.origin.x,
+                                                                        facebookShare.frame.origin.y + facebookShare.frame.size.height + 20,
+                                                                        watchVideo.frame.size.width,
+                                                                        watchVideo.frame.size.height)];
+    [twitterShare setTitle:@"Share on Twitter" forState:UIControlStateNormal];
+    [twitterShare addTarget:self action:@selector(shareOnTwitter) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:twitterShare];
+    
+    
+    
 	if(IS_IPHONE_5){
         //self.view.frame = CGRectMake(0, 0, 320, 568);
         
@@ -92,28 +124,18 @@
         btrefreshLabelFrame.origin.x = EARN_REFRESH_LABEL_X;
         btrefreshLabelFrame.origin.y = 20 + EARN_REFRESH_LABEL_Y;
         refreshLabel.frame = btrefreshLabelFrame;
-        
-        /*CGRect btdownloadFrame = downloadButton.frame;
-        btdownloadFrame.origin.x = EARN_DOWNLOAD_BUTTON_X;
-        btdownloadFrame.origin.y = 30 + EARN_DOWNLOAD_BUTTON_Y;
-        downloadButton.frame = btdownloadFrame;
-        */
-        
-        CGRect btvidFrame = watchVideo.frame;
-        btvidFrame.origin.x = EARN_VIDEOS_BUTTON_X;
-        btvidFrame.origin.y = 20 + EARN_VIDEOS_BUTTON_Y;
-        watchVideo.frame = btvidFrame;
+
+        //CGRect btvidFrame = watchVideo.frame;
+        //btvidFrame.origin.x = EARN_VIDEOS_BUTTON_X;
+        //btvidFrame.origin.y = 20 + EARN_VIDEOS_BUTTON_Y;
+        //watchVideo.frame = btvidFrame;
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = EARN_BACK_BUTTON_X;
         btbackFrame.origin.y = 150 + EARN_BACK_BUTTON_Y;
         backButton.frame = btbackFrame;
         
-        CGRect btrefreshFrame = refreshButton.frame;
-        btrefreshFrame.origin.x = EARN_REFRESH_BUTTON_X;
-        btrefreshFrame.origin.y = 20 + EARN_REFRESH_BUTTON_Y;
-        refreshButton.frame = btrefreshFrame;
-	}
+    }
 	
 }
 
@@ -265,14 +287,154 @@
 }
 
 
+-(void)shareOnFacebook{
+	
+    SLComposeViewController *fbController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [fbController setInitialText: [NSString stringWithFormat:@"Yes, this is the same old Snake. Best game ever."]];
+    
+    //[controller2 setInitialText:@"First post from my iPhone app"];
+    [fbController addURL:[NSURL URLWithString:@"https://itunes.apple.com/in/app/snake-classic/id394603141?mt=8"]];
+    [fbController addImage:[UIImage imageNamed:@"http://zingapps.co/FBlogo.png"]];
+    
+    
+    SLComposeViewControllerCompletionHandler __block completionHandler=^(SLComposeViewControllerResult result){
+        
+        [fbController dismissViewControllerAnimated:YES completion:nil];
+        
+        switch(result){
+            case SLComposeViewControllerResultCancelled:
+            {
+                 NSLog(@"Cancelled.....");
+
+            }
+                break;
+            case SLComposeViewControllerResultDone:
+            {
+                NSLog(@"DONE");
+                
+                BOOL giveCredits = YES;
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                NSString *lastPostDate = [defaults objectForKey:@"FACEBOOK_EARN_SHARE"];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateStyle:NSDateFormatterFullStyle];
+                [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
+                NSDate *today = [[NSDate alloc] init];
+                if (lastPostDate) {
+                    
+                    NSDate *lastDate = [dateFormatter dateFromString:lastPostDate];
+                    
+                    if ([today compare:[lastDate dateByAddingTimeInterval:24*60*60]] == NSOrderedAscending) {
+                        giveCredits = NO;
+                    }
+                }
+                
+                if (giveCredits) {
+                    [defaults setObject:[dateFormatter stringFromDate:today] forKey:@"FACEBOOK_EARN_SHARE"];
+                    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                    NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/put_balance.php?idfa=%@&rewardquantity=10",idfaString];
+                    
+                    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                    
+                    [request setTimeoutInterval:15];
+                    [request setURL:[NSURL URLWithString:urlString]];
+                    
+                    NSData *responseDataSerial = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+                    
+                    NSString *connected = [[NSString alloc] initWithData:responseDataSerial encoding:NSUTF8StringEncoding];
+                    if (!connected) {
+                        NSLog(@"Unable to give credits");
+                    }
+                }
+
+            }
+                break;
+            default:{
+                NSLog(@"Default");
+            }
+                break;
+        }};
+    [fbController setCompletionHandler:completionHandler];
+
+    
+    
+    [self presentViewController:fbController animated:YES completion:Nil];
+
+    
+}
+
+-(void)shareOnTwitter{
+    SLComposeViewController *tweetSheet;
+    tweetSheet = [[SLComposeViewController alloc] init];
+
+    tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText: [NSString stringWithFormat:@"Check out a true classic - Snake Classic for iOS! http://bit.ly/c26ZIw"]];
+    
+    SLComposeViewControllerCompletionHandler __block completionHandler=^(SLComposeViewControllerResult result){
+        
+        [tweetSheet dismissViewControllerAnimated:YES completion:nil];
+        
+        switch(result){
+            case SLComposeViewControllerResultCancelled:
+            {
+                NSLog(@"Cancelled.....");
+                
+            }
+                break;
+            case SLComposeViewControllerResultDone:
+            {
+                BOOL giveCredits = YES;
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                NSString *lastPostDate = [defaults objectForKey:@"TWITTER_EARN_SHARE"];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateStyle:NSDateFormatterFullStyle];
+                [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
+                NSDate *today = [[NSDate alloc] init];
+                if (lastPostDate) {
+                    
+                    NSDate *lastDate = [dateFormatter dateFromString:lastPostDate];
+
+                    if ([today compare:[lastDate dateByAddingTimeInterval:24*60*60]] == NSOrderedAscending) {
+                        giveCredits = NO;
+                    }
+                }
+                
+                if (giveCredits) {
+                    [defaults setObject:[dateFormatter stringFromDate:today] forKey:@"TWITTER_EARN_SHARE"];
+                    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                    NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/put_balance.php?idfa=%@&rewardquantity=5",idfaString];
+                    
+                    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+                    
+                    [request setTimeoutInterval:15];
+                    [request setURL:[NSURL URLWithString:urlString]];
+                    
+                    NSData *responseDataSerial = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+                    
+                    NSString *connected = [[NSString alloc] initWithData:responseDataSerial encoding:NSUTF8StringEncoding];
+                    if (!connected) {
+                        NSLog(@"Unable to give credits");
+                    }
+                }
+            }
+                break;
+            default:{
+                NSLog(@"default");
+            }
+                break;
+        }};
+    [tweetSheet setCompletionHandler:completionHandler];
+    
+    
+    [self presentViewController:tweetSheet animated:YES completion:nil];
+
+}
+
 - (IBAction) watchVideoPressed{
     
-    NSLog(@"self view :%@", self.view);
     if ([FlurryAds adReadyForSpace:@"Videos"]) {
-        NSLog(@"ready");
         [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
     } else {
-        NSLog(@"not ready");
         //[FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
         [FlurryAds fetchAndDisplayAdForSpace:@"Videos" view:self.view size:FULLSCREEN];
     }
@@ -427,6 +589,7 @@
 - (void) viewDidDisappear:(BOOL)animated{
     
     [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
+    [FlurryAds removeAdFromSpace:@"Videos"];
     [FlurryAds setAdDelegate:nil];
     
 	
