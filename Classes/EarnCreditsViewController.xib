@@ -22,7 +22,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7">
-                    <rect key="frame" x="15" y="384" width="72" height="37"/>
+                    <rect key="frame" x="16" y="383" width="72" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" image="snake_Classic_0006_back.png">

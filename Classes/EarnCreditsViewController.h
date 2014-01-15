@@ -24,12 +24,12 @@
 	
 	
 
-	IBOutlet UILabel *name;
-	IBOutlet UILabel *refreshLabel;
+	//IBOutlet UILabel *name;
+	//IBOutlet UILabel *refreshLabel;
 	IBOutlet UILabel *balance;
 	
 	IBOutlet UIImageView *background;
-    IBOutlet UIButton *nameButton;
+    //IBOutlet UIButton *nameButton;
     //IBOutlet UIButton *downloadButton;
     IBOutlet UIButton *watchVideo;
     IBOutlet UIButton *backButton;

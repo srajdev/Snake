@@ -302,6 +302,22 @@
 		4D89F9BB12371FA100051A67 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D89F9B912371FA100051A67 /* HighScoreViewController.m */; };
 		4D89F9BC12371FA100051A67 /* HighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D89F9BA12371FA100051A67 /* HighScoreViewController.xib */; };
 		4D89F9FD1237225000051A67 /* HighScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D89F9FC1237225000051A67 /* HighScoreCell.xib */; };
+		4DAAC73A18861F6A00221825 /* unlockButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC73818861F6A00221825 /* unlockButton.png */; };
+		4DAAC73B18861F6A00221825 /* unlockButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC73918861F6A00221825 /* unlockButton@2x.png */; };
+		4DAAC748188624BE00221825 /* earncredits_3-Cr.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC73C188624BE00221825 /* earncredits_3-Cr.png */; };
+		4DAAC749188624BE00221825 /* earncredits_3-Cr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC73D188624BE00221825 /* earncredits_3-Cr@2x.png */; };
+		4DAAC74A188624BE00221825 /* earncredits_5-Cr.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC73E188624BE00221825 /* earncredits_5-Cr.png */; };
+		4DAAC74B188624BE00221825 /* earncredits_5-Cr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC73F188624BE00221825 /* earncredits_5-Cr@2x.png */; };
+		4DAAC74C188624BE00221825 /* earncredits_10-Cr.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC740188624BE00221825 /* earncredits_10-Cr.png */; };
+		4DAAC74D188624BE00221825 /* earncredits_10-Cr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC741188624BE00221825 /* earncredits_10-Cr@2x.png */; };
+		4DAAC74E188624BE00221825 /* earncredits_note.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC742188624BE00221825 /* earncredits_note.png */; };
+		4DAAC74F188624BE00221825 /* earncredits_note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC743188624BE00221825 /* earncredits_note@2x.png */; };
+		4DAAC750188624BE00221825 /* earncredits_share-on-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC744188624BE00221825 /* earncredits_share-on-facebook.png */; };
+		4DAAC751188624BE00221825 /* earncredits_share-on-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC745188624BE00221825 /* earncredits_share-on-facebook@2x.png */; };
+		4DAAC752188624BE00221825 /* earncredits_share-on-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC746188624BE00221825 /* earncredits_share-on-twitter.png */; };
+		4DAAC753188624BE00221825 /* earncredits_share-on-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC747188624BE00221825 /* earncredits_share-on-twitter@2x.png */; };
+		4DAAC7551886259600221825 /* watch videos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC7541886259600221825 /* watch videos@2x.png */; };
+		4DAAC75718862AFB00221825 /* _0001_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAAC75618862AFB00221825 /* _0001_refresh@2x.png */; };
 		4DABB3D2125DD3D100D397D6 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DABB3D1125DD3D100D397D6 /* Session.m */; };
 		4DABB3D6125DD60300D397D6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DABB3D5125DD60300D397D6 /* UserInfo.m */; };
 		4DABB3E8125DD74300D397D6 /* UserRequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DABB3E5125DD74300D397D6 /* UserRequestResult.m */; };
@@ -859,6 +875,22 @@
 		4D89F9B912371FA100051A67 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
 		4D89F9BA12371FA100051A67 /* HighScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HighScoreViewController.xib; path = Classes/HighScoreViewController.xib; sourceTree = "<group>"; };
 		4D89F9FC1237225000051A67 /* HighScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighScoreCell.xib; sourceTree = "<group>"; };
+		4DAAC73818861F6A00221825 /* unlockButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlockButton.png; sourceTree = "<group>"; };
+		4DAAC73918861F6A00221825 /* unlockButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unlockButton@2x.png"; sourceTree = "<group>"; };
+		4DAAC73C188624BE00221825 /* earncredits_3-Cr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_3-Cr.png"; sourceTree = "<group>"; };
+		4DAAC73D188624BE00221825 /* earncredits_3-Cr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_3-Cr@2x.png"; sourceTree = "<group>"; };
+		4DAAC73E188624BE00221825 /* earncredits_5-Cr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_5-Cr.png"; sourceTree = "<group>"; };
+		4DAAC73F188624BE00221825 /* earncredits_5-Cr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_5-Cr@2x.png"; sourceTree = "<group>"; };
+		4DAAC740188624BE00221825 /* earncredits_10-Cr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_10-Cr.png"; sourceTree = "<group>"; };
+		4DAAC741188624BE00221825 /* earncredits_10-Cr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_10-Cr@2x.png"; sourceTree = "<group>"; };
+		4DAAC742188624BE00221825 /* earncredits_note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earncredits_note.png; sourceTree = "<group>"; };
+		4DAAC743188624BE00221825 /* earncredits_note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_note@2x.png"; sourceTree = "<group>"; };
+		4DAAC744188624BE00221825 /* earncredits_share-on-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_share-on-facebook.png"; sourceTree = "<group>"; };
+		4DAAC745188624BE00221825 /* earncredits_share-on-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_share-on-facebook@2x.png"; sourceTree = "<group>"; };
+		4DAAC746188624BE00221825 /* earncredits_share-on-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_share-on-twitter.png"; sourceTree = "<group>"; };
+		4DAAC747188624BE00221825 /* earncredits_share-on-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earncredits_share-on-twitter@2x.png"; sourceTree = "<group>"; };
+		4DAAC7541886259600221825 /* watch videos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watch videos@2x.png"; sourceTree = "<group>"; };
+		4DAAC75618862AFB00221825 /* _0001_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_0001_refresh@2x.png"; sourceTree = "<group>"; };
 		4DABB3D0125DD3D100D397D6 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		4DABB3D1125DD3D100D397D6 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		4DABB3D4125DD60300D397D6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
@@ -1376,6 +1408,22 @@
 		4D27806A1230BAE300BE95A7 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				4DAAC75618862AFB00221825 /* _0001_refresh@2x.png */,
+				4DAAC7541886259600221825 /* watch videos@2x.png */,
+				4DAAC73C188624BE00221825 /* earncredits_3-Cr.png */,
+				4DAAC73D188624BE00221825 /* earncredits_3-Cr@2x.png */,
+				4DAAC73E188624BE00221825 /* earncredits_5-Cr.png */,
+				4DAAC73F188624BE00221825 /* earncredits_5-Cr@2x.png */,
+				4DAAC740188624BE00221825 /* earncredits_10-Cr.png */,
+				4DAAC741188624BE00221825 /* earncredits_10-Cr@2x.png */,
+				4DAAC742188624BE00221825 /* earncredits_note.png */,
+				4DAAC743188624BE00221825 /* earncredits_note@2x.png */,
+				4DAAC744188624BE00221825 /* earncredits_share-on-facebook.png */,
+				4DAAC745188624BE00221825 /* earncredits_share-on-facebook@2x.png */,
+				4DAAC746188624BE00221825 /* earncredits_share-on-twitter.png */,
+				4DAAC747188624BE00221825 /* earncredits_share-on-twitter@2x.png */,
+				4DAAC73818861F6A00221825 /* unlockButton.png */,
+				4DAAC73918861F6A00221825 /* unlockButton@2x.png */,
 				4D05000512832500004603CF /* _0000_beach_theme2.png */,
 				4DDDA42412860B1600A59629 /* _0000_Classic.png */,
 				4DDF4480127B09F4005BF642 /* _0000_Classic_end.png */,
@@ -1756,18 +1804,22 @@
 				4DE90A4A1241CFCE00CB48EB /* _0001_yellow.png in Resources */,
 				4DE90A4C1241CFD400CB48EB /* _0000_yellow-selected.png in Resources */,
 				4DD52DD91252B192002AF9A6 /* FBDialog.bundle in Resources */,
+				4DAAC748188624BE00221825 /* earncredits_3-Cr.png in Resources */,
 				4D6111A61252BD09008BFCF6 /* FBLogin.png in Resources */,
 				4D6111A71252BD09008BFCF6 /* FBLoginPressed.png in Resources */,
 				4D6111A81252BD09008BFCF6 /* FBLogout.png in Resources */,
 				4D6111A91252BD09008BFCF6 /* FBLogoutPressed.png in Resources */,
+				4DAAC74D188624BE00221825 /* earncredits_10-Cr@2x.png in Resources */,
 				4DABB4BD125DF78300D397D6 /* _0001_Facebook.png in Resources */,
 				4DD44E5F1263E08900FE49B2 /* _0000_Twitter.png in Resources */,
 				4DD44EE11263EDC900FE49B2 /* _0006_rate-.png in Resources */,
 				4DD44F0B1263F19200FE49B2 /* _0000_options.png in Resources */,
+				4DAAC73A18861F6A00221825 /* unlockButton.png in Resources */,
 				4DD39C5D1266778E009E5B69 /* _0000_global_grey.png in Resources */,
 				4DD39C5E1266778E009E5B69 /* _0001_friends_grey.png in Resources */,
 				4DD39C5F1266778E009E5B69 /* _0002_local_grey.png in Resources */,
 				4DD39C601266778E009E5B69 /* _0003_global_white.png in Resources */,
+				4DAAC74B188624BE00221825 /* earncredits_5-Cr@2x.png in Resources */,
 				4DD39C611266778E009E5B69 /* _0004_friends_white.png in Resources */,
 				4DD39C621266778E009E5B69 /* _0005_local_white.png in Resources */,
 				4DEEE67D1276B21C00A90AA7 /* GameModeViewController.xib in Resources */,
@@ -1790,6 +1842,7 @@
 				4D05001012832500004603CF /* _0000_unlock_theme3.png in Resources */,
 				4D26F36212839EA700D16F13 /* _0000_hole_field.png in Resources */,
 				4D26F36312839EA800D16F13 /* _0000_square_field.png in Resources */,
+				4DAAC74A188624BE00221825 /* earncredits_5-Cr.png in Resources */,
 				4D26F36412839EA800D16F13 /* _0000_unlock_hole.png in Resources */,
 				4D26F36512839EA800D16F13 /* _0000_unlock_square.png in Resources */,
 				4D26F3E01283C16200D16F13 /* _0000_LOCK.png in Resources */,
@@ -1807,15 +1860,18 @@
 				4DDDA21E12851DAA00A59629 /* helpDetailViewController.xib in Resources */,
 				4DDDA3A31285F3B200A59629 /* _0000_snake_classic.png in Resources */,
 				4DDDA3AB1285FAC900A59629 /* _0003_gameplay_theme1.png in Resources */,
+				4DAAC74C188624BE00221825 /* earncredits_10-Cr.png in Resources */,
 				4DDDA3EA128602F100A59629 /* _0000_gameplay_classic.png in Resources */,
 				4DDDA3F2128604B600A59629 /* _0000_Field_Classic.png in Resources */,
 				4DDDA3F3128604B600A59629 /* _0000_Field_Theme3.png in Resources */,
 				4DDDA3F4128604B600A59629 /* _0000_Field_Theme2.png in Resources */,
+				4DAAC75718862AFB00221825 /* _0001_refresh@2x.png in Resources */,
 				4DDDA3F5128604B600A59629 /* _0000_Field_Theme1.png in Resources */,
 				4DDDA42612860B1600A59629 /* _0000_Classic.png in Resources */,
 				4DDDA42712860B1600A59629 /* _0000_Extreme.png in Resources */,
 				4DDDA43F128618DB00A59629 /* _0000_theme3_options.png in Resources */,
 				4DDDA440128618DB00A59629 /* _0000_theme2_options.png in Resources */,
+				4DAAC751188624BE00221825 /* earncredits_share-on-facebook@2x.png in Resources */,
 				4DDDA441128618DB00A59629 /* _0000_theme1_options.png in Resources */,
 				4DDDA4D012863B7400A59629 /* _0000_unlock-all.png in Resources */,
 				2CC5EEF6180E4DC30021C69B /* Icon@2x.png in Resources */,
@@ -1831,6 +1887,7 @@
 				4DBCFED912877E450047AC18 /* _0003_Box.png in Resources */,
 				4DBCFEDA12877E450047AC18 /* _0002_Box-Pressed.png in Resources */,
 				4DBCFEDB12877E450047AC18 /* _0001_Hole.png in Resources */,
+				4DAAC74F188624BE00221825 /* earncredits_note@2x.png in Resources */,
 				4DBCFEDC12877E450047AC18 /* _0000_Next.png in Resources */,
 				4DBCFEE1128781330047AC18 /* end game_beach.png in Resources */,
 				4DBCFEE2128781330047AC18 /* end game_night.png in Resources */,
@@ -1856,6 +1913,7 @@
 				4D0D1DED128A7C500091E3A4 /* blue_4sq.png in Resources */,
 				4D0D1DEE128A7C500091E3A4 /* blue_box.png in Resources */,
 				4D0D1DEF128A7C500091E3A4 /* blue_hitw.png in Resources */,
+				4DAAC74E188624BE00221825 /* earncredits_note.png in Resources */,
 				4D0D1DF0128A7C500091E3A4 /* blue_open.png in Resources */,
 				4D0D1DF2128A7C500091E3A4 /* green_4sq.png in Resources */,
 				4D0D1DF3128A7C500091E3A4 /* green_box.png in Resources */,
@@ -1869,8 +1927,10 @@
 				4D0D1DFC128A7C500091E3A4 /* yellow_box.png in Resources */,
 				4D0D1DFD128A7C500091E3A4 /* yellow_hitw.png in Resources */,
 				4D0D1DFE128A7C500091E3A4 /* yellow_open.png in Resources */,
+				4DAAC750188624BE00221825 /* earncredits_share-on-facebook.png in Resources */,
 				4D35B4F7128A83E7001ECC69 /* _0000_classic_options.png in Resources */,
 				4D35B538128A8DE1001ECC69 /* HELP.png in Resources */,
+				4DAAC73B18861F6A00221825 /* unlockButton@2x.png in Resources */,
 				4DC43AE3128BB2D100FFE1B5 /* _0000_Difficulty_Classic.png in Resources */,
 				2C9A7A69180C602C00BD4FB1 /* Icon~iphone.png in Resources */,
 				4DC43AE4128BB2D100FFE1B5 /* _0000_Difficulty_theme1.png in Resources */,
@@ -1911,6 +1971,7 @@
 				2CC2003B17FDE61100100CC7 /* _Options_Beach.png in Resources */,
 				2CC2003D17FDE61200100CC7 /* _Options_Classic.png in Resources */,
 				2CC2003F17FDE61200100CC7 /* _Options_Garden.png in Resources */,
+				4DAAC7551886259600221825 /* watch videos@2x.png in Resources */,
 				2CC2004117FDE61200100CC7 /* _Options_Night.png in Resources */,
 				2CC2004417FE9BEC00100CC7 /* gameplay_background.png in Resources */,
 				2CC2005017FEBD4800100CC7 /* gameplay_classic.png in Resources */,
@@ -1925,6 +1986,8 @@
 				2CC2007D17FF491B00100CC7 /* _orange_box.png in Resources */,
 				2CC2007F17FF491B00100CC7 /* _orange_hitw.png in Resources */,
 				2CC2008117FF491B00100CC7 /* _orange_open.png in Resources */,
+				4DAAC753188624BE00221825 /* earncredits_share-on-twitter@2x.png in Resources */,
+				4DAAC749188624BE00221825 /* earncredits_3-Cr@2x.png in Resources */,
 				2CC2008317FF491B00100CC7 /* _yellow_4sq.png in Resources */,
 				2CC2008517FF491B00100CC7 /* _yellow_box.png in Resources */,
 				2CC2008717FF491B00100CC7 /* _yellow_hitw.png in Resources */,
@@ -1932,6 +1995,7 @@
 				2CC2008E17FF4B7100100CC7 /* _blue_4sq.png in Resources */,
 				2CC2009017FF4B7100100CC7 /* _blue_box.png in Resources */,
 				2CC2009217FF4B7100100CC7 /* _blue_hitw.png in Resources */,
+				4DAAC752188624BE00221825 /* earncredits_share-on-twitter.png in Resources */,
 				2CC2009517FFDC7900100CC7 /* _green_4sq.png in Resources */,
 				2CC20287180461C800100CC7 /* store_beach.png in Resources */,
 				2CC20289180461C800100CC7 /* store_classic.png in Resources */,

@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FieldModeViewController : UIViewController {
+@interface FieldModeViewController : UIViewController <UIAlertViewDelegate>{
 	
 	
 	IBOutlet UIButton *openField;
@@ -37,6 +37,13 @@
 	IBOutlet UIImageView *topBackground;
     
     IBOutlet UIImageView *topImage;
+    IBOutlet UIButton *nextButton;
+    
+    IBOutlet UIButton *unlockButton;
+    
+    int fieldTagToUnlock;
+    UIAlertView *unlockAlert;
+    UIAlertView *noCreditsAlert;
 
 }
 
@@ -47,6 +54,7 @@
 -(IBAction) HoleWallPressed:(id)sender;
 -(IBAction) SquarePressed:(id)sender;
 -(IBAction) NextPressed:(id)sender;
+-(IBAction)unlockPressed:(id)sender;
 
 -(IBAction) lockPressed : (id) sender;
 

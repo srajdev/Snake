@@ -34,8 +34,8 @@
 	
 	hole.enabled = YES;
 	square.enabled = YES;
-	holeLocked.hidden =YES;
-    squareLocked.hidden = YES;
+	//holeLocked.hidden =YES;
+    //squareLocked.hidden = YES;
 	
 	openField.hidden = YES;
 	openFieldSelected.hidden = NO;
@@ -44,30 +44,34 @@
 	boxSelected.hidden = YES;
 	
 	
-	if (delegate.holeUnlocked == NO) {
-		hole.hidden = NO;
-		holeSelected.hidden = YES;
-		hole.enabled = NO;
+	/*if (delegate.holeUnlocked == NO) {
+		//hole.hidden = NO;
+		//holeSelected.hidden = YES;
+		//hole.enabled = NO;
 		holeLocked.hidden = NO;
 		
 	}
-	else {
+	else {*/
 		hole.hidden = NO;
 		holeSelected.hidden = YES;
-	}
+	/*}
 	
 	
 	if (delegate.squareUnlocked == NO) {
-		square.hidden = NO;
-		squareSelected.hidden = YES;
-		square.enabled = NO;
+		//square.hidden = NO;
+		//squareSelected.hidden = YES;
+		//square.enabled = NO;
 		squareLocked.hidden = NO;
 	}
-	else {
+	else {*/
 		square.hidden = NO;
 		squareSelected.hidden = YES;
-	}
+	//}
 	
+    
+    nextButton.hidden = NO;
+    unlockButton.hidden = YES;
+    fieldTagToUnlock = 0;
 	[self setbackground];
 	
 	
@@ -85,8 +89,8 @@
 	
 	hole.enabled = YES;
 	square.enabled = YES;
-	holeLocked.hidden =YES;
-	squareLocked.hidden = YES;
+	//holeLocked.hidden =YES;
+	//squareLocked.hidden = YES;
 	
 	openField.hidden = NO;
 	openFieldSelected.hidden = YES;
@@ -95,30 +99,34 @@
 	boxSelected.hidden = NO;
 	
 	
-	if (delegate.holeUnlocked == NO) {
-		hole.hidden = NO;
-		holeSelected.hidden = YES;
-		hole.enabled = NO;
+	/*if (delegate.holeUnlocked == NO) {
+		//hole.hidden = NO;
+		//holeSelected.hidden = YES;
+		//hole.enabled = NO;
 		holeLocked.hidden = NO;
 		
 	}
-	else {
+	else {*/
 		hole.hidden = NO;
 		holeSelected.hidden = YES;
-	}
+	/*}
 	
 	
 	if (delegate.squareUnlocked == NO) {
-		square.hidden = NO;
-		squareSelected.hidden = YES;
-		square.enabled = NO;
+		//square.hidden = NO;
+		//squareSelected.hidden = YES;
+		//square.enabled = NO;
 		squareLocked.hidden = NO;
 	}
-	else {
+	else {*/
 		square.hidden = NO;
 		squareSelected.hidden = YES;
-	}
-	
+	//}
+	fieldTagToUnlock = 0;
+    
+    nextButton.hidden = NO;
+    unlockButton.hidden = YES;
+
 	[self setbackground];
 	
 }
@@ -138,8 +146,8 @@
 	
 	hole.enabled = YES;
 	square.enabled = YES;
-	holeLocked.hidden =YES;
-	squareLocked.hidden = YES;
+	//holeLocked.hidden =YES;
+	//squareLocked.hidden = YES;
 	
 	openField.hidden = NO;
 	openFieldSelected.hidden = YES;
@@ -148,32 +156,41 @@
 	boxSelected.hidden = YES;
 	
 	
-	if (delegate.holeUnlocked == NO) {
-		hole.hidden = NO;
-		holeSelected.hidden = YES;
-		hole.enabled = NO;
+	/*if (delegate.holeUnlocked == NO) {
+		//hole.hidden = NO;
+		//holeSelected.hidden = YES;
+		//hole.enabled = NO;
 		holeLocked.hidden = NO;
 		
 	}
-	else {
+	else {*/
 		hole.hidden = YES;
 		holeSelected.hidden = NO;
-	}
+	/*}
 	
 	
 	if (delegate.squareUnlocked == NO) {
-		square.hidden = NO;
-		squareSelected.hidden = YES;
-		square.enabled = NO;
+		//square.hidden = NO;
+		//squareSelected.hidden = YES;
+		//square.enabled = NO;
 		squareLocked.hidden = NO;
 	}
-	else {
+	else {*/
 		square.hidden = NO;
 		squareSelected.hidden = YES;
-	}
+	//}
 	
-	[self setbackground];
 	
+	if (delegate.holeUnlocked == NO) {
+        nextButton.hidden = YES;
+        unlockButton.hidden = NO;
+        fieldTagToUnlock = 1;
+    }
+    else{
+        nextButton.hidden = NO;
+        unlockButton.hidden = YES;
+    }
+    [self setbackground];
 	
 	
 }
@@ -191,8 +208,8 @@
 	
 	hole.enabled = YES;
 	square.enabled = YES;
-	holeLocked.hidden =YES;
-	squareLocked.hidden = YES;
+	//holeLocked.hidden =YES;
+	//squareLocked.hidden = YES;
 	
 	openField.hidden = NO;
 	openFieldSelected.hidden = YES;
@@ -201,32 +218,41 @@
 	boxSelected.hidden = YES;
 	
 	
-	if (delegate.holeUnlocked == NO) {
-		hole.hidden = NO;
-		holeSelected.hidden = YES;
-		hole.enabled = NO;
+	/*if (delegate.holeUnlocked == NO) {
+		//hole.hidden = NO;
+		//holeSelected.hidden = YES;
+		//hole.enabled = NO;
 		holeLocked.hidden = NO;
 		
 	}
-	else {
+	else {*/
 		hole.hidden = NO;
 		holeSelected.hidden = YES;
-	}
+	/*}
 	
 	
 	if (delegate.squareUnlocked == NO) {
-		square.hidden = NO;
-		squareSelected.hidden = YES;
-		square.enabled = NO;
+		//square.hidden = NO;
+		//squareSelected.hidden = YES;
+		//square.enabled = NO;
 		squareLocked.hidden = NO;
 	}
-	else {
+	else {*/
 		square.hidden = YES;
 		squareSelected.hidden = NO;
-	}
+	//}
 	
 	[self setbackground];
 	
+    if (delegate.squareUnlocked == NO) {
+        nextButton.hidden = YES;
+        unlockButton.hidden = NO;
+        fieldTagToUnlock = 2;
+    }
+    else{
+        nextButton.hidden = NO;
+        unlockButton.hidden = YES;
+    }
 }
 -(IBAction) NextPressed:(id)sender{
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -235,28 +261,39 @@
 	
 }
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     
-        [self setbackground];
+    
+    
+    //UIImage *unlockImage = [UIImage imageNamed:@"unlockButton.png"];
+    /*unlockButton = [[UIButton alloc] initWithFrame:CGRectMake(nextButton.frame.origin.x - 10,
+                                                              nextButton.frame.origin.y,
+                                                              nextButton.frame.size.width + 20,
+                                                              nextButton.frame.size.height)];
+    //[unlockButton setTitle:@"Unlock" forState:UIControlStateNormal];
+    [unlockButton setImage:unlockImage forState:UIControlStateNormal];*/
+    //[unlockButton addTarget:self action:@selector(unlockPressed) forControlEvents:UIControlEventTouchUpInside];
+    unlockButton.hidden = YES;
+    //[self.view addSubview:unlockButton];
+    [self setbackground];
 
-	//  [super viewDidLoad];
 
 }
 -(void) viewWillAppear:(BOOL)animated{
-	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[self setButtonState];
+	[self setbackground];
+
+    
+    //1 is hole in the wall
+    //2 is square
+    fieldTagToUnlock = 0;
+  
+}
+
+-(void)setButtonState{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
 	hole.enabled = YES;
@@ -265,43 +302,111 @@
 	squareLocked.hidden = YES;
 	delegate.fieldMode = kNoWall;
 	delegate.isWallOn = NO;
+    nextButton.hidden = NO;
+    unlockButton.hidden = YES;
 	
-		
+    
 	openField.hidden = YES;
 	openFieldSelected.hidden = NO;
-
+    
 	box.hidden = NO;
 	boxSelected.hidden = YES;
+    
+    hole.hidden = NO;
+    holeSelected.hidden = YES;
+    hole.enabled = YES;
+    holeLocked.hidden = NO;
+    
+    square.hidden = NO;
+    squareSelected.hidden = YES;
+    square.enabled = YES;
+    squareLocked.hidden = NO;
 	
-
+    
 	if (delegate.holeUnlocked == NO) {
-		hole.hidden = NO;
-		holeSelected.hidden = YES;
-		hole.enabled = NO;
-		holeLocked.hidden = NO;
+		//hole.hidden = NO;
+		//holeSelected.hidden = YES;
+		//hole.enabled = NO;
+		//holeLocked.hidden = NO;
 		
 	}
 	else {
+        holeLocked.hidden = YES;
 		hole.hidden = NO;
 		holeSelected.hidden = YES;
 	}
-
+    
 	
 	if (delegate.squareUnlocked == NO) {
-		square.hidden = NO;
-		squareSelected.hidden = YES;
-		square.enabled = NO;
-		squareLocked.hidden = NO;
+		//square.hidden = NO;
+		//squareSelected.hidden = YES;
+		//square.enabled = NO;
+		//squareLocked.hidden = NO;
 	}
 	else {
+        squareLocked.hidden = YES;
 		square.hidden = NO;
 		squareSelected.hidden = YES;
 	}
 
-	//[self setbackground];
-	
-	
-  
+}
+
+-(IBAction)unlockPressed:(id)sender{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (delegate.userBalance >= 500 ) {
+        NSString *fieldName = [NSString stringWithFormat:@"Hole in the wall"];
+        if (fieldTagToUnlock == 2) {
+            fieldName = @"4Square";
+        }
+        unlockAlert = [[UIAlertView alloc] initWithTitle:@"Snake Classic" message:[NSString stringWithFormat:@"Unlock %@ for 30 credits?", fieldName] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
+        
+        [unlockAlert show];
+    }
+    else{
+        noCreditsAlert = [[UIAlertView alloc] initWithTitle:@"Snake Classic" message:@"You do not have enough credits to unlock this field" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Earn Credits",nil];
+        
+        [noCreditsAlert show];
+    }
+}
+
+// Alert view to tells the user they have successfully unlocked the theme or field
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (buttonIndex == 1) {      
+        if (alertView == unlockAlert) {
+            if (fieldTagToUnlock == 1) {
+                delegate.holeUnlocked = YES;
+                delegate.userBalance -= 30;
+                holeLocked.hidden = YES;
+                [self HoleWallPressed:nil];
+            }
+            
+            if (fieldTagToUnlock == 2) {
+                delegate.squareUnlocked = YES;
+                delegate.userBalance -= 30;
+                squareLocked.hidden = YES;
+                [self SquarePressed:nil];
+            }
+            nextButton.hidden = NO;
+            unlockButton.hidden = YES;
+        }
+        
+        if (alertView == noCreditsAlert) {
+            
+            if (fieldTagToUnlock == 1) {
+                delegate.creditsInfo = kHole;
+            }
+            
+            if (fieldTagToUnlock == 2) {
+                delegate.creditsInfo = kSquare;
+            }
+            
+            [delegate switchView:self.view toview:delegate.earnView.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
+
+        }
+    }
+    
+    
 }
 
 -(void) setbackground{
@@ -526,11 +631,7 @@
 	if (buttonPressed.tag == 1) {
 		delegate.creditsInfo = kSquare;
 	}
-	
-	//[delegate switchView:self.view toview:delegate.storeView.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-	
-	
-	
+    
 	[delegate switchView:self.view toview:delegate.unlockView.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
 	
 	

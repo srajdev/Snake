@@ -76,34 +76,74 @@
 		}
         balance.textColor = [UIColor whiteColor];
 	}
+
+    float yCoord = 220;
+    if (!IS_IPHONE_5) {
+        yCoord = 160;
+    }
+    UIImage *facebookImage = [UIImage imageNamed:@"earncredits_share-on-facebook.png"];
+    UIButton *facebookShare = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (facebookImage.size.width / 2) - 30,
+                                                                         yCoord,
+                                                                         facebookImage.size.width - 30,
+                                                                         facebookImage.size.height)];
+    [facebookShare setImage:facebookImage forState:UIControlStateNormal];
+    [facebookShare addTarget:self action:@selector(shareOnFacebook) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:facebookShare];
+    
+    
+    UIImage *facebookCreditsImage = [UIImage imageNamed:@"earncredits_10-Cr"];
+    UIImageView *facebookCredits = [[UIImageView alloc] initWithFrame:CGRectMake(facebookShare.frame.origin.x + facebookShare.frame.size.width + 20,
+                                                                                facebookShare.frame.origin.y + 5,
+                                                                                facebookCreditsImage.size.width,
+                                                                                facebookCreditsImage.size.height)];
+    [facebookCredits setImage:facebookCreditsImage];
+    [self.view addSubview:facebookCredits];
+    
+    
+    
+    
+    UIImage *twitterImage = [UIImage imageNamed:@"earncredits_share-on-twitter"];
+    UIButton *twitterShare = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (twitterImage.size.width / 2) - 30,
+                                                                        facebookShare.frame.origin.y + facebookShare.frame.size.height + 50,
+                                                                        twitterImage.size.width - 30,
+                                                                        twitterImage.size.height)];
+    [twitterShare setImage:twitterImage forState:UIControlStateNormal];
+    [twitterShare addTarget:self action:@selector(shareOnTwitter) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:twitterShare];
+    
+    UIImage *twitterCreditsImage = [UIImage imageNamed:@"earncredits_5-Cr"];
+    UIImageView *twitterCredits = [[UIImageView alloc] initWithFrame:CGRectMake(facebookCredits.frame.origin.x,
+                                                                             twitterShare.frame.origin.y + 5,
+                                                                             twitterCreditsImage.size.width,
+                                                                              twitterCreditsImage.size.height)];
+    [twitterCredits setImage:twitterCreditsImage];
+    [self.view addSubview:twitterCredits];
     
     UIImage *watchVideoImage = [UIImage imageNamed:@"watch videos.png"];
     
-    watchVideo = [[UIButton alloc] initWithFrame:CGRectMake(40,
-                                                            200,
-                                                           watchVideoImage.size.width,
+    watchVideo = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (watchVideoImage.size.width / 2) - 30,
+                                                            twitterShare.frame.origin.y + twitterShare.frame.size.height + 50,
+                                                            watchVideoImage.size.width - 30,
                                                             watchVideoImage.size.height)];
     [watchVideo setImage:watchVideoImage forState:UIControlStateNormal];
     [watchVideo addTarget:self action:@selector(watchVideoPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:watchVideo];
     
+    UIImage *videosImages = [UIImage imageNamed:@"earncredits_3-Cr"];
+    UIImageView *videosCredits = [[UIImageView alloc] initWithFrame:CGRectMake(facebookCredits.frame.origin.x,
+                                                                              watchVideo.frame.origin.y + 5,
+                                                                              videosImages.size.width,
+                                                                               videosImages.size.height)];
+    [videosCredits setImage:videosImages];
+    [self.view addSubview:videosCredits];
     
-    UIButton *facebookShare = [[UIButton alloc] initWithFrame:CGRectMake(watchVideo.frame.origin.x,
-                                                                         watchVideo.frame.origin.y + watchVideo.frame.size.height + 20,
-                                                                         watchVideo.frame.size.width,
-                                                                         watchVideo.frame.size.height)];
-    [facebookShare setTitle:@"Share on Facebook" forState:UIControlStateNormal];
-    [facebookShare addTarget:self action:@selector(shareOnFacebook) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:facebookShare];
-    
-    
-    UIButton *twitterShare = [[UIButton alloc] initWithFrame:CGRectMake(watchVideo.frame.origin.x,
-                                                                        facebookShare.frame.origin.y + facebookShare.frame.size.height + 20,
-                                                                        watchVideo.frame.size.width,
-                                                                        watchVideo.frame.size.height)];
-    [twitterShare setTitle:@"Share on Twitter" forState:UIControlStateNormal];
-    [twitterShare addTarget:self action:@selector(shareOnTwitter) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:twitterShare];
+    UIImage *noteImage = [UIImage imageNamed:@"earncredits_note"];
+    UIImageView *note = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (noteImage.size.width / 2),
+                                                                     watchVideo.frame.origin.y + 50,
+                                                                     noteImage.size.width,
+                                                                      noteImage.size.height)];
+    [note setImage:noteImage];
+    [self.view addSubview:note];
     
     
     
@@ -115,7 +155,7 @@
         btbalFrame.origin.y = 3 + 4;
         balance.frame = btbalFrame;
         
-        CGRect btnameFrame = name.frame;
+        /*CGRect btnameFrame = name.frame;
         btnameFrame.origin.x = EARN_VIDEOS_LABEL_X;
         btnameFrame.origin.y = 20 + EARN_VIDEOS_LABEL_Y;
         name.frame = btnameFrame;
@@ -128,7 +168,7 @@
         //CGRect btvidFrame = watchVideo.frame;
         //btvidFrame.origin.x = EARN_VIDEOS_BUTTON_X;
         //btvidFrame.origin.y = 20 + EARN_VIDEOS_BUTTON_Y;
-        //watchVideo.frame = btvidFrame;
+        //watchVideo.frame = btvidFrame;*/
         
         CGRect btbackFrame = backButton.frame;
         btbackFrame.origin.x = EARN_BACK_BUTTON_X;
@@ -136,6 +176,18 @@
         backButton.frame = btbackFrame;
         
     }
+    
+    UIImage *refreshImage = [UIImage imageNamed:@"_0001_refresh.png"];
+    refreshButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - refreshImage.size.width,
+                                                              backButton.frame.origin.y + 3,
+                                                              refreshImage.size.width - 30,
+                                                               refreshImage.size.height)];
+    
+    [refreshButton setImage:refreshImage forState:UIControlStateNormal];
+    [refreshButton addTarget:self action:@selector(refreshPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:refreshButton];
+    
+
 	
 }
 
@@ -433,10 +485,10 @@
 - (IBAction) watchVideoPressed{
     
     if ([FlurryAds adReadyForSpace:@"Videos"]) {
-        [FlurryAds displayAdForSpace:@"Videos" onView:self.view];
+        [FlurryAds displayAdForSpace:@"Video_Earn Credits" onView:self.view];
     } else {
         //[FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
-        [FlurryAds fetchAndDisplayAdForSpace:@"Videos" view:self.view size:FULLSCREEN];
+        [FlurryAds fetchAndDisplayAdForSpace:@"Video_Earn Credits" view:self.view size:FULLSCREEN];
     }
     
 }
