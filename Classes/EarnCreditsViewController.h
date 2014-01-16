@@ -47,7 +47,6 @@
 
 @property (nonatomic,retain) MyAdView *myAdView;
 
-- (IBAction) downloadPressed;
 
 -(IBAction) watchVideoPressed;
 

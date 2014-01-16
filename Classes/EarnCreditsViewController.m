@@ -16,6 +16,7 @@
 #import "FlurryAds.h"
 #import "Social/Social.h"
 #import "AdSupport/ASIdentifierManager.h"
+#import <AdColony/AdColony.h>
 
 @implementation EarnCreditsViewController
 
@@ -278,6 +279,8 @@
     
     [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"UPDATE_CREDITS" object:nil];
 }
 
 
@@ -493,12 +496,17 @@
 
 - (IBAction) watchVideoPressed{
     
-    if ([FlurryAds adReadyForSpace:@"Videos"]) {
+    /*if ([FlurryAds adReadyForSpace:@"Videos"]) {
         [FlurryAds displayAdForSpace:@"Video_Earn Credits" onView:self.view];
     } else {
         //[FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
         [FlurryAds fetchAndDisplayAdForSpace:@"Video_Earn Credits" view:self.view size:FULLSCREEN];
-    }
+    }*/
+    
+    [AdColony playVideoAdForZone:@"vz8a85a435f2b346368c"
+                    withDelegate:nil
+                withV4VCPrePopup:NO
+                andV4VCPostPopup:NO];
     
 }
 
@@ -571,6 +579,20 @@
 // Function to refresh the app suggested to the user
 
 -(void) refresh{
+    
+    if(IS_IPHONE_5){
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = EARN_BACK_BUTTON_X;
+        btbackFrame.origin.y = 150 + EARN_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
+    else{
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = EARN_BACK_BUTTON_X;
+        btbackFrame.origin.y = EARN_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
+
 	[self viewDidAppear:true];
 	
 }
@@ -652,6 +674,8 @@
     [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
     [FlurryAds removeAdFromSpace:@"Videos"];
     [FlurryAds setAdDelegate:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UPDATE_CREDITS" object:nil];
     
 	
 }

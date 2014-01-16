@@ -55,6 +55,7 @@
 #import "HelpPageViewController.h"
 #import "helpDetailViewController.h"
 #import <GameKit/GameKit.h>
+#import <AdColony/AdColony.h>
 
 
 @class snakeType;
@@ -70,7 +71,7 @@
 @class EarnCreditsViewController;
 
 @interface SnakeClassicAppDelegate : NSObject <UIApplicationDelegate, AVAudioPlayerDelegate, FBSessionDelegate,
-UserInfoLoadDelegate, FBDialogDelegate> {
+UserInfoLoadDelegate, FBDialogDelegate, AdColonyDelegate> {
     
     UIWindow *window;
 	

@@ -41,6 +41,8 @@
 #import "netinet/in.h"
 #import "SystemConfiguration/SystemConfiguration.h"
 #import "AdSupport/ASIdentifierManager.h"
+#import "SBJSON.h"
+
 
 
 @implementation SnakeClassicAppDelegate
@@ -290,8 +292,21 @@ static NSString* kFBAppId = @"158392174179755";
 #pragma mark Application lifecycle
 
 
+- ( void ) onAdColonyV4VCReward:(BOOL)success currencyName:(NSString*)currencyName currencyAmount:(int)amount inZone:(NSString*)zoneID {
+	NSLog(@"AdColony zone %@ reward %i %i %@", zoneID, success, amount, currencyName);
+	
+	if (success) {
+        NSLog(@"success: %i", amount );
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UPDATE_CREDITS" object:nil];
+	} else {
+		NSLog(@"something went wrong");
+	}
+}
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	
     [[UIApplication sharedApplication] 
@@ -300,6 +315,14 @@ static NSString* kFBAppId = @"158392174179755";
 	  UIRemoteNotificationTypeBadge | 
 	  UIRemoteNotificationTypeSound) ];
 	
+    
+    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    [AdColony setCustomID:idfaString];
+    
+    [AdColony configureWithAppID:@"app44c30834b97d4545b2"
+                         zoneIDs:@[@"vz8a85a435f2b346368c"]
+                        delegate:self
+                         logging:YES];
 	
 	take_over = 0;
 	take_over_menu = 0;
