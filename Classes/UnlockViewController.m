@@ -27,9 +27,24 @@
     
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
+	[self setBackground];
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
 	
+    
+    if(IS_IPHONE_5) {
+        self.view.frame = CGRectMake(0, 0, 320, 568);
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
+        btbackFrame.origin.y = 90 + HELPDETAIL_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+    }
+	
+    
+}
+
+-(void)setBackground{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -50,7 +65,7 @@
             background.image = [UIImage imageNamed:@"Theme1.png"];
         }
         balance.textColor = [UIColor yellowColor];
-
+        
     }
 	else if(delegate.theme == kTheme2){
 		if(IS_IPHONE_5){
@@ -73,17 +88,7 @@
         }
         balance.textColor = [UIColor whiteColor];
     }
-    
-    if(IS_IPHONE_5) {
-        self.view.frame = CGRectMake(0, 0, 320, 568);
-        
-        CGRect btbackFrame = backButton.frame;
-        btbackFrame.origin.x = HELPDETAIL_BACK_BUTTON_X;
-        btbackFrame.origin.y = 90 + HELPDETAIL_BACK_BUTTON_Y;
-        backButton.frame = btbackFrame;
-    }
-	
-    
+
 }
 
 - (void) viewWillAppear:(BOOL)animated{
@@ -125,36 +130,7 @@
 	}
 	
     [FlurryAds setAdDelegate:self];
-   /* if(IS_IPHONE_5){
-    //cretate a UIView to hold the Flurry banner ad, with desired position and size
-        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 250, self.view.frame.size.width, 50)];
-    
-        [self.view addSubview:flurryContainer];
-    //fetch the ad with the newly created UIView
-        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
-    }
-    else{
-    */
-        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-	//}
-    
-//	[adView doNotIgnoreNewAdRequests];
-//	[adView doNotIgnoreAutoRefreshTimer];
-	
-	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-/*	adView = delegate.mainmenu.adView;
-	if(IS_IPHONE_5){
-        
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-    }
-	
-	[self.view addSubview:adView];
-*/
-	
+    [self setBackground];
 	
 }
 

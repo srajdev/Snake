@@ -256,7 +256,7 @@
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	//[self setbackground];
+	[self setbackground];
 	
 	if (delegate.speed == 1 ) {
 

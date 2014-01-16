@@ -304,7 +304,7 @@
 		
 		[nameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
 		if(IS_IPHONE_5){
-             self.view.frame = CGRectMake(0, 0, 320, 568);
+             //self.view.frame = CGRectMake(0, 0, 320, 568);
             [background setFrame:CGRectMake(0, 0, 320, 568)];
             background.image = [UIImage imageNamed:@"_Options_Night.png"];
         }
@@ -576,7 +576,6 @@
 	[[UIApplication sharedApplication] setStatusBarHidden:YES];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	/*
     [nameButton setTitle:delegate.playerName forState:UIControlStateNormal];
 	name.hidden = YES;
 	
@@ -883,7 +882,6 @@
 		soundOffSelected.hidden = YES;
 		
 	}
-	*/
 #ifdef LITE_VERSION
     
     [FlurryAds setAdDelegate:self];
@@ -1251,6 +1249,8 @@
 			theme3Selected.hidden = NO;
 		}
 		
+        
+        
 		delegate.theme = kTheme3;
 		
 		[nameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];

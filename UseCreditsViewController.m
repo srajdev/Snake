@@ -34,55 +34,7 @@
 
 -(void) viewDidLoad{
     
-    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (delegate.theme == kClassicTheme) {
-		if(IS_IPHONE_5){
-             self.view.frame = CGRectMake(0, 0, 320, 568);
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_classic.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"use_credits_classic.png"];
-		}
-        balance.textColor = [UIColor whiteColor];
-		
-	}
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-             self.view.frame = CGRectMake(0, 0, 320, 568);
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_garden.png"];
-        }
-        else{
-            
-            background.image = [UIImage imageNamed:@"use_credits_garden.png"];
-		}
-        balance.textColor = [UIColor yellowColor];
-	}
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-             self.view.frame = CGRectMake(0, 0, 320, 568);
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_beach.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"use_credits_beach.png"];
-		}
-        balance.textColor = [UIColor darkTextColor];
-	}
-	else if(delegate.theme == kTheme3){
-		
-		if(IS_IPHONE_5){
-             self.view.frame = CGRectMake(0, 0, 320, 568);
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"_use_credits_night.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"use_credits_night.png"];
-        }
-		balance.textColor = [UIColor whiteColor];
-	}
-    
+    [self setBackground];
     
     if(IS_IPHONE_5) {
        
@@ -147,11 +99,64 @@
         backButton.frame = btbackFrame;
     }
 }
+
+
+-(void)setBackground{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (delegate.theme == kClassicTheme) {
+		if(IS_IPHONE_5){
+            self.view.frame = CGRectMake(0, 0, 320, 568);
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"use_credits_classic.png"];
+		}
+        balance.textColor = [UIColor whiteColor];
+		
+	}
+	else if(delegate.theme == kTheme1){
+		if(IS_IPHONE_5){
+            self.view.frame = CGRectMake(0, 0, 320, 568);
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_garden.png"];
+        }
+        else{
+            
+            background.image = [UIImage imageNamed:@"use_credits_garden.png"];
+		}
+        balance.textColor = [UIColor yellowColor];
+	}
+	else if(delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            self.view.frame = CGRectMake(0, 0, 320, 568);
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_beach.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"use_credits_beach.png"];
+		}
+        balance.textColor = [UIColor darkTextColor];
+	}
+	else if(delegate.theme == kTheme3){
+		
+		if(IS_IPHONE_5){
+            self.view.frame = CGRectMake(0, 0, 320, 568);
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"_use_credits_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"use_credits_night.png"];
+        }
+		balance.textColor = [UIColor whiteColor];
+	}
+
+}
 - (void) viewWillAppear:(BOOL)animated{
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
+	[self setBackground];
 	
 	delegate.userBalance = delegate.totalbalance - (delegate.holeUnlocked * 30) - (delegate.squareUnlocked *30)
 	- (delegate.beachUnlocked *20) - (delegate.gardenUnlocked *20) - (delegate.nightUnlocked *20);

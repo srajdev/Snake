@@ -32,51 +32,10 @@
 - (void) viewDidLoad{
  
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
+	[self setBackground];
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
     
-	if (delegate.theme == kClassicTheme) {
-        if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_classic.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_classic_store.png"];
-        }
-		balance.textColor = [UIColor whiteColor];
-		
-	}
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_garden.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_theme1_store.png"];
-        }
-		balance.textColor = [UIColor yellowColor];
-	}
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_beach.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_theme2_store.png"];
-		}
-        balance.textColor = [UIColor darkTextColor];
-	}
-	else if(delegate.theme == kTheme3){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"store_night.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"_0000_theme3_store.png"];
-		}
-        balance.textColor = [UIColor whiteColor];
-	}
-
+	
     float yCoord = 220;
     if (!IS_IPHONE_5) {
         yCoord = 160;
@@ -180,7 +139,7 @@
     UIImage *refreshImage = [UIImage imageNamed:@"_0001_refresh.png"];
     refreshButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - refreshImage.size.width,
                                                               backButton.frame.origin.y + 3,
-                                                              refreshImage.size.width - 30,
+                                                              refreshImage.size.width - 20,
                                                                refreshImage.size.height)];
     
     [refreshButton setImage:refreshImage forState:UIControlStateNormal];
@@ -189,6 +148,56 @@
     
 
 	
+}
+
+-(void)setBackground{
+     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_classic_store.png"];
+        }
+		balance.textColor = [UIColor whiteColor];
+		
+	}
+	else if(delegate.theme == kTheme1){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme1_store.png"];
+        }
+		balance.textColor = [UIColor yellowColor];
+	}
+	else if(delegate.theme == kTheme2){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_beach.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme2_store.png"];
+		}
+        balance.textColor = [UIColor darkTextColor];
+	}
+	else if(delegate.theme == kTheme3){
+		if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_night.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme3_store.png"];
+		}
+        balance.textColor = [UIColor whiteColor];
+	}
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setBackground];
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -420,7 +429,7 @@
     tweetSheet = [[SLComposeViewController alloc] init];
 
     tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText: [NSString stringWithFormat:@"Check out a true classic - Snake Classic for iOS! http://bit.ly/c26ZIw"]];
+    [tweetSheet setInitialText: [NSString stringWithFormat:@"Check out a true classic - Snake Classic for iOS! http://bit.ly/1iRQnvC"]];
     
     SLComposeViewControllerCompletionHandler __block completionHandler=^(SLComposeViewControllerResult result){
         

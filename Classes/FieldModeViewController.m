@@ -353,7 +353,7 @@
 
 -(IBAction)unlockPressed:(id)sender{
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (delegate.userBalance >= 500 ) {
+    if (delegate.userBalance >= 30 ) {
         NSString *fieldName = [NSString stringWithFormat:@"Hole in the wall"];
         if (fieldTagToUnlock == 2) {
             fieldName = @"4Square";

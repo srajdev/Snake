@@ -79,8 +79,8 @@ static NSString* kFBAppId = @"158392174179755";
 NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 
 
--(void) viewDidLoad{
-	
+-(void)setBackground{
+    
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if (delegate.theme == kClassicTheme) {
@@ -122,7 +122,12 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
             background.image = [UIImage imageNamed:@"end game_night.png"];
         }
 	}
+
+}
+
+-(void) viewDidLoad{
     
+    [self setBackground];
     if(IS_IPHONE_5){
         
         [gameOver setFrame:CGRectMake(69, 55, 182, 42)];
@@ -191,12 +196,7 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-/*
-	if (delegate.mainmenu.adView != NULL) {
-		[delegate.mainmenu.adView doNotIgnoreNewAdRequests];
-		[delegate.mainmenu.adView requestFreshAd];
-	}
-*/
+    [self setBackground];
     [FlurryAds initialize:self];
 	[FlurryAds setAdDelegate:self];
     
@@ -238,47 +238,7 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 	
 	score.textColor = [UIColor whiteColor];
 	highestScore.textColor = [UIColor whiteColor];
-	/*
-	if (delegate.theme == kClassicTheme) {
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"end_game_classic.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"end game_classic.png"];
-        }
-	}
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"end_game_garden.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"end game_garden.png"];
-        }
-	}
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"end_game_beach.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"end game_beach.png"];
-        }
-	}
-	else if(delegate.theme == kTheme3){
-		score.textColor = [UIColor colorWithRed:1 green:0.56 blue:0 alpha:1];
-		highestScore.textColor = [UIColor colorWithRed:1 green:0.56 blue:0 alpha:1];
-		
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"end_game_night.png"];
-        }
-        else{
-		background.image = [UIImage imageNamed:@"end game_night.png"];
-        }
-	}
-     */
+
     	[[UIApplication sharedApplication] setStatusBarHidden: YES];
 	
 	if (delegate.FBLoggedIn == YES) {
@@ -290,16 +250,6 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 	}
 
 	
-	/*
-	if (isTwitterLogged == YES) {
-		
-		[engine sendUpdate: [NSString stringWithFormat: @"I scored %d in SnakeClassic on the iPhone! Beat that! http://bit.ly/c26ZIw #SnakeClassic #iPhone",delegate.delegateScore]];
-
-		
-	}
-	
-	isTwitterLogged = NO;
-	*/
 	NSArray *highScoreData = [[HighScores getLocalHighScores] retain];
 	
 	
@@ -863,7 +813,7 @@ interstitial {
         NSNumber *abcd = [NSNumber numberWithInt:delegate.delegateScore];
         
         tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText: [NSString stringWithFormat:@"I scored %@ in #SnakeClassic! Beat that! http://bit.ly/c26ZIw #iphone", [numberFormatter stringFromNumber:abcd]]];
+    [tweetSheet setInitialText: [NSString stringWithFormat:@"I scored %@ in #SnakeClassic! Beat that! http://bit.ly/1iRQnvC #iphone", [numberFormatter stringFromNumber:abcd]]];
         
         [self presentViewController:tweetSheet animated:YES completion:nil];
     //}

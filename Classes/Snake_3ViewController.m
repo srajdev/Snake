@@ -554,11 +554,13 @@ if (delegate.gameStatus != kGamePause) {
 
 - (void) viewDidAppear:(BOOL)animated {
 
-	
-	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-		comeFromPause = NO;
-		[self startGame];
+	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    comeFromPause = NO;
+    [self startGame];
+    if (delegate.stillLoading) {
+        delegate.stillLoading = NO;
+    }
 }
 
 // Alert that takes the user to the store if a level is locked
@@ -604,7 +606,6 @@ if (delegate.gameStatus != kGamePause) {
         else{
 		game.snake.head_x = 235.0;
 		game.snake.head_y = 145.0;
-        int abc = delegate.bonusFoodNumber;
         }
     }
 	
@@ -684,14 +685,20 @@ if (delegate.gameStatus != kGamePause) {
 			
 			//[alert show];
 			[Flurry logEvent:@"extreme/pop to unlock hitw shown"];
-			[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
-		}
+            if (!delegate.stillLoading) {
+                [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
+
+            }
+        }
 		else if ((delegate.fieldMode == kSquareWall && delegate.squareUnlocked == NO)) {
 			//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field 4square." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
 			
 			//[alert show];
 			[Flurry logEvent:@"extreme/pop to unlock 4sq shown"];
-			[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
+            if (!delegate.stillLoading) {
+                [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
+            }
+			
 		}
 		else {
 			currentView = game;
@@ -779,14 +786,19 @@ if (delegate.gameStatus != kGamePause) {
         
         //[alert show];
         //[Flurry logEvent:@"extreme/pop to unlock hitw shown"];
-        [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
+        if (!delegate.stillLoading) {
+            //[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
+        }
     }
     else if ((delegate.fieldMode == kSquareWall && delegate.squareUnlocked == NO)) {
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field 4square." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
         
         //[alert show];
         [Flurry logEvent:@"extreme/pop to unlock 4sq shown"];
-        [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
+        if (!delegate.stillLoading) {
+          
+            //[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
+        }
     }
     else {
     

@@ -27,7 +27,37 @@
 
 -(void) viewDidLoad{
     
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+		
+    [self setBackground];
+    if(IS_IPHONE_5){
+        self.view.frame = CGRectMake(0, 0, 320, 568);
+        
+        CGRect btclassicFrame = classicButton.frame;
+        btclassicFrame.origin.x = GAMEMODE_CLASSIC_BUTTON_X;
+        btclassicFrame.origin.y = 30 + GAMEMODE_BUTTON_Y;
+        classicButton.frame = btclassicFrame;
+        
+        CGRect btextremeFrame = extremeButton.frame;
+        btextremeFrame.origin.x = GAMEMODE_CLASSIC_BUTTON_X;
+        btextremeFrame.origin.y = 150 + GAMEMODE_BUTTON_Y;
+        extremeButton.frame = btextremeFrame;
+        
+        CGRect bthelpFrame = helpButton.frame;
+        bthelpFrame.origin.x = GAMEMODE_HELP_BUTTON_X;
+        bthelpFrame.origin.y = 70 + GAMEMODE_HELP_BUTTON_Y;
+        helpButton.frame = bthelpFrame;
+        
+        CGRect btbackFrame = backButton.frame;
+        btbackFrame.origin.x = GAMEMODE_BACK_BUTTON_X;
+        btbackFrame.origin.y = 70 + GAMEMODE_BACK_BUTTON_Y;
+        backButton.frame = btbackFrame;
+        
+    }
+    
+}
+
+-(void)setBackground{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
     
     if (delegate.theme == kClassicTheme) {
@@ -68,32 +98,11 @@
             background.image = [UIImage imageNamed:@"Theme3.png"];
         }
     }
-	
-    if(IS_IPHONE_5){
-        self.view.frame = CGRectMake(0, 0, 320, 568);
-        
-        CGRect btclassicFrame = classicButton.frame;
-        btclassicFrame.origin.x = GAMEMODE_CLASSIC_BUTTON_X;
-        btclassicFrame.origin.y = 30 + GAMEMODE_BUTTON_Y;
-        classicButton.frame = btclassicFrame;
-        
-        CGRect btextremeFrame = extremeButton.frame;
-        btextremeFrame.origin.x = GAMEMODE_CLASSIC_BUTTON_X;
-        btextremeFrame.origin.y = 150 + GAMEMODE_BUTTON_Y;
-        extremeButton.frame = btextremeFrame;
-        
-        CGRect bthelpFrame = helpButton.frame;
-        bthelpFrame.origin.x = GAMEMODE_HELP_BUTTON_X;
-        bthelpFrame.origin.y = 70 + GAMEMODE_HELP_BUTTON_Y;
-        helpButton.frame = bthelpFrame;
-        
-        CGRect btbackFrame = backButton.frame;
-        btbackFrame.origin.x = GAMEMODE_BACK_BUTTON_X;
-        btbackFrame.origin.y = 70 + GAMEMODE_BACK_BUTTON_Y;
-        backButton.frame = btbackFrame;
-        
-    }
-    
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setBackground];
 }
 - (void) viewDidAppear:(BOOL)animated{
 	
@@ -151,11 +160,8 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
-	//[delegate.activeGame.displayLink invalidate];
+	[delegate.activeGame.displayLink invalidate];
 	delegate.activeGame = nil;
-	
-	
-	
 	delegate.foodNumber = 0;
 	delegate.bonusFoodNumber = 0;
 	delegate.extremeSuccess = 0;
@@ -218,7 +224,7 @@
 	
 	//[delegate.mainmenu.adView ignoreNewAdRequests];
 	
-	//[delegate.activeGame.displayLink invalidate];
+	[delegate.activeGame.displayLink invalidate];
 	delegate.activeGame = nil;
 	
 	

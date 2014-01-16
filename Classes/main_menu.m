@@ -79,45 +79,7 @@
 #endif
 	
     
-   /* if (delegate.theme == kClassicTheme) {
-        if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main-menu_classic.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"Classic.png"];
-        }
-    }
-    
-	else if(delegate.theme == kTheme1){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main_menu_garden.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"Theme1.png"];
-        }
-    }
-	else if(delegate.theme == kTheme2){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main_menu_beach.png"];
-        }
-        else{
-		//background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
-		background.image = [UIImage imageNamed:@"Theme2.png"];
-        }
-    }
-	else if(delegate.theme == kTheme3){
-		if(IS_IPHONE_5){
-            [background setFrame:CGRectMake(0, 0, 320, 568)];
-            background.image = [UIImage imageNamed:@"main_menu_night.png"];
-        }
-        else{
-            background.image = [UIImage imageNamed:@"Theme3.png"];
-        }
-    }
-    */
+    [self setBackground];
 		if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
 		resumebutton.enabled = YES;
 	}
@@ -453,19 +415,9 @@
 */
 
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+-(void)setBackground{
     
-    
-    
- #ifdef LITE_VERSION
- // Code specific to lite version
- 
- 
- //	[adView doNotIgnoreNewAdRequests];
- //	[adView doNotIgnoreAutoRefreshTimer];
-    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
+     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (delegate.theme == kClassicTheme) {
         if(IS_IPHONE_5){
             [background setFrame:CGRectMake(0, 0, 320, 568)];
@@ -504,7 +456,23 @@
             background.image = [UIImage imageNamed:@"Theme3.png"];
         }
     }
+
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
     
+    
+    
+ #ifdef LITE_VERSION
+ // Code specific to lite version
+ 
+ 
+ //	[adView doNotIgnoreNewAdRequests];
+ //	[adView doNotIgnoreAutoRefreshTimer];
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [self setBackground];
     if(IS_IPHONE_5){
         self.view.frame = CGRectMake(0, 0, 320, 568);
         

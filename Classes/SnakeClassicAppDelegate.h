@@ -246,6 +246,8 @@ UserInfoLoadDelegate, FBDialogDelegate> {
     BOOL GCConnected;
 
     NSMutableArray *achievementsToSubmit;
+    
+    BOOL stillLoading;
 	
 
 	
@@ -413,6 +415,8 @@ UserInfoLoadDelegate, FBDialogDelegate> {
 @property BOOL GCConnected;
 
 @property (nonatomic, retain) NSMutableArray *achievementsToSubmit;
+
+@property BOOL stillLoading;
 
 
 -(void) play;

@@ -35,54 +35,14 @@
 }
 */
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setBackground];
+}
+
 - (void)viewDidLoad{
     
-    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-     
-     if (delegate.theme == kClassicTheme) {
-     if(IS_IPHONE_5){
-     [background setFrame:CGRectMake(0, 0, 320, 568)];
-     background.image = [UIImage imageNamed:@"store_classic.png"];
-     }
-     else{
-     background.image = [UIImage imageNamed:@"_0000_classic_store.png"];
-     }
-     balance.textColor = [UIColor whiteColor];
-     }
-     
-     else if(delegate.theme == kTheme1){
-     if(IS_IPHONE_5){
-     [background setFrame:CGRectMake(0, 0, 320, 568)];
-     background.image = [UIImage imageNamed:@"store_garden.png"];
-     }
-     else{
-     background.image = [UIImage imageNamed:@"_0000_theme1_store.png"];
-     }
-     balance.textColor = [UIColor yellowColor];
-     }
-     else if(delegate.theme == kTheme2){
-     if(IS_IPHONE_5){
-     [background setFrame:CGRectMake(0, 0, 320, 568)];
-     background.image = [UIImage imageNamed:@"store_beach.png"];
-     }
-     else{
-     //background.image = [UIImage imageNamed:@"_0000_theme2_main.png"];
-     background.image = [UIImage imageNamed:@"_0000_theme2_store.png"];
-     }
-     balance.textColor = [UIColor darkTextColor];
-     }
-     else if(delegate.theme == kTheme3){
-     if(IS_IPHONE_5){
-     [background setFrame:CGRectMake(0, 0, 320, 568)];
-     background.image = [UIImage imageNamed:@"store_night.png"];
-     
-     }
-     else{
-     background.image = [UIImage imageNamed:@"_0000_theme3_store.png"];
-     }
-     balance.textColor = [UIColor whiteColor];
-     }
+    [self setBackground];
     
     if(IS_IPHONE_5){
         //self.view.frame = CGRectMake(0, 0, 320, 568);
@@ -114,6 +74,55 @@
 	}
 }
 
+
+-(void)setBackground{
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+    
+    if (delegate.theme == kClassicTheme) {
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_classic.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_classic_store.png"];
+        }
+        balance.textColor = [UIColor whiteColor];
+    }
+    
+    else if(delegate.theme == kTheme1){
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_garden.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme1_store.png"];
+        }
+        balance.textColor = [UIColor yellowColor];
+    }
+    else if(delegate.theme == kTheme2){
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_beach.png"];
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme2_store.png"];
+        }
+        balance.textColor = [UIColor darkTextColor];
+    }
+    else if(delegate.theme == kTheme3){
+        if(IS_IPHONE_5){
+            [background setFrame:CGRectMake(0, 0, 320, 568)];
+            background.image = [UIImage imageNamed:@"store_night.png"];
+            
+        }
+        else{
+            background.image = [UIImage imageNamed:@"_0000_theme3_store.png"];
+        }
+        balance.textColor = [UIColor whiteColor];
+    }
+
+}
 - (void) viewDidAppear:(BOOL)animated{
 	
 	
@@ -217,7 +226,7 @@
 -(void) showAlert :(NSTimer *)theTimer{
 
 	
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"Unlock premium fields and wallpapers using credits. Earn credits by downloading recommended free apps!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Earn Credits",nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"Unlock premium fields and wallpapers using credits. There are various ways to earn free Credits." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Earn Credits",nil];
 	
 		[alert show];
 

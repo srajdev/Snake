@@ -177,6 +177,7 @@
 @synthesize GCConnected;
 
 @synthesize achievementsToSubmit;
+@synthesize stillLoading;
 
 
 
@@ -334,8 +335,8 @@ static NSString* kFBAppId = @"158392174179755";
 	fieldMode = kNoWall;
 	
 	
-	
-
+	// this flag is used to makes ure exreme mode pop ups dont show when we load a paused game
+    self.stillLoading= NO;
 	
 	
 		appLaunch = YES;
@@ -739,27 +740,12 @@ static NSString* kFBAppId = @"158392174179755";
 		[activeGame.countTimer invalidate];
 		
 		activeGame.displayLink.paused = YES;
+        
+        self.stillLoading = YES;
 		
 		[window addSubview:gameOn.view];
 		
-		
-		
 		[gameOn release];
-		
-
-		
-		
-	/*	main_menu *aMenu = [[main_menu alloc] initWithNibName:@"main_menu" bundle:nil];
-		self.mainmenu = aMenu;
-		
-		[window addSubview:mainmenu.view];
-
-		
-		[aMenu release];*/
-		
-		
-		
-		
 		
 	} 
 	
@@ -958,6 +944,7 @@ if ([self connectedToNetwork]) {
 	//window.rootViewController = mainmenu;
 	
 	[aMenu release];
+    
 
 	return YES;
 }
