@@ -56,7 +56,7 @@
 #import "helpDetailViewController.h"
 #import <GameKit/GameKit.h>
 #import <AdColony/AdColony.h>
-
+#import "ASIHTTPRequest.h"
 
 @class snakeType;
 @class foodType;
@@ -71,7 +71,7 @@
 @class EarnCreditsViewController;
 
 @interface SnakeClassicAppDelegate : NSObject <UIApplicationDelegate, AVAudioPlayerDelegate, FBSessionDelegate,
-UserInfoLoadDelegate, FBDialogDelegate, AdColonyDelegate> {
+UserInfoLoadDelegate, FBDialogDelegate, AdColonyDelegate, ASIHTTPRequestDelegate> {
     
     UIWindow *window;
 	
@@ -456,6 +456,7 @@ UserInfoLoadDelegate, FBDialogDelegate, AdColonyDelegate> {
 -(BOOL) isGameCenterAPIAvailable;
 
 - (void)dataAvailable;
+-(void)putBalanceForUser:(int)amount;
 
 //- (void)dataUnavailable;
 

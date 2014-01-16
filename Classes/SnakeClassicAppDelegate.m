@@ -42,6 +42,7 @@
 #import "SystemConfiguration/SystemConfiguration.h"
 #import "AdSupport/ASIdentifierManager.h"
 #import "SBJSON.h"
+#import "ASIFormDataRequest.h"
 
 
 
@@ -291,19 +292,45 @@ static NSString* kFBAppId = @"158392174179755";
 #pragma mark -
 #pragma mark Application lifecycle
 
+- (void) requestFinished:(ASIHTTPRequest *)request {
+    //NSString *responseString = [request responseString];
+    NSLog(@"Response %d : %@", request.responseStatusCode, [request responseString]);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UPDATE_CREDITS" object:nil];
+    //NSData *responseData = [request responseData];
+}
+
+- (void) requestStarted:(ASIHTTPRequest *) request {
+    NSLog(@"request started...");
+}
+
+- (void) requestFailed:(ASIHTTPRequest *) request {
+    NSError *error = [request error];
+    NSLog(@"%@", error);
+}
+
 
 - ( void ) onAdColonyV4VCReward:(BOOL)success currencyName:(NSString*)currencyName currencyAmount:(int)amount inZone:(NSString*)zoneID {
 	NSLog(@"AdColony zone %@ reward %i %i %@", zoneID, success, amount, currencyName);
 	
 	if (success) {
         NSLog(@"success: %i", amount );
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UPDATE_CREDITS" object:nil];
+        [self putBalanceForUser:amount];
 	} else {
 		NSLog(@"something went wrong");
 	}
 }
 
+-(void)putBalanceForUser:(int)amount{
+    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://zingapps.co/balance.php"]];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Content-Type" value:@"application/xml;charset=UTF-8;"];
+    [request setPostValue:idfaString forKey:@"idfa"];
+    [request setPostValue:[NSString stringWithFormat:@"%i", amount] forKey:@"rewardquantity"];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -314,10 +341,6 @@ static NSString* kFBAppId = @"158392174179755";
 	 (UIRemoteNotificationTypeAlert | 
 	  UIRemoteNotificationTypeBadge | 
 	  UIRemoteNotificationTypeSound) ];
-	
-    
-    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    [AdColony setCustomID:idfaString];
     
     [AdColony configureWithAppID:@"app44c30834b97d4545b2"
                          zoneIDs:@[@"vz8a85a435f2b346368c"]
