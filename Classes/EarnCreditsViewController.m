@@ -395,7 +395,7 @@
                 
                 if (giveCredits) {
                     [defaults setObject:[dateFormatter stringFromDate:today] forKey:@"FACEBOOK_EARN_SHARE"];
-                    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                    /*NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
                     NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/put_balance.php?idfa=%@&rewardquantity=10",idfaString];
                     
                     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -408,7 +408,10 @@
                     NSString *connected = [[NSString alloc] initWithData:responseDataSerial encoding:NSUTF8StringEncoding];
                     if (!connected) {
                         NSLog(@"Unable to give credits");
-                    }
+                    }*/
+                    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+                    
+                    [delegate putBalanceForUser:10];
                 }
 
             }
@@ -442,6 +445,8 @@
             case SLComposeViewControllerResultCancelled:
             {
                 NSLog(@"Cancelled.....");
+                //apSnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+                //[delegate putBalanceForUser:5];
                 
             }
                 break;
@@ -465,7 +470,7 @@
                 
                 if (giveCredits) {
                     [defaults setObject:[dateFormatter stringFromDate:today] forKey:@"TWITTER_EARN_SHARE"];
-                    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+                    /*NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
                     NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/put_balance.php?idfa=%@&rewardquantity=5",idfaString];
                     
                     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -478,7 +483,11 @@
                     NSString *connected = [[NSString alloc] initWithData:responseDataSerial encoding:NSUTF8StringEncoding];
                     if (!connected) {
                         NSLog(@"Unable to give credits");
-                    }
+                    }*/
+                    
+                    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+                    
+                    [delegate putBalanceForUser:5];
                 }
             }
                 break;
