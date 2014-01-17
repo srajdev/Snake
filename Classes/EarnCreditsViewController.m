@@ -17,6 +17,7 @@
 #import "Social/Social.h"
 #import "AdSupport/ASIdentifierManager.h"
 #import <AdColony/AdColony.h>
+#import "SnakeIAPHelper.h"
 
 @implementation EarnCreditsViewController
 
@@ -29,6 +30,9 @@
 @synthesize myAdView;
 @synthesize watchVideo;
 @synthesize balance;
+@synthesize products;
+
+
 
 - (void) viewDidLoad{
  
@@ -37,13 +41,25 @@
 	balance.text = [NSString stringWithFormat:@"%d Cr",delegate.userBalance];
     
 	
-    float yCoord = 220;
+    float yCoord = 180;
     if (!IS_IPHONE_5) {
-        yCoord = 160;
+        yCoord = 120;
     }
+    
+    UIImage *buyImage = [UIImage imageNamed:@"earncredits_buy.png"];
+    UIButton *buyButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (buyImage.size.width / 2) - 30,
+                                                                     yCoord,
+                                                                     buyImage.size.width,
+                                                                     buyImage.size.height)];
+    [buyButton setImage:buyImage forState:UIControlStateNormal];
+    [buyButton addTarget:self action:@selector(buyCredits) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:buyButton];
+    
+   
+    
     UIImage *facebookImage = [UIImage imageNamed:@"earncredits_share-on-facebook.png"];
     UIButton *facebookShare = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (facebookImage.size.width / 2) - 30,
-                                                                         yCoord,
+                                                                         yCoord + buyButton.frame.size.height + 40,
                                                                          facebookImage.size.width - 30,
                                                                          facebookImage.size.height)];
     [facebookShare setImage:facebookImage forState:UIControlStateNormal];
@@ -59,6 +75,15 @@
     [facebookCredits setImage:facebookCreditsImage];
     [self.view addSubview:facebookCredits];
     
+    
+    UIImage *buyCreditsImage = [UIImage imageNamed:@"earncredits_30-Cr.png"];
+    UIImageView *buyCredits = [[UIImageView alloc] initWithFrame:CGRectMake(facebookCredits.frame.origin.x,
+                                                                            buyButton.frame.origin.y + 5,
+                                                                            buyCreditsImage.size.width,
+                                                                            buyCreditsImage.size.height)];
+    [buyCredits setImage:buyCreditsImage];
+    [self.view addSubview:buyCredits];
+
     
     
     
@@ -147,7 +172,18 @@
     [refreshButton addTarget:self action:@selector(refreshPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:refreshButton];
     
-
+    
+    self.products = nil;
+    [[SnakeIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *getProducts) {
+        if (success) {
+            self.products = getProducts;
+            for (SKProduct * product in self.products){
+                NSLog(@"product : %@", product.productIdentifier);
+            }
+        }
+    }];
+    
+    
 	
 }
 
@@ -281,6 +317,7 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"UPDATE_CREDITS" object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveCreditsForPurchase) name:IAPHelperProductPurchasedNotification object:nil];
 }
 
 
@@ -296,58 +333,53 @@
     
     if(alertView.tag == 1 && buttonIndex==2){
         
-    UITextField *emailTextField = [alertView textFieldAtIndex:0];
-    NSString *vendorID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        UITextField *emailTextField = [alertView textFieldAtIndex:0];
+        NSString *vendorID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
-    //NSLog(@"%@",emailTextField.text);
-    //NSLog(@"%lu",(unsigned long)[emailTextField.text length]);
-    //NSLog(@"%@",vendorID);
+        NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
-    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    //NSLog(@"%@",idfaString);
-    //NSString *secret = @"Qwdfty!3";
-    
-    if(((unsigned long)[emailTextField.text length]) > 0 ){
-	NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/setEmail.php?idfa=%@&email=%@&vendorID=%@",idfaString,emailTextField.text,vendorID];
+        if(((unsigned long)[emailTextField.text length]) > 0 ){
+            NSString *urlString = [NSString stringWithFormat:@"http://zingapps.co/setEmail.php?idfa=%@&email=%@&vendorID=%@",idfaString,emailTextField.text,vendorID];
         
     
 	
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    NSURLResponse *response = nil;
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+            NSURLResponse *response = nil;
         
-	NSError *e = nil;
-	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&e];
+            NSError *e = nil;
+            NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&e];
 
-    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-        NSLog(@"%@",responseString);
-      //  NSLog(@"%@",response);
-      //  NSLog(@"%@",e);
-    
+            NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
-        if([responseString isEqualToString:@"Email exists"]){
+            if([responseString isEqualToString:@"Email exists"]){
             
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email ID Exists:" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-            [alertView setTag:2];
-            [alertView show];
-            //[alert release];
-            //[self viewDidAppear:true];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email ID Exists:" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+                [alertView setTag:2];
+                [alertView show];
             
+            }
+            else{
+                BOOL emailEntered = YES;
+                [defaults setBool:emailEntered forKey: @"emailEntered"];
+                [defaults synchronize];
+                [self watchVideoPressed];
+            }
         }
-        else{
-            BOOL emailEntered = YES;
-            [defaults setBool:emailEntered forKey: @"emailEntered"];
-            [defaults synchronize];
-            [self watchVideoPressed];
-        }
-        
-	}
     }
     else if(alertView.tag == 2){
         [self viewDidAppear:true];
-        
     }
     
+}
+
+-(void)buyCredits{
+    NSLog(@"products : %@", self.products);
+    for (SKProduct * product in self.products){
+        NSLog(@"product : %@", product.productIdentifier);
+        if ([product.productIdentifier isEqualToString:SnakeIAPProductName]) {
+            [[SnakeIAPHelper sharedInstance] buyProduct:product];
+        }
+    }
 }
 
 
@@ -587,6 +619,16 @@
 
 // Function to refresh the app suggested to the user
 
+/*- (void)productPurchased:(NSNotification *)notification {
+    NSString * productIdentifier = notification.object;
+    if ([productIdentifier isEqualToString:SnakeIAPProductName]) {
+        SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+        [delegate putBalanceForUser:30];
+        UIAlertView *purchasedAlert = [[UIAlertView alloc] initWithTitle:@"Congrtulations" message:@"Congratulations you have succesfully purchased 30 credits" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [purchasedAlert show];
+    }
+}*/
 -(void) refresh{
     
     if(IS_IPHONE_5){
@@ -685,6 +727,7 @@
     [FlurryAds setAdDelegate:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UPDATE_CREDITS" object:nil];
+    //[[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
     
 	
 }

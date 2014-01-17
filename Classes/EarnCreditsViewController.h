@@ -34,6 +34,7 @@
     IBOutlet UIButton *watchVideo;
     IBOutlet UIButton *backButton;
     IBOutlet UIButton *refreshButton;
+    NSArray *products;
 }
 @property (nonatomic,retain) IBOutlet UILabel *name;
 @property (nonatomic,retain) IBOutlet UILabel *balance;
@@ -46,6 +47,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *refreshButton;
 
 @property (nonatomic,retain) MyAdView *myAdView;
+@property (nonatomic, retain)     NSArray *products;
 
 
 -(IBAction) watchVideoPressed;

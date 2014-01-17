@@ -466,5 +466,7 @@ UserInfoLoadDelegate, FBDialogDelegate, AdColonyDelegate, ASIHTTPRequestDelegate
 
 - (NSString *)applicationDocumentsDirectory;
 
+-(void)creditsPurchaseCompleted;
+
 @end
 

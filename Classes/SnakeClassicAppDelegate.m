@@ -44,6 +44,8 @@
 #import "SBJSON.h"
 #import "ASIFormDataRequest.h"
 
+#import "SnakeIAPHelper.h"
+
 
 
 @implementation SnakeClassicAppDelegate
@@ -260,6 +262,12 @@ static NSString* kFBAppId = @"158392174179755";
 }
 
 
+-(void)creditsPurchaseCompleted{
+    [self putBalanceForUser:30];
+    UIAlertView *purchasedAlert = [[UIAlertView alloc] initWithTitle:@"Congrtulations" message:@"Congratulations you have succesfully purchased 30 credits" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [purchasedAlert show];
+}
 
 - (BOOL) connectedToNetwork
 {
@@ -322,7 +330,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(void)putBalanceForUser:(int)amount{
     NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://zingapps.co/balance.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://zingapps.co/balance.php"]];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Content-Type" value:@"application/xml;charset=UTF-8;"];
@@ -341,6 +349,8 @@ static NSString* kFBAppId = @"158392174179755";
 	 (UIRemoteNotificationTypeAlert | 
 	  UIRemoteNotificationTypeBadge | 
 	  UIRemoteNotificationTypeSound) ];
+    
+    [SnakeIAPHelper sharedInstance];
     
     [AdColony configureWithAppID:@"app44c30834b97d4545b2"
                          zoneIDs:@[@"vz8a85a435f2b346368c"]
