@@ -155,6 +155,10 @@ NSString *const SnakeIAPProductName = @"SnakeCredits1305";
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
     }
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Sorry there was some error in your transaction. Please try again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [alert show];
+    
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 

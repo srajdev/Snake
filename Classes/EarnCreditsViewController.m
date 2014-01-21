@@ -18,6 +18,7 @@
 #import "AdSupport/ASIdentifierManager.h"
 #import <AdColony/AdColony.h>
 #import "SnakeIAPHelper.h"
+#import "Flurry.h"
 
 @implementation EarnCreditsViewController
 
@@ -373,7 +374,7 @@
 }
 
 -(void)buyCredits{
-    NSLog(@"products : %@", self.products);
+    [Flurry logEvent:@"Earn Credits/ Buy Credits"];
     for (SKProduct * product in self.products){
         NSLog(@"product : %@", product.productIdentifier);
         if ([product.productIdentifier isEqualToString:SnakeIAPProductName]) {
@@ -384,6 +385,7 @@
 
 
 -(void)shareOnFacebook{
+    [Flurry logEvent:@"Earn Credits/ Share Facebook"];
 	
     SLComposeViewController *fbController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
@@ -463,6 +465,7 @@
 }
 
 -(void)shareOnTwitter{
+    [Flurry logEvent:@"Earn Credits/ Share Twitter"];
     SLComposeViewController *tweetSheet;
     tweetSheet = [[SLComposeViewController alloc] init];
 
@@ -477,7 +480,7 @@
             case SLComposeViewControllerResultCancelled:
             {
                 NSLog(@"Cancelled.....");
-                //apSnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+                //SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
                 //[delegate putBalanceForUser:5];
                 
             }
@@ -544,6 +547,7 @@
         [FlurryAds fetchAndDisplayAdForSpace:@"Video_Earn Credits" view:self.view size:FULLSCREEN];
     }*/
     
+    [Flurry logEvent:@"Earn Credits/ Watch Video"];
     [AdColony playVideoAdForZone:@"vz8a85a435f2b346368c"
                     withDelegate:nil
                 withV4VCPrePopup:NO
@@ -574,7 +578,6 @@
     
     NSString *connected = [[NSString alloc] initWithData:responseDataSerial encoding:NSUTF8StringEncoding];
     
-    NSLog(@"response string: %@", connected);
     
 	if (connected == NULL) {
 		

@@ -264,7 +264,7 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(void)creditsPurchaseCompleted{
     [self putBalanceForUser:30];
-    UIAlertView *purchasedAlert = [[UIAlertView alloc] initWithTitle:@"Congrtulations" message:@"Congratulations you have succesfully purchased 30 credits" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    UIAlertView *purchasedAlert = [[UIAlertView alloc] initWithTitle:@"Confirmation" message:@"Congratulations. Your have successfully purchased 30 Snake Classic credits." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     
     [purchasedAlert show];
 }
@@ -313,6 +313,8 @@ static NSString* kFBAppId = @"158392174179755";
 
 - (void) requestFailed:(ASIHTTPRequest *) request {
     NSError *error = [request error];
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Sorry from error occured while fullfilling your request. Please try again in a bit." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [errorAlert show];
     NSLog(@"%@", error);
 }
 
@@ -330,10 +332,10 @@ static NSString* kFBAppId = @"158392174179755";
 
 -(void)putBalanceForUser:(int)amount{
     NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://zingapps.co/balance.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://creditsmob.com/snake_balance/"]];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
-    [request addRequestHeader:@"Content-Type" value:@"application/xml;charset=UTF-8;"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json;charset=UTF-8;"];
     [request setPostValue:idfaString forKey:@"idfa"];
     [request setPostValue:[NSString stringWithFormat:@"%i", amount] forKey:@"rewardquantity"];
     [request setDelegate:self];
