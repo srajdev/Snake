@@ -602,8 +602,6 @@
     // The amount is the same for all user for all videos watched
     // The amount is the same as configured on dev portal - the min reward
     
-    // Flurry server sends a post-view next stating the amount of the reward .
-    
     [self viewDidAppear:true];
     
 }

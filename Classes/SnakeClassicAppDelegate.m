@@ -27,8 +27,6 @@
 #import "snakeType.h"
 #import "foodType.h"
 #import "Snake_3ViewController.h"
-#import "Flurry.h"
-#import "FlurryAds.h"
 #import "HighScoreViewController.h"
 #import "Options.h"
 #import "Difficulty.h"
@@ -856,10 +854,6 @@ static NSString* kFBAppId = @"158392174179755";
 	earnView = [[EarnCreditsViewController alloc] initWithNibName:@"EarnCreditsViewController" bundle:nil];
 	helpPage = [[HelpPageViewController alloc]initWithNibName:@"HelpPageViewController" bundle:nil];
 	helpDetail = [[helpDetailViewController alloc] initWithNibName:@"helpDetailViewController" bundle:nil];
-
-    [Flurry setCrashReportingEnabled:YES];
-    [Flurry startSession:@"9VIC9CUSJ9PN1RB212BA"];
-    [FlurryAds initialize:window.rootViewController];
     
 // If the user has the unlocked version we give him all the features unlocked.
 #ifndef LITE_VERSION

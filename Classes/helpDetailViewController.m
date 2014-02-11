@@ -112,16 +112,6 @@
 #ifdef LITE_VERSION
     
 #endif
-    self.adView = nil;
-    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
-                                                 size:MOPUB_BANNER_SIZE] autorelease];
-    self.adView.delegate = self;
-    CGRect frame = self.adView.frame;
-    CGSize size = [self.adView adContentViewSize];
-    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
-    self.adView.frame = frame;
-    [self.view addSubview:self.adView];
-    [self.adView loadAd];
     [super viewWillAppear:animated];
 }
 
