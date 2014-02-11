@@ -15,6 +15,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation StoreViewController
 
@@ -242,7 +243,8 @@
 // Action taking the user to earn credits
 -(IBAction) earnPressed : (id) sender{
 	
-	[Flurry logEvent:@"store/earn credits"];
+    TSEvent *e = [TSEvent eventWithName:@"store_earn credits" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -255,7 +257,8 @@
 // Action taking the user to use their credits
 -(IBAction) usePressed : (id) sender{
 	
-	[Flurry logEvent:@"store/user credits"];
+	TSEvent *e = [TSEvent eventWithName:@"store_use credits" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -281,15 +284,6 @@
 	
 }
 
-// Action that takes the user to download the unlocked game
--(IBAction) unlockPressed : (id) sender{
-	
-	[Flurry logEvent:@"store/unlock all"];
-	
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/app/id403683533"]];
-	
-}
-
 
 
 -(IBAction) backPressed : (id) sender{
@@ -304,7 +298,8 @@
 // Action taking the user to the help page to understand the store
 -(IBAction) helpPressed : (id)sender{
 	
-	[Flurry logEvent:@"store/help"];
+	TSEvent *e = [TSEvent eventWithName:@"store_help" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

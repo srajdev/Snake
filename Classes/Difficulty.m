@@ -13,9 +13,7 @@
 #import "Difficulty.h"
 #import "SnakeClassicAppDelegate.h"
 #import "Snake_3ViewController.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation Difficulty
 
@@ -46,59 +44,14 @@
 	
 	delegate.gameStatus = kGameActive;
 	
-	if (delegate.speed == 1) {
-	//	[FlurryAnalytics logEvent:@"Play Speed 1"];
-		[Flurry logEvent:@"Play Speed 1"];
-	}
-	if (delegate.speed == 2) {
-		[Flurry logEvent:@"Play Speed 2"];
-	}
-	if (delegate.speed == 3) {
-		[Flurry logEvent:@"Play Speed 3"];
-	}
-	if (delegate.speed == 4) {
-		[Flurry logEvent:@"Play Speed 4"];
-	}
-	if (delegate.speed == 5) {
-		[Flurry logEvent:@"Play Speed 5"];
-	}
-	
-	
-	if (delegate.isSoundOn == YES) {
-		[Flurry logEvent:@"Sound on"];
-	}
-	if (delegate.isSoundOn == NO) {
-		[Flurry logEvent:@"Sound off"];
-	}
-	
-	if (delegate.isVibrateOn == YES) {
-		[Flurry logEvent:@"Vibration on"];
-	}
-	if (delegate.isVibrateOn == NO) {
-		[Flurry logEvent:@"Vibration off"];
-	}
-	
-	if (delegate.isWallOn == YES) {
-		[Flurry logEvent:@"Walls on"];
-		
-	}
-	if (delegate.isWallOn == NO) {
-		[Flurry logEvent:@"Walls off"];
-	}
-	
-	if (delegate.snakeColor == [UIColor greenColor]) {
-		[Flurry logEvent:@"Snake Color/Green"];
-	}
-	if (delegate.snakeColor == [UIColor blueColor]) {
-		[Flurry logEvent:@"Snake Color/Blue"];
-	}
-	if (delegate.snakeColor == [UIColor blackColor]) {
-		[Flurry logEvent:@"Snake Color/Black"];
-	}
-	if (delegate.snakeColor == [UIColor orangeColor]) {
-		[Flurry logEvent:@"Snake Color/Orange"];
-	}
-	
+    
+    TSEvent *e = [TSEvent eventWithName:@"Difficulty_Options" oneTimeOnly:NO];
+    [e addValue:[NSNumber numberWithInt:delegate.speed] forKey:@"speed"];
+    [e addValue:[NSNumber numberWithBool:delegate.isSoundOn] forKey:@"sound"];
+    [e addValue:[NSNumber numberWithBool:delegate.isVibrateOn] forKey:@"vibration"];
+    [e addValue:[NSNumber numberWithBool:delegate.isWallOn] forKey:@"walls"];
+    [e addValue:[NSNumber numberWithInt:delegate.snakeColor] forKey:@"snake_color"];
+    [[TSTapstream instance] fireEvent:e];
 	
 	gameNew = [[Snake_3ViewController alloc] initWithNibName:@"Snake_3ViewController" bundle:nil];
 	

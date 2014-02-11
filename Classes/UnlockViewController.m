@@ -16,6 +16,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation UnlockViewController
 
@@ -198,7 +199,8 @@
 	
 
 		if (delegate.creditsInfo == kGarden) {
-			[Flurry logEvent:@"view/unlock garden"];
+            TSEvent *e = [TSEvent eventWithName:@"unlock_unlock garden" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
 			delegate.gardenUnlocked = YES;
 			canPurchase = YES;
 		
@@ -208,7 +210,8 @@
 		
 		}
 		else if (delegate.creditsInfo == kBeach){
-			[Flurry logEvent:@"view/unlock beach"];
+            TSEvent *e = [TSEvent eventWithName:@"unlock_unlock beach" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
 			delegate.beachUnlocked = YES;
 			canPurchase = YES;
 			
@@ -217,7 +220,8 @@
 			[alert show];
 		}
 		else if(delegate.creditsInfo == kNight){
-			[Flurry logEvent:@"view/unlock night"];
+            TSEvent *e = [TSEvent eventWithName:@"unlock_unlock night" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
 			delegate.nightUnlocked = YES;
 			canPurchase = YES;
 			
@@ -226,7 +230,8 @@
 			[alert show];
 		}
 		else if (delegate.creditsInfo == kHole){
-			[Flurry logEvent:@"view/unlock hitw"];
+            TSEvent *e = [TSEvent eventWithName:@"unlock_unlock hole in wall" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
 	
 			delegate.holeUnlocked = YES;
 			canPurchase = YES;
@@ -236,7 +241,8 @@
 			[alert show];
 		}
 		else if(delegate.creditsInfo == kSquare){
-			[Flurry logEvent:@"view/unlock 4sq"];
+            TSEvent *e = [TSEvent eventWithName:@"unlock_unlock 4sq" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
 	
 			delegate.squareUnlocked = YES;
 			canPurchase = YES;

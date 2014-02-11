@@ -21,6 +21,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 
 @implementation Options
@@ -1048,7 +1049,8 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	if (buttonPressed.tag == 0) {
-		[Flurry logEvent:@"options/classic theme"];
+        TSEvent *e = [TSEvent eventWithName:@"options_classic theme" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		classic.hidden = YES;
 		classicSelected.hidden = NO;
 		
@@ -1101,7 +1103,8 @@
 	}
 	else if(buttonPressed.tag == 1){
 	
-		[Flurry logEvent:@"options/garden theme"];
+        TSEvent *e = [TSEvent eventWithName:@"options_garden theme" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		classic.hidden = NO;
 		classicSelected.hidden = YES;
 		
@@ -1154,7 +1157,8 @@
 		
 	}
 	else if(buttonPressed.tag == 2){
-		[Flurry logEvent:@"options/beach theme"];
+        TSEvent *e = [TSEvent eventWithName:@"options_beach theme" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		
 		classic.hidden = NO;
 		classicSelected.hidden = YES;
@@ -1208,7 +1212,8 @@
 		
 	}
 	else if(buttonPressed.tag == 3){
-		[Flurry logEvent:@"options/night theme"];
+        TSEvent *e = [TSEvent eventWithName:@"options_night theme" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		
 		classic.hidden = NO;
 		classicSelected.hidden = YES;
@@ -1460,7 +1465,8 @@
 
 -(IBAction)buttonToChangeName{
 	
-	[Flurry logEvent:@"Settings/Change Player"];
+    TSEvent *e = [TSEvent eventWithName:@"options_change player name" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	nameButton.hidden = YES;

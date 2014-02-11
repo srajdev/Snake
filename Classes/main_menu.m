@@ -28,7 +28,9 @@
 #import "HighScoreViewController.h"
 #import "Flurry.h"
 #import "MMSDK.h"
+#import "TSTapstream.h"
 #import <CoreLocation/CoreLocation.h>
+
 
 
 #define kiPhoneInlineDefaultZone @"3327876051"
@@ -221,7 +223,8 @@
 // Action that takes place when the new game button is pressed. takes the user to a screen to select different speeds
 -(IBAction)newgame:(id)sender{
 
-	[Flurry logEvent:@"New Game"];
+    TSEvent *e = [TSEvent eventWithName:@"menu_new game" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -235,7 +238,8 @@
 
 -(IBAction)options:(id)sender{
 	
-	[Flurry logEvent:@"Settings"];
+    TSEvent *e = [TSEvent eventWithName:@"menu_settings" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -251,7 +255,8 @@
 
 -(IBAction)resume:(id)sender{
 	
-	[Flurry logEvent:@"Resume"];
+    TSEvent *e = [TSEvent eventWithName:@"menu_resume" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -354,24 +359,13 @@
 // Action that takes palce when the scores button is pressed. Takes the user to the scores screen
 -(IBAction)scores:(id)sender{
 	
-	[Flurry logEvent:@"Scores"];
+    TSEvent *e = [TSEvent eventWithName:@"menu_scores" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
 	[delegate switchView:self.view toview:delegate.scoreMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-	
-}
-
-// Action that takes place when the more apps button is pressed. Shows the user more similar apps.
-
-
--(IBAction)moreApps:(id)sender{
-	
-	[Flurry logEvent:@"More Apps"];
-
-	[Flurry openCatalog:@"more apps" canvasOrientation:@"portrait"];
-    
 	
 }
 
@@ -381,7 +375,8 @@
 
 
 	
-	[Flurry logEvent:@"main menu/store"];
+    TSEvent *e = [TSEvent eventWithName:@"menu_store" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -394,7 +389,8 @@
 
 -(IBAction) helpPressed : (id)sender{
 	
-	[Flurry logEvent:@"main menu/help"];
+    TSEvent *e = [TSEvent eventWithName:@"menu_help" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

@@ -683,6 +683,17 @@
 		4DEEE6961276B45300A90AA7 /* FieldModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEE6941276B45300A90AA7 /* FieldModeViewController.xib */; };
 		4DEEFB5618A9C878006B4B98 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB5118A9C878006B4B98 /* Appirater.m */; };
 		4DEEFB5718A9C878006B4B98 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEFB5418A9C878006B4B98 /* AppiraterLocalizable.strings */; };
+		4DEEFB7618A9CA54006B4B98 /* TSAppEventSourceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB5C18A9CA54006B4B98 /* TSAppEventSourceImpl.m */; };
+		4DEEFB7718A9CA54006B4B98 /* TSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB5E18A9CA54006B4B98 /* TSConfig.m */; };
+		4DEEFB7818A9CA54006B4B98 /* TSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB6018A9CA54006B4B98 /* TSCore.m */; };
+		4DEEFB7918A9CA54006B4B98 /* TSCoreListenerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB6318A9CA54006B4B98 /* TSCoreListenerImpl.m */; };
+		4DEEFB7A18A9CA54006B4B98 /* TSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB6618A9CA54006B4B98 /* TSEvent.m */; };
+		4DEEFB7B18A9CA54006B4B98 /* TSHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB6918A9CA54006B4B98 /* TSHit.m */; };
+		4DEEFB7C18A9CA54006B4B98 /* TSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB6B18A9CA54006B4B98 /* TSLogging.m */; };
+		4DEEFB7D18A9CA54006B4B98 /* TSPlatformImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB6F18A9CA54006B4B98 /* TSPlatformImpl.m */; };
+		4DEEFB7E18A9CA54006B4B98 /* TSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB7118A9CA54006B4B98 /* TSResponse.m */; };
+		4DEEFB7F18A9CA54006B4B98 /* TSTapstream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB7318A9CA54006B4B98 /* TSTapstream.m */; };
+		4DEEFB8018A9CA54006B4B98 /* TSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB7518A9CA54006B4B98 /* TSUtils.m */; };
 		4DFDB14A1239EE8E00329152 /* apple_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDB1491239EE8E00329152 /* apple_red.png */; };
 		4DFDB20E1239F8F100329152 /* apple_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDB20D1239F8F100329152 /* apple_green.png */; };
 /* End PBXBuildFile section */
@@ -1159,6 +1170,35 @@
 		4DEEFB5118A9C878006B4B98 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
 		4DEEFB5218A9C878006B4B98 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
 		4DEEFB5518A9C878006B4B98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		4DEEFB5918A9CA54006B4B98 /* TSApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSApi.h; sourceTree = "<group>"; };
+		4DEEFB5A18A9CA54006B4B98 /* TSAppEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAppEventSource.h; sourceTree = "<group>"; };
+		4DEEFB5B18A9CA54006B4B98 /* TSAppEventSourceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAppEventSourceImpl.h; sourceTree = "<group>"; };
+		4DEEFB5C18A9CA54006B4B98 /* TSAppEventSourceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAppEventSourceImpl.m; sourceTree = "<group>"; };
+		4DEEFB5D18A9CA54006B4B98 /* TSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSConfig.h; sourceTree = "<group>"; };
+		4DEEFB5E18A9CA54006B4B98 /* TSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSConfig.m; sourceTree = "<group>"; };
+		4DEEFB5F18A9CA54006B4B98 /* TSCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCore.h; sourceTree = "<group>"; };
+		4DEEFB6018A9CA54006B4B98 /* TSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCore.m; sourceTree = "<group>"; };
+		4DEEFB6118A9CA54006B4B98 /* TSCoreListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCoreListener.h; sourceTree = "<group>"; };
+		4DEEFB6218A9CA54006B4B98 /* TSCoreListenerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCoreListenerImpl.h; sourceTree = "<group>"; };
+		4DEEFB6318A9CA54006B4B98 /* TSCoreListenerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCoreListenerImpl.m; sourceTree = "<group>"; };
+		4DEEFB6418A9CA54006B4B98 /* TSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDelegate.h; sourceTree = "<group>"; };
+		4DEEFB6518A9CA54006B4B98 /* TSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEvent.h; sourceTree = "<group>"; };
+		4DEEFB6618A9CA54006B4B98 /* TSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEvent.m; sourceTree = "<group>"; };
+		4DEEFB6718A9CA54006B4B98 /* TSHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHelpers.h; sourceTree = "<group>"; };
+		4DEEFB6818A9CA54006B4B98 /* TSHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHit.h; sourceTree = "<group>"; };
+		4DEEFB6918A9CA54006B4B98 /* TSHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHit.m; sourceTree = "<group>"; };
+		4DEEFB6A18A9CA54006B4B98 /* TSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLogging.h; sourceTree = "<group>"; };
+		4DEEFB6B18A9CA54006B4B98 /* TSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLogging.m; sourceTree = "<group>"; };
+		4DEEFB6C18A9CA54006B4B98 /* TSLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLogLevel.h; sourceTree = "<group>"; };
+		4DEEFB6D18A9CA54006B4B98 /* TSPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPlatform.h; sourceTree = "<group>"; };
+		4DEEFB6E18A9CA54006B4B98 /* TSPlatformImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPlatformImpl.h; sourceTree = "<group>"; };
+		4DEEFB6F18A9CA54006B4B98 /* TSPlatformImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPlatformImpl.m; sourceTree = "<group>"; };
+		4DEEFB7018A9CA54006B4B98 /* TSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSResponse.h; sourceTree = "<group>"; };
+		4DEEFB7118A9CA54006B4B98 /* TSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSResponse.m; sourceTree = "<group>"; };
+		4DEEFB7218A9CA54006B4B98 /* TSTapstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTapstream.h; sourceTree = "<group>"; };
+		4DEEFB7318A9CA54006B4B98 /* TSTapstream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTapstream.m; sourceTree = "<group>"; };
+		4DEEFB7418A9CA54006B4B98 /* TSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSUtils.h; sourceTree = "<group>"; };
+		4DEEFB7518A9CA54006B4B98 /* TSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSUtils.m; sourceTree = "<group>"; };
 		4DFDB1491239EE8E00329152 /* apple_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_red.png; sourceTree = "<group>"; };
 		4DFDB20D1239F8F100329152 /* apple_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_green.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SnakeClassic-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SnakeClassic-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -1340,6 +1380,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4DEEFB5818A9CA41006B4B98 /* Tapstream */,
 				4DEEFB4F18A9C867006B4B98 /* AppRater */,
 				4DAAC76418879C2500221825 /* Networking */,
 				4DAAC75C18876E0E00221825 /* AdColony.framework */,
@@ -1927,6 +1968,42 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
+		4DEEFB5818A9CA41006B4B98 /* Tapstream */ = {
+			isa = PBXGroup;
+			children = (
+				4DEEFB5918A9CA54006B4B98 /* TSApi.h */,
+				4DEEFB5A18A9CA54006B4B98 /* TSAppEventSource.h */,
+				4DEEFB5B18A9CA54006B4B98 /* TSAppEventSourceImpl.h */,
+				4DEEFB5C18A9CA54006B4B98 /* TSAppEventSourceImpl.m */,
+				4DEEFB5D18A9CA54006B4B98 /* TSConfig.h */,
+				4DEEFB5E18A9CA54006B4B98 /* TSConfig.m */,
+				4DEEFB5F18A9CA54006B4B98 /* TSCore.h */,
+				4DEEFB6018A9CA54006B4B98 /* TSCore.m */,
+				4DEEFB6118A9CA54006B4B98 /* TSCoreListener.h */,
+				4DEEFB6218A9CA54006B4B98 /* TSCoreListenerImpl.h */,
+				4DEEFB6318A9CA54006B4B98 /* TSCoreListenerImpl.m */,
+				4DEEFB6418A9CA54006B4B98 /* TSDelegate.h */,
+				4DEEFB6518A9CA54006B4B98 /* TSEvent.h */,
+				4DEEFB6618A9CA54006B4B98 /* TSEvent.m */,
+				4DEEFB6718A9CA54006B4B98 /* TSHelpers.h */,
+				4DEEFB6818A9CA54006B4B98 /* TSHit.h */,
+				4DEEFB6918A9CA54006B4B98 /* TSHit.m */,
+				4DEEFB6A18A9CA54006B4B98 /* TSLogging.h */,
+				4DEEFB6B18A9CA54006B4B98 /* TSLogging.m */,
+				4DEEFB6C18A9CA54006B4B98 /* TSLogLevel.h */,
+				4DEEFB6D18A9CA54006B4B98 /* TSPlatform.h */,
+				4DEEFB6E18A9CA54006B4B98 /* TSPlatformImpl.h */,
+				4DEEFB6F18A9CA54006B4B98 /* TSPlatformImpl.m */,
+				4DEEFB7018A9CA54006B4B98 /* TSResponse.h */,
+				4DEEFB7118A9CA54006B4B98 /* TSResponse.m */,
+				4DEEFB7218A9CA54006B4B98 /* TSTapstream.h */,
+				4DEEFB7318A9CA54006B4B98 /* TSTapstream.m */,
+				4DEEFB7418A9CA54006B4B98 /* TSUtils.h */,
+				4DEEFB7518A9CA54006B4B98 /* TSUtils.m */,
+			);
+			name = Tapstream;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2505,18 +2582,24 @@
 				4D27564C1889BFAA001AAF14 /* IAPHelper.m in Sources */,
 				4DE534E01230B82B00BB7B65 /* HighScoreRecord.m in Sources */,
 				4DE534E11230B82B00BB7B65 /* HighScores.m in Sources */,
+				4DEEFB7818A9CA54006B4B98 /* TSCore.m in Sources */,
 				4DE534E51230B82B00BB7B65 /* main_menu.m in Sources */,
+				4DEEFB7A18A9CA54006B4B98 /* TSEvent.m in Sources */,
 				4DE534E71230B82B00BB7B65 /* Options.m in Sources */,
 				4DE534E91230B82B00BB7B65 /* Snake_3ViewController.m in Sources */,
+				4DEEFB7618A9CA54006B4B98 /* TSAppEventSourceImpl.m in Sources */,
 				4DE534EA1230B82B00BB7B65 /* snakeType.m in Sources */,
 				4D2780341230B88A00BE95A7 /* Difficulty.m in Sources */,
 				4D2780361230B88A00BE95A7 /* foodType.m in Sources */,
+				4DEEFB7C18A9CA54006B4B98 /* TSLogging.m in Sources */,
 				4D2780371230B88A00BE95A7 /* GameOver.m in Sources */,
+				4DEEFB8018A9CA54006B4B98 /* TSUtils.m in Sources */,
 				4D433E0512371C56006552B1 /* HighScoreCell.m in Sources */,
 				4D89F9BB12371FA100051A67 /* HighScoreViewController.m in Sources */,
 				4DAAC7FC18879EDD00221825 /* ASIS3BucketObject.m in Sources */,
 				4DD52DDA1252B192002AF9A6 /* NSObject+SBJSON.m in Sources */,
 				4DD52DDB1252B192002AF9A6 /* NSString+SBJSON.m in Sources */,
+				4DEEFB7718A9CA54006B4B98 /* TSConfig.m in Sources */,
 				4DD52DDC1252B192002AF9A6 /* SBJSON.m in Sources */,
 				4DD52DDD1252B192002AF9A6 /* SBJsonBase.m in Sources */,
 				4DD52DDE1252B192002AF9A6 /* SBJsonParser.m in Sources */,
@@ -2534,6 +2617,7 @@
 				4DABB3D6125DD60300D397D6 /* UserInfo.m in Sources */,
 				4DAAC7EC18879EDC00221825 /* ASIDataCompressor.m in Sources */,
 				4DABB3E8125DD74300D397D6 /* UserRequestResult.m in Sources */,
+				4DEEFB7E18A9CA54006B4B98 /* TSResponse.m in Sources */,
 				4DABB3E9125DD74300D397D6 /* FriendsRequestResult.m in Sources */,
 				4DEEE67C1276B21C00A90AA7 /* GameModeViewController.m in Sources */,
 				4DEEE6951276B45300A90AA7 /* FieldModeViewController.m in Sources */,
@@ -2558,6 +2642,7 @@
 				4DC8C53512AE0B6700286D15 /* NSDictionary_JSONExtensions.m in Sources */,
 				4DC8C53612AE0B6700286D15 /* NSScanner_Extensions.m in Sources */,
 				4DC8C53712AE0B6700286D15 /* CJSONDataSerializer.m in Sources */,
+				4DEEFB7D18A9CA54006B4B98 /* TSPlatformImpl.m in Sources */,
 				4DC8C53812AE0B6700286D15 /* CJSONDeserializer.m in Sources */,
 				4DC8C53912AE0B6700286D15 /* CJSONScanner.m in Sources */,
 				4DAAC7EE18879EDC00221825 /* ASIDownloadCache.m in Sources */,
@@ -2568,8 +2653,11 @@
 				4DAAC7F718879EDC00221825 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				4DC8C53B12AE0B6700286D15 /* CSerializedJSONData.m in Sources */,
 				4DAAC7ED18879EDC00221825 /* ASIDataDecompressor.m in Sources */,
+				4DEEFB7918A9CA54006B4B98 /* TSCoreListenerImpl.m in Sources */,
+				4DEEFB7F18A9CA54006B4B98 /* TSTapstream.m in Sources */,
 				4DAAC7F118879EDC00221825 /* ASIInputStream.m in Sources */,
 				4DAAC7F018879EDC00221825 /* ASIHTTPRequest.m in Sources */,
+				4DEEFB7B18A9CA54006B4B98 /* TSHit.m in Sources */,
 				4DAAC7FB18879EDD00221825 /* ASIS3Bucket.m in Sources */,
 				4D6BF6861338B24F00A79861 /* GKAchievementHandler.m in Sources */,
 				4D6BF6871338B24F00A79861 /* GKAchievementNotification.m in Sources */,

@@ -24,6 +24,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 
 
@@ -395,7 +396,8 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 // Action that is called to post to facebook
 
 - (IBAction)postToFacebook:(id)sender {
-    [Flurry logEvent:@"gameover/facebook"];
+    TSEvent *e = [TSEvent eventWithName:@"gameover_facebook" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -415,29 +417,6 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
         [self presentViewController:controller2 animated:YES completion:Nil];
     
 }
-/*
-- (IBAction) FBpublish: (id)sender {
-	
-	[Flurry logEvent:@"gameover/facebook"];
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	if (delegate.FBLoggedIn == NO) {
-		delegate.loginFromOver = YES;
-		[delegate login];
-		
-		
-	}
-	else {
-				delegate.loginFromOver = NO;
-		[self publishFacebook];
-	}
-
-		
-	
-	
-	
-}
-*/
 
 // Function that posts to facebook
 
@@ -501,7 +480,8 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 
 -(IBAction)playAgain:(id)sender{
 
-	[Flurry logEvent:@"Play Again"];
+    TSEvent *e = [TSEvent eventWithName:@"gameover_Play Again" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     playAgainButton = true;
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
@@ -608,7 +588,8 @@ interstitial {
 
 -(IBAction)buttonToChangeName{
 	
-	[Flurry logEvent:@"Game Over/Change Player"];
+    TSEvent *e = [TSEvent eventWithName:@"gameover_change player name" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	name.hidden = YES;
@@ -649,7 +630,8 @@ interstitial {
 
 -(IBAction)mainmenu:(id)sender{
 	
-	[Flurry logEvent:@"Menu"];
+    TSEvent *e = [TSEvent eventWithName:@"gameover_mennu" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     
     mainMenuButton = true;
     
@@ -711,7 +693,8 @@ interstitial {
 -(IBAction) rateApp{
 	
 	
-	[Flurry logEvent:@"gameover/rate"];
+    TSEvent *e = [TSEvent eventWithName:@"gameover_rate" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	// Send the user to the appropriate rate place depending on which version (LOCKED OR UNLOCKED)
 #ifdef LITE_VERSION
@@ -804,7 +787,8 @@ interstitial {
     SLComposeViewController *tweetSheet;
     //if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     //{
-        [Flurry logEvent:@"gameover/twitter"];
+    TSEvent *e = [TSEvent eventWithName:@"gamevoer_twitter" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
         tweetSheet = [[SLComposeViewController alloc] init];
         NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
         [numberFormatter setPositiveFormat:@"#,###"];
@@ -834,8 +818,6 @@ interstitial {
 // Action that is called to post on twitter
 /*
 -(IBAction) tweetIt{
-	
-	[Flurry logEvent:@"gameover/twitter"];
 	
 	NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
 	[numberFormatter setPositiveFormat:@"#,###"];

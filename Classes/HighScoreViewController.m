@@ -21,6 +21,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 
 @implementation HighScoreViewController
@@ -174,7 +175,8 @@
 
 //Action to be called whent he global high score is pressed
 -(IBAction) globalPressed {
-	[Flurry logEvent:@"scores/global"];
+    TSEvent *e = [TSEvent eventWithName:@"scores_global" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	if (delegate.isconnected == NO) {
@@ -214,7 +216,8 @@
 // Acction to be called when the friends score is pressed
 -(IBAction) friendsPressed{
 	
-	[Flurry logEvent:@"scores/friends"];
+    TSEvent *e = [TSEvent eventWithName:@"scores_friends" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];

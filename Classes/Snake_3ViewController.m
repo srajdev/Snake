@@ -19,6 +19,7 @@
 #import "Flurry.h"
 #import "HighScores.h"
 #import "HighScoreRecord.h"
+#import "TSTapstream.h"
 
 
 @implementation Snake_3ViewController
@@ -176,7 +177,8 @@
 
 -(void) pauseGameNow{
 	
-	[Flurry logEvent:@"Pause"];
+    TSEvent *e = [TSEvent eventWithName:@"game_pause" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 
 	
@@ -295,7 +297,8 @@
 
 -(void)gameOver:(CADisplayLink *)displayLinkSent{
 	
-	[Flurry logEvent:@"Game Over"];
+    TSEvent *e = [TSEvent eventWithName:@"game_game over" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	[displayLinkSent invalidate];
 	
@@ -570,7 +573,8 @@ if (delegate.gameStatus != kGamePause) {
 	if(buttonIndex == 0)
 	{
 		
-		[Flurry logEvent:@"extreme/Unlock pressed in popup"];
+        TSEvent *e = [TSEvent eventWithName:@"game_unlock pressed in popup" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
         
 		[self pauseGameNow];
@@ -684,7 +688,8 @@ if (delegate.gameStatus != kGamePause) {
 			//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field Hole in the Wall." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
 			
 			//[alert show];
-			[Flurry logEvent:@"extreme/pop to unlock hitw shown"];
+            TSEvent *e = [TSEvent eventWithName:@"game_pop up hole in wall" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
             if (!delegate.stillLoading) {
                 [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
 
@@ -694,7 +699,8 @@ if (delegate.gameStatus != kGamePause) {
 			//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field 4square." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
 			
 			//[alert show];
-			[Flurry logEvent:@"extreme/pop to unlock 4sq shown"];
+            TSEvent *e = [TSEvent eventWithName:@"game_pop up 4sq" oneTimeOnly:NO];
+            [[TSTapstream instance] fireEvent:e];
             if (!delegate.stillLoading) {
                 [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];
             }
@@ -785,7 +791,6 @@ if (delegate.gameStatus != kGamePause) {
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field Hole in the Wall." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
         
         //[alert show];
-        //[Flurry logEvent:@"extreme/pop to unlock hitw shown"];
         if (!delegate.stillLoading) {
             //[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert2:) userInfo:nil repeats:NO];
         }
@@ -794,7 +799,8 @@ if (delegate.gameStatus != kGamePause) {
         //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Field Locked" message:@"To continue you need to unlock the field 4square." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Unlock",nil];
         
         //[alert show];
-        [Flurry logEvent:@"extreme/pop to unlock 4sq shown"];
+        TSEvent *e = [TSEvent eventWithName:@"game_pop up 4sq" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
         if (!delegate.stillLoading) {
           
             //[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert3:) userInfo:nil repeats:NO];

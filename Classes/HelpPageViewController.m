@@ -14,6 +14,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation HelpPageViewController
 
@@ -201,18 +202,21 @@
 	delegate.pageFrom = kFromHelp;
 	
 	if (button.tag == 0) {
-		[Flurry logEvent:@"help/gameplay"];
+        TSEvent *e = [TSEvent eventWithName:@"help_game play" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		delegate.helpMode = kGamePlay;
 	}
 	else if(button.tag == 1){
 	
-		[Flurry logEvent:@"help/unlock items"];
+        TSEvent *e = [TSEvent eventWithName:@"help_unlock items" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		delegate.helpMode = kUnlockItems;
 		
 	}
 	else if(button.tag == 2){
 	
-		[Flurry logEvent:@"help/FAQ"];
+        TSEvent *e = [TSEvent eventWithName:@"help_faqs" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		delegate.helpMode = kFAQ;
 	}
 	
@@ -229,7 +233,8 @@
 // takes the user to rate the game depending on which version he is on
 
 -(IBAction) rateGame : (id) sender{
-	[Flurry logEvent:@"help/rate"];
+    TSEvent *e = [TSEvent eventWithName:@"help_rate" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 #ifdef LITE_VERSION
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=394603141&onlyLatestVersion=false&type=Purple+Software"]];
 	
@@ -243,7 +248,8 @@
 
 // Takes the user to Snake Classic Blog
 -(IBAction) blogPressed : (id) sender{
-	[Flurry logEvent:@"help/blog"];
+    TSEvent *e = [TSEvent eventWithName:@"help_blog" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://snakeclassic.blogspot.com"]];
 	
@@ -253,7 +259,8 @@
 
 // Takes the user to the facebook page of Snake classic
 -(IBAction) facebookPressed : (id) sender{
-	[Flurry logEvent:@"help/facebook page"];
+    TSEvent *e = [TSEvent eventWithName:@"help_facebook page" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.facebook.com/snakeclassic"]];
 	
 }

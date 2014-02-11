@@ -47,6 +47,8 @@
 #import "SnakeIAPHelper.h"
 #import "Appirater.h"
 
+#import "TSTapstream.h"
+
 
 
 @implementation SnakeClassicAppDelegate
@@ -359,6 +361,11 @@ static NSString* kFBAppId = @"158392174179755";
                          zoneIDs:@[@"vz8a85a435f2b346368c"]
                         delegate:self
                          logging:YES];
+    
+    //Setup TapStream
+    TSConfig *config = [TSConfig configWithDefaults];
+    config.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    [TSTapstream createWithAccountName:@"zingapps" developerSecret:@"2f7MQm1ER8eovHgsMZbX1w" config:config];
 	
 	take_over = 0;
 	take_over_menu = 0;

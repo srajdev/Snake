@@ -18,6 +18,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation GameModeViewController
 @synthesize classicButton;
@@ -155,7 +156,8 @@
 
 -(IBAction) ClassicPressed : (id) sender{
 	
-	[Flurry logEvent:@"newgame/classic"];
+    TSEvent *e = [TSEvent eventWithName:@"newgame_classic" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -217,7 +219,8 @@
 
 - (IBAction) ExtremePressed : (id) sender{
 	
-	[Flurry logEvent:@"newgame/extreme"];
+    TSEvent *e = [TSEvent eventWithName:@"new game_extreme" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

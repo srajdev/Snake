@@ -19,6 +19,7 @@
 #import <AdColony/AdColony.h>
 #import "SnakeIAPHelper.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation EarnCreditsViewController
 
@@ -374,7 +375,8 @@
 }
 
 -(void)buyCredits{
-    [Flurry logEvent:@"Earn Credits/ Buy Credits"];
+    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Buy Credits" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     for (SKProduct * product in self.products){
         NSLog(@"product : %@", product.productIdentifier);
         if ([product.productIdentifier isEqualToString:SnakeIAPProductName]) {
@@ -385,7 +387,8 @@
 
 
 -(void)shareOnFacebook{
-    [Flurry logEvent:@"Earn Credits/ Share Facebook"];
+    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Facebook Share" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
     SLComposeViewController *fbController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
@@ -465,7 +468,8 @@
 }
 
 -(void)shareOnTwitter{
-    [Flurry logEvent:@"Earn Credits/ Share Twitter"];
+    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Twiiter Share" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     SLComposeViewController *tweetSheet;
     tweetSheet = [[SLComposeViewController alloc] init];
 
@@ -540,14 +544,8 @@
 
 - (IBAction) watchVideoPressed{
     
-    /*if ([FlurryAds adReadyForSpace:@"Videos"]) {
-        [FlurryAds displayAdForSpace:@"Video_Earn Credits" onView:self.view];
-    } else {
-        //[FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
-        [FlurryAds fetchAndDisplayAdForSpace:@"Video_Earn Credits" view:self.view size:FULLSCREEN];
-    }*/
-    
-    [Flurry logEvent:@"Earn Credits/ Watch Video"];
+    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Watch Video" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     [AdColony playVideoAdForZone:@"vz8a85a435f2b346368c"
                     withDelegate:nil
                 withV4VCPrePopup:NO

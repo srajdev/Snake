@@ -16,6 +16,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation FieldModeViewController
 
@@ -24,7 +25,8 @@
 // Action when user presses Open Field
 -(IBAction) OpenFieldPressed:(id)sender{
 	
-	[Flurry logEvent:@"classic/play openfield"];
+    TSEvent *e = [TSEvent eventWithName:@"Classic_Play Open Field" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -80,7 +82,8 @@
 // Action when user presses Box field
 -(IBAction) BoxPressed:(id)sender{
 	
-	[Flurry logEvent:@"classic/play box"];
+    TSEvent *e = [TSEvent eventWithName:@"Classic_Play Box" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
@@ -135,7 +138,8 @@
 // Action when user presses Hole in the wall Field
 -(IBAction) HoleWallPressed:(id)sender{
 	
-	[Flurry logEvent:@"classic/play hitw"];
+    TSEvent *e = [TSEvent eventWithName:@"Classic_Hole in wall" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
@@ -198,7 +202,8 @@
 // Action when user presses 4Square Field
 -(IBAction) SquarePressed:(id)sender{
 	
-	[Flurry logEvent:@"classic/play 4sq"];
+    TSEvent *e = [TSEvent eventWithName:@"Classic_Four Square" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

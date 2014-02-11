@@ -16,6 +16,7 @@
 #import "FlurryAdDelegate.h"
 #import "FlurryAds.h"
 #import "Flurry.h"
+#import "TSTapstream.h"
 
 @implementation UseCreditsViewController
 
@@ -314,27 +315,32 @@
 	delegate.unlockFromAnother = 0;
 	
 	if (buttonPressed.tag == 0) {
-		[Flurry logEvent:@"use credits/view beach"];
+        TSEvent *e = [TSEvent eventWithName:@"usecredits_view beach" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		delegate.creditsInfo = kBeach;
 		
 	}
 	else if(buttonPressed.tag == 1){
-		[Flurry logEvent:@"use credits/view garden"];
+        TSEvent *e = [TSEvent eventWithName:@"usecredits_view garden" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 	
 		delegate.creditsInfo = kGarden;
 	}
 	else if(buttonPressed.tag == 2){
-		[Flurry logEvent:@"use credits/view night"];
+        TSEvent *e = [TSEvent eventWithName:@"usecredits_view night" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		
 		delegate.creditsInfo = kNight;
 	}	
 	else if(buttonPressed.tag == 3){
-		[Flurry logEvent:@"use credits/view hitw"];
+        TSEvent *e = [TSEvent eventWithName:@"usecredits_view hole in wall" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		
 		delegate.creditsInfo = kHole;
 	}
 	else if(buttonPressed.tag == 4){
-		[Flurry logEvent:@"use credits/view 4sq"];
+        TSEvent *e = [TSEvent eventWithName:@"usecredits_view 4sq" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
 		
 		delegate.creditsInfo = kSquare;
 	}
