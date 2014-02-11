@@ -195,13 +195,7 @@
 	delegate.isWallOn = NO;
 	//[delegate.mainmenu.adView ignoreNewAdRequests];
 	
-	[delegate switchView:self.view toview:delegate.fieldModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-	
-	
-
-	
-	
-	
+	[delegate switchView:self.view toview:delegate.fieldModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];	
 }
 /*
 - (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {

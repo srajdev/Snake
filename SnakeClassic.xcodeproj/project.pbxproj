@@ -757,6 +757,7 @@
 		4DEEFDCC18AACD1D006B4B98 /* ChartboostInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFDC918AACD1D006B4B98 /* ChartboostInterstitialCustomEvent.m */; };
 		4DEEFDCD18AACD1D006B4B98 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEFDCB18AACD1D006B4B98 /* README.md */; };
 		4DEEFDD018AACDEC006B4B98 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEEFDCF18AACDEC006B4B98 /* libChartboost.a */; };
+		4DEEFDD518AAE2C6006B4B98 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEEFDD418AAE2C6006B4B98 /* Crashlytics.framework */; };
 		4DFDB14A1239EE8E00329152 /* apple_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDB1491239EE8E00329152 /* apple_red.png */; };
 		4DFDB20E1239F8F100329152 /* apple_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDB20D1239F8F100329152 /* apple_green.png */; };
 /* End PBXBuildFile section */
@@ -781,8 +782,6 @@
 		2C241F42183F42E400A61CBB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		2C241F44183F430400A61CBB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2C241F46183F432200A61CBB /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
-		2C241F49183F442B00A61CBB /* libFlurry_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.3.0.a; path = "../Flurry iPhone SDK viPhone 4.3.0/Flurry-iOS-4.3.0/Flurry/libFlurry_4.3.0.a"; sourceTree = "<group>"; };
-		2C241F4D183F633A00A61CBB /* libFlurryAds_4.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurryAds_4.3.0.a; path = "../Flurry iPhone SDK viPhone 4.3.0/Flurry-iOS-4.3.0/FlurryAds/libFlurryAds_4.3.0.a"; sourceTree = "<group>"; };
 		2C241F4F183F63BE00A61CBB /* libMMSDK_5.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMMSDK_5.1.1.a; path = ../iOS_5.1.1_SDK/MMSDK/libMMSDK_5.1.1.a; sourceTree = "<group>"; };
 		2C241F521840914B00A61CBB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2C241F55184091B000A61CBB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -1422,6 +1421,7 @@
 		4DEEFDCB18AACD1D006B4B98 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4DEEFDCE18AACDEC006B4B98 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
 		4DEEFDCF18AACDEC006B4B98 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
+		4DEEFDD418AAE2C6006B4B98 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4DFDB1491239EE8E00329152 /* apple_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_red.png; sourceTree = "<group>"; };
 		4DFDB20D1239F8F100329152 /* apple_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_green.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SnakeClassic-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SnakeClassic-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -1466,6 +1466,7 @@
 				4D2783811230EE8C00BE95A7 /* SystemConfiguration.framework in Frameworks */,
 				2C6183D8185F1C31007FDC79 /* EventKit.framework in Frameworks */,
 				2C241F6F18436DE200A61CBB /* CoreFoundation.framework in Frameworks */,
+				4DEEFDD518AAE2C6006B4B98 /* Crashlytics.framework in Frameworks */,
 				4D2783821230EE8D00BE95A7 /* UIKit.framework in Frameworks */,
 				4D433DE81237193A006552B1 /* iAd.framework in Frameworks */,
 				4DABB62F125F840400D397D6 /* libxml2.dylib in Frameworks */,
@@ -1660,6 +1661,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DEEFDD418AAE2C6006B4B98 /* Crashlytics.framework */,
 				4DAAC76218876EA800221825 /* EventKitUI.framework */,
 				4DAAC76018876E9500221825 /* CoreMedia.framework */,
 				4DAAC75E18876E2B00221825 /* libz.1.2.5.dylib */,
@@ -1671,8 +1673,6 @@
 				2C241F55184091B000A61CBB /* Social.framework */,
 				2C241F521840914B00A61CBB /* CFNetwork.framework */,
 				2C241F4F183F63BE00A61CBB /* libMMSDK_5.1.1.a */,
-				2C241F4D183F633A00A61CBB /* libFlurryAds_4.3.0.a */,
-				2C241F49183F442B00A61CBB /* libFlurry_4.3.0.a */,
 				2C241F46183F432200A61CBB /* PassKit.framework */,
 				2C241F44183F430400A61CBB /* MobileCoreServices.framework */,
 				2C241F42183F42E400A61CBB /* CoreTelephony.framework */,
@@ -2557,6 +2557,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				4DEEFDD318AAE2AC006B4B98 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -3119,6 +3120,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DEEFDD318AAE2AC006B4B98 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 9282cf0ce1a9fee66f2abd4fb87e75803ad0178c d7ba61bf25f9c665d3735f34c28cf6f3e949e61fbaf98bc0e0fa9bc03674c999";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {

@@ -538,7 +538,7 @@
     TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Watch Video" oneTimeOnly:NO];
     [[TSTapstream instance] fireEvent:e];
     [AdColony playVideoAdForZone:@"vz8a85a435f2b346368c"
-                    withDelegate:nil
+                    withDelegate:self
                 withV4VCPrePopup:NO
                 andV4VCPostPopup:NO];
     

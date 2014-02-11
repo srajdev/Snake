@@ -46,6 +46,7 @@
 #import "Appirater.h"
 
 #import "TSTapstream.h"
+#import <Crashlytics/Crashlytics.h>
 
 
 
@@ -359,6 +360,8 @@ static NSString* kFBAppId = @"158392174179755";
                          zoneIDs:@[@"vz8a85a435f2b346368c"]
                         delegate:self
                          logging:YES];
+    
+    [Crashlytics startWithAPIKey:@"9282cf0ce1a9fee66f2abd4fb87e75803ad0178c"];
     
     //Setup TapStream
     TSConfig *config = [TSConfig configWithDefaults];

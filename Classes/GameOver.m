@@ -182,14 +182,18 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
     self.adView.frame = frame;
     [self.view addSubview:self.adView];
     [self.adView loadAd];
+    
+    
+    // Instantiate the interstitial using the class convenience method.
     self.interstitial = [MPInterstitialAdController
                          interstitialAdControllerForAdUnitId:@"05e522d1f83245f2b5765980f7b6a57f"];
     
     // Fetch the interstitial ad.
+    self.interstitial.delegate = self;
     [self.interstitial loadAd];
-    
     [super viewDidLoad];
 }
+
 
 // Make sure all the score and names are shown as current every time the view appears
 -(void) viewWillAppear:(BOOL)animated{
@@ -535,13 +539,17 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
     delegate.gameStatus = kGameStart;
     
     [self saveGame];
-    
+    NSLog(@"ready ::%@", [NSNumber numberWithBool:self.interstitial.ready]);
     if (self.interstitial.ready) {
         [self.interstitial showFromViewController:self];
     }
     else {
         [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
     }
+}
+
+- (void)interstitialDidFailToLoadAd:(MPInterstitialAdController *)interstitial{
+    NSLog(@"failed to load");
 }
 
 
