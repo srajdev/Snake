@@ -45,6 +45,7 @@
 #import "ASIFormDataRequest.h"
 
 #import "SnakeIAPHelper.h"
+#import "Appirater.h"
 
 
 
@@ -1004,6 +1005,14 @@ if ([self connectedToNetwork]) {
 	[aMenu release];
     
 
+    
+    [Appirater setAppId:@"394603141"];
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:3];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
 	return YES;
 }
 

@@ -681,6 +681,8 @@
 		4DEEE67D1276B21C00A90AA7 /* GameModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEE67B1276B21C00A90AA7 /* GameModeViewController.xib */; };
 		4DEEE6951276B45300A90AA7 /* FieldModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEE6931276B45300A90AA7 /* FieldModeViewController.m */; };
 		4DEEE6961276B45300A90AA7 /* FieldModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEE6941276B45300A90AA7 /* FieldModeViewController.xib */; };
+		4DEEFB5618A9C878006B4B98 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEFB5118A9C878006B4B98 /* Appirater.m */; };
+		4DEEFB5718A9C878006B4B98 /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DEEFB5418A9C878006B4B98 /* AppiraterLocalizable.strings */; };
 		4DFDB14A1239EE8E00329152 /* apple_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDB1491239EE8E00329152 /* apple_red.png */; };
 		4DFDB20E1239F8F100329152 /* apple_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFDB20D1239F8F100329152 /* apple_green.png */; };
 /* End PBXBuildFile section */
@@ -1153,6 +1155,10 @@
 		4DEEE6921276B45300A90AA7 /* FieldModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldModeViewController.h; sourceTree = "<group>"; };
 		4DEEE6931276B45300A90AA7 /* FieldModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldModeViewController.m; sourceTree = "<group>"; };
 		4DEEE6941276B45300A90AA7 /* FieldModeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FieldModeViewController.xib; path = Classes/FieldModeViewController.xib; sourceTree = "<group>"; };
+		4DEEFB5018A9C878006B4B98 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		4DEEFB5118A9C878006B4B98 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		4DEEFB5218A9C878006B4B98 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		4DEEFB5518A9C878006B4B98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
 		4DFDB1491239EE8E00329152 /* apple_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_red.png; sourceTree = "<group>"; };
 		4DFDB20D1239F8F100329152 /* apple_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_green.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SnakeClassic-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SnakeClassic-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -1334,6 +1340,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4DEEFB4F18A9C867006B4B98 /* AppRater */,
 				4DAAC76418879C2500221825 /* Networking */,
 				4DAAC75C18876E0E00221825 /* AdColony.framework */,
 				2C6183DD1864CB37007FDC79 /* FlurryAds */,
@@ -1901,6 +1908,25 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		4DEEFB4F18A9C867006B4B98 /* AppRater */ = {
+			isa = PBXGroup;
+			children = (
+				4DEEFB5018A9C878006B4B98 /* Appirater.h */,
+				4DEEFB5118A9C878006B4B98 /* Appirater.m */,
+				4DEEFB5218A9C878006B4B98 /* AppiraterDelegate.h */,
+				4DEEFB5318A9C878006B4B98 /* en.lproj */,
+			);
+			name = AppRater;
+			sourceTree = "<group>";
+		};
+		4DEEFB5318A9C878006B4B98 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4DEEFB5418A9C878006B4B98 /* AppiraterLocalizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1960,6 +1986,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -2205,6 +2232,7 @@
 				2CC2007717FF491B00100CC7 /* _green_box.png in Resources */,
 				2CC2007917FF491B00100CC7 /* _green_hitw.png in Resources */,
 				2CC2007B17FF491B00100CC7 /* _orange_4sq.png in Resources */,
+				4DEEFB5718A9C878006B4B98 /* AppiraterLocalizable.strings in Resources */,
 				2CC2007D17FF491B00100CC7 /* _orange_box.png in Resources */,
 				2CC2007F17FF491B00100CC7 /* _orange_hitw.png in Resources */,
 				2CC2008117FF491B00100CC7 /* _orange_open.png in Resources */,
@@ -2471,6 +2499,7 @@
 				4DAAC7F818879EDC00221825 /* ASICloudFilesObject.m in Sources */,
 				1D3623260D0F684500981E51 /* SnakeClassicAppDelegate.m in Sources */,
 				28193060112F816700ECF9B4 /* SnakeClassic.xcdatamodeld in Sources */,
+				4DEEFB5618A9C878006B4B98 /* Appirater.m in Sources */,
 				4D27564F1889C200001AAF14 /* SnakeIAPHelper.m in Sources */,
 				4DE534DE1230B82B00BB7B65 /* GameView.m in Sources */,
 				4D27564C1889BFAA001AAF14 /* IAPHelper.m in Sources */,
@@ -2609,6 +2638,17 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		4DEEFB5418A9C878006B4B98 /* AppiraterLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DEEFB5518A9C878006B4B98 /* en */,
+			);
+			name = AppiraterLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2618,8 +2658,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CLANG_ENABLE_OBJC_ARC[arch=*]" = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zing/ Apps, LLC (9B7RE4S3EQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zing/ Apps, LLC (9B7RE4S3EQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2681,20 +2721,20 @@
 					"/Users/pmehta/Zing/Snake/GSSDK\\ 3.1.1",
 				);
 				MACH_O_TYPE = mh_execute;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DLITE_VERSION";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-fobjc-arc",
 				);
 				PRODUCT_NAME = Snake;
-				PROVISIONING_PROFILE = "540A66AF-1B30-4028-9F96-70561781B00D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "540A66AF-1B30-4028-9F96-70561781B00D";
+				PROVISIONING_PROFILE = "2F4F9852-BA31-4B55-9936-09E1C5F1E1FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F4F9852-BA31-4B55-9936-09E1C5F1E1FB";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=*]" = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -2705,8 +2745,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zing/ Apps, LLC (9B7RE4S3EQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zing/ Apps, LLC (9B7RE4S3EQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2755,20 +2795,21 @@
 					/Users/swapan/dev/Snake/Flurry,
 					/Users/swapan/dev/Snake/MMSDK,
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DLITE_VERSION";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-fobjc-arc",
 				);
 				PRODUCT_NAME = Snake;
-				PROVISIONING_PROFILE = "540A66AF-1B30-4028-9F96-70561781B00D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "540A66AF-1B30-4028-9F96-70561781B00D";
+				PROVISIONING_PROFILE = "2F4F9852-BA31-4B55-9936-09E1C5F1E1FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F4F9852-BA31-4B55-9936-09E1C5F1E1FB";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -2913,8 +2954,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Zing/ Apps, LLC (9B7RE4S3EQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zing/ Apps, LLC (9B7RE4S3EQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Swapan Rajdev (VV9Y6779T7)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2961,20 +3002,21 @@
 					/Users/swapan/dev/Snake/Flurry,
 					/Users/swapan/dev/Snake/MMSDK,
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DLITE_VERSION";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-fobjc-arc",
 				);
 				PRODUCT_NAME = Snake;
-				PROVISIONING_PROFILE = "540A66AF-1B30-4028-9F96-70561781B00D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "540A66AF-1B30-4028-9F96-70561781B00D";
+				PROVISIONING_PROFILE = "2F4F9852-BA31-4B55-9936-09E1C5F1E1FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F4F9852-BA31-4B55-9936-09E1C5F1E1FB";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7";
 			};
 			name = Distribution;
 		};
