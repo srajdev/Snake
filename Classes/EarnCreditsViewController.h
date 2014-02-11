@@ -10,19 +10,9 @@
 
 
 #import <UIKit/UIKit.h>
-#import "MyAdView.h"
+#import "MPAdView.h"
 
-
-
-
-
-@interface EarnCreditsViewController : UIViewController <UIAlertViewDelegate>{
-	
-	MyAdView *myAdView;
-	
-	
-	
-	
+@interface EarnCreditsViewController : UIViewController <UIAlertViewDelegate, MPAdViewDelegate>{
 
 	//IBOutlet UILabel *name;
 	//IBOutlet UILabel *refreshLabel;
@@ -45,9 +35,8 @@
 
 @property (nonatomic,retain) IBOutlet UILabel *refreshLabel;
 @property (nonatomic,retain) IBOutlet UIButton *refreshButton;
-
-@property (nonatomic,retain) MyAdView *myAdView;
 @property (nonatomic, retain)     NSArray *products;
+@property (nonatomic, retain) MPAdView *adView;
 
 
 -(IBAction) watchVideoPressed;

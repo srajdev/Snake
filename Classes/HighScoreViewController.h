@@ -18,14 +18,14 @@
 #import "HighScoreRecord.h"
 #import "HighScores.h"
 #import "main_menu.h"
-#import "FlurryAdDelegate.h"
 
 #import "FBConnect.h"
+#import "MPAdView.h"
 
 
 
-@interface HighScoreViewController : UIViewController <UITableViewDelegate, FlurryAdDelegate, UITableViewDataSource,
-FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
+@interface HighScoreViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,
+FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate, MPAdViewDelegate> {
 	
 	IBOutlet UITableView *highScoreTable;
 	NSArray *highScoreData;
@@ -76,8 +76,7 @@ FBDialogDelegate, FBSessionDelegate, FBRequestDelegate, UIAlertViewDelegate> {
 @property (nonatomic,retain) UIActivityIndicatorView *activity;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
 
-//@property(nonatomic, readonly) NSUUID *advertisingIdentifier;
-
+@property (nonatomic, retain) MPAdView *adView;
 -(void) showAlert ;
 
 

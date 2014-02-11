@@ -12,9 +12,6 @@
 #import "StoreViewController.h"
 #import "SnakeClassicAppDelegate.h"
 #import "main_menu.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
 #import "TSTapstream.h"
 
 @implementation StoreViewController
@@ -38,7 +35,18 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    self.adView = nil;
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
     [self setBackground];
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad{
@@ -73,6 +81,17 @@
         bthelpFrame.origin.y = 65 + GAMEMODE_HELP_BUTTON_Y;
         helpButton.frame = bthelpFrame;
 	}
+    
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    [super viewDidLoad];
 }
 
 
@@ -145,42 +164,6 @@
 		
 	}
 	
-	
-    [FlurryAds setAdDelegate:self];
-    if(IS_IPHONE_5){
-        //cretate a UIView to hold the Flurry banner ad, with desired position and size
-        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
-        
-        [self.view addSubview:flurryContainer];
-        //fetch the ad with the newly created UIView
-        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
-    }
-    else{
-        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-	}
-	
-	
-	//[adView doNotIgnoreNewAdRequests];
-	//[adView doNotIgnoreAutoRefreshTimer];
-	
-	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-/*	adView = delegate.mainmenu.adView;
-	if(IS_IPHONE_5){
-        
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	}
-
-	
-	
-	
-	
-	
-	[self.view addSubview:adView];
-*/	
 }
 
 /*
@@ -320,14 +303,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void) viewDidDisappear:(BOOL)animated{
-    
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
-    
-	
-}
-
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -336,6 +311,7 @@
 
 
 - (void)dealloc {
+    self.adView = nil;
     [super dealloc];
 }
 

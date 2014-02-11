@@ -10,9 +10,10 @@
 //				 or download the unlocked version
 
 #import <UIKit/UIKit.h>
+#import "MPAdView.h"
 
 
-@interface StoreViewController : UIViewController <UIAlertViewDelegate> {
+@interface StoreViewController : UIViewController <UIAlertViewDelegate, MPAdViewDelegate> {
 	
 	
 	IBOutlet UIImageView *background;
@@ -36,6 +37,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *helpButton;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
 @property (nonatomic,retain) IBOutlet UILabel *balance;
+@property (nonatomic, retain) MPAdView *adView;
 
 -(IBAction) earnPressed : (id) sender;
 

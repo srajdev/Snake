@@ -13,9 +13,6 @@
 #import "main_menu.h"
 #import "UnlockViewController.h"
 #import "GKAchievementHandler.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
 #import "TSTapstream.h"
 
 @implementation UseCreditsViewController
@@ -234,29 +231,6 @@
 		squareUnlocked.hidden = YES;
 		square.hidden = NO;
 	}
-
-
-    [FlurryAds setAdDelegate:self];
-	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-	
-	//[adView doNotIgnoreNewAdRequests];
-	//[adView doNotIgnoreAutoRefreshTimer];
-	
-	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-/*	adView = delegate.mainmenu.adView;
-	if(IS_IPHONE_5){
-        
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	}
-	
-	[self.view addSubview:adView];
-*/
-	
-	
 }
 
 
@@ -356,15 +330,6 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	[delegate switchView:self.view toview:delegate.storeView.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
-	
-}
-
-
-- (void) viewDidDisappear:(BOOL)animated{
-    
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
-    
 	
 }
 

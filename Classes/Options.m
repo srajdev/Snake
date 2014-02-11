@@ -18,9 +18,6 @@
 #import "Options.h"
 #import "SnakeClassicAppDelegate.h"
 #import "main_menu.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
 #import "TSTapstream.h"
 
 
@@ -567,10 +564,33 @@
         fbButton.frame = btfbButtonFrame;
         
     }
-	
+	self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    [super viewDidLoad];
 }
 
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.adView = nil;
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    [super viewWillAppear:animated];
+
+}
 
 - (void) viewDidAppear:(BOOL)animated{
 	
@@ -884,29 +904,8 @@
 		
 	}
 #ifdef LITE_VERSION
-    
-    [FlurryAds setAdDelegate:self];
-	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-	
-    
-    // Code specific to lite version
 
-	//[adView doNotIgnoreNewAdRequests];
-//	[adView doNotIgnoreAutoRefreshTimer];
-	
-	
-	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-	/*adView = delegate.mainmenu.adView;
-	if(IS_IPHONE_5){
-        
-        adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	}
-*/
-#endif	
+#endif
 	
 	fbButton.isLoggedIn = delegate.FBLoggedIn;
 	
@@ -991,18 +990,6 @@
 		//delegate.FBLoggedIn = YES;
 	}
 	[fbButton updateImage];
-}
-
-
-- (void) viewDidDisappear:(BOOL)animated{
-	
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
-
-//	[adView ignoreNewAdRequests];
-	
-//	[adView ignoreAutoRefreshTimer];
-	
 }
 
 /*
@@ -1543,7 +1530,7 @@
 - (void)dealloc {
 	[name release];
 	[nameButton release];
-	
+	self.adView = nil;
 	
     [super dealloc];
 }

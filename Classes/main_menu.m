@@ -23,10 +23,7 @@
 #import "Difficulty.h"
 #import "Snake_3ViewController.h"
 #import "Options.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
 #import "HighScoreViewController.h"
-#import "Flurry.h"
 #import "MMSDK.h"
 #import "TSTapstream.h"
 #import <CoreLocation/CoreLocation.h>
@@ -51,13 +48,18 @@
 @synthesize checkAchievementsButton;
 @synthesize resumeTimer;
 
-@synthesize adView = _adView;
-
-
-
-
 - (void) viewWillAppear:(BOOL)animated{
-	[super viewWillAppear:animated];
+	
+    self.adView = nil;
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 
@@ -88,76 +90,15 @@
 	else {
 		resumebutton.enabled = NO;
 	}
-	
-	
-   
-	
-#ifdef LITE_VERSION
-    // Code specific to lite version
-
-	
-    [FlurryAds setAdDelegate:self];
-    [Flurry setDebugLogEnabled:YES];
-    
-    [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
- 
-    
-    
-/*
-	if(IS_IPHONE_5){
-        
-    adView.frame = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	}
-    
-	[self.view addSubview:adView];
-*/
-#endif
-	
-	 [super viewDidLoad];
+    [super viewWillAppear:animated];
 	
 }
-
-
-- (void) viewDidDisappear:(BOOL)animated{
-
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
-    
-//	[adView ignoreNewAdRequests];
-	
-//	[adView ignoreAutoRefreshTimer];
-	
-	
-}
-
-
--(void) viewWillDisappear:(BOOL)animated {
-    
-    //[super viewWillDisappear:animated];
-    
-    // Remove the ad when view dissappears
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    
-    // Reset delegate, if set earlier
-    [FlurryAds setAdDelegate:nil];
-}
-
 
 
 // Function to get the AdWhirl Key
 
 -(NSString *)adWhirlApplicationKey{
-
-	
-	
-	
 	return kSampleAppKey;
-
-	
 }
 
 -(void) showAlert :(NSTimer *)theTimer{
@@ -213,9 +154,11 @@
 		
 	}
 }
+
+
+#pragma mark - <MPAdViewDelegate>
 - (UIViewController *)viewControllerForPresentingModalView {
-	return self;
-	//return [((SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate]) navigationController];
+    return self;
 }
 
 
@@ -261,16 +204,7 @@
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
 	
-//	[self.adView ignoreNewAdRequests];
-	
-	
 	delegate.comeFromResume = YES;
-	
-	//[delegate.activeGame startGame];
-	
-
-	
-	
 	[UIView	 beginAnimations:@"Animation2" context:nil];
 		
 	
@@ -462,10 +396,7 @@
     
  #ifdef LITE_VERSION
  // Code specific to lite version
- 
- 
- //	[adView doNotIgnoreNewAdRequests];
- //	[adView doNotIgnoreAutoRefreshTimer];
+
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     [self setBackground];
@@ -509,38 +440,22 @@
         
     }
 
- /*
- adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
- 
- 
- 
- 
- adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
- 
- 
- [self.view addSubview:adView];
- */
  #endif
+    
+    self.adView = nil;
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    
+    [super viewDidLoad];
  
 }
-
- 
-/*
-- (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
-	[UIView beginAnimations:@"AdResize" context:nil];
-	[UIView setAnimationDuration:0.5];
-	CGSize adSize = [adWhirlView actualAdSize];
-	CGRect newFrame = adWhirlView.frame;
-	newFrame.size.height = adSize.height; 
-	newFrame.size.width = adSize.width;
-	newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2; // center
-	
-	
-	adWhirlView.frame = newFrame;
-	
-	[UIView commitAnimations];
-}
-*/
 
 -(IBAction) checkAchievements{
     
@@ -609,8 +524,7 @@
 	[resumebutton release];
 	[scoresbutton release];
     [storeButton release];
-    //_adView.delegate = nil;
-    [_adView release];
+    self.adView = nil;
     [super dealloc];
 }
 

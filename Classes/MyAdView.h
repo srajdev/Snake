@@ -18,7 +18,6 @@
 }
 
 - (id)initWithFrame:(CGRect)frame appIcon:(UIImage*)icon referralUrl:(NSString*)url;
-//- (id)initWithFlurryOffer:(FlurryOffer*)flurryOffer;
 - (void)downloadApp;
 
 @end

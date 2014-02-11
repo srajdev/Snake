@@ -12,9 +12,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAdView.h"
 
 
-@interface GameModeViewController : UIViewController {
+@interface GameModeViewController : UIViewController <MPAdViewDelegate>{
 	
 	
 	IBOutlet UIImageView *background;
@@ -30,6 +31,8 @@
 @property (nonatomic,retain) IBOutlet UIButton *extremeButton;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
 @property (nonatomic,retain) IBOutlet UIButton *helpButton;
+
+@property (nonatomic, retain) MPAdView *adView;
 
 -(IBAction) ClassicPressed : (id) sender;
 

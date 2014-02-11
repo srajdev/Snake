@@ -19,13 +19,14 @@
 
 #import "FBConnect.h"
 #import "FBLoginButton.h"
+#import "MPAdView.h"
 
 
 @class main_menu;
 
 
 
-@interface Options : UIViewController <UITextFieldDelegate, FBSessionDelegate>{
+@interface Options : UIViewController <UITextFieldDelegate, FBSessionDelegate, MPAdViewDelegate>{
 	
 	IBOutlet UITextField *name;
 	IBOutlet UIButton *orange;
@@ -122,6 +123,7 @@
 
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
 @property (nonatomic,retain) IBOutlet FBLoginButton *fbButton;
+@property (nonatomic, retain) MPAdView *adView;
 
 
 

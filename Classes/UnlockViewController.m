@@ -13,9 +13,6 @@
 #import "main_menu.h"
 #import "Options.h"
 #import "FieldModeViewController.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
 #import "TSTapstream.h"
 
 @implementation UnlockViewController
@@ -129,8 +126,6 @@
 		theme.image = [UIImage imageNamed:@"_0000_unlock_square.png"];
 		
 	}
-	
-    [FlurryAds setAdDelegate:self];
     [self setBackground];
 	
 }
@@ -298,14 +293,6 @@
 	else {
 		[delegate switchView:self.view toview:delegate.useCreditsView.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
 	}
-	
-}
-
-- (void) viewDidDisappear:(BOOL)animated{
-    
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
-    
 	
 }
 

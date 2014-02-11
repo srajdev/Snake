@@ -15,9 +15,7 @@
 #import "SnakeClassicAppDelegate.h"
 #import "Difficulty.h"
 #import "Snake_3ViewController.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
+
 #import "TSTapstream.h"
 
 @implementation GameModeViewController
@@ -54,7 +52,16 @@
         backButton.frame = btbackFrame;
         
     }
-    
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    [super viewDidLoad];
 }
 
 -(void)setBackground{
@@ -103,7 +110,18 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    self.adView = nil;
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
     [self setBackground];
+    [super viewWillAppear:animated];
 }
 - (void) viewDidAppear:(BOOL)animated{
 	
@@ -112,10 +130,6 @@
 	
 #ifdef LITE_VERSION
     // Code specific to lite version
-	[FlurryAds setAdDelegate:self];
-
-	[FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-    
 	//	[adView doNotIgnoreNewAdRequests];
 	//	[adView doNotIgnoreAutoRefreshTimer];
 	
@@ -313,9 +327,6 @@
 */
 
 - (void) viewDidDisappear:(BOOL)animated{
-    
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
 
 	
 }
@@ -335,6 +346,7 @@
 
 
 - (void)dealloc {
+    self.adView = nil;
     [super dealloc];
 }
 

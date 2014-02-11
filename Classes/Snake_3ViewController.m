@@ -16,7 +16,6 @@
 
 #import "Snake_3ViewController.h"
 #import "SnakeClassicAppDelegate.h"
-#import "Flurry.h"
 #import "HighScores.h"
 #import "HighScoreRecord.h"
 #import "TSTapstream.h"

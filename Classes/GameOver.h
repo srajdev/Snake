@@ -18,14 +18,13 @@
 #import <UIKit/UIKit.h>
 
 #import "FBConnect.h"
-//#import "SA_OAuthTwitterController.h"
-//#import "SA_OAuthTwitterEngine.h"
-//#import "GreystripeDelegate.h"
 #import <GameKit/GameKit.h>
 #import "GKAchievementHandler.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
-#import "FlurryAdDelegate.h"
+#import "MPAdView.h"
+#import "MPInterstitialAdController.h"
+
 
 @class Difficulty;
 @class main_menu;
@@ -33,7 +32,7 @@
 
 
 @interface GameOver : UIViewController <UITextFieldDelegate,
-FBDialogDelegate,FBRequestDelegate,FBSessionDelegate, FlurryAdDelegate> {
+FBDialogDelegate,FBRequestDelegate,FBSessionDelegate, MPAdViewDelegate, MPInterstitialAdControllerDelegate> {
 	
 	IBOutlet UIButton *name;
 	IBOutlet UILabel *score;
@@ -82,6 +81,9 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate, FlurryAdDelegate> {
 
 
 -(IBAction)playAgain:(id)sender;
+
+
+
 @property (nonatomic,retain) HighScoreRecord *highScore;
 
 @property (nonatomic,retain) UIButton *name;
@@ -106,14 +108,12 @@ FBDialogDelegate,FBRequestDelegate,FBSessionDelegate, FlurryAdDelegate> {
 @property BOOL playAgainButton;
 @property BOOL mainMenuButton;
 
-//-(IBAction) FBpublish: (id)sender;
+@property (nonatomic, retain) MPAdView *adView;
+@property (nonatomic, retain) MPInterstitialAdController *interstitial;
+
 -(IBAction) postToTwitter:(id)sender;
 -(IBAction) postToFacebook:(id)sender;
-//-(IBAction) tweetIt;
-//-(void) postToTwitter;
--(void) submitScore: (int) theScore theName:(NSString *)theName;   //v1.1
 -(void) getUserInfo;
-//-(id) appSpotRootViewController;
 
 -(void) publishFacebook;
 

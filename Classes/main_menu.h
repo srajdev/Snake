@@ -20,11 +20,8 @@
 
 #import <UIKit/UIKit.h>
 #import <GameKit/GameKit.h>
-#import "flurryAdDelegate.h"
+#import "MPAdView.h"
 
-//#import <MadsSDK/MadsSDK.h>
-
-@class MadsAdView;
 
 @class Difficulty;
 @class Options;
@@ -33,12 +30,7 @@
 
 
 
-@interface main_menu : UIViewController <UIAlertViewDelegate, FlurryAdDelegate, GKAchievementViewControllerDelegate>{
-	
-	MadsAdView *_adView;
-
-
-
+@interface main_menu : UIViewController <UIAlertViewDelegate, GKAchievementViewControllerDelegate, MPAdViewDelegate>{
 	
 	UIButton *newgamebutton;
 	UIButton *optionbutton;
@@ -59,7 +51,7 @@
 	
 }
 
-@property(nonatomic,retain) MadsAdView *adView;
+@property (nonatomic, retain) MPAdView *adView;
 
 @property (nonatomic,retain) IBOutlet UIButton *newgamebutton;
 @property (nonatomic,retain) IBOutlet UIButton *optionbutton;
@@ -83,7 +75,6 @@
 -(IBAction)resume:(id)sender;
 -(IBAction)scores:(id)sender;
 -(IBAction)storePressed:(id)sender;
--(IBAction)moreApps:(id)sender;
 -(IBAction) helpPressed : (id)sender;
 -(void) showAlert :(NSTimer *)theTimer;
 -(void) showAlert_2;

@@ -856,13 +856,6 @@ static NSString* kFBAppId = @"158392174179755";
 	earnView = [[EarnCreditsViewController alloc] initWithNibName:@"EarnCreditsViewController" bundle:nil];
 	helpPage = [[HelpPageViewController alloc]initWithNibName:@"HelpPageViewController" bundle:nil];
 	helpDetail = [[helpDetailViewController alloc] initWithNibName:@"helpDetailViewController" bundle:nil];
-	
-    
-//    [FlurryAppCircle setAppCircleEnabled:YES];
-//    [FlurryClips setVideoAdsEnabled:YES];
-//    [FlurryClips setVideoDelegate:self];
-//    [FlurryAppCircle setAppCircleDelegate:self];
-//    [FlurryAnalytics startSession:@"9VIC9CUSJ9PN1RB212BA"];
 
     [Flurry setCrashReportingEnabled:YES];
     [Flurry startSession:@"9VIC9CUSJ9PN1RB212BA"];

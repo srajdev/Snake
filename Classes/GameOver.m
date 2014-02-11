@@ -21,9 +21,6 @@
 #import "HighScoreRecord.h"
 #import "Difficulty.h"
 #import "GKAchievementHandler.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
-#import "Flurry.h"
 #import "TSTapstream.h"
 
 
@@ -64,11 +61,7 @@ static NSString* kFBAppId = @"158392174179755";
 //Function to return the AdWhirl Key
 
 -(NSString *)adWhirlApplicationKey{
-	
 	return kSampleAppKey;
-	
-	
-	
 }
 
 
@@ -178,45 +171,35 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
         btrateFrame.origin.x = 242;
         btrateFrame.origin.y = 50 + 381;
         rateAppButton.frame = btrateFrame;
-        
-        
     }
-	//[GSAdEngine setFullScreenDelegate:self forSlotNamed:@"fullscreenSlot"];
     
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    self.interstitial = [MPInterstitialAdController
+                         interstitialAdControllerForAdUnitId:@"05e522d1f83245f2b5765980f7b6a57f"];
     
-    //[FlurryClips setVideoDelegate:self];
-	
-	
-	
+    // Fetch the interstitial ad.
+    [self.interstitial loadAd];
+    
+    [super viewDidLoad];
 }
 
 // Make sure all the score and names are shown as current every time the view appears
 -(void) viewWillAppear:(BOOL)animated{
-	
-	
 
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
     [self setBackground];
-    [FlurryAds initialize:self];
-	[FlurryAds setAdDelegate:self];
     
     playAgainButton = false;
     mainMenuButton = false;
-    
-	if(IS_IPHONE_5){
-        //cretate a UIView to hold the Flurry banner ad, with desired position and size
-        UIView *flurryContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 518, self.view.frame.size.width, 50)];
-        
-        [self.view addSubview:flurryContainer];
-        //fetch the ad with the newly created UIView
-        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:flurryContainer size:BANNER_BOTTOM];
-    }
-    else{
-        [FlurryAds fetchAndDisplayAdForSpace:@"BANNER_MAIN_VIEW" view:self.view size:BANNER_BOTTOM];
-	}
-	
-    [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
 	
 	if (delegate.gameMode == kClassicMode && delegate.fieldMode == kNoWall && delegate.delegateScore >= 10000) {
 		delegate.maxOpen = YES;
@@ -288,53 +271,39 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 	[highScoreData release];
 	
 #ifdef LITE_VERSION
-    // Code specific to lite version
 
-	
-//	[adView doNotIgnoreNewAdRequests];
-//	[adView doNotIgnoreAutoRefreshTimer];
-	
-	//adView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
-/*	adView = delegate.mainmenu.adView;
-	if(IS_IPHONE_5){
-        
-        UadViewframe = CGRectMake(0.0, 520.0, 320.0, 50.0);
-        
-    }
-    else{
-	adView.frame = CGRectMake(0.0, 432.0, 320.0, 50.0);
-	}
-*/
- #endif
-
-	[super viewDidLoad];
-	
-#ifdef LITE_VERSION
-    // Code specific to lite version
-
-	
-	//[self.view addSubview:adView];
 #endif
 	
 	if (delegate.GCTest) {
      
-	GKAchievement *achievement = [delegate getAchievementForIdentifier:@"Allrounder"];
-	
-	if (achievement.percentComplete < 100.0 && delegate.maxOpen == YES && delegate.maxBox == YES && delegate.maxHole == YES && delegate.maxSquare == YES && delegate.GCConnected) {
-		
-		[delegate reportAchievementIdentifier:@"Allrounder" percentComplete:100];
-		
-		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAchievementExtreme:) userInfo:nil repeats:NO];
-	}
-	
-	if (delegate.extremeSuccess == 1) {
-		
+        GKAchievement *achievement = [delegate getAchievementForIdentifier:@"Allrounder"];
+        
+        if (achievement.percentComplete < 100.0 && delegate.maxOpen == YES && delegate.maxBox == YES && delegate.maxHole == YES && delegate.maxSquare == YES && delegate.GCConnected) {
+            
+            [delegate reportAchievementIdentifier:@"Allrounder" percentComplete:100];
+            
+            [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAchievementExtreme:) userInfo:nil repeats:NO];
+        }
+        
+        if (delegate.extremeSuccess == 1) {
+            
 
-		 [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAchievement:) userInfo:nil repeats:NO];
-		
-	}
+             [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAchievement:) userInfo:nil repeats:NO];
+            
+        }
 	}
 
+    self.adView = nil;
+    self.adView = [[[MPAdView alloc] initWithAdUnitId:@"770bbd6ca49544bb80bf388fd6c08f61"
+                                                 size:MOPUB_BANNER_SIZE] autorelease];
+    self.adView.delegate = self;
+    CGRect frame = self.adView.frame;
+    CGSize size = [self.adView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.adView.frame = frame;
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
+    [super viewWillAppear:animated];
 	
 }
 
@@ -369,13 +338,7 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 }
 
 - (void) viewDidDisappear:(BOOL)animated{
-
-//	[adView ignoreNewAdRequests];
-	
-//	[adView ignoreAutoRefreshTimer];
-[super viewDidDisappear:animated];
-	    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds setAdDelegate:nil];
+    [super viewDidDisappear:animated];
 }
 
 /*
@@ -484,18 +447,15 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
     [[TSTapstream instance] fireEvent:e];
     playAgainButton = true;
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    //[FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
-    if ([FlurryAds adReadyForSpace:adSpaceName]) {
-        NSLog(@"ad is there");
-        [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
-    } else {
-        // Fetch an ad
-        NSLog(@"NO AD");
-        [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
-        [delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-        //[FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
+    
+    if (self.interstitial.ready) {
+        [self.interstitial showFromViewController:self];
     }
-
+    else {
+        NSLog(@"NO AD");
+        [delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
+    }
+    
 	delegate.foodNumber = 0;
 	delegate.bonusFoodNumber = 0;
 	delegate.extremeSuccess = 0;
@@ -508,76 +468,22 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 	delegate.gameStatus = kGameStart;
 	
 	[self saveGame];
-    
-    
-    
-/*	
-#ifdef LITE_VERSION
-	
-	if ([GSAdEngine isAdReadyForSlotNamed:@"fullscreenSlot"] && delegate.delegateScore > 5000)
-	{
-		[GSAdEngine displayFullScreenAdForSlotNamed:@"fullscreenSlot"];
-		
-	}
-#endif
-*/
-    
-	
-    /*if([FlurryClips videoAdIsAvailable:@"VIDEO_AUTOPLAY"] && delegate.delegateScore > 5000){
-        
-        [FlurryClips openVideoTakeover:@"VIDEO_AUTOPLAY" orientation:@"portrait" rewardImage:nil rewardMessage:nil userCookies:nil autoPlay:YES];
-        
-        
-    }
-     */
-//	[delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-	
 	
 }
 
-- (BOOL) spaceShouldDisplay:(NSString*)adSpace interstitial:(BOOL)
-interstitial {
-    if (interstitial) {
-        // Pause app state here
-    }
-    
-    // Continue ad display
-    return YES;
+- (void)interstitialWillAppear:(MPInterstitialAdController *)interstitial {
+    // Is going to appear
 }
 
-/*
- *  Resume app state when the interstitial is dismissed.
- */
-
-- (void)spaceDidDismiss:(NSString *)adSpace interstitial:(BOOL)interstitial {
-    if (interstitial) {
-        SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-        
-        if(playAgainButton){
-        /*delegate.foodNumber = 0;
-        delegate.bonusFoodNumber = 0;
-        delegate.extremeSuccess = 0;
-        delegate.missedInExtreme = 0;
-        
-        
-        
-        //delegate.gameStatus = kGameActive;
-        
-        delegate.gameStatus = kGameStart;
-        
-        [self saveGame];
-        */
+- (void)interstitialDidDisappear:(MPInterstitialAdController *)interstitial {
+    SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if(playAgainButton){
         [delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
-        }
-        
-        if(mainMenuButton){
-            //delegate.gameStatus = kGameStart;
-            
-            //[self saveGame];
-
-            [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
-            
-        }
+    }
+    
+    if(mainMenuButton){
+        [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
     }
 }
 
@@ -634,62 +540,22 @@ interstitial {
     [[TSTapstream instance] fireEvent:e];
     
     mainMenuButton = true;
-    
-      //[FlurryAds fetchAndDisplayAdForSpace:adSpaceName view:self.view size:FULLSCREEN];
-    
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     delegate.gameStatus = kGameStart;
     
     [self saveGame];
     
-    //[delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
-    
-    
-    if ([FlurryAds adReadyForSpace:adSpaceName]) {
-        [FlurryAds displayAdForSpace:adSpaceName onView:self.view];
-    } else {
-        // Fetch an ad
-        [FlurryAds fetchAdForSpace:adSpaceName frame:self.view.frame size:FULLSCREEN];
+    if (self.interstitial.ready) {
+        [self.interstitial showFromViewController:self];
+    }
+    else {
         [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
     }
-	
-	
-	
-/*	
-#ifdef LITE_VERSION
-	
-	if ([GSAdEngine isAdReadyForSlotNamed:@"fullscreenSlot"] && delegate.delegateScore > 5000)
-	{
-		[GSAdEngine displayFullScreenAdForSlotNamed:@"fullscreenSlot"];
-		
-	}
-	
-#endif
-*/
-    
-    /*
-    if( [FlurryClips videoAdIsAvailable:@"VIDEO_AUTOPLAY"] && delegate.delegateScore > 5000){
-        
-        [FlurryClips openVideoTakeover:@"VIDEO_AUTOPLAY" orientation:@"portrait" rewardImage:nil rewardMessage:nil userCookies:nil autoPlay:YES];
-    }
-    */
-	
-	
-	
 }
 
-
-// REMOVED...Moved to high score view controller
-
--(void) submitScore: (int) theScore theName:(NSString *)theName{
-	
-	
-}
 
 // Action that is calle to rate the app
-
-
 -(IBAction) rateApp{
 	
 	
@@ -760,30 +626,13 @@ interstitial {
  */
 - (void)request:(FBRequest*)request didLoad:(id)result {
 	
-	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-
-//	FBName = [result objectForKey:@"name"];
-//	FBName = [FBName stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-	
-	
-//	FBid = [result objectForKey:@"id"];
-
-	
-	[self submitScore:delegate.delegateScore theName:delegate.playerName];
 };
 
 - (void)request:(FBRequest*)request didFailWithError:(NSError*)error{
-	 SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	
-	
-	[self submitScore:delegate.delegateScore theName:delegate.playerName];
 };
 
 - (IBAction)postToTwitter:(id)sender {
-    //NSLog(@"Enter posttotwitter");
     SLComposeViewController *tweetSheet;
     //if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     //{
@@ -967,6 +816,7 @@ interstitial {
 	[score release];
 	[highestScore release];
 	[changeName release];
+    self.adView = nil;
 	
 	
 	[FBid release];

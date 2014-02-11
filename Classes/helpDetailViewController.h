@@ -11,21 +11,19 @@
 #import <UIKit/UIKit.h>
 
 #import "main_menu.h"
+#import "MPAdView.h"
 
 
-@interface helpDetailViewController : UIViewController {
+@interface helpDetailViewController : UIViewController <MPAdViewDelegate>{
 	
-	IBOutlet UITextView *text;
-	
-	
-	
-	
+	IBOutlet UITextView *text;	
 	IBOutlet UIImageView *background;
     IBOutlet UIButton *backButton;
 
 }
 
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) MPAdView *adView;
 
 -(IBAction) backPressed :(id)sender;
 

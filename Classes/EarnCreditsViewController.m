@@ -12,13 +12,10 @@
 #import "EarnCreditsViewController.h"
 #import "SnakeClassicAppDelegate.h"
 #import "main_menu.h"
-#import "FlurryAdDelegate.h"
-#import "FlurryAds.h"
 #import "Social/Social.h"
 #import "AdSupport/ASIdentifierManager.h"
 #import <AdColony/AdColony.h>
 #import "SnakeIAPHelper.h"
-#import "Flurry.h"
 #import "TSTapstream.h"
 
 @implementation EarnCreditsViewController
@@ -29,7 +26,6 @@
 @synthesize nameButton;
 //@synthesize downloadButton;
 @synthesize name;
-@synthesize myAdView;
 @synthesize watchVideo;
 @synthesize balance;
 @synthesize products;
@@ -313,11 +309,6 @@
 		[NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(showAlert_2:) userInfo:nil repeats:NO];
 	}
 
-    [FlurryAds setAdDelegate:self];
-    
-    [FlurryAds fetchAdForSpace:@"Videos" frame:self.view.frame size:FULLSCREEN];
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"UPDATE_CREDITS" object:nil];
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(giveCreditsForPurchase) name:IAPHelperProductPurchasedNotification object:nil];
 }
@@ -722,11 +713,6 @@
 }
 
 - (void) viewDidDisappear:(BOOL)animated{
-    
-    [FlurryAds removeAdFromSpace:@"BANNER_MAIN_VIEW"];
-    [FlurryAds removeAdFromSpace:@"Videos"];
-    [FlurryAds setAdDelegate:nil];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UPDATE_CREDITS" object:nil];
     //[[NSNotificationCenter defaultCenter] removeObserver:self name:IAPHelperProductPurchasedNotification object:nil];
     

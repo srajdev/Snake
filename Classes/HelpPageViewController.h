@@ -9,11 +9,12 @@
 //  Descirption: This is the help page which gives the user all the information of all the different feature of the game
 
 #import <UIKit/UIKit.h>
+#import "MPAdView.h"
 
 
 
 
-@interface HelpPageViewController : UIViewController {
+@interface HelpPageViewController : UIViewController <MPAdViewDelegate>{
 	
 	
 	IBOutlet UIImageView *background;
@@ -35,6 +36,7 @@
 @property (nonatomic,retain) IBOutlet UIButton *blogButton;
 @property (nonatomic,retain) IBOutlet UIButton *facebookButton;
 @property (nonatomic,retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) MPAdView *adView;
 
 -(IBAction) buttonPressed : (id)sender;
 
