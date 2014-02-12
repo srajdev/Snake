@@ -72,7 +72,7 @@
 	
     
     [self setBackground];
-		if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
+    if (delegate.gameStatus == kGamePause || delegate.inTransition == YES) {
 		resumebutton.enabled = YES;
 	}
 	else {

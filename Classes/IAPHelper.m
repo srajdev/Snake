@@ -10,6 +10,7 @@
 #import "IAPHelper.h"
 #import <StoreKit/StoreKit.h>
 #import "SnakeClassicAppDelegate.h"
+#import "TSTapstream.h"
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
 NSString *const SnakeIAPProductName = @"SnakeCredits1305";
@@ -134,6 +135,9 @@ NSString *const SnakeIAPProductName = @"SnakeCredits1305";
 }
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
+    
+    TSEvent *e = [TSEvent eventWithName:@"IAP_transcation Completed" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     NSLog(@"completeTransaction...");
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
@@ -142,6 +146,8 @@ NSString *const SnakeIAPProductName = @"SnakeCredits1305";
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
     NSLog(@"restoreTransaction...");
+    TSEvent *e = [TSEvent eventWithName:@"IAP_transcation Restored" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
     
     [self provideContentForProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
@@ -152,13 +158,16 @@ NSString *const SnakeIAPProductName = @"SnakeCredits1305";
     NSLog(@"failedTransaction...");
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
-        NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
+        TSEvent *e = [TSEvent eventWithName:@"IAP_transcation ERROR" oneTimeOnly:NO];
+        [e addValue:transaction.error.localizedDescription forKey:@"error"];
+        [[TSTapstream instance] fireEvent:e];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Sorry there was some error in your transaction. Please try again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [alert show];
+    }else{
+        TSEvent *e = [TSEvent eventWithName:@"IAP_transcation Cancelled" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
     }
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Sorry there was some error in your transaction. Please try again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    
-    [alert show];
-    
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 

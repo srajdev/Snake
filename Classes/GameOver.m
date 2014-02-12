@@ -446,7 +446,8 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
         [self.interstitial showFromViewController:self];
     }
     else {
-        NSLog(@"NO AD");
+        TSEvent *e = [TSEvent eventWithName:@"gameover_Play Again no ad available" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
         [delegate switchView:self.view toview:delegate.gameModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];
     }
     
@@ -530,7 +531,7 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
 
 -(IBAction)mainmenu:(id)sender{
 	
-    TSEvent *e = [TSEvent eventWithName:@"gameover_mennu" oneTimeOnly:NO];
+    TSEvent *e = [TSEvent eventWithName:@"gameover_menu pressed" oneTimeOnly:NO];
     [[TSTapstream instance] fireEvent:e];
     
     mainMenuButton = true;
@@ -539,11 +540,12 @@ NSString *adSpaceName = @"INTERSTITIAL_MAIN_VIEW";
     delegate.gameStatus = kGameStart;
     
     [self saveGame];
-    NSLog(@"ready ::%@", [NSNumber numberWithBool:self.interstitial.ready]);
     if (self.interstitial.ready) {
         [self.interstitial showFromViewController:self];
     }
     else {
+        TSEvent *e = [TSEvent eventWithName:@"gameover_menu no ad available" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
         [delegate switchView:self.view toview:delegate.mainmenu.view delay:NO remove:YES display:nil curlup:NO curldown:YES];
     }
 }

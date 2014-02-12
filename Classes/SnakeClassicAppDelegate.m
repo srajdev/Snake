@@ -378,21 +378,11 @@ static NSString* kFBAppId = @"158392174179755";
     GCConnected = NO;
     
     if (GCTest) {
-        
         [self authenticateLocalPlayer];
     }
-	
-//	GSAdSlotDescription * slot2 = [GSAdSlotDescription descriptionWithSize:kGSAdSizeIPhoneFullScreen name:@"fullscreenSlot"];
+
 	
 	achievementsDictionary = [[NSMutableDictionary alloc] init];
-	
-	//[self loadAchievements];
-	
-	
-	
-//	NSString *applicationID = @"6cb1c347-cd2b-4b24-8fcd-ccf728144e92";
-//	[GSAdEngine startupWithAppID:applicationID adSlotDescriptions:[NSArray arrayWithObject:slot2]];
-	
 	
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 	
@@ -794,13 +784,6 @@ static NSString* kFBAppId = @"158392174179755";
 		else if (defaultSnakeColor == 3) {
 			snakeColor = [UIColor blackColor];
 		}
-		
-		
-		
-		
-		
-		
-		
 		Snake_3ViewController *gameOn = [[Snake_3ViewController alloc]initWithNibName:@"Snake_3ViewController" bundle:nil];
 		self.activeGame = gameOn;
 		

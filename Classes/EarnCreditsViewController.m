@@ -378,9 +378,7 @@
 
 
 -(void)shareOnFacebook{
-    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Facebook Share" oneTimeOnly:NO];
-    [[TSTapstream instance] fireEvent:e];
-	
+    
     SLComposeViewController *fbController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
     [fbController setInitialText: [NSString stringWithFormat:@"Yes, this is the same old Snake. Best game ever."]];
@@ -404,6 +402,9 @@
             case SLComposeViewControllerResultDone:
             {
                 NSLog(@"DONE");
+                TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Facebook Share" oneTimeOnly:NO];
+                [[TSTapstream instance] fireEvent:e];
+
                 
                 BOOL giveCredits = YES;
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -459,8 +460,6 @@
 }
 
 -(void)shareOnTwitter{
-    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Twiiter Share" oneTimeOnly:NO];
-    [[TSTapstream instance] fireEvent:e];
     SLComposeViewController *tweetSheet;
     tweetSheet = [[SLComposeViewController alloc] init];
 
@@ -482,6 +481,8 @@
                 break;
             case SLComposeViewControllerResultDone:
             {
+                TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Twiiter Share" oneTimeOnly:NO];
+                [[TSTapstream instance] fireEvent:e];
                 BOOL giveCredits = YES;
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 NSString *lastPostDate = [defaults objectForKey:@"TWITTER_EARN_SHARE"];
@@ -537,15 +538,31 @@
     
     TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Watch Video" oneTimeOnly:NO];
     [[TSTapstream instance] fireEvent:e];
-    [AdColony playVideoAdForZone:@"vz8a85a435f2b346368c"
-                    withDelegate:self
-                withV4VCPrePopup:NO
-                andV4VCPostPopup:NO];
+    
+    if ([AdColony zoneStatusForZone:@"vz8a85a435f2b346368c"] == ADCOLONY_ZONE_STATUS_ACTIVE) {
+        TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Watch Video Showing Video" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
+        [AdColony playVideoAdForZone:@"vz8a85a435f2b346368c"
+                        withDelegate:nil
+                    withV4VCPrePopup:NO
+                    andV4VCPostPopup:NO];
+    }
+    else{
+        TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Watch Video No Video" oneTimeOnly:NO];
+        [[TSTapstream instance] fireEvent:e];
+        UIAlertView *noVideoAlert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"No offers available right now. Please check back later." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [noVideoAlert show];
+    }
     
 }
 
 - (void) videoDidFinish:(NSString *)adSpace{
     NSLog(@"Ad Space [%@] Video Did Finish", adSpace);
+    
+    
+    TSEvent *e = [TSEvent eventWithName:@"Earn Credits_Finished Watching Video" oneTimeOnly:NO];
+    [[TSTapstream instance] fireEvent:e];
 
     SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	

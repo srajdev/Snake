@@ -174,9 +174,19 @@
     [[TSTapstream instance] fireEvent:e];
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
+   
+	@try {
+        if (delegate.gameStatus == kGamePause) {
+            [delegate.activeGame.displayLink invalidate];
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"could not invalidate dispaly link on classic: %@", exception.reason);
+    }
+    @finally {
+        NSLog(@"finally");
+    }
 	
-	
-	[delegate.activeGame.displayLink invalidate];
 	delegate.activeGame = nil;
 	delegate.foodNumber = 0;
 	delegate.bonusFoodNumber = 0;
@@ -197,32 +207,6 @@
 	
 	[delegate switchView:self.view toview:delegate.fieldModeMenu.view delay:NO remove:YES display:nil curlup:YES curldown:NO];	
 }
-/*
-- (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
-	
-	
-	
-	
-	//SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	
-	
-	
-	[UIView beginAnimations:@"AdResize" context:nil];
-	[UIView setAnimationDuration:0.5];
-	CGSize adSize = [adWhirlView actualAdSize];
-	CGRect newFrame = adWhirlView.frame;
-	newFrame.size.height = adSize.height; // fit the ad
-	newFrame.size.width = adSize.width;
-	newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/2; // center
-	
-	
-	
-	adWhirlView.frame = newFrame;
-	// ... adjust surrounding views here ...
-	[UIView commitAnimations];
-}
- */
 // Action that is called when the user wants to play the extreme mode
 
 - (IBAction) ExtremePressed : (id) sender{
@@ -232,10 +216,17 @@
 	
 	SnakeClassicAppDelegate *delegate = (SnakeClassicAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	
-	//[delegate.mainmenu.adView ignoreNewAdRequests];
-	
-	[delegate.activeGame.displayLink invalidate];
+	@try {
+        if (delegate.gameStatus == kGamePause) {
+            [delegate.activeGame.displayLink invalidate];
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"could not invalidate dispaly link on classic: %@", exception.reason);
+    }
+    @finally {
+        NSLog(@"finally");
+    }
 	delegate.activeGame = nil;
 	
 	
